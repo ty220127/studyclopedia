@@ -12,7 +12,7 @@ nav ul{left:50%}
 nav li,nav ul{position:relative;float:left;margin:0}
 nav li{left:-85%;list-style:none;padding:0 20px}
 nav li a{color:#000; text-decoration:none; font-weight:bold;}
-nav li a:hover{color:#dfdfdf;text-decoration:underline}
+nav li a:hover{color:#f59b42;text-decoration:underline}
 #ttlhead{
 	font-size: 200%;
 	font-family: sans-serif;
