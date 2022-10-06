@@ -7,7 +7,7 @@ table{
 	font-size: 14px;
 }
 
-nav{width:100%;position:fixed;top:0;left:0;padding:5px 0;opacity:.8;background:#abf;z-index:1}
+nav{width:100%;position:fixed;top:0;left:0;padding:5px 0;opacity:.8;background:#fba;z-index:1}
 nav ul{left:50%}
 nav li,nav ul{position:relative;float:left;margin:0}
 nav li{left:-85%;list-style:none;padding:0 20px}
