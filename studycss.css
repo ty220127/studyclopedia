@@ -1,0 +1,106 @@
+body{
+      font-family: sans-serif;
+      font-size: 14px;
+}
+
+table{
+	font-size: 14px;
+}
+
+nav{width:100%;position:fixed;top:0;left:0;padding:5px 0;opacity:.8;background:#abf;z-index:1}
+nav ul{left:50%}
+nav li,nav ul{position:relative;float:left;margin:0}
+nav li{left:-85%;list-style:none;padding:0 20px}
+nav li a{color:#000; text-decoration:none; font-weight:bold;}
+nav li a:hover{color:#dfdfdf;text-decoration:underline}
+#ttlhead{
+	font-size: 200%;
+	font-family: sans-serif;
+	font-weight: bold;
+	line-height:3
+}
+
+#titlehead2{
+	font-size: 200%;
+	font-family: sans-serif;
+	font-weight: bold;
+	width: 100%;
+	position: fixed;
+	background: #abf;
+	top:0; left:0; padding:3px; opacity:.8;
+}
+
+#titlehead{
+	font-size: 200%;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+#bib{
+}
+
+.def{
+      padding: 0.5%; 
+      margin-bottom: 0.5%; 
+      border-left: solid 0.3em #aaaa4a; 
+      border-bottom:0.1em solid #aaaa4a;
+      background-color: #ffff99;
+}
+.prp{
+      padding: 0.5%; 
+      margin-bottom: 0.5%; 
+      border-left: solid 0.3em #597dff;
+      border-bottom:0.1em solid #597dff;
+      background-color: #b2f9ff;
+}
+.exm{
+      padding: 0.5%; 
+      margin-bottom: 0.5%; 
+      border-left: solid 0.3em #59c859; 
+      border-bottom:0.1em solid #59c859;
+      background-color: #b2ffb2;
+}
+.exr{
+      padding: 0.5%; 
+      margin-bottom: 0.5%; 
+      border-left: solid 0.3em #c85959; 
+      border-bottom:0.1em solid #c85959;
+      background-color: #ffc8c8;
+}
+
+.fct{
+      padding: 0.5%; 
+      margin-bottom: 0.5%; 
+      border-left: solid 0.3em #646464; 
+      border-bottom:0.1em solid #646464;
+      background-color: #c8c8c8;
+}
+
+
+ul.defl{
+      list-style-type: lower-roman;
+}
+
+ol.q li {
+	list-style-type: none;
+	counter-increment: cnt;
+	position: relative;
+}
+ 
+ol.q li::before {
+	content: "(" counter(cnt) ")　";
+	display: inline-block;
+	margin-left: -2.5em;
+	width: 3em;
+	text-align: right;
+	top: 0;
+	left: 0;
+}
+
+.cor{
+        padding: 0.5%; 
+        margin-bottom: 0.3%; 
+	font-size: 14px;
+	font-weight: normal;
+	background-color: #c8c8c8;
+}
