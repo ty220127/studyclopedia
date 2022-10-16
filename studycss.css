@@ -14,29 +14,37 @@ nav li{left:-85%;list-style:none;padding:0 20px}
 nav li a{color:#000; text-decoration:none; font-weight:bold;}
 nav li a:hover{color:#f59b42;text-decoration:underline}
 #ttlhead{
-	font-size: 200%;
+	margin-top: 2em;
+	font-size: 150%;
 	font-family: sans-serif;
 	font-weight: bold;
-	line-height:3
+	line-height: 1.2;
 }
-
-#titlehead2{
-	font-size: 200%;
-	font-family: sans-serif;
-	font-weight: bold;
-	width: 100%;
-	position: fixed;
-	background: #abf;
-	top:0; left:0; padding:3px; opacity:.8;
-}
-
-#titlehead{
-	font-size: 200%;
-	font-family: sans-serif;
-	font-weight: bold;
-}
+#ttlhead a{color:#000; text-decoration:none; font-weight:bold;}
+#ttlhead a:hover{color:#aa0000;}
 
 #bib{
+}
+
+#box {
+  width: 260px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: rgb(210, 232, 247);
+  box-sizing: border-box;
+}
+#box li {
+  margin-left: 30px;
+}
+
+h2{
+margin-bottom:3rem auto;
+color:#cf0c0c;
+border-bottom:3px solid #444;
+padding: 0.5rem;
+border-left: solid 0.5rem #aa0000;
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+background-color: rgb(255, 200, 200);
 }
 
 .def{
