@@ -27,7 +27,7 @@ nav li a:hover{color:#f59b42;text-decoration:underline}
 }
 
 #box {
-  width: 260px;
+  width: 400px;
   padding: 10px;
   border: 1px solid gray;
   background-color: rgb(210, 232, 247);
