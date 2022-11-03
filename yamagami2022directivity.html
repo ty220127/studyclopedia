@@ -1,0 +1,91 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "Directivity of quantum walk via its random walk replica"
+	document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"
+	const sec1 = "Introduction"
+	const sec2 = "Preliminaries"
+	const sec3 = "Directivity of QWRWers"
+	const sec4 = "Summary and Discussion"
+	const sec5 = "Appx. A: Calculations of probabilities on QWRWs"
+	const sec6 = "Appx. B: The 2-term moving variance of $r(n)$"
+</script>
+<style>
+</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><a href="https://www.hindawi.com/journals/complexity/2022/9021583/"><script>document.write(ttl)</script></a></div>
+<p>Tomoki Yamagami, Etsuo Segawa, Nicolas Chauvet, André Röhm, Ryoichi Horisaki, and Makoto Naruse
+<br>Complexity, 2022, 9021583 (2022).</p>
+</center>
+<hr>
+<nav>
+<ul>
+<li style="left:-73%;"><a href="index.html">STUDYCLOPEDIA</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
+established on 2022/11/2<br>
+updated on 2022/11/2
+</p>
+       
+<center style="margin-top:3em;">
+<table border="2" width="80%" cellpadding="5"><tbody><tr><td>
+量子ウォーク (QW) にはランダムウォーク (RW) と比較することで，それとは異なった性質を見ることができる．これは，特に線形的拡がりや局在化において最も顕著である．その一方で，量子ウォークを模倣するランダムウォーク（これを quantum-walk-replicating random walk (QWRW) として言及する）がいくつかの文献で研究されており，そこでは QWRW の結果的な性質が QW のそれと一致する．しかしながら我々は，先行研究において，QW に対するより深い，或いは新しい視点を得られるような QWRW の性質の利用が十分になされていないと考えている．本論文では，QWRW を通して１次元上離散量子ウォークの「方向性」に焦点を当てる．QWRW により個々のウォーカーの軌道を考えることができるという事実を活用することで，まず QWRW の将来の方向の決定性について議論を行う．これにより，線形的拡がりや局在化の効果を新しい方法で明示することができる．また，QWRW の推移確率を可視化することができ，それは極めて複雑な（グラフの）形状を現す．これも，QW の新たな表現方法である．更に，RW と　QW が初めて帰ってくる時刻を議論する．これも，QWRW という概念によって可能になったことである．QW の最初の再帰時刻の統計的結果は QW の性質である線形的拡がりと局在化により，RW とかなり異なっていることが観察できる．
+</td></tr></tbody></table>
+
+<ol id="box" style="text-align:left;">
+  <li><a href="#1"><script>document.write(sec1)</script></a></li>
+  <li><a href="#2"><script>document.write(sec2)</script></a></li>
+  <li><a href="#3"><script>document.write(sec3)</script></a></li>
+  <li><a href="#4"><script>document.write(sec4)</script></a></li>
+  <li><a href="#5"><script>document.write(sec5)</script></a></li>
+  <li><a href="#6"><script>document.write(sec6)</script></a></li>
+</ul>
+</center>
+
+<h2 id="1"><script>document.write(sec1)</script></h2>
+aaaa
+<h2 id="2"><script>document.write(sec2)</script></h2>
+aaaa
+<h2 id="3"><script>document.write(sec3)</script></h2>
+aaaa
+<h2 id="4"><script>document.write(sec4)</script></h2>
+aaaa
+<h2 id="5"><script>document.write(sec5)</script></h2>
+aaaa
+<h2 id="6"><script>document.write(sec6)</script></h2>
+aaaa
+</body>
+</html>
