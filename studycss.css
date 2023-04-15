@@ -3,6 +3,17 @@ body{
       font-size: 14px;
 }
 
+* { 
+    margin: 0px; 
+    padding: 0px; 
+}
+
+.boxes{
+	font-size: 14px;
+	border-left: solid 0.5em transparent;
+	border-right: solid 0.5em transparent;
+}
+
 table{
 	font-size: 14px;
 }
