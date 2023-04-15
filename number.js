@@ -48,7 +48,7 @@ dates[i] = new Date( 2020, 8, 6, 00, 00 );
 doi[i] = "https://link.springer.com/article/10.1007/s42484-020-00024-8";
 arxiv[i] = "https://arxiv.org/abs/2002.06395";
 j = 0;
-j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
+j++; antilinearity = j; bns[i][j] = "報酬平均値";
 
 //3:SunadaTate2012QW
 i++; S12QW = i;
