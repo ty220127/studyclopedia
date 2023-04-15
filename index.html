@@ -18,6 +18,8 @@
 </head>
 
 <body>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+
 <nav>
 <ul>
 <li style="font-size: 200%; left:-65%;"><a href="index.html"><script>document.write(ttl)</script></a></li>
@@ -28,25 +30,38 @@
 <a href="history.html">更新履歴</a>
 </center>
 
-<ul>
-	<li>2001
-		<ul>
-		<li>0706: <a href="ambainis2001one.html">A. Ambainis et al.: One-dimensional quantum walks</a></li>
-		</ul>
-	</li>	
-	<li>2002
-		<ul>
-		<li>0617: <a href="konno2005new.html">N. Konno: A new type of limit theorem for the one-dimensional quantum random walk</a></li>
-		</ul>
-	</li>	
-	<li>2011
-		<ul>
-		<li>0809: <a href="sunada2012asymptotic.html">T. Sunada and T. Tate: Asymptotic behavior of quantum walks on the line</a></li>
-		</ul>
-	<li>2022
-		<ul>
-		<li>0409: <a href="yamagami2022directivity.html">Yamagami et al.: Directivity of quantum walk via its random walk replica</a></li>
-		</ul>
-	</li>	
-</ul>
+<script>i = 0;</script>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+
+</body>
 </html>
+
+<script>
+ var moji = "PgNo"
+    var tmp = document.getElementsByClassName("page") ;
+	console.log(tmp)
+
+    for(var i=0; i<=tmp.length-1;i++){
+        //id追加
+        tmp[i].setAttribute("id",moji+i);
+    }
+
+var tt = [];
+
+for(var i = 0; i <= tmp.length-1; i++){
+	tt[i] = document.getElementById("PgNo" + i);
+	tt[i].href = refs[i+1];
+}
+console.log(tt)
+console.log(tt.href)
+
+</script>
