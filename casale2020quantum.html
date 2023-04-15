@@ -78,16 +78,27 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = antilinearity</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>行動 $x\in X$ に対して
+	<p>行動 $x\in X$ に対する報酬期待値
 	<p>\begin{align}
-		a_x = \sum_{x\in X} \nu_x(y) f(x,\,y)
+		a_x = \sum_{y\in Y} \nu_x(y) f(x,\,y)
 		\end{align}</p>
-	<p>と定めると，これは行動 $x$ に対する報酬期待値である．</p>
+	<p>は行動 $x$ がにより報酬が得られる確率そのものである．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-	</div>
+	<p>\begin{align}
+		Y^{x}_j := \{y\in Y\,|\,f(x,\,y) = j\}
+		\end{align}</p>
+	<p>と定めると，$Y^{x}_0\cap Y^{x}_1 = \emptyset$ かつ $Y^{x}_0\cup Y^{x}_1 = Y$ であるから</p>
+	<p>\begin{align}
+		a_x &= \sum_{y\in Y} \nu_x(y)f(x,\,y)\\
+			&= \sum_{y\in Y^{x}_0} \nu_x(y)f(x,\,y) + \sum_{y\in Y^{x}_1} \nu_x(y)f(x,\,y)\\
+			&= \sum_{y\in Y^{x}_0} \nu_x(y)\cdot 0 + \sum_{y\in Y^{x}_1} \nu_x(y)\cdot 1\\
+			&= \sum_{y\in Y^{x}_1} \nu_x(y).
+		\end{align}</p>
+	<p>これは，行動 $x$ に対して報酬が得られる環境 $y$ になる確率の総和である．</p>
+ 	</div>
 </details>
 </div>
 <br>
