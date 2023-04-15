@@ -80,41 +80,35 @@ h2{
 }
 
 .def{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #aaaa4a; 
-      border-bottom:0.1em solid #aaaa4a;
+	background: #7b7b35;
+	color: #FFFFFF;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.def #tx{
+      border-left: solid 0.8em #7b7b35;
+      border-bottom:0.1em solid #7b7b35;
       background-color: #ffff99;
-}
-.prp{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #597dff;
-      border-bottom:0.1em solid #597dff;
-      background-color: #b2f9ff;
-}
-.exm{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #59c859; 
-      border-bottom:0.1em solid #59c859;
-      background-color: #b2ffb2;
-}
-.exr{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #c85959; 
-      border-bottom:0.1em solid #c85959;
-      background-color: #ffc8c8;
+      color:#000000;
+      font-weight: normal;
+      padding:10px;
 }
 
-.fct{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #646464; 
-      border-bottom:0.1em solid #646464;
-      background-color: #c8c8c8;
+.prp{
+	background: #23237b;
+	color: #FFFFFF;
+	font-family: sans-serif;
+	font-weight: bold;
 }
+.prp #tx{
+      border-left: solid 0.8em #23237b;
+      border-bottom:0.1em solid #23237b;
+      background-color: #b2f9ff;
+      color:#000000;
+      font-weight: normal;
+      padding:10px;
+}
+
 
 
 ul.defl{
