@@ -4,6 +4,13 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <style>
+#ttlh{
+	margin-top: 0.5em;
+	font-size: 200%;
+	font-family: sans-serif;
+	font-weight: bold;
+	line-height:3
+}
 </style>
 <script>
 	const ttl = "更新履歴"
@@ -13,17 +20,22 @@
 </head>
 
 <body>
-<center><div style="font-size: 200%; font-family: sans-serif; font-weight: bold; line-height:3"><script>document.write(ttl)</script></div></center>
+<script src="https://ty220127.github.io/studyclopedia/number.js"></script>
 
-<nav>
-<ul>
-<li style="left:-73%;"><a href="index.html">STUDYCLOPEDIA</a></li>
-</ul>
-</nav>
+<center><div id="ttlh"><script>document.write(ttl)</script></div></center>
 
+<div class="header">
+<center><a href="index.html">STUDYCLOPEDIA</a></center>
+</div>
+
+<div class="boxes">
 <center>
 <table rules="rows">
 <tbody>
+<tr><td rowspan="3" valign="top" nowrap=""><font color="green">221104</font>&nbsp;</td>		
+  <td><a href="casale2020quantum.html"><script>document.write(authors[C20QB][1])</script> et al. (<script>document.write(dates[C20QB].getFullYear())</script>)</a>：ページ作成</td></tr>
+	<tr><td><a href="amakasu2021conflict.html"><script>document.write(authors[A21OAM][1])</script> et al. (<script>document.write(dates[A21OAM].getFullYear())</script>)</a>：ページ作成</td></tr>
+	<tr><td><a href="index.html">トップページ</a>：フォーム変更</td></tr>
 <tr><td rowspan="4" valign="top" nowrap=""><font color="green">221104</font>&nbsp;</td>		
   <td><a href="yamagami2022directivity.html">Yamagami et al.(2022)</a>：論文ページへの飛び方を変更</td></tr>
   	<tr><td><a href="sunada2012asymptotic.html">Sunada and Tate (2012)</a>：論文ページへの飛び方を変更</td></tr>
@@ -51,6 +63,10 @@
 </tbody>
 </table>
 </center>
+</div>
+
+<br>
+<div class="footer"></div>
 
 </body>
 </html>
