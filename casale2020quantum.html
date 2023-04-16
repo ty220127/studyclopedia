@@ -26,11 +26,12 @@
 		intgrl: '\\displaystyle\\int',
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+		ket: ['|{#1}\\rangle', 1],
 	}}});
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/4/15"
+	const updated = "2023/4/16"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec1 = "Introduction"
 	const sec2 = "Preliminaries"
@@ -76,14 +77,15 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </center>
 <br><br>
 
-<p id="1">&nbsp;</p><script>var curbox = antilinearity</script>
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = averewardisprob</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>行動 $x\in X$ に対する報酬期待値
+	<p>行動 $x\in X$ に対する報酬平均値
 	<p>\begin{align}
 		a_x = \sum_{y\in Y} \nu_x(y) f(x,\,y)
 		\end{align}</p>
-	<p>は行動 $x$ がにより報酬が得られる確率そのものである．</p>
+	<p>は行動 $x$ により報酬が得られる確率そのものである．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
@@ -103,6 +105,64 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </details>
 </div>
 <br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = H0H1def</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$j\in\{0,\ 1\}$ に対し， $X$ の部分集合</p>
+	<p>\begin{align}
+		X_j = \{x\in X\,|\, f(x) = j\}
+		\end{align}</p>
+	<p>を定義する．また，$j\in\{0,\ 1\}$ に対して</p>
+	<p>\begin{align}
+		\DeclareMathOperator{\spn}{\mathrm{span}}
+		\mathcal{H}_j = \spn\{\ket{x}\in\mathcal{H}\,|\, x\in X_j\}
+		\end{align}</p>
+	<p>を定める．</p>
+</div>
+</div>
+<br>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = H0H1orthogonal</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$\mathcal{H}_0$ と $\mathcal{H}_1$ は互いに直交補空間の関係にある．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Psi0Psi1</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$x\in X$ に対して $\alpha_x\in\mathbb{C}$ を $\sum_{x\in X}|\alpha_x|^2$ となるように定める．ここで $p = \sum_{x\in X_1} |\alpha_x|^2$ とすれば，それぞれ $\mathcal{H}_0,\ \mathcal{H}_1$ 上の単位ベクトル $\ket{\varPsi_0},\ \ket{\varPsi_1}$ が存在して</p>
+	<p>\begin{align}
+		\ket{\varPsi} = \sqrt{p}\ket{\varPsi_1} + \sqrt{1-p}\ket{\varPsi_0}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>$p$ はマークされた要素のいずれかを観測する確率と解釈できる．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
 
 </div>
 
