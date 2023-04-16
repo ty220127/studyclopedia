@@ -48,7 +48,10 @@ dates[i] = new Date( 2020, 8, 6, 00, 00 );
 doi[i] = "https://link.springer.com/article/10.1007/s42484-020-00024-8";
 arxiv[i] = "https://arxiv.org/abs/2002.06395";
 j = 0;
-j++; antilinearity = j; bns[i][j] = "報酬平均値と成功確率の関係";
+j++; averewardisprob = j; bns[i][j] = "命題：報酬平均値と成功確率の関係";
+j++; H0H1def = j; bns[i][j] = "定義：マーク・非マーク要素と対応する Hilbert 空間";
+j++; H0H1orthogonal = j; bns[i][j] = "マーク・非マーク要素の Hilbert 空間は互いに直交";
+j++; Psi0Psi1 = j; bns[i][j] = "状態の２次元射影";
 
 //3:SunadaTate2012QW
 i++; S12QW = i;
