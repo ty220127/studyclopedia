@@ -50,8 +50,8 @@ arxiv[i] = "https://arxiv.org/abs/2002.06395";
 j = 0;
 j++; averewardisprob = j; bns[i][j] = "命題：報酬平均値と成功確率の関係";
 j++; H0H1def = j; bns[i][j] = "定義：マーク・非マーク要素と対応する Hilbert 空間";
-j++; H0H1orthogonal = j; bns[i][j] = "マーク・非マーク要素の Hilbert 空間は互いに直交";
-j++; Psi0Psi1 = j; bns[i][j] = "状態の２次元射影";
+j++; H0H1orthogonal = j; bns[i][j] = "命題：マーク・非マーク要素の Hilbert 空間は互いに直交";
+j++; Psi0Psi1 = j; bns[i][j] = "命題：状態の２次元射影";
 
 //3:SunadaTate2012QW
 i++; S12QW = i;
