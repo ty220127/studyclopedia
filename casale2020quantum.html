@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -27,11 +28,13 @@
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 		ket: ['|{#1}\\rangle', 1],
+		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
+		braket: ['\\langle #1 \\rangle',1],
 	}}});
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/4/16"
+	const updated = "2023/4/18"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec1 = "Introduction"
 	const sec2 = "Preliminaries"
@@ -82,7 +85,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>行動 $x\in X$ に対する報酬平均値
-	<p>\begin{align}
+	<p>\bes^2gin{align}
 		a_x = \sum_{y\in Y} \nu_x(y) f(x,\,y)
 		\end{align}</p>
 	<p>は行動 $x$ により報酬が得られる確率そのものである．</p>
@@ -126,6 +129,50 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <br>
 
 <!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox =oracleOf</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>関数 $f:X\to \{0,\,1\}$ に依存する作用素で，以下を満たすものを【オラクル (oracle)】と呼ぶ：</p>
+	<p>\begin{align}
+		O_f\ket{x} = (-1)^{f(x)}\ket{x}.
+		\end{align}</p>
+</div>
+</div>
+<br>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = oracleOfketbra</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>\begin{align}
+		O_f = \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>まず，$x\in X_1$ に対して<p>
+	<p>\begin{align}
+		O_f\ket{x} = (-1)^1\ket{x} = -\ket{x}.
+		\end{align}</p>
+	<p>次に，$x\in X_0$ に対して</p>
+	<p>\begin{align}
+		O_f\ket{x} = (-1)^0\ket{x} = \ket{x}.
+		\end{align}</p>
+	<p>よって</p>
+	<p>\begin{align}
+		O_f &= \sum_{x\in X_0}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
+			&= \sum_{x\in X_0}\ketbra{x}{x} + \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
+			&= \sum_{x\in X}\ketbra{x}{x} -2\sum_{x\in X_1}\ketbra{x}{x}\\
+			&= \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}
+		\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = H0H1orthogonal</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
@@ -158,6 +205,40 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<summary>補足</summary>
 	<div id="tx">
 		<p>$p$ はマークされた要素のいずれかを観測する確率と解釈できる．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = recprob</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>QBAIにおいて要素 $x\in X$ が $n$ ステップの振幅増幅の後に推薦される確率 $P_n(x)$ は</p>
+	<p>\begin{align}
+		P_n(x) = |\alpha_x|^2 \left( 1 +  \fraction{(a_x -p)(\sin^2((2n+1)\theta)-p)}{p(1-p)}\right)
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>以下，$s = \sin((2n+1)\theta),\ c = \cos((2n+1)\theta)$ とする．</p>
+	<p>\begin{align}
+		P_n(x) &= \left\|\sum_{y\in Y}\ketbra{xy}{xy}\cdot G^n\ket{\varPsi}\right\|^2\\
+			&= \left\| \sum_{y\in Y_1^{x}}\braket{xy|G^n|\varPsi}\ket{xy} + \sum_{y\in Y_0^{x}}\braket{xy|G^n|\varPsi}\ket{xy}\right\|^2\\
+			&= \sum_{y\in Y_1^{x}}|\braket{xy|G^n|\varPsi}|^2 + \sum_{y\in Y_0^{x}}|\braket{xy|G^n|\varPsi}|^2\\
+			&= \sum_{y\in Y_1^{x}}s^2\fraction{|\alpha_x|^2\nu_x(y)}{p} + \sum_{y\in Y_0^{x}}c^2\fraction{|\alpha_x|^2\nu_x(y)}{1-p}\\
+			&= |\alpha_x|^2\left( \fraction{s^2}{p}\sum_{y\in Y_1^{x}}\nu_x(y) + \fraction{c^2}{1-p}\sum_{y\in Y_0^{x}}	\nu_x(y)\right) \\
+			&= |\alpha_x|^2\left( \fraction{s^2}{p}a_x + \fraction{c^2}{1-p}(1-a_x)\right) \\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(s^2a_x(1-p) + c^2(1-a_x)p)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(s^2a_x + (1-s^2)p -a_x p)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(a_xs^2+ p c^2 -a_x p)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(a_xs^2+ p - ps^2 -a_x p)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(p -p^2 +a_xs^2- ps^2 -a_x p + p^2)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(p(1-p) +(a_x- p)(s^2 -p))\\
+			&= |\alpha_x|^2\left(1 +\fraction{(a_x- p)(s^2 -p)}{p(1-p)}\right).
+		\end{align}</p>
  	</div>
 </details>
 </div>
