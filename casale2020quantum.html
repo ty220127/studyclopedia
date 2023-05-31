@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -81,7 +80,35 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <br><br>
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = H0H1def</script>
+<p id="1">&nbsp;</p><script>var curbox = Re6</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>最適腕識別において，$T$ 回の環境への作用を行った後の平均リグレット $R_T$ とエラー確率 $e_T := 1- P_T(x^*)$ の関係は</p>
+	<p>\begin{align}
+		R_T \leq e_T.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>\begin{align}
+			R_T &= \sum_{x\in X\backslash\{x^*\}}P_T(x)\varDelta_x \leq \sum_{x\in X\backslash\{x^*\}}P_T(x)\\
+				&= 1- P_T(x^*) = e_T
+			\end{align}</p>
+		<p>以上まとめると，$R_T \leq e_T.$</p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>論文では等号は含まれていない（つまり，$R_T\lt e_T$ としてある）．等号が成立するのは，すべての $x\in X\backslash\{x^*\}$ に対して $\varDelta_x = 1$ となる場合であるが，確かにそんな状況を考えても最適腕識別の設定としては面白くない．ただし，あり得ないわけではないので，ここでは等号も含めた形としている．</p>
+ 	</div>
+</details>
+</div>
+<br>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Hd6</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>$j\in\{0,\ 1\}$ に対し， $X$ の部分集合</p>
@@ -99,7 +126,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <br>
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = H0H1orthogonal</script>
+<p id="1">&nbsp;</p><script>var curbox = Ho6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>$\mathcal{H}_0$ と $\mathcal{H}_1$ は互いに直交補空間の関係にある．</p>
@@ -114,7 +141,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox =oracleOf</script>
+<p id="1">&nbsp;</p><script>var curbox = Of6</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>関数 $f:X\to \{0,\,1\}$ に依存する作用素で，以下を満たすものを【オラクル (oracle)】と呼ぶ：</p>
@@ -126,7 +153,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <br>
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = oracleOfketbra</script>
+<p id="1">&nbsp;</p><script>var curbox = kb6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>\begin{align}
@@ -158,7 +185,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = averewardisprob</script>
+<p id="1">&nbsp;</p><script>var curbox = ar6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>行動 $x\in X$ に対する報酬平均値
@@ -188,7 +215,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = Psi0Psi1</script>
+<p id="1">&nbsp;</p><script>var curbox = Ps6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>$x\in X$ に対して $\alpha_x\in\mathbb{C}$ を $\sum_{x\in X}|\alpha_x|^2$ となるように定める．ここで $p = \sum_{x\in X_1} |\alpha_x|^2$ とすれば，それぞれ $\mathcal{H}_0,\ \mathcal{H}_1$ 上の単位ベクトル $\ket{\varPsi_0},\ \ket{\varPsi_1}$ が存在して</p>
@@ -212,7 +239,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = recprob</script>
+<p id="1">&nbsp;</p><script>var curbox = rp6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>QBAIにおいて要素 $x\in X$ が $n$ ステップの振幅増幅の後に推薦される確率 $P_n(x)$ は</p>
