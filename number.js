@@ -48,13 +48,14 @@ dates[i] = new Date( 2020, 8, 6, 00, 00 );
 doi[i] = "https://link.springer.com/article/10.1007/s42484-020-00024-8";
 arxiv[i] = "https://arxiv.org/abs/2002.06395";
 j = 0;
-j++; H0H1def = j; bns[i][j] = "定義：マーク・非マーク要素と対応する Hilbert 空間";
-j++; H0H1orthogonal = j; bns[i][j] = "命題：マーク・非マーク要素の Hilbert 空間は互いに直交";
-j++; oracleOf = j; bns[i][j] = "定義：オラクル";
-j++; oracleOfketbra = j; bns[i][j] = "命題：オラクルの別表現";
-j++; averewardisprob = j; bns[i][j] = "命題：報酬平均値と成功確率の関係";
-j++; Psi0Psi1 = j; bns[i][j] = "命題：状態の２次元射影";
-j++; recprob = j; bns[i][j] = "命題：QBAIにおける推薦確率";
+j++; Re6 = j; bns[i][j] = "命題：平均リグレットとエラー確率の関係";
+j++; Hd6 = j; bns[i][j] = "定義：マーク・非マーク要素と対応する Hilbert 空間";
+j++; Ho6 = j; bns[i][j] = "命題：マーク・非マーク要素の Hilbert 空間は互いに直交";
+j++; Of6 = j; bns[i][j] = "定義：オラクル";
+j++; kb6 = j; bns[i][j] = "命題：オラクルの別表現";
+j++; ar6 = j; bns[i][j] = "命題：報酬平均値と成功確率の関係";
+j++; Ps6 = j; bns[i][j] = "命題：状態の２次元射影";
+j++; rp6 = j; bns[i][j] = "命題：QBAIにおける推薦確率";
 
 //3:SunadaTate2012QW
 i++; S12QW = i;
