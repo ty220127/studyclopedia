@@ -45,6 +45,7 @@ nav li a{color:#000; text-decoration:none; font-weight:bold;}
 nav li a:hover{color:#f59b42;text-decoration:underline}
 
 #ttlhead{
+	text-align: center;
 	margin-top: 2em;
 	font-size: 150%;
 	font-family: sans-serif;
@@ -53,6 +54,13 @@ nav li a:hover{color:#f59b42;text-decoration:underline}
 }
 #ttlhead a{color:#000; text-decoration:none; font-weight:bold;}
 #ttlhead a:hover{color:#aa0000;}
+
+.section{
+	text-align: center;
+	font-size: 120%;
+	font-family: sans-serif;
+	font-weight: bold;
+}
 
 #bib{
 }
