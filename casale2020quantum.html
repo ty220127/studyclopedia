@@ -26,7 +26,7 @@
 		intgrl: '\\displaystyle\\int',
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
-		ket: ['\\, |{#1}\\rangle', 1],
+		ket: ['|{#1}\\rangle', 1],
 		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
 		braket: ['\\langle #1 \\rangle',1],
 	}}});
@@ -178,7 +178,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Ps6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>$\mathcal{H}$ 上の状態を</p>
+	<p>$\mathcal{H}$ 上の状態を表す単位ベクトルを</p>
 	<p>\begin{align}
 		\ket{\varPsi} = \sum_{x\in X} \alpha_x \ket{x}\ \ \left(\alpha_x\in \mathbb{C},\, \sum_{x\in X}|\alpha_x|^2 =1\right)
 		\end{align}</p>
@@ -238,6 +238,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </div>
 </div>
 <br>
+<!-- end of a box -->
 
 <!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = kb6</script>
@@ -265,6 +266,87 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= \sum_{x\in X}\ketbra{x}{x} -2\sum_{x\in X_1}\ketbra{x}{x}\\
 			&= \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}
 		\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = roD6</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>状態 $\ket{\mathbf{0}} := \ket{0}^{\otimes n}$ を <script>nr(N,Ps6)</script> で導入した $\ket{\varPsi}$ に変換するユニタリ演算子を $A$ とする：</p>
+	<p>\begin{align}
+		\ket{\varPsi} = A\ket{\mathbf{0}}.
+		\end{align}</p>
+	<p>また $S_0  = 2 \ketbra{\mathbf{0}}{\mathbf{0}} - \mathbb{I}$ とし，これらを用いて演算子 $R_\varPsi$ を
+	<p>\begin{align*}
+		R_\varPsi = AS_0 A^{-1}
+		\end{align*}</p>
+	<p>と定義する．これを状態 $\ket{\varPsi}$ に関する【反射演算子 (reflection operator)】と呼ぶ．</p>
+</div>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = roP6</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>状態 $\ket{\varPsi}$ に関する反射演算子 $R_\varPsi$ は</p>
+	<p>\begin{align*}
+		R_\varPsi = 2\ketbra{\varPsi}{\varPsi} -\mathbb{I}
+		\end{align*}</p>
+	<p>と書き換えることができる．また，$R_\varPsi \ket{\varPsi} = \ket{\varPsi}$ が成立する．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>演算子 $A$ はユニタリ，つまり $A^{-1} = A^\dagger$ である（ただし $A^\dagger$ は $A$ の随伴行列）ことを用いて，</p>
+		<p>\begin{align*}
+			R_\varPsi &= A(2\ketbra{\mathbf{0}}{\mathbf{0}} -\mathbb{I}) A^{-1} = 2 A\ketbra{\mathbf{0}}{\mathbf{0}}A^{-1} - AA^{-1}\\
+				&= 2 A\ketbra{\mathbf{0}}{\mathbf{0}}A^\dagger - \mathbb{I} = 2 (A\ket{\mathbf{0}})(A\ket{\mathbf{0}})^\dagger - \mathbb{I}\\
+				&= 2\ketbra{\varPsi}{\varPsi} -\mathbb{I}.
+			\end{align*}</p>
+		<p>$\ket{\varPsi}$ が単位ベクトルであることに注意して上の結果を用いると，</p>
+		<p>\begin{align*}
+			R_\varPsi \ket{\varPsi} &= (2\ketbra{\varPsi}{\varPsi} -\mathbb{I} ) \ket{\varPsi} = 2 \braket{\varPsi|\varPsi} \ket{\varPsi} - \ket{\varPsi} \\
+				&= 2\ket{\varPsi} - \ket{\varPsi} = \ket{\varPsi}.
+			\end{align*}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = aa6</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>オラクル $O_f$ と状態 $\ket{\varPsi}$ に関する反射演算子 $R_\varPsi$ の積による演算子を $Q$ とする：</p>
+	<p>\begin{align*}
+			Q = R_\varPsi O_f.
+		\end{align*}</p>
+	<p><script>nr(N,Ps6)</script> で定義した $\ket{\varPsi_1},\ \ket{\varPsi_0}$ に対して</p>
+	<p>\begin{align*}
+			Q\ket{\varPsi_1} &= \cos 2\theta \,\ket{\varPsi_1} - \sin 2\theta \,\ket{\varPsi_0},\\
+			Q\ket{\varPsi_0} &= \sin 2\theta \,\ket{\varPsi_1} + \cos 2\theta \,\ket{\varPsi_0}\\
+		\end{align*}</p>
+	<p>であり，故に $\ket{\varPsi}$ に対して</p>
+	<p>\begin{align*}
+			Q\ket{\varPsi} &= \sin 3\theta \,\ket{\varPsi_1} + \cos 3\theta \,\ket{\varPsi_0}
+		\end{align*}</p>
+	<p>である．更に，</p>
+	<p>\begin{align*}
+			Q^n \ket{\varPsi} &= \sin ((2n + 1)\theta) \,\ket{\varPsi_1} + \cos ((2n +1)\theta) \,\ket{\varPsi_0}
+		\end{align*}</p>
+	<p>である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
  	</div>
 </details>
 </div>
