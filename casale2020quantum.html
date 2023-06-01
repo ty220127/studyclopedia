@@ -82,6 +82,36 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div class="section">2. Best arm identification</div>
 
 <!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = ar6</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>行動 $x\in X$ に対する報酬平均値
+	<p>\begin{align}
+		a_x = \sum_{y\in Y} \nu_x(y) f(x,\,y)
+		\end{align}</p>
+	<p>は行動 $x$ により報酬が得られる確率そのものである．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>\begin{align}
+		Y^{x}_j := \{y\in Y\,|\,f(x,\,y) = j\}
+		\end{align}</p>
+	<p>と定めると，$Y^{x}_0\cap Y^{x}_1 = \emptyset$ かつ $Y^{x}_0\cup Y^{x}_1 = Y$ であるから</p>
+	<p>\begin{align}
+		a_x &= \sum_{y\in Y} \nu_x(y)f(x,\,y)\\
+			&= \sum_{y\in Y^{x}_0} \nu_x(y)f(x,\,y) + \sum_{y\in Y^{x}_1} \nu_x(y)f(x,\,y)\\
+			&= \sum_{y\in Y^{x}_0} \nu_x(y)\cdot 0 + \sum_{y\in Y^{x}_1} \nu_x(y)\cdot 1\\
+			&= \sum_{y\in Y^{x}_1} \nu_x(y).
+		\end{align}</p>
+	<p>これは，行動 $x$ に対して報酬が得られる環境 $y$ になる確率の総和である．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = Re6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
@@ -145,80 +175,6 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = Of6</script>
-<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
-<div id="tx">
-	<p>関数 $f:X\to \{0,\,1\}$ に依存する作用素で，以下を満たすものを【オラクル (oracle)】と呼ぶ：</p>
-	<p>\begin{align}
-		O_f\ket{x} = (-1)^{f(x)}\ket{x}.
-		\end{align}</p>
-</div>
-</div>
-<br>
-
-<!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = kb6</script>
-<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
-<div id="tx">
-	<p>\begin{align}
-		O_f = \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}.
-		\end{align}</p>
-</div>
-<details class="dtl">
-	<summary>証明</summary>
-	<div id="tx">
-	<p>まず，$x\in X_1$ に対して<p>
-	<p>\begin{align}
-		O_f\ket{x} = (-1)^1\ket{x} = -\ket{x}.
-		\end{align}</p>
-	<p>次に，$x\in X_0$ に対して</p>
-	<p>\begin{align}
-		O_f\ket{x} = (-1)^0\ket{x} = \ket{x}.
-		\end{align}</p>
-	<p>よって</p>
-	<p>\begin{align}
-		O_f &= \sum_{x\in X_0}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
-			&= \sum_{x\in X_0}\ketbra{x}{x} + \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
-			&= \sum_{x\in X}\ketbra{x}{x} -2\sum_{x\in X_1}\ketbra{x}{x}\\
-			&= \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}
-		\end{align}</p>
- 	</div>
-</details>
-</div>
-<br>
-<!-- end of a box -->
-
-<!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = ar6</script>
-<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
-<div id="tx">
-	<p>行動 $x\in X$ に対する報酬平均値
-	<p>\begin{align}
-		a_x = \sum_{y\in Y} \nu_x(y) f(x,\,y)
-		\end{align}</p>
-	<p>は行動 $x$ により報酬が得られる確率そのものである．</p>
-</div>
-<details class="dtl">
-	<summary>証明</summary>
-	<div id="tx">
-	<p>\begin{align}
-		Y^{x}_j := \{y\in Y\,|\,f(x,\,y) = j\}
-		\end{align}</p>
-	<p>と定めると，$Y^{x}_0\cap Y^{x}_1 = \emptyset$ かつ $Y^{x}_0\cup Y^{x}_1 = Y$ であるから</p>
-	<p>\begin{align}
-		a_x &= \sum_{y\in Y} \nu_x(y)f(x,\,y)\\
-			&= \sum_{y\in Y^{x}_0} \nu_x(y)f(x,\,y) + \sum_{y\in Y^{x}_1} \nu_x(y)f(x,\,y)\\
-			&= \sum_{y\in Y^{x}_0} \nu_x(y)\cdot 0 + \sum_{y\in Y^{x}_1} \nu_x(y)\cdot 1\\
-			&= \sum_{y\in Y^{x}_1} \nu_x(y).
-		\end{align}</p>
-	<p>これは，行動 $x$ に対して報酬が得られる環境 $y$ になる確率の総和である．</p>
- 	</div>
-</details>
-</div>
-<br>
-<!-- end of a box -->
-
-<!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = Ps6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
@@ -265,6 +221,50 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<summary>補足</summary>
 	<div id="tx">
 		<p>$p$ はマークされた要素のいずれかを観測する確率と解釈できる．振幅増幅における基本的な処理である．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Of6</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>関数 $f:X\to \{0,\,1\}$ に依存する作用素で，以下を満たすものを【オラクル (oracle)】と呼ぶ：</p>
+	<p>\begin{align}
+		O_f\ket{x} = (-1)^{f(x)}\ket{x}.
+		\end{align}</p>
+</div>
+</div>
+<br>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = kb6</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>\begin{align}
+		O_f = \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>まず，$x\in X_1$ に対して<p>
+	<p>\begin{align}
+		O_f\ket{x} = (-1)^1\ket{x} = -\ket{x}.
+		\end{align}</p>
+	<p>次に，$x\in X_0$ に対して</p>
+	<p>\begin{align}
+		O_f\ket{x} = (-1)^0\ket{x} = \ket{x}.
+		\end{align}</p>
+	<p>よって</p>
+	<p>\begin{align}
+		O_f &= \sum_{x\in X_0}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
+			&= \sum_{x\in X_0}\ketbra{x}{x} + \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
+			&= \sum_{x\in X}\ketbra{x}{x} -2\sum_{x\in X_1}\ketbra{x}{x}\\
+			&= \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}
+		\end{align}</p>
  	</div>
 </details>
 </div>
