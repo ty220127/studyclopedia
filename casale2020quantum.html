@@ -26,14 +26,14 @@
 		intgrl: '\\displaystyle\\int',
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
-		ket: ['|{#1}\\rangle', 1],
+		ket: ['\\, |{#1}\\rangle', 1],
 		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
 		braket: ['\\langle #1 \\rangle',1],
 	}}});
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/5/31"
+	const updated = "2023/6/1"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec1 = "Introduction"
 	const sec2 = "Preliminaries"
@@ -222,20 +222,49 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Ps6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>$x\in X$ に対して $\alpha_x\in\mathbb{C}$ を $\sum_{x\in X}|\alpha_x|^2$ となるように定める．ここで $p = \sum_{x\in X_1} |\alpha_x|^2$ とすれば，それぞれ $\mathcal{H}_0,\ \mathcal{H}_1$ 上の単位ベクトル $\ket{\varPsi_0},\ \ket{\varPsi_1}$ が存在して</p>
+	<p>$\mathcal{H}$ 上の状態を</p>
 	<p>\begin{align}
-		\ket{\varPsi} = \sqrt{p}\ket{\varPsi_1} + \sqrt{1-p}\ket{\varPsi_0}.
+		\ket{\varPsi} = \sum_{x\in X} \alpha_x \ket{x}\ \ \left(\alpha_x\in \mathbb{C},\, \sum_{x\in X}|\alpha_x|^2 =1\right)
 		\end{align}</p>
+	<p>で表すとき，$p = \sum_{x\in X_1} |\alpha_x|^2$ を用いて</p>
+	<p>\begin{align*}
+		\ket{\varPsi_1} &= \fraction{1}{\sqrt{p}}\sum_{x\in X_1} \alpha_x\ket{x} \in \mathcal{H}_1,\\
+		\ket{\varPsi_0} &= \fraction{1}{\sqrt{1-p}}\sum_{x\in X_0} \alpha_x\ket{x}\in \mathcal{H}_0
+		\end{align*}</p>
+	<p>と定めれば，$\ket{\varPsi_0},\ \ket{\varPsi_1}$ はそれぞれ単位ベクトルであり，</p>
+	<p>\begin{align}
+		\ket{\varPsi} = \sqrt{p}\ket{\varPsi_1} + \sqrt{1-p}\ket{\varPsi_0}
+		\end{align}</p>
+	<p>である．また，$\theta := \arcsin \sqrt{p}$ なる $\theta\in (0,\ \pi/2)$ が存在して</p>
+	<p>\begin{align*}
+		\ket{\varPsi} = \sin\theta \ket{\varPsi_1} + \cos\theta \ket{\varPsi_0}.
+		\end{align*}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
- 	</div>
+		<p>$\ket{\varPsi_1},\ \ket{\varPsi_0}$ のノルムは</p>
+		<p>\begin{align*}
+			\|\ket{\varPsi_1}\|^2 &= \fraction{1}{p} \left\|\sum_{x\in X_1} \alpha_x\ket{x}\right\|^2 = \fraction{1}{p} \sum_{x\in X_1} |\alpha_x|^2 = 1,\Rule{0px}{0px}{40px}\\
+			\|\ket{\varPsi_0}\|^2 &= \fraction{1}{1-p} \left\|\sum_{x\in X_0} \alpha_x\ket{x}\right\|^2 = \fraction{1}{1-p} \sum_{x\in X_0} |\alpha_x|^2\\
+				&= \fraction{1}{1-p} \left( \sum_{x\in X} |\alpha|^2 -\sum_{x\in X_1} |\alpha_x|^2 \right) = \fraction{1-p}{1-p} = 1.
+			\end{align*}</p>
+		<p>よって，$\ket{\varPsi_1},\ \ket{\varPsi_0}$ は共に単位ベクトルである．また，これらを用いて</p>
+		<p>\begin{align*}
+			\ket{\varPsi} &= \sum_{x\in X}\alpha_x\ket{x} = \sum_{x\in X_0}\alpha_x\ket{x} + \sum_{x\in X_0} \alpha_x\ket{x} \\
+				&= \sqrt{p} \cdot \fraction{1}{\sqrt{p}} \sum_{x\in X_1}\alpha_x\ket{x} + \sqrt{1-p} \cdot \fraction{1}{\sqrt{1-p}} \sum_{x\in X_0} \alpha_x\ket{x}\\
+				&= \sqrt{p} \ket{\varPsi_1} + \sqrt{1-p} \ket{\varPsi_0}.
+			\end{align*}</p>
+		<p>ここで，$0\lt \sqrt{p}\lt 1$ であるから $\theta = \arcsin \sqrt{p}$ なる $\theta\in (0,\ \pi/2)$ が存在する．このとき $\sqrt{p} = \sin\theta,\ \sqrt{1-p} = \sqrt{1-\sin^2\theta} = \cos\theta$ であるから，$\theta$ を用いて $\ket{\varPsi}$ を以下のように書き換えられる：
+	<p>\begin{align*}
+		\ket{\varPsi} = \sin\theta \ket{\varPsi_1} + \cos\theta \ket{\varPsi_0}.
+		\end{align*}</p>
+	</div>
 </details>
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p>$p$ はマークされた要素のいずれかを観測する確率と解釈できる．</p>
+		<p>$p$ はマークされた要素のいずれかを観測する確率と解釈できる．振幅増幅における基本的な処理である．</p>
  	</div>
 </details>
 </div>
