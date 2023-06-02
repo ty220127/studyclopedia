@@ -14,6 +14,19 @@ var bns = [];
 
 i = 0;
 
+//7:Rhodes2019QWSonCBG
+i = 7;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/rhodes2019quantum.html";
+ttls[i] = "Quantum walk search on the complete bipartite graph";
+authors[i] = ["Mason L.","Rhodes", "Thomas G.","Wong"]; 
+dates[i] = new Date( 2019, 3, 1, 00, 00 );
+doi[i] = "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032301";
+arxiv[i] = "https://arxiv.org/abs/1812.06079";
+j = 0;
+j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
+j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
+
 //6:Casalé2020QB
 i = 6;
 bns[i] = [];
