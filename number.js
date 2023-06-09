@@ -14,6 +14,19 @@ var bns = [];
 
 i = 0;
 
+//8:Mihana2018memory
+i = 8;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/mihana2018memory.html";
+ttls[i] = "Memory Effect on Adaptive Decision Making with a Chaotic Semiconductor Laser";
+authors[i] = ["Takatomo","Mihana", "Yuta","Terashima", "Makoto","Naruse", "Song-Ju","Kim", "Atsushi","Uchida"]; 
+dates[i] = new Date( 2018, 4, 5, 00, 00 );
+doi[i] = "https://www.hindawi.com/journals/complexity/2018/4318127/";
+arxiv[i] = "";
+j = 0;
+j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
+j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
+
 //7:Rhodes2019QWSonCBG
 i = 7;
 bns[i] = [];
