@@ -63,7 +63,6 @@ j++; roP6 = j; bns[i][j] = "命題：反射演算子の別表現と反射性";
 j++; aro6 = j; bns[i][j] = "命題：振幅増幅における反射演算子の役割";
 j++; aa6 = j; bns[i][j] = "命題：振幅増幅";
 j++; Oe6 = j; bns[i][j] = "命題：QBAIにおける環境作用素";
-j++; in6 = j; bns[i][j] = "命題：QBAIにおける初期状態";
 j++; rp6 = j; bns[i][j] = "命題：QBAIにおける推薦確率";
 
 //5:Amakasu2021CfOAM
