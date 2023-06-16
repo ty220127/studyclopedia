@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -25,6 +26,7 @@
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		twovec: ['\\left[\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right]', 2],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 		ket: ['|{#1}\\rangle', 1],
 		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
@@ -33,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/6/14"
+	const updated = "2023/6/16"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec1 = "Introduction"
 	const sec2 = "Preliminaries"
@@ -220,7 +222,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p>$p$ はマークされた要素のいずれかを観測する確率と解釈できる．振幅増幅における基本的な処理である．また，振幅増幅では $\ket{\varPsi}$ を $\mathcal{S} = \spn\{\ket{\varPsi_1},\ \ket{\varPsi_0}\}$ 上の単位ベクトルと捉えており，振幅増幅における時間発展は $\mathcal{S}$ 上のユニタリ変換として表現される（→ <script>nr(N,aa6)</script>）．</p>
+		<p>$p$ はマークされた要素のいずれかを観測する確率と解釈できる．振幅増幅における基本的な処理である．また，振幅増幅では $\ket{\varPsi}$ を $\mathcal{S} = \spn\{\ket{\varPsi_1},\ \ket{\varPsi_0}\}$ 上の単位ベクトルと捉えており，振幅増幅における時間発展は $\mathcal{S}$ 上のユニタリ変換として表現される（→ <script>nr(N,aa6)</script>）．ここで $\mathcal{S} \simeq \mathbb{C}^2$ であることから，$\ket{\varPsi_1} = [1\,\,\,0]^\trp,\ \ket{\varPsi_0} = [0\,\,\,1]^\trp$ と表現すれば，$\ket{\Psi} \simeq [\sin\theta \,\,\,\cos\theta]^\trp$ である．このように，振幅増幅を2次元の変換と対応付けるとスムーズに議論ができる．</p>
  	</div>
 </details>
 </div>
@@ -285,7 +287,24 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-	<p></p>
+	<p>\begin{align}
+		\braket{\varPsi_1|O_f|\varPsi_1} &= \braket{\varPsi_1|\varPsi_1} -2 \sum_{x\in X_1} |\braket{x|\varPsi_1}|^2\\
+			&= 1 -2\sum_{x\in X_1} \fraction{|\alpha_x|^2}{p} = 1-2 = -1,\\
+		\braket{\varPsi_0|O_f|\varPsi_0} &= \braket{\varPsi_0|\varPsi_0} -2 \sum_{x\in X_1} |\braket{x|\varPsi_0}|^2\\
+			&= 1 -0 = 1,\\
+		\braket{\varPsi_0|O_f|\varPsi_1} &= \braket{\varPsi_0|\varPsi_1} -2 \sum_{x\in X_1} \braket{\varPsi_0|x}\braket{x|\varPsi_1} = 0,\\
+		\braket{\varPsi_1|O_f|\varPsi_0} &= \braket{\varPsi_1|\varPsi_0} -2 \sum_{x\in X_1} \braket{\varPsi_1|x}\braket{x|\varPsi_0} = 0.
+		\end{align}</p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>この命題により，オラクル $O_f$ は $\mathcal{S}$ 上において</p>
+		<p>\begin{align}
+			O_f \simeq \twobytwo{-1}{0}{0}{1}.
+			\end{align}</p>
+		<p>であることがわかる．</p>
  	</div>
 </details>
 </div>
@@ -356,6 +375,16 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p></p>
  	</div>
 </details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>この命題により，反射作用素 $R_\varPsi$ は $\mathcal{S}$ 上において</p>
+		<p>\begin{align}
+			R_\varPsi \simeq \twobytwo{-\cos 2\theta}{\sin 2\theta}{\sin 2\theta}{\cos 2\theta}.
+			\end{align}</p>
+		<p>であることがわかる．</p>
+ 	</div>
+</details>
 </div>
 <br>
 <!-- end of a box -->
@@ -389,6 +418,23 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		<p></p>
  	</div>
 </details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p><script>nr(N,aOf6)</script>，<script>nr(N,aro6)</script> における考察により，</p>
+		<p>\begin{align}
+			Q = R_\varPsi O_f &\simeq \twobytwo{-\cos 2\theta}{\sin 2\theta}{\sin 2\theta}{\cos 2\theta} \twobytwo{-1}{0}{0}{1}\\
+					&= \twobytwo{\cos 2\theta}{\sin 2\theta}{-\sin 2\theta}{\cos 2\theta}.
+			\end{align}</p>
+		<p>故に，以下の結果を得ることができる：</p>
+		<p>\begin{align}
+			&\ket{\varPsi_1} \simeq \twovec{-\cos 2\theta}{\sin 2\theta},\ \ket{\varPsi_0} \simeq \twovec{\sin 2\theta}{\cos 2\theta}\\
+			&Q\ket{\varPsi} \simeq \twobytwo{\cos 2\theta}{\sin 2\theta}{-\sin 2\theta}{\cos 2\theta} \twovec{\sin \theta}{\cos \theta}\\
+				&\hspace{10mm} = \twovec{\cos 2\theta \sin \theta + \sin 2\theta \cos \theta}{-\sin 2\theta \sin \theta + \cos 2\theta \cos \theta} = \twovec{\sin 3\theta}{\cos 3\theta}
+			\end{align}</p>
+		<p>これらの結果はすべて上記命題と対応している．</p>
+ 	</div>
+</details>
 </div>
 <br>
 <!-- end of a box -->
@@ -399,7 +445,19 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Oe6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>BAI</p>
+	<p>腕 $x$ を選択した際の環境の内部状態に関する分布 $\nu_x(y)$ を用いて，$\mathcal{H}_Y$ に属する状態</p>
+	<p>\begin{align}
+		\ket{\psi_x} = \sum_{y\in Y} \sqrt{\nu_x(y)} \ket{y}\in \mathcal{H}_Y
+		\end{align}</p>
+	<p>を定義する．また，$\mathcal{H}$ 上の作用素 $O_e$ を以下で定める：</p>
+	<p>\begin{align}
+		O_e  = \sum_{x\in X} \ketbra{x,\,\psi_x}{x,\,\mathbf{0}}.
+		\end{align}</p>
+	<p>このとき，$\mathcal{H}$ 上の作用素 $A' := O_e (A\otimes \mathbb{I})$ は</p>
+	<p>\begin{align}
+		A' = \sum_{x\in X} \alpha_x \ketbra{x,\,\psi_x}{\mathbf{0},\,\mathbf{0}} = \sum_{x\in X}\sum_{y\in Y} \alpha_x\sqrt{\nu_x(y)} \ketbra{x,\,y}{\mathbf{0},\,\mathbf{0}}
+		\end{align}</p>
+	<p>と表すことができる．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
