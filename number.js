@@ -14,6 +14,19 @@ var bns = [];
 
 i = 0;
 
+//9:Wong2015grover
+i = 9;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/wong2015grover.html";
+ttls[i] = "Grover search with lackadaisical quantum walks";
+authors[i] = ["Thomas G.","Wong"]; 
+dates[i] = new Date( 2015, 10, 7, 00, 00 );
+doi[i] = "https://iopscience.iop.org/article/10.1088/1751-8113/48/43/435304";
+arxiv[i] = "https://arxiv.org/abs/1502.04567";
+j = 0;
+j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
+j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
+
 //8:Mihana2018memory
 i = 8;
 bns[i] = [];
