@@ -11,8 +11,23 @@ var dates = [];
 var doi = [];
 var arxiv = [];
 var bns = [];
+var pub = [];
 
 i = 0;
+
+//10:Grover1996fast
+i = 10;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/grover1996fast.html";
+ttls[i] = "A fast quantum mechanical algorithm for database search";
+authors[i] = ["Lov K.","Grover"]; 
+dates[i] = new Date( 1996, 7, 1, 00, 00 );
+doi[i] = "https://dl.acm.org/doi/10.1145/237814.237866";
+arxiv[i] = "https://arxiv.org/abs/quant-ph/9605043";
+pub[i] = "in: Proceedings of the 28th annual ACM symposium on Theory of computing, pp. 212-219";
+j = 0;
+j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
+j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
 
 //9:Wong2015grover
 i = 9;
@@ -23,6 +38,7 @@ authors[i] = ["Thomas G.","Wong"];
 dates[i] = new Date( 2015, 10, 7, 00, 00 );
 doi[i] = "https://iopscience.iop.org/article/10.1088/1751-8113/48/43/435304";
 arxiv[i] = "https://arxiv.org/abs/1502.04567";
+pub[i] = "Journal of Physics A: Mathematical Theory, Vol. 48 Art. 435304";
 j = 0;
 j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
 j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
@@ -36,6 +52,7 @@ authors[i] = ["Takatomo","Mihana", "Yuta","Terashima", "Makoto","Naruse", "Song-
 dates[i] = new Date( 2018, 4, 5, 00, 00 );
 doi[i] = "https://www.hindawi.com/journals/complexity/2018/4318127/";
 arxiv[i] = "";
+pub[i] = "Complexity vol. 2018, Art. ID 4318127";
 j = 0;
 j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
 j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
@@ -49,6 +66,7 @@ authors[i] = ["Mason L.","Rhodes", "Thomas G.","Wong"];
 dates[i] = new Date( 2019, 3, 1, 00, 00 );
 doi[i] = "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032301";
 arxiv[i] = "https://arxiv.org/abs/1812.06079";
+pub[i] = "Physical Review A Vol. 99, Art. 032301";
 j = 0;
 j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
 j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
@@ -62,6 +80,7 @@ authors[i] = ["Balthazar","Casalé", "Giuseppe","Di Molfetta", "Hachem","Kadri",
 dates[i] = new Date( 2020, 8, 6, 00, 00 );
 doi[i] = "https://link.springer.com/article/10.1007/s42484-020-00024-8";
 arxiv[i] = "https://arxiv.org/abs/2002.06395";
+pub[i] = "Quantum Machine Intelligence Vol. 2, Art. 11";
 j = 0;
 j++; ar6 = j; bns[i][j] = "命題：報酬平均値と成功確率の関係";
 j++; Re6 = j; bns[i][j] = "命題：平均リグレットとエラー確率の関係";
@@ -87,6 +106,7 @@ authors[i] = ["Takashi","Amakasu", "Nicolas","Chauvet", "Guillaume","Bachelier",
 dates[i] = new Date( 2021, 10, 26, 00, 00 );
 doi[i] = "https://www.nature.com/articles/s41598-021-00493-2";
 arxiv[i] = "https://arxiv.org/abs/2107.00877";
+pub[i] = "Scientific Reports, Vol. 11, Art. No. 21117";
 j = 0;
 j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
 
@@ -99,6 +119,7 @@ authors[i] = ["Tomoki","Yamagami", "Etsuo","Segawa", "Nicolas","Chauvet", "Andr�
 dates[i] = new Date( 2022, 10, 29, 00, 00 );
 doi[i] = "https://www.hindawi.com/journals/complexity/2022/9021583/";
 arxiv[i] = "https://arxiv.org/abs/2201.08067";
+pub[i] = "Complexity, Vol. 2022, Art. ID 9021583";
 j = 0;
 j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
 
@@ -111,6 +132,7 @@ authors[i] = ["Toshikazu","Sunada", "Tatsuya","Tate"];
 dates[i] = new Date( 2012, 3, 15, 00, 00 );
 doi[i] = "https://doi.org/10.1016/j.jfa.2011.12.016";
 arxiv[i] = "https://arxiv.org/abs/1108.1878";
+pub[i] = "Journal of Functional Analysis, Vol. 262, Iss. 6, pp. 2608-2645";
 j = 0;
 j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
 
@@ -122,6 +144,7 @@ ttls[i] = "One-dimensional quantum walks";
 authors[i] = ["Andris","Ambainis", "Eric","Bach", "Ashwin","Nayak", "Ashvin","Vishwanath", "John","Watrous"];
 dates[i] = new Date( 2001, 07, 00, 00, 00 );
 doi[i] = "https://doi.org/10.1145/380752.380757";
+pub[i] = "in: Proceedings of the 31rd annual ACM symposium on Theory of computing, pp. 37–49";
 j = 0;
 j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
 
@@ -134,6 +157,7 @@ authors[i] = ["Norio","Konno"];
 dates[i] = new Date( 2005, 10, 00, 00, 00 );
 doi[i] = "https://projecteuclid.org/journals/journal-of-the-mathematical-society-of-japan/volume-57/issue-4/A-new-type-of-limit-theorems-for-the-one-dimensional/10.2969/jmsj/1150287309.full";
 arxiv[i] = "https://arxiv.org/abs/quant-ph/0206103";
+pub[i] = "Journal of the Mathematical Society of Japan, Vol. 57, Iss. 4, pp. 1179-1195";
 j = 0;
 j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
 
