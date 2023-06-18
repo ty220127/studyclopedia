@@ -4,32 +4,32 @@
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["¥¥(","¥¥)"]] } });	
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['¥¥href{https://ty220127.github.io/mathemaru/#1.html###2}{¥¥scriptsize¥¥sf[¥¥# #2]}',2],
-		nr: ['^¥¥numref{#1}{#2}', 2],
-		refeq: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{=}',2],
-		refleq: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥leq}',2],
-		refeqv: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥equiv}',2],
-		reflr: ['¥¥underset{¥¥hspace{-0.5mm}¥¥numref{#1}{#2}}{¥¥Longleftrightarrow}',2],
-		refr: ['¥¥underset{¥¥numref{#1}{#2}}{¥¥Longrightarrow}',2],
-		bs: '¥¥boldsymbol', 
-		bsqcu: '¥¥displaystyle¥¥bigsqcup', 
-		bcu: '¥¥displaystyle¥¥bigcup', 
-		bca: '¥¥displaystyle¥¥bigcap', 
-		fraction: ['¥¥displaystyle¥¥frac{#1}{#2}', 2],
-		limit: '¥¥displaystyle¥¥lim',
-		sig: '¥¥displaystyle¥¥sum',
-		cpl: '¥¥mathsf{c}',
-		trp: '¥¥mathsf{T}',
-		rd: '¥¥mathrm{d}',
-		intgrl: '¥¥displaystyle¥¥int',
-		twobytwo: ['¥¥left[¥¥begin{array}{cc} #1 & #2¥¥¥¥ #3 & #4¥¥end{array}¥¥right]', 4],
-		threebythree: ['¥¥left[¥¥begin{array}{ccc} #1 & #2 & #3¥¥¥¥ #4 & #5 & #6¥¥¥¥ #7 & #8 & #9¥¥end{array}¥¥right]', 9],
-		choose: ['¥¥left(¥¥begin{array}{c} #1¥¥¥¥ #2¥¥end{array}¥¥right)', 2],
-		ket: ['|{#1}¥¥rangle', 1],
-		ketbra: ['|{#1}¥¥rangle¥¥hspace{-0.5mm}¥¥langle{#2}|',2],
-		braket: ['¥¥langle #1 ¥¥rangle',1],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		threebythree: ['\\left[\\begin{array}{ccc} #1 & #2 & #3\\\\ #4 & #5 & #6\\\\ #7 & #8 & #9\\end{array}\\right]', 9],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+		ket: ['|{#1}\\rangle', 1],
+		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
+		braket: ['\\langle #1 \\rangle',1],
 	}}});
 </script>
 <script>
@@ -68,7 +68,7 @@
 <br><script>document.write(pub[N])</script> (<script>document.write(dates[N].getFullYear())</script>). [<a id="doi">doi</a>] [<a id="axv">arXiv</a>] </p>
 </center>
 <hr>
-$¥DeclareMathOperator{¥spn}{span}$
+$\DeclareMathOperator{\spn}{span}$
 
 <p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
 Page No. <b><script>document.write(N)</script></b> &ensp;
@@ -89,15 +89,15 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Sc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>¥begin{align}
-		S¥ket{ab} = ¥ket{ba},¥quad S¥ket{ba} = ¥ket{ab},¥quad S¥ket{bb} = ¥ket{bb}.
-		¥end{align}</p>
+	<p>\begin{align}
+		S\ket{ab} = \ket{ba},\quad S\ket{ba} = \ket{ab},\quad S\ket{bb} = \ket{bb}.
+		\end{align}</p>
 	<p>であり，故に</p>
-	<p>¥begin{align}
-		&¥braket{ab|S|ba} = ¥braket{ba|S|ab} = ¥braket{bb|S|bb} = 1, ¥Rule{0px}{0px}{10px}¥¥
-		&¥braket{ab|S|ab} = ¥braket{ab|S|bb} = ¥braket{ba|S|ba} ¥¥
-		&= ¥braket{ba|S|bb} = ¥braket{bb|S|ab} = ¥braket{bb|S|ba} = 0.
-		¥end{align}</p>
+	<p>\begin{align}
+		&\braket{ab|S|ba} = \braket{ba|S|ab} = \braket{bb|S|bb} = 1, \Rule{0px}{0px}{10px}\\
+		&\braket{ab|S|ab} = \braket{ab|S|bb} = \braket{ba|S|ba} \\
+		&= \braket{ba|S|bb} = \braket{bb|S|ab} = \braket{bb|S|ba} = 0.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
@@ -108,10 +108,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p>$S$ は，$¥mathcal{H} = ¥spn¥{¥ket{ab},¥,¥ket{ba},¥,¥ket{bb}¥}$ 上で</p>
-		<p>¥begin{align}
-			S ¥simeq ¥threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
-			¥end{align}</p>
+		<p>$S$ は，$\mathcal{H} = \spn\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ 上で</p>
+		<p>\begin{align}
+			S \simeq \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
