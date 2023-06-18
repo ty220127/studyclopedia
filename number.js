@@ -1,8 +1,3 @@
-//Numbering-Rule
-function nr(model,box) {
-  document.write("[#" + model + "-" + box + "]")
-}
-
 var refs = [];
 var ttls = [];
 var authors = [];
@@ -162,4 +157,21 @@ arxiv[i] = "https://arxiv.org/abs/quant-ph/0206103";
 pub[i] = "Journal of the Mathematical Society of Japan, Vol. 57, Iss. 4, pp. 1179-1195";
 j = 0;
 j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
+
+//Numbering-Rule
+function nr(model,box) {
+  document.write("[#" + model + "-" + box + "]")
+}
+
+function athr(n){
+		if(authors[n][2] == null){
+			document.write(authors[n][1]);
+		} else {
+			if(authors[n][4] == null){
+				document.write(authors[n][1] + " and " + authors[n][3]);
+			} else {
+				document.write(authors[n][1] + " et al.");
+			}
+		}
+}
 
