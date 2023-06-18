@@ -40,8 +40,9 @@ doi[i] = "https://iopscience.iop.org/article/10.1088/1751-8113/48/43/435304";
 arxiv[i] = "https://arxiv.org/abs/1502.04567";
 pub[i] = "Journal of Physics A: Mathematical Theory, Vol. 48 Art. 435304";
 j = 0;
-j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
-j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
+j++; Sc9 = j; bns[i][j] = "命題：完全グラフにおけるシフト作用素の機能と３次元表現";
+j++; Cc9 = j; bns[i][j] = "命題：完全グラフにおけるコイン作用素と３次元表現";
+j++; Uc9 = j; bns[i][j] = "命題：完全グラフにおける探索作用素の３次元表現";
 
 //8:Mihana2018memory
 i = 8;
