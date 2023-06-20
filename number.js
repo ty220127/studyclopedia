@@ -78,6 +78,7 @@ doi[i] = "https://link.springer.com/article/10.1007/s42484-020-00024-8";
 arxiv[i] = "https://arxiv.org/abs/2002.06395";
 pub[i] = "Quantum Machine Intelligence Vol. 2, Art. 11";
 j = 0;
+j++; bai6 = j; bns[i][j] = "設定：内部状態により報酬の決まる最適腕識別";
 j++; ar6 = j; bns[i][j] = "命題：報酬平均値と成功確率の関係";
 j++; Re6 = j; bns[i][j] = "命題：平均リグレットとエラー確率の関係";
 j++; Hd6 = j; bns[i][j] = "定義：マーク・非マーク要素と対応する Hilbert 空間";
