@@ -34,16 +34,21 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/6/18"
+	const updated = "2023/6/20"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
-	const sec1 = "Introduction"
-	const sec2 = "Preliminaries"
-	const sec3 = "Directivity of QWRWers"
-	const sec4 = "Summary and Discussion"
-	const sec5 = "Appx. A: Calculations of probabilities on QWRWs"
-	const sec6 = "Appx. B: The 2-term moving variance of $r(n)$"
+	const sec = ["", "Introduction",
+				"Best Arm Identification",
+				"Quantum Amplitude Amplification",
+				"Quantum Best Arm Identification",
+				"Conclusion"];
 </script>
 <style>
+ul.defl{	
+	margin-top: 5.6px;
+	margin-left: 3em;
+	margin-bottom: 5.6px;
+	list-style-type: lower-roman;
+}
 </style>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
@@ -80,13 +85,40 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </center>
 <br><br>
 
-<div class="section">2. Best arm identification</div>
+<div class="section"><script>s = 2; document.write(s + ". " + sec[s])</script></div>
 
 <!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = bai6</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p></p>
+	<p style="text-align: center; padding: 15px 0;"><img src="Qbandit.png" aria-hidden="true" style="vertical-align: 0.838ex; height:25ex;"></p>
+	<center style="padding: 15px 0;">
+	<table rules="rows" >
+	<tbody>
+    <tr>
+      <th colspan="2">Notation List</th>
+    </tr>
+	<tr>
+	  <td>$X$</td><td>「腕」の集合<br>
+	<tr>
+  	<td>$N \in \mathbb{N}$</td><td>腕の数 $(N = |X|)$<br>
+	<tr>
+  	<td>$Y$</td><td>環境の「内部状態」の集合<br>
+	<tr>
+	<td>$\nu_x: Y\to [0,\ 1]$</td><td>$x\in X$ に基づいて選択される $Y$ の元に関する確率分布<br>
+	<tr>
+	<td>$f: X\times Y \to \{0,\ 1\}$&nbsp; </td><td>報酬<br>
+	</tbody>
+	</table>
+	</center>
+	<p>アルゴリズムは，以下の繰り返しにより構成される：</p>
+	<ul class="defl">
+		<li style="padding: 3px">エージェントがある規則に基づいて腕 $x\in X$ を選択する．</li>
+		<li style="padding: 3px">選択された $x$ によって決まる確率分布 $\nu_x$ により環境の内部状態 $y\in Y$ が決まる．</li>
+		<li style="padding: 3px">エージェントは組 $(x,\,y)\in X\times Y$ に基づいた報酬 $f(x,\,y)$ を受け取る．</li>
+		<li style="padding: 3px">エージェントは必要に応じて腕の選択規則を更新する．</li>
+	</ul>
+	<p>以上を $t$ 回繰り返す．最適腕識別の目標は，なるべく少ない回数 $T$ で最適腕 $x^*\in X$ を選択することを目標とする．</p>
 </div>
 <details class="dtl">
 	<summary>補足</summary>
@@ -155,7 +187,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </div>
 <br>
 
-<div class="section">3. Quantum amplitude amplification</div>
+<div class="section"><script>s = 3; document.write(s + ". " + sec[s])</script></div>
 
 <!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = Hd6</script>
@@ -464,7 +496,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <br>
 <!-- end of a box -->
 
-<div class="section">4. Quantum best arm identification</div>
+<div class="section"><script>s = 4; document.write(s + ". " + sec[s])</script></div>
 
 <!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = Oe6</script>
