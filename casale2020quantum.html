@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -28,6 +29,7 @@
 		twovec: ['\\left[\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right]', 2],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 		ket: ['|{#1}\\rangle', 1],
+		bra: ['\\langle{#1}|', 1],
 		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
 		braket: ['\\langle #1 \\rangle',1],
 	}}});
@@ -281,7 +283,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p>関数 $f:X\to \{0,\,1\}$ に依存する作用素で，以下を満たすものを【オラクル (oracle)】と呼ぶ：</p>
 	<p>\begin{align}
-		O_f\ket{x} = (-1)^{f(x)}\ket{x}.
+		O_f\ket{x} = (-1)^{f(x)}\ket{x} = \left\{ \begin{array}{cc} -\ket{x} & (x\in X_1) \\ \ket{x} & (x\in X_0) \end{array}\right..
 		\end{align}</p>
 </div>
 </div>
@@ -326,21 +328,52 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p><script>nr(N,Ps6)</script> における $\ket{\varPsi_1},\ \ket{\varPsi_0}$ に対して</p>
 	<p>\begin{align}
+		O_f\ket{\varPsi_1} = -\ket{\varPsi_1},\quad O_f\ket{\varPsi_0} = \ket{\varPsi_0}.
+		\end{align}</p>
+	<p>さらに，</p>
+	<p>\begin{align}
 		&\braket{\varPsi_1|O_f|\varPsi_1} = -1,\quad \braket{\varPsi_0|O_f|\varPsi_0} = 1\Rule{0px}{0px}{10px}\\
 		&\braket{\varPsi_0|O_f|\varPsi_1} = \braket{\varPsi_1|O_f|\varPsi_0} = 0.\\
 		\end{align}</p>
 </div>
 <details class="dtl">
-	<summary>証明</summary>
+	<summary>証明１（定義から）</summary>
 	<div id="tx">
 	<p>\begin{align}
-		\braket{\varPsi_1|O_f|\varPsi_1} &= \braket{\varPsi_1|\varPsi_1} -2 \sum_{x\in X_1} |\braket{x|\varPsi_1}|^2\\
-			&= 1 -2\sum_{x\in X_1} \fraction{|\alpha_x|^2}{p} = 1-2 = -1,\\
-		\braket{\varPsi_0|O_f|\varPsi_0} &= \braket{\varPsi_0|\varPsi_0} -2 \sum_{x\in X_1} |\braket{x|\varPsi_0}|^2\\
-			&= 1 -0 = 1,\\
-		\braket{\varPsi_0|O_f|\varPsi_1} &= \braket{\varPsi_0|\varPsi_1} -2 \sum_{x\in X_1} \braket{\varPsi_0|x}\braket{x|\varPsi_1} = 0,\\
-		\braket{\varPsi_1|O_f|\varPsi_0} &= \braket{\varPsi_1|\varPsi_0} -2 \sum_{x\in X_1} \braket{\varPsi_1|x}\braket{x|\varPsi_0} = 0.
+		O_f\ket{\varPsi_1} &= O_f\left(\fraction{1}{\sqrt{p}} \sum_{x\in X_1} \alpha_x\ket{x}\right)\\
+			&= \fraction{1}{\sqrt{p}} \sum_{x\in X_1} \alpha_x O_f\ket{x}\\
+			&= \fraction{1}{\sqrt{p}} \sum_{x\in X_1} \alpha_x (-\ket{x})\\
+			&= -\fraction{1}{\sqrt{p}} \sum_{x\in X_1} \alpha_x \ket{x}\\
+			&= -\ket{\varPsi_1}, \Rule{0px}{0px}{10px}\\
+		O_f\ket{\varPsi_0} &= O_f\left(\fraction{1}{\sqrt{p}} \sum_{x\in X_0} \alpha_x\ket{x}\right)\\
+			&= \fraction{1}{\sqrt{1-p}} \sum_{x\in X_0} \alpha_x O_f\ket{x}\\
+			&= \fraction{1}{\sqrt{1-p}} \sum_{x\in X_0} \alpha_x \ket{x}\\
+			&= \ket{\varPsi_0}.
 		\end{align}</p>
+	<p>故に，</p>
+	<p>\begin{align}
+		&\braket{\varPsi_1|O_f|\varPsi_1} = \bra{\varPsi_1}(-\ket{\varPsi_1}) = -\braket{\varPsi_1|\varPsi_1} = -1,\\
+		&\braket{\varPsi_0|O_f|\varPsi_0} = -\braket{\varPsi_0|\varPsi_0} = 1,\\
+		&\braket{\varPsi_0|O_f|\varPsi_1} = \bra{\varPsi_0}(-\ket{\varPsi_1}) = -\braket{\varPsi_0|\varPsi_1} = 0,\\
+		&\braket{\varPsi_1|O_f|\varPsi_0} = -\braket{\varPsi_1|\varPsi_0} = 0,\\
+		\end{align}</p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>証明２（別表現より）</summary>
+	<div id="tx">
+	<p>\begin{align}
+		O_f\ket{\varPsi_1} &= (\mathbb{I} -2\sum_{x\in X_1} \ketbra{x}{x})\ket{\varPsi_1}\\
+			&= \ket{\varPsi_1} -2\sum_{x\in X_1} \braket{x|\varPsi_1} \ket{x}\\
+			&= \ket{\varPsi_1} -2\sum_{x\in X_1} \fraction{\alpha_x}{\sqrt{p}} \ket{x}\\
+			&= \ket{\varPsi_1} -2 \fraction{1}{\sqrt{p}} \sum_{x\in X_1} \alpha_x \ket{x}\\
+			&= \ket{\varPsi_1} -2 \ket{\varPsi_1} = -\ket{\varPsi_1} \Rule{0px}{0px}{30px}\\
+		O_f\ket{\varPsi_0} &= (\mathbb{I} -2\sum_{x\in X_1} \ketbra{x}{x})\ket{\varPsi_0}\\
+			&= \ket{\varPsi_0} -2\sum_{x\in X_1} \braket{x|\varPsi_0} \ket{x}\\
+			&= \ket{\varPsi_0} -2\sum_{x\in X_1} 0\cdot \ket{x}\\
+			&= \ket{\varPsi_0}
+		\end{align}</p>
+		<p>あとは証明１と同じ．</p>
  	</div>
 </details>
 <details class="dtl">
