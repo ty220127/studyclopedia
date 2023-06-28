@@ -21,8 +21,7 @@ doi[i] = "https://link.springer.com/article/10.1007/s11128-017-1807-4";
 arxiv[i] = "https://arxiv.org/abs/1707.07127";
 pub[i] = "Quantum Information Processing vol. 17, Art. No. 100";
 j = 0;
-j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
-j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
+j++; usD7 = j; bns[i][j] = "";
 
 //10:Grover1996fast
 i = 10;
