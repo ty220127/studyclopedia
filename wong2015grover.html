@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -35,7 +34,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/6/30"
+	const updated = "2023/7/1"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -119,18 +118,64 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = abc9</script>
+<p id="1">&nbsp;</p><script>var curbox = flc9</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$a$ 頂点（マーク頂点）から $b$ 頂点（非マーク頂点）への流れに対応するベクトル，$b$ 頂点から $a$ 頂点への流れに対応するベクトル，$b$ 頂点たちの中で完結する流れに対応するベクトルをそれぞれ</p>
+	<p>\begin{align}
+		\ket{ab} &= \fraction{1}{\sqrt{N-1}}\ket{1}\otimes \sum_{e=1}^{N-1} \ket{e},\\
+		\ket{ba} &= \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1},\\
+		\ket{bb} &= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e= 1\\ e \not = N-b+1}}^{N-1}\ket{e}
+		\end{align}</p>
+	<p>とする．</p>
+</div>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>ある頂点からどのような頂点に向かって確率振幅が流れるかを考えているとき，考えていることはほぼ「有向辺上の量子ウォーク」と考えていることが同じになってくる．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = FLc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
+	<p>$\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ は完全正規直交基底である．つまり $\alpha,\ \beta \in \{ab,\,ba,\,bb\}$ に対して</p>
 	<p>\begin{align}
-		S\ket{ab} = \ket{ba},\quad S\ket{ba} = \ket{ab},\quad S\ket{bb} = \ket{bb}.
+		\braket{\alpha|\beta} = \delta_{\alpha\beta} = \left\{ \begin{array}{cc} 1 & (\alpha = \beta) \\ 0 & (\alpha \not = \beta) \end{array} \right..
 		\end{align}</p>
-	<p>であり，故に</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>$S$ は，$\mathcal{H} = \spn\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ 上で</p>
+		<p>\begin{align}
+			S \simeq \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Fic9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$\ket{ab},\ \ket{ba},\ \ket{bb}$ を用いて初期状態 $\ket{\psi_0}$ は</p>
 	<p>\begin{align}
-		&\braket{ab|S|ba} = \braket{ba|S|ab} = \braket{bb|S|bb} = 1, \Rule{0px}{0px}{10px}\\
-		&\braket{ab|S|ab} = \braket{ab|S|bb} = \braket{ba|S|ba} \\
-		&= \braket{ba|S|bb} = \braket{bb|S|ab} = \braket{bb|S|ba} = 0.
+		\ket{\psi_0} = \fraction{1}{\sqrt{N}}\left( \ket{ab} + \ket{ba} + \sqrt{N-2}\ket{bb} \right)
 		\end{align}</p>
+	<p>と書き直せる．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
