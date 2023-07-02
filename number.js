@@ -49,6 +49,7 @@ arxiv[i] = "https://arxiv.org/abs/1502.04567";
 pub[i] = "Journal of Physics A: Mathematical Theory, Vol. 48 Art. 435304";
 j = 0;
 j++; Stc9 = j; bns[i][j] = "自己閉路のない完全グラフにおける量子ウォーク探索";
+j++; qwc9 = j; bns[i][j] = "自己閉路のない完全グラフにおける量子ウォークの定常状態";
 j++; flc9 = j; bns[i][j] = "完全グラフにおける状態の流れ方向による分類と対応するベクトル";
 j++; FLc9 = j; bns[i][j] = "命題：完全グラフにおける流れベクトルの完全正規直交性";
 j++; Fic9 = j; bns[i][j] = "命題：完全グラフにおける流れベクトルによる初期状態の表示";
