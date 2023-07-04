@@ -1,5 +1,3 @@
-
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -37,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/7/3"
+	const updated = "2023/7/4"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["", "Introduction",
 				"Best Arm Identification",
@@ -493,15 +491,19 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			Q\ket{\varPsi_1} &= \cos 2\theta \,\ket{\varPsi_1} - \sin 2\theta \,\ket{\varPsi_0},\\
 			Q\ket{\varPsi_0} &= \sin 2\theta \,\ket{\varPsi_1} + \cos 2\theta \,\ket{\varPsi_0}\\
 		\end{align*}</p>
-	<p>であり，故に $\ket{\varPsi}$ に対して</p>
+	<p>であり，故に $\ket{\varPsi}$ に $Q$ を作用させると</p>
 	<p>\begin{align*}
 			Q\ket{\varPsi} &= \sin 3\theta \,\ket{\varPsi_1} + \cos 3\theta \,\ket{\varPsi_0}
 		\end{align*}</p>
-	<p>である．更に，</p>
+	<p>を得る．また，$Q$ を $n$ 回作用させた状態は</p>
 	<p>\begin{align*}
 			Q^n \ket{\varPsi} &= \sin ((2n + 1)\theta) \,\ket{\varPsi_1} + \cos ((2n +1)\theta) \,\ket{\varPsi_0}
 		\end{align*}</p>
-	<p>である．</p>
+	<p>であり，故に $Q$ を $n$ 回作用させた後に測定を行い $x\in X$ を観測する確率は</p>
+	<p>\begin{align}
+		P_n(x) = |\braket{x|Q^n|\varPsi}|^2 = \fraction{|\alpha_x|^2}{p}\sin^2((2n+1)\theta)
+		\end{align}</p>
+	<p>である．
 </div>
 <details class="dtl">
 	<summary>証明</summary>
@@ -536,21 +538,43 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p>振幅増幅の駆動回数 $n$ が</p>
 	<p>\begin{align}
-			n_0 = \left\lfloor \fraction{\pi}{4}\sqrt{N} \right\rfloor
+			n_0 = \left\lfloor \fraction{\pi}{4\theta} \right\rfloor
 			\end{align}</p>
 	<p>であるとき，あるマーク要素 $x\in X_1$ が観測される確率 $P_n(x) = |\braket{x|Q^n|\varPsi}|^2$ に関して</p>
 	<p>\begin{align}
-			P_{n_0}(x) \geq 1- p.
+			P_{n_0}(x) \geq \fraction{|\alpha_x|^2(1- p)}{p}.
 			\end{align}</p>
+	<p>また，マーク要素のうちの何れか一つが観測される確率 $P_{n}^{(*)}$ に関して</p>
+	<p>\begin{align}
+		P_{n_0}^{(*)} \geq 1-p.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>まず $n_0 = \lfloor \pi/(4\theta) \rfloor$ と定めると，ある $\delta\in [0,\ 1)$ が存在して $n_0 = \pi/(4\theta) -\delta$ である．よって $P_{n_0}(x)$ を $\delta$ を用いて表すと</p>
+		<p>\begin{align}
+			P_{n_0}(x) &= \fraction{|\alpha_x|^2}{p}\sin^2((2n_0+1)\theta)\\
+					&= \fraction{|\alpha_x|^2}{p}(1- \cos^2((2n_0+1)\theta))\\
+					&= \fraction{|\alpha_x|^2}{p}\left(1- \cos^2\left( \left\{2 \left(\fraction{\pi}{4\theta} -\delta\right) +1\right\}\theta \right)\right)\\
+					&= \fraction{|\alpha_x|^2}{p} \left( 1- \cos^2\left(\fraction{\pi}{2} -(2\delta -1)\theta \right) \right)\\
+					&= \fraction{|\alpha_x|^2}{p} \left( 1- \left(\cos \fraction{\pi}{2}\cos (2\delta -1)\theta + \sin \fraction{\pi}{2} \sin(2\delta -1)\theta \right)^2 \right)\\
+					&= \fraction{|\alpha_x|^2}{p} \left( 1- \sin^2 (2\delta -1)\theta  \right).
+			\end{align}</p>
+		<p>ここで $-\theta \leq (2\delta -1)\theta \lt \theta$ であるから，$|\sin (2\delta -1)\theta| \leq \left|\sin\theta \right| = \sqrt{p}$ が従う．よって</p>
+		<p>\begin{align}
+			P_{n_0}(x) \geq \fraction{|\alpha_x|^2 (1-p)}{p}.
+			\end{align}</p>
+		<p>また，この結果を用いることで，マーク要素の何れかが観測される確率は</p>
+		<p>\begin{align}
+			P_{n_0}^{(*)} &= \sum_{x\in X_1} P_{n_0}(x)\\
+				&\geq \sum_{x\in X_1} \fraction{|\alpha_x|^2 (1-p)}{p}\\
+				&= \fraction{1-p}{p} \sum_{x\in X_1}|\alpha_x|^2 = 1-p.
+			\end{align}</p>
  	</div>
 </details>
 <details class="dtl">
-	<summary>補足</summary>
+	<summary>別証明</summary>
 	<div id="tx">
 		<p></p>
  	</div>
