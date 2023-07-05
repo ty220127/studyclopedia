@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -34,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/2"
+	const updated = "2023/7/5"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -118,7 +119,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p></p>
+		<p>上の取り決めより，$S$ は以下のように記述することができる：</p>
+		<p>\begin{align}
+			S = \sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -180,7 +184,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = FLc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>$\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ は完全正規直交基底である．つまり $\alpha,\ \beta \in \{ab,\,ba,\,bb\}$ に対して</p>
+	<p>$\mathcal{A} := \{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ は完全正規直交基底である．つまり $\alpha,\ \beta \in \{ab,\,ba,\,bb\}$ に対して</p>
 	<p>\begin{align}
 		\braket{\alpha|\beta} = \delta_{\alpha\beta} = \left\{ \begin{array}{cc} 1 & (\alpha = \beta) \\ 0 & (\alpha \not = \beta) \end{array} \right..
 		\end{align}</p>
@@ -188,7 +192,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-	<p>すべてのケースにおいて $\braket{\alpha|\beta} = \braket{\beta|\alpha}$ であるので，$\braket{ab|ab},\ \braket{ab|ba},\ \braket{ab|bb},\ \braket{ba|ba},\ \braket{ba|bb},\ \braket{bb|bb}$ の全６ケースについて調べれば十分である．</p>	
+	<p>$\braket{\alpha|\beta}$ が $0$ ないし $1$ であるならば $\braket{\beta|\alpha}$ も同じ値であるので，$\braket{ab|ab}$，$\braket{ab|ba}$，$\braket{ab|bb}$，$\braket{ba|ba}$，$\braket{ba|bb}$，$\braket{bb|bb}$ の全６ケースについて調べれば十分である．</p>	
 	<p>\begin{align}
 		\braket{ab|ab} &= \fraction{1}{N-1} \braket{1|1} \sum_{e=1}^{N-1}\sum_{f=1}^{N-1} \braket{e|f}\\
 			&= \fraction{1}{N-1} \sum_{e=1}^{N-1} 1 = \fraction{N-1}{N-1} = 1,\Rule{0px}{0px}{30px}\\
@@ -203,15 +207,6 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= \fraction{1}{(N-1)(N-2)} \sum_{b=2}^{N}\sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} 1\\
 			&= \fraction{(N-1)(N-2)}{(N-1)(N-2)} = 1.
 		\end{align}</p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p>$S$ は，$\mathcal{H} = \spn\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ 上で</p>
-		<p>\begin{align}
-			S \simeq \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
-			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -231,16 +226,15 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-	<p></p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p>$S$ は，$\mathcal{H} = \spn\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ 上で</p>
-		<p>\begin{align}
-			S \simeq \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
-			\end{align}</p>
+	<p>\begin{align}
+		\ket{\psi_0} &= \ket{s_v}\otimes \ket{s_c}\\
+			&= \fraction{1}{\sqrt{N(N-1)}} \sum_{i=1}^{N}\ket{i}\otimes \sum_{e=1}^{N-1}\ket{e}\\
+			&= \fraction{1}{\sqrt{N(N-1)}}\Biggl\{ \ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} +\\
+			& \hspace{20mm} \sum_{b=2}^{N} \ket{b} \otimes \Biggl( \ket{N-b+1} + \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} \ket{e}\Biggr)\Biggr\}\\
+			&= \fraction{1}{\sqrt{N}}\Biggl( \fraction{1}{\sqrt{N-1}}\ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} + \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\\
+			& \hspace{45mm}  \fraction{\sqrt{N-2}}{\sqrt{(N-1)(N-2)}} \sum_{b=2}^{N}\ket{b}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} \ket{e} \Biggr)\\
+			&= \fraction{1}{\sqrt{N}}\left( \ket{ab} +\ket{ba} + \sqrt{N-2}\ket{bb}\right).
+		\end{align}</p>
  	</div>
 </details>
 </div>
@@ -254,7 +248,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>\begin{align}
 		S\ket{ab} = \ket{ba},\quad S\ket{ba} = \ket{ab},\quad S\ket{bb} = \ket{bb}.
 		\end{align}</p>
-	<p>であり，表現行列 $\widetilde{S}$ は</p>
+	<p>であり，線形写像 $f_S: \spn \mathcal{A}\to \spn \mathcal{A};\ \ket{\psi} \mapsto S\ket{\psi}$ の表現行列 $\widetilde{S}$ は</p>
 	<p>\begin{align}
 		\widetilde{S} = \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
 		\end{align}</p>
@@ -262,16 +256,62 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-	<p></p>
- 	</div>
+	<p>\begin{align}
+		S\ket{ab} &= \left(\sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
+			&\hspace{50mm}\cdot \left( \ket{1}\otimes \fraction{1}{\sqrt{N-1}} \sum_{e=1}^{N-1} \ket{e}\right)	\\
+			&= \fraction{1}{\sqrt{N-1}}\sum_{j=2}^{N}\ket{j}\otimes \ketbra{N-j+1}{j-1}\sum_{e=1}^{N-1}\ket{e}\\
+			&= \fraction{1}{\sqrt{N-1}}\sum_{j=2}^{N}\ket{j}\otimes \ket{N-j+1} = \ket{ba}. \Rule{0px}{0px}{40px}\\
+		S\ket{ba} &= \left(\sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
+			&\hspace{35mm}\cdot \left( \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
+			&= \fraction{1}{\sqrt{N-1}}\sum_{i=2}^{N}\sum_{\stackrel{j=1}{j\not =1}}^{N}\bigl(\ket{j}\\
+			&\hspace{18mm}\otimes \braket{(j-i)\modulo N|N-i+1}\ket{(i-j)\modulo N}\bigr)\\
+			&= \fraction{1}{\sqrt{N-1}} \sum_{i=2}^{N}\ket{1}\otimes \ket{i-1}\\
+			&= \fraction{1}{\sqrt{N-1}}\ket{1}\otimes \sum_{i=2}^{N}\ket{i-1}\\
+			&= \fraction{1}{\sqrt{N-1}}\ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} = \ket{ab}.  \Rule{0px}{0px}{40px}\\
+		S\ket{bb} &= \left(\sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
+			& \hspace{15mm}\cdot\left(\fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e= 1\\ e \not = N-b+1}}^{N-1}\ket{e}\right)\\
+			&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\sum_{\stackrel{j=1}{j\not =b}}^{N}\bigl(\ket{j}\\
+			&\hspace{17mm}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} \braket{(j-b)\modulo N|e}\ket{(b-j)\modulo N}\bigr).
+		\end{align}</p>
+		<p>ここで，$j=1$ の項において</p>
+		<p>\begin{align}
+			\ket{1} \otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\braket{N-b+1|e}\ket{b-1} = 0.
+			\end{align}</p>
+		<p>次に，$j = 2,\ \cdots,\ b-1$ に対して，$N-b+j = N-b+2,\ \cdots,\ N-1$ であり，各 $j$ に対し $\braket{N-b+j|e} = 1$ なる $e$ が一つずつ存在するから</p>
+		<p>\begin{align}
+			&\ket{j}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\braket{N-b+j|e}\ket{b-j}\\
+			&=\ket{j}\otimes \ket{b-j}.
+			\end{align}</p>
+		<p>そして $j = b+1,\ \cdots,\ N$ に対して，$j-b = 1,\ \cdots,\ N-b$ であり，各 $j$ に対し $\braket{j-b|e} = 1$ なる $e$ が一つずつ存在するから</p>
+		<p>\begin{align}
+			&\ket{j}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\braket{j-b|e}\ket{N+b-j}\\
+			&=\ket{j}\otimes \ket{N+b-j}.
+			\end{align}</p>
+		<p>以上の結果を $S\ket{bb}$ の変形式に代入すると</p>
+		<p>\begin{align}
+			&S\ket{bb}\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\\
+				&\hspace{5mm} \Biggl(\sum_{j=2}^{b-1}\ket{j}\otimes \ket{b-j} + \sum_{j=b+1}^{N}\ket{j}\otimes \ket{N+b-j}\Biggr)\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}} \sum_{b=2}^{N}\sum_{\substack{j=2\\ j\not = b}}^{N} \ket{j}\otimes \ket{(b-j)\modulo N}\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}} \sum_{j=2}^{N}\sum_{\substack{b=2\\ b\not = j}}^{N} \ket{j}\otimes \ket{(b-j)\modulo N}.
+			\end{align}</p>
+		<p>$(b-j)\modulo N = N+2-j,\ N+3-j,\ \cdots,\ N-1,\ 1,\ \cdots,\ N-j$ より</p>
+		<p>\begin{align}
+				&S\ket{bb}\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}} \sum_{j=2}^{N}\sum_{\substack{e=1\\ e\not = N+1-j}}^{N} \ket{j}\otimes \ket{e}\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}} \sum_{j=2}^{N}\ket{j}\otimes \sum_{\substack{e=1\\ e\not = N+1-j}}^{N} \ket{e}= \ket{bb}.
+			\end{align}</p>
+		<p>以上の結果をまとめると，</p>
+		<p>\begin{align}
+			[S\ket{ab}\ S\ket{ba}\ S\ket{bb}] &= [\ket{ba}\ \ket{ab}\ \ket{bb}]\\
+				&= [\ket{ab}\ \ket{ba}\ \ket{bb}] \underset{\widetilde{S}}{\underline{\threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}}}.
+			\end{align}</p>
+	</div>
 </details>
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p>$S$ は，$\mathcal{H} = \spn\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ 上で</p>
-		<p>\begin{align}
-			S \simeq \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
-			\end{align}</p>
+		<p>真面目に計算して示すと上記証明のようにやや煩雑になるが，直感的にはほぼ明らかな事実である．</p>
  	</div>
 </details>
 </div>
