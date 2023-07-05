@@ -35,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/7/4"
+	const updated = "2023/7/5"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["", "Introduction",
 				"Best Arm Identification",
@@ -576,7 +576,55 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>別証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>まず $n_0$ の定義より，不等式</p>
+		<p>\begin{align}
+			n_0 \leq \fraction{\pi}{4\theta}
+			\end{align}</p>
+		<p>が成り立つ．この両辺を $2$ 倍して $1$ を足し，さらに $\theta \gt 0$ に注意して $\theta$ 倍をすれば</p>
+		<p>\begin{align}
+			(2n_0 +1)\theta \leq \fraction{\pi}{2} + \theta
+			\end{align}</p>
+		<p>を得る．更にこれを変形すると</p>
+		<p>\begin{align}
+			(2n_0 +1)\theta -\fraction{\pi}{2} \leq \theta
+			\end{align}</p>
+		<p>が成り立つ．</p>
+		<p>一方，$n_0$ の定義より，以下の不等式も成立する：</p>
+		<p>\begin{align}
+			\fraction{\pi}{4\theta} \lt n_0 + 1.
+			\end{align}</p>
+		<p>この両辺を $2$ 倍して $1$ を引き，さらに $\theta$ 倍すれば</p>
+		<p>\begin{align}
+			\fraction{\pi}{2} -\theta \lt (2n_0 +1) \theta
+			\end{align}</p>
+		<p>を得る．更にこれを変形すると</p>
+		<p>\begin{align}
+			-\left( (2n_0 + 1)\theta -\fraction{\pi}{2} \right) \lt \theta
+			\end{align}</p>
+		<p>を得る．以上の結果をまとめると，$\theta \gt 0$ と $n_0 := \lfloor \pi/4\theta \rfloor$ に対し</p>
+		<p>\begin{align}
+			\left| (2n_0 +1)\theta -\fraction{\pi}{2} \right| \leq \theta
+			\end{align}</p>
+		<p>が成り立つ．</p>
+		<p>ここで $0\lt \theta\lt \pi/2$ より，次が従う：</p>
+		<p>\begin{align}
+			 \left| \sin\left( (2n_0 +1)\theta -\fraction{\pi}{2}\right) \right| \leq \sin\theta = \sqrt{p},
+			\end{align}</p>
+		<p>つまり</p>
+		<p>\begin{align}
+			\sin^2 \left( (2n_0 +1)\theta -\fraction{\pi}{2}\right) \leq p.
+			\end{align}</p>
+		<p>任意の $\varphi\in \mathbb{R}$ に対して $\sin (\varphi -\pi/2) = -\cos\varphi$ であることを用いれば，</p>
+		<p>\begin{align}
+			\cos^2 \left( (2n_0 +1)\theta\right) \leq p
+			\end{align}</p>
+		<p>が成り立つ．よって</p>
+		<p>\begin{align}
+			P_{n_0}(x) &= \fraction{|\alpha_x|^2}{p} \sin^2((2n_0+1)\theta)\\
+				&= \fraction{|\alpha_x|^2}{p} (1-\cos^2((2n_0+1)\theta))\\
+				&\geq \fraction{|\alpha_x|^2}{p} (1-p)
+			\end{align}</p>
+		<p>を得る．</p>
  	</div>
 </details>
 </div>
@@ -706,6 +754,16 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </div>
 <br>
 <!-- end of a box -->
+
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li> R. Portugal: Quantum Walks and Search Algorithms (2nd ed.), Springer,  2018.</li>
+		<li>石川智, 小川朋宏, 河内亮周, 木村元, 林正人: 量子情報科学入門, 共立出版, 2012.</li>
+		<li>今野紀雄: 量子探索 - 量子ウォークが拓く最先端アルゴリズム, 近代科学社, 2021.</li>
+	</ul>
+</div>
+<br>
 
 </div>
 
