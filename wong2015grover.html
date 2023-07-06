@@ -35,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/5"
+	const updated = "2023/7/6"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -227,7 +227,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<summary>証明</summary>
 	<div id="tx">
 	<p>\begin{align}
-		\ket{\psi_0} &= \ket{s_v}\otimes \ket{s_c}\\
+		&\ket{\psi_0} = \ket{s_v}\otimes \ket{s_c}\\
 			&= \fraction{1}{\sqrt{N(N-1)}} \sum_{i=1}^{N}\ket{i}\otimes \sum_{e=1}^{N-1}\ket{e}\\
 			&= \fraction{1}{\sqrt{N(N-1)}}\Biggl\{ \ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} +\\
 			& \hspace{20mm} \sum_{b=2}^{N} \ket{b} \otimes \Biggl( \ket{N-b+1} + \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} \ket{e}\Biggr)\Biggr\}\\
