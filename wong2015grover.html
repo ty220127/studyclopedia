@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -35,7 +34,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/6"
+	const updated = "2023/7/10"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -322,12 +321,47 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Cc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p></p>
+	<p>$\widehat{C} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1$ とする．このとき，$C_1= C_1^{\text{flip}} = -C_0$，$C_1 = C_1^{\text{SKW}}= I_d$ 何れの場合も以下が成り立つ：</p>
+	<p>\begin{align}
+		&\widehat{C}\ket{ab} = -\ket{ab},\\
+		&\widehat{C}\ket{ba} =  -\cos\theta\ket{ba} +\sin\theta\ket{bb},\\
+		&\widehat{C}\ket{bb} = \sin\theta\ket{ba} + \cos\theta\ket{bb}.
+		\end{align}</p>
+	<p>ただし，$\theta$ は</p>
+	<p>\begin{align}
+		\cos\theta = \fraction{N-3}{N-1},\quad \sin\theta = \fraction{2\sqrt{N-2}}{N-1}
+		\end{align}</p>
+	<p>を満たす．また，線形写像 $f_{\widehat{C}}:\spn \mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto \widehat{C}\ket{\psi}$ の表現行列 $\widetilde{C}$ は</p>
+	<p>\begin{align}
+		\widetilde{C} = \threebythree{-1}{0}{0}{0}{-\cos\theta}{\sin\theta}{0}{\sin\theta}{\cos\theta}.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>$C_1= C_1^{\text{flip}} = -C_0$ とすると，</p>
+		<p>\begin{align}
+			\widehat{C} = \widehat{C}^{\text{flip}}&= (I_n-\ketbra{1}{1})\otimes C_0 -\ketbra{1}{1}\otimes C_0\\
+			&= (I_n -2\ketbra{1}{1})\otimes C_0
+			\end{align}</p>
+		<p>が成り立つ．このとき</p>
+		<p>\begin{align}
+			&\widehat{C}^{\text{flip}}\ket{ab}\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes C_0 \right\}\ket{ab}\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\left( \ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e}\right)\\
+				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}(2\braket{s_c|e}\ket{s_c} -\ket{e})\\
+				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\left( \fraction{2}{N-1}\sum_{f=1}^{N-1}\ket{f}-\ket{e}\right)\\
+				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\left( 2\sum_{f=1}^{N-1}\ket{f} -\sum_{e=1}^{N-1}\ket{e}\right)\\
+				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e} = -\ket{ab},\Rule{0pt}{0pt}{20pt}\\
+			&\widehat{C}^{\text{flip}}\ket{ba}\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
+				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{ \ket{b}\otimes (2\braket{s_c|N-b+1}\ket{s_c} -\ket{N-b+1})\right\}\\
+				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{\ket{b}\otimes\left( \fraction{2}{N-1}\sum_{e=1}^{N-1}\ket{e} -\ket{N-b+1}\right)\right\}\\
+				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{\ket{b}\otimes\left( \fraction{2}{N-1}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e} -\fraction{N-3}{N-1}\ket{N-b+1}\right)\right\}\\
+				&= \fraction{2\sqrt{N-2}}{N-1}\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \fraction{1}{\sqrt{N-2}}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+				&\hspace{60mm} -\fraction{N-3}{N-1}\left(\fraction{1}{\sqrt{N-1}}\ket{b}\otimes \ket{N+1-b}\right)\\
+				&=\sin\theta \ket{bb} -\cos\theta\ket{ba},\Rule{0pt}{0pt}{20pt}
+			\end{align}</p>
  	</div>
 </details>
 <details class="dtl">
