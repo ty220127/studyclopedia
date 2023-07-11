@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -34,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/10"
+	const updated = "2023/7/11"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -354,13 +355,30 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\left( 2\sum_{f=1}^{N-1}\ket{f} -\sum_{e=1}^{N-1}\ket{e}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e} = -\ket{ab},\Rule{0pt}{0pt}{20pt}\\
 			&\widehat{C}^{\text{flip}}\ket{ba}\\
-				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\\
+				& \hspace{50mm}\cdot\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
 				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{ \ket{b}\otimes (2\braket{s_c|N-b+1}\ket{s_c} -\ket{N-b+1})\right\}\\
 				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{\ket{b}\otimes\left( \fraction{2}{N-1}\sum_{e=1}^{N-1}\ket{e} -\ket{N-b+1}\right)\right\}\\
-				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{\ket{b}\otimes\left( \fraction{2}{N-1}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e} -\fraction{N-3}{N-1}\ket{N-b+1}\right)\right\}\\
+				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\Biggl\{\ket{b}\otimes \fraction{2}{N-1}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e} \\
+				& \hspace{70mm} -\ket{b}\otimes \fraction{N-3}{N-1}\ket{N-b+1}\Biggr\}\\
 				&= \fraction{2\sqrt{N-2}}{N-1}\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \fraction{1}{\sqrt{N-2}}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
-				&\hspace{60mm} -\fraction{N-3}{N-1}\left(\fraction{1}{\sqrt{N-1}}\ket{b}\otimes \ket{N+1-b}\right)\\
-				&=\sin\theta \ket{bb} -\cos\theta\ket{ba},\Rule{0pt}{0pt}{20pt}
+				&\hspace{50mm} -\fraction{N-3}{N-1}\left(\fraction{1}{\sqrt{N-1}}\ket{b}\otimes \ket{N+1-b}\right)\\
+				&=\sin\theta \ket{bb} -\cos\theta\ket{ba},\Rule{0pt}{0pt}{20pt}\\
+			&\widehat{C}^{\text{flip}}\ket{bb}\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\\
+				& \hspace{30mm}\cdot\left(\fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}(2\ketbra{s_c}{s_c}-I_d)\ket{e}\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\left( \fraction{2}{N-1}\sum_{f=1}^{N-1}\ket{f} -\ket{e}\right)\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \left( \fraction{2(N-2)}{N-1}\sum_{f=1}^{N-1}\ket{f} -\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\\
+				&\hspace{30mm} \otimes \left(\fraction{2(N-2)}{N-1}\ket{N-b+1}+ \fraction{N-3}{N-1}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \ket{e}\right)\\
+				&= \fraction{2\sqrt{N-2}}{N-1}\ket{ba} + \fraction{N-3}{N-1}\ket{bb} = \sin\theta\ket{ba} + \cos\theta\ket{bb}.
+			\end{align}</p>
+		<p>以上の結果をまとめると，</p>
+		<p>\begin{align}
+			&[\widehat{C}\ket{ab}\ \widehat{C}\ket{ba}\ \widehat{C}\ket{bb}]\\
+			&= [-\ket{ab}\ -\cos\theta\ket{ba}+\sin\theta\ket{bb}\ \sin\theta\ket{ba}+\cos\theta\ket{bb}]\\
+			&= [\ket{ab}\ \ket{ba}\ \ket{bb}] \threebythree{-1}{0}{0}{0}{-\cos\theta}{\sin\theta}{0}{\sin\theta}{\cos\theta}\Rule{0pt}{25pt}{0pt}.
 			\end{align}</p>
  	</div>
 </details>
