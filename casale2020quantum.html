@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -35,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/7/5"
+	const updated = "2023/7/18"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["", "Introduction",
 				"Best Arm Identification",
@@ -329,10 +330,9 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>\begin{align}
 		O_f\ket{\varPsi_1} = -\ket{\varPsi_1},\quad O_f\ket{\varPsi_0} = \ket{\varPsi_0}.
 		\end{align}</p>
-	<p>さらに，</p>
+	<p>さらに，$\mathcal{S} = \spn\{\ket{\varPsi_1},\ \ket{\varPsi_0}\}$ 上の線形変換 $g$ を $g(\ket{\psi}) = O_f\ket{\psi}$ とおくとき，$g$ の表現行列 $\widetilde{O_f}$ は</p>
 	<p>\begin{align}
-		&\braket{\varPsi_1|O_f|\varPsi_1} = -1,\quad \braket{\varPsi_0|O_f|\varPsi_0} = 1\Rule{0px}{0px}{10px}\\
-		&\braket{\varPsi_0|O_f|\varPsi_1} = \braket{\varPsi_1|O_f|\varPsi_0} = 0.\\
+		\widetilde{O_f} = \twobytwo{-1}{0}{0}{1}.
 		\end{align}</p>
 </div>
 <details class="dtl">
@@ -351,10 +351,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\end{align}</p>
 	<p>故に，</p>
 	<p>\begin{align}
-		&\braket{\varPsi_1|O_f|\varPsi_1} = \bra{\varPsi_1}(-\ket{\varPsi_1}) = -\braket{\varPsi_1|\varPsi_1} = -1,\\
-		&\braket{\varPsi_0|O_f|\varPsi_0} = -\braket{\varPsi_0|\varPsi_0} = 1,\\
-		&\braket{\varPsi_0|O_f|\varPsi_1} = \bra{\varPsi_0}(-\ket{\varPsi_1}) = -\braket{\varPsi_0|\varPsi_1} = 0,\\
-		&\braket{\varPsi_1|O_f|\varPsi_0} = -\braket{\varPsi_1|\varPsi_0} = 0,\\
+		&[g(\ket{\varPsi_1})\ \ g(\ket{\varPsi_0})] \\
+			&= [O_f\ket{\varPsi_1}\ \ O_f\ket{\varPsi_0}]\\
+			&= [-\ket{\varPsi_1}\ \ \ket{\varPsi_0}]\\
+			&= [\ket{\varPsi_1}\ \ \ket{\varPsi_0}] \underset{\widetilde{O_f}}{\underline{\twobytwo{-1}{0}{0}{1}}}.
 		\end{align}</p>
  	</div>
 </details>
@@ -373,16 +373,6 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= \ket{\varPsi_0}
 		\end{align}</p>
 		<p>あとは証明１と同じ．</p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p>この命題により，オラクル $O_f$ は $\mathcal{S}$ 上において</p>
-		<p>\begin{align}
-			O_f \simeq \twobytwo{-1}{0}{0}{1}.
-			\end{align}</p>
-		<p>であることがわかる．</p>
  	</div>
 </details>
 </div>
