@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -36,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/7/18"
+	const updated = "2023/7/19"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["", "Introduction",
 				"Best Arm Identification",
@@ -301,17 +300,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-	<p>まず，$x\in X_1$ に対して<p>
 	<p>\begin{align}
-		O_f\ket{x} = (-1)^1\ket{x} = -\ket{x}.
-		\end{align}</p>
-	<p>次に，$x\in X_0$ に対して</p>
-	<p>\begin{align}
-		O_f\ket{x} = (-1)^0\ket{x} = \ket{x}.
-		\end{align}</p>
-	<p>よって</p>
-	<p>\begin{align}
-		O_f &= \sum_{x\in X_0}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
+		O_f &= \sum_{x\in X}(-1)^{f(x)}\ketbra{x}{x}\\
+			&= \sum_{x\in X_0}1\cdot \ketbra{x}{x} + \sum_{x\in X_1} (-1)\cdot\ketbra{x}{x}\\
+			&= \sum_{x\in X_0}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
 			&= \sum_{x\in X_0}\ketbra{x}{x} + \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x} - \sum_{x\in X_1}\ketbra{x}{x}\\
 			&= \sum_{x\in X}\ketbra{x}{x} -2\sum_{x\in X_1}\ketbra{x}{x}\\
 			&= \mathbb{I} -2\sum_{x\in X_1}\ketbra{x}{x}
@@ -433,35 +425,42 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p><script>nr(N,Ps6)</script> における $\ket{\varPsi_1},\ \ket{\varPsi_0}$ に対して</p>
 	<p>\begin{align}
-		&\braket{\varPsi_1|R_\varPsi|\varPsi_1} = -\cos 2\theta,\quad \braket{\varPsi_0|R_\varPsi|\varPsi_0} = \cos 2\theta\Rule{0px}{0px}{10px}\\
-		&\braket{\varPsi_0|R_\varPsi|\varPsi_1} = \braket{\varPsi_1|R_\varPsi|\varPsi_0} = \sin 2\theta.\\
+		&R_\varPsi \ket{\varPsi_1} = -\cos 2\theta \ket{\varPsi_1} + \sin 2\theta \ket{\varPsi_0},\\
+		&R_\varPsi \ket{\varPsi_0} = \sin 2\theta \ket{\varPsi_1} + \cos 2\theta \ket{\varPsi_0}.
+		\end{align}</p>
+	<p>さらに，$\mathcal{S} = \spn\{\ket{\varPsi_1},\ \ket{\varPsi_0}\}$ 上の線形変換 $h$ を $h(\ket{\psi}) = R_\varPsi \ket{\psi}$ とおくとき，$h$ の表現行列 $\widetilde{R_\varPsi}$ は</p>
+	<p>\begin{align}
+		\widetilde{R_\varPsi} = \twobytwo{-\cos 2\theta}{\sin 2\theta}{\sin 2\theta}{\cos 2\theta}.
 		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
+	<p>まず，$\ket{\Psi}$ と $\theta$ の関係により明らかに</p>
 	<p>\begin{align}
-		\braket{\varPsi_1|R_\varPsi|\varPsi_1} &= \braket{\varPsi_1|(2\ketbra{\varPsi}{\varPsi} -\mathbb{I})|\varPsi_1}\\
-			&= 2 |\braket{\varPsi|\varPsi_1}|^2 -1 = 2\sin^2\theta -1\\
-			&= -\cos 2\theta, \Rule{0px}{0px}{10px}\\
-		\braket{\varPsi_0|R_\varPsi|\varPsi_0} &= \braket{\varPsi_0|(2\ketbra{\varPsi}{\varPsi} -\mathbb{I})|\varPsi_0}\\
-			&= 2 |\braket{\varPsi|\varPsi_0}|^2 -1 = 2\cos^2\theta -1\\
-			&= \cos 2\theta, \Rule{0px}{0px}{10px}\\
-		\braket{\varPsi_0|R_\varPsi|\varPsi_1} &= \braket{\varPsi_0|(2\ketbra{\varPsi}{\varPsi} -\mathbb{I})|\varPsi_1}\\
-			&= 2 \braket{\varPsi_0|\varPsi}\braket{\varPsi|\varPsi_1} -0 = 2\sin \theta\cos \theta\\
-			&= \sin 2\theta, \Rule{0px}{0px}{10px}\\
-		\braket{\varPsi_0|R_\varPsi|\varPsi_1} &= \overline{\braket{\varPsi_1|R_\varPsi|\varPsi_0}} = \sin 2\theta.\\
+		\braket{\varPsi|\varPsi_1} = \sin\theta,\quad \braket{\varPsi|\varPsi_0} = \cos\theta.
 		\end{align}</p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p>この命題により，反射作用素 $R_\varPsi$ は $\mathcal{S}$ 上において</p>
-		<p>\begin{align}
-			R_\varPsi \simeq \twobytwo{-\cos 2\theta}{\sin 2\theta}{\sin 2\theta}{\cos 2\theta}.
-			\end{align}</p>
-		<p>であることがわかる．</p>
+	<p>よって $R_\varPsi\ket{\varPsi_1},\ R_\varPsi\ket{\varPsi_0}$ は以下のように計算される：</p>
+	<p>\begin{align}
+		R_\varPsi \ket{\varPsi_1} &= 2\ket{\varPsi}\braket{\varPsi|\varPsi_1} -\ket{\varPsi_1}\\
+			&= 2\sin\theta \ket{\varPsi} -\ket{\varPsi_1}\\
+			&= 2\sin^2\theta\ket{\varPsi_1} +2\sin\theta \cos\theta \ket{\varPsi_0} -\ket{\varPsi_1}\\
+			&= -(1-\sin^2\theta)\ket{\varPsi_1} +2\sin\theta \cos\theta \ket{\varPsi_0} \\
+			&= -\cos 2\theta \ket{\varPsi_1} + \sin 2\theta \ket{\varPsi_0},\Rule{0px}{0px}{20px}\\
+
+		R_\varPsi \ket{\varPsi_0} &= 2\ket{\varPsi}\braket{\varPsi|\varPsi_0} -\ket{\varPsi_0}\\
+			&= 2\cos\theta \ket{\varPsi} -\ket{\varPsi_0}\\
+			&= 2\cos\theta \sin\theta\ket{\varPsi_1} +2 \cos^2\theta \ket{\varPsi_0} -\ket{\varPsi_0}\\
+			&= 2\sin\theta \cos\theta \ket{\varPsi_1} +(\cos^2\theta -1) \ket{\varPsi_0} \\
+			&= \sin 2\theta \ket{\varPsi_1} + \cos 2\theta \ket{\varPsi_0}.
+		\end{align}</p>
+	<p>故に，</p>
+	<p>\begin{align}
+		&[h(\ket{\varPsi_1})\ \ h(\ket{\varPsi_0})]\\
+			& =[R_\varPsi \ket{\varPsi_1}\ \ R_\varPsi\ket{\varPsi_0}]\\
+			& =[-\cos 2\theta \ket{\varPsi_1} + \sin 2\theta \ket{\varPsi_0}\ \ \sin 2\theta \ket{\varPsi_1} + \cos 2\theta \ket{\varPsi_0}]\\
+			&= [\ket{\varPsi_1}\ \ \ket{\varPsi_0}]\underset{\widetilde{R_\varPsi}}{\underline{ \twobytwo{-\cos 2\theta}{\sin 2\theta}{\sin 2\theta}{\cos 2\theta}}}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
