@@ -119,7 +119,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		<li style="padding: 3px">エージェントは組 $(x,\,y)\in X\times Y$ に基づいた報酬 $f(x,\,y)$ を受け取る．</li>
 		<li style="padding: 3px">エージェントは必要に応じて腕の選択規則を更新する．</li>
 	</ul>
-	<p>以上を $t$ 回繰り返す．最適腕識別の目標は，なるべく少ない回数 $T$ で最適腕 $x^*\in X$ 選択確率 $P_T(x)$ を最適化することを目標とする．</p>
+	<p>以上を $t$ 回繰り返す．最適腕識別の目標は，なるべく少ない回数 $T$ で最適腕 $\tilde{x}\in X$ 選択確率 $P_T(x)$ を最適化することを目標とする．</p>
 </div>
 <details class="dtl">
 	<summary>補足</summary>
@@ -164,7 +164,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Re6</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>最適腕識別において，$T$ 回の環境への作用を行った後の平均リグレット $R_T$ とエラー確率 $e_T := 1- P_T(x^*)$ の関係は</p>
+	<p>最適腕識別において，$T$ 回の環境への作用を行った後の平均リグレット $R_T$ とエラー確率 $e_T := 1- P_T(\tilde{x})$ の関係は</p>
 	<p>\begin{align}
 		R_T \leq e_T.
 		\end{align}</p>
@@ -173,8 +173,8 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<summary>証明</summary>
 	<div id="tx">
 		<p>\begin{align}
-			R_T &= \sum_{x\in X\backslash\{x^*\}}P_T(x)\varDelta_x \leq \sum_{x\in X\backslash\{x^*\}}P_T(x)\\
-				&= 1- P_T(x^*) = e_T
+			R_T &= \sum_{x\in X\backslash\{\tilde{x}\}}P_T(x)\varDelta_x \leq \sum_{x\in X\backslash\{\tilde{x}\}}P_T(x)\\
+				&= 1- P_T(\tilde{x}) = e_T
 			\end{align}</p>
 		<p>以上まとめると，$R_T \leq e_T.$</p>
  	</div>
@@ -182,7 +182,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p>論文では等号は含まれていない（つまり，$R_T\lt e_T$ としてある）．等号が成立するのは，すべての $x\in X\backslash\{x^*\}$ に対して $\varDelta_x = 1$ となる場合であるが，確かにそんな状況を考えても最適腕識別の設定としては面白くない．ただし，あり得ないわけではないので，ここでは等号も含めた形としている．</p>
+		<p>論文では等号は含まれていない（つまり，$R_T\lt e_T$ としてある）．等号が成立するのは，すべての $x\in X\backslash\{\tilde{x}\}$ に対して $\varDelta_x = 1$ となる場合であるが，確かにそんな状況を考えても最適腕識別の設定としては面白くない．ただし，あり得ないわけではないので，ここでは等号も含めた形としている．</p>
  	</div>
 </details>
 </div>
@@ -720,23 +720,34 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p>振幅増幅の駆動回数 $n$ が</p>
 	<p>\begin{align}
-			n_0 = \left\lfloor \fraction{\pi}{4}\sqrt{N} \right\rfloor
+			n_0 = \left\lfloor \fraction{\pi}{4\theta} \right\rfloor
 			\end{align}</p>
-	<p>であるとき，あるマーク要素 $x\in X_1$ が観測される確率 $P_n(x) = |\braket{x|Q^n|\varPsi}|^2$ に関して</p>
+	<p>であるとき，最適腕 $\tilde{x}$ が推薦される確率 $P_n(x) = |\braket{x|G^n|\varPsi}|^2$ に関して</p>
 	<p>\begin{align}
-			P_{n_0}(x) \geq 1- p.
+			P_{n_0}(\tilde{x}) \geq \fraction{|\alpha_{\tilde{x}}|^2a_{\tilde{x}}}{p}\left(1-\fraction{p}{1-p}\right).
 			\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p> $n_0 = \lfloor \pi/(4\theta) \rfloor$ に対して</p>
+		<p>\begin{align}
+			\sin^2((2n_0 +1)\theta)\geq 1-p
+			\end{align}</p>
+		<p>であるから，これを用いて $P_{n_0}(\tilde{x})$ を評価すると</p>
+		<p>\begin{align}
+			P_{n_0}(\tilde{x}) &\geq |\alpha_{\tilde{x}}|^2\left(1 +\fraction{(a_{\tilde{x}}- p)(1 -2p)}{p(1-p)}\right)\\
+				&= \fraction{|\alpha_{\tilde{x}}|^2}{p(1-p)} (p-p^2 +a_{\tilde{x}} -2a_{\tilde{x}}p -p +2p^2)\\
+				&= \fraction{|\alpha_{\tilde{x}}|^2}{p(1-p)} \{p^2 +a_{\tilde{x}}(1-2p) \}\\
+				&\geq \fraction{|\alpha_{\tilde{x}}|^2a_{\tilde{x}}}{p}\cdot \fraction{1-2p}{1-p}\\
+				&= \fraction{|\alpha_{\tilde{x}}|^2a_{\tilde{x}}}{p}\left(1-\fraction{p}{1-p}\right).
+			\end{align}</p>
  	</div>
 </details>
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p></p>
+		<p>論文中の Theorem 1 に対応する結果であるが，Theorem 1 では $P_{n_0}(\tilde{x})$ が $|\alpha_{\tilde{x}}|^2 a_{\tilde{x}}/p$ に近づくことしか述べていない．ここでは，その様子をより詳細に評価した．</p>
  	</div>
 </details>
 </div>
