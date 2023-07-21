@@ -35,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/7/19"
+	const updated = "2023/7/21"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["", "Introduction",
 				"Best Arm Identification",
@@ -445,13 +445,13 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		R_\varPsi \ket{\varPsi_1} &= 2\ket{\varPsi}\braket{\varPsi|\varPsi_1} -\ket{\varPsi_1}\\
 			&= 2\sin\theta \ket{\varPsi} -\ket{\varPsi_1}\\
 			&= 2\sin^2\theta\ket{\varPsi_1} +2\sin\theta \cos\theta \ket{\varPsi_0} -\ket{\varPsi_1}\\
-			&= -(1-\sin^2\theta)\ket{\varPsi_1} +2\sin\theta \cos\theta \ket{\varPsi_0} \\
+			&= -(1-2\sin^2\theta)\ket{\varPsi_1} +2\sin\theta \cos\theta \ket{\varPsi_0} \\
 			&= -\cos 2\theta \ket{\varPsi_1} + \sin 2\theta \ket{\varPsi_0},\Rule{0px}{0px}{20px}\\
 
 		R_\varPsi \ket{\varPsi_0} &= 2\ket{\varPsi}\braket{\varPsi|\varPsi_0} -\ket{\varPsi_0}\\
 			&= 2\cos\theta \ket{\varPsi} -\ket{\varPsi_0}\\
 			&= 2\cos\theta \sin\theta\ket{\varPsi_1} +2 \cos^2\theta \ket{\varPsi_0} -\ket{\varPsi_0}\\
-			&= 2\sin\theta \cos\theta \ket{\varPsi_1} +(\cos^2\theta -1) \ket{\varPsi_0} \\
+			&= 2\sin\theta \cos\theta \ket{\varPsi_1} +(2\cos^2\theta -1) \ket{\varPsi_0} \\
 			&= \sin 2\theta \ket{\varPsi_1} + \cos 2\theta \ket{\varPsi_0}.
 		\end{align}</p>
 	<p>故に，</p>
@@ -701,11 +701,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= \sum_{y\in Y_1^{x}}s^2\fraction{|\alpha_x|^2\nu_x(y)}{p} + \sum_{y\in Y_0^{x}}c^2\fraction{|\alpha_x|^2\nu_x(y)}{1-p}\\
 			&= |\alpha_x|^2\left( \fraction{s^2}{p}\sum_{y\in Y_1^{x}}\nu_x(y) + \fraction{c^2}{1-p}\sum_{y\in Y_0^{x}}	\nu_x(y)\right) \\
 			&= |\alpha_x|^2\left( \fraction{s^2}{p}a_x + \fraction{c^2}{1-p}(1-a_x)\right) \\
-			&= \fraction{|\alpha_x|^2}{p(1-p)}(s^2a_x(1-p) + c^2(1-a_x)p)\\
-			&= \fraction{|\alpha_x|^2}{p(1-p)}(s^2a_x + (1-s^2)p -a_x p)\\
-			&= \fraction{|\alpha_x|^2}{p(1-p)}(a_xs^2+ p c^2 -a_x p)\\
-			&= \fraction{|\alpha_x|^2}{p(1-p)}(a_xs^2+ p - ps^2 -a_x p)\\
-			&= \fraction{|\alpha_x|^2}{p(1-p)}(p -p^2 +a_xs^2- ps^2 -a_x p + p^2)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(a_x(1-p)s^2 + (1-a_x)pc^2)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(a_xs^2 + p(1-s^2) -a_x p)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(p + a_xs^2 -ps^2 -a_xp)\\
+			&= \fraction{|\alpha_x|^2}{p(1-p)}(p a_x(s^2-p) -p(s^2-p) - p^2)\\
 			&= \fraction{|\alpha_x|^2}{p(1-p)}(p(1-p) +(a_x- p)(s^2 -p))\\
 			&= |\alpha_x|^2\left(1 +\fraction{(a_x- p)(s^2 -p)}{p(1-p)}\right).
 		\end{align}</p>
