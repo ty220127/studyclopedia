@@ -20,12 +20,16 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
+		eu: '\\mathrm{e}',
+		iu: '\\mathrm{i}',
 		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		twovec: ['\\left[\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right]', 2],
 		threebythree: ['\\left[\\begin{array}{ccc} #1 & #2 & #3\\\\ #4 & #5 & #6\\\\ #7 & #8 & #9\\end{array}\\right]', 9],
+		threevec: ['\\left[\\begin{array}{c} #1 \\\\ #2 \\\\ #3 \\end{array}\\right]', 3],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 		ket: ['|{#1}\\rangle', 1],
 		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
@@ -34,7 +38,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/20"
+	const updated = "2023/7/22"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -324,19 +328,19 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Cc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>$\widehat{C} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1$ とする．このとき，$C_1= C_1^{\text{flip}} = -C_0$，$C_1 = C_1^{\text{SKW}}= I_d$ 何れの場合も以下が成り立つ：</p>
+	<p>$T = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1$ とする．このとき，$C_1= C_1^{\text{flip}} = -C_0$，$C_1 = C_1^{\text{SKW}}= I_d$ 何れの場合も以下が成り立つ：</p>
 	<p>\begin{align}
-		&\widehat{C}\ket{ab} = -\ket{ab},\\
-		&\widehat{C}\ket{ba} =  -\cos\theta\ket{ba} +\sin\theta\ket{bb},\\
-		&\widehat{C}\ket{bb} = \sin\theta\ket{ba} + \cos\theta\ket{bb}.
+		&T\ket{ab} = -\ket{ab},\\
+		&T\ket{ba} =  -\cos\theta\ket{ba} +\sin\theta\ket{bb},\\
+		&T\ket{bb} = \sin\theta\ket{ba} + \cos\theta\ket{bb}.
 		\end{align}</p>
 	<p>ただし，$\theta$ は</p>
 	<p>\begin{align}
 		\cos\theta = \fraction{N-3}{N-1},\quad \sin\theta = \fraction{2\sqrt{N-2}}{N-1}
 		\end{align}</p>
-	<p>を満たす．また，線形写像 $f_{\widehat{C}}:\spn \mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto \widehat{C}\ket{\psi}$ の表現行列 $\widetilde{C}$ は</p>
+	<p>を満たす．また，線形写像 $f_{T}:\spn \mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto T\ket{\psi}$ の表現行列 $\widetilde{T}$ は</p>
 	<p>\begin{align}
-		\widetilde{C} = \threebythree{-1}{0}{0}{0}{-\cos\theta}{\sin\theta}{0}{\sin\theta}{\cos\theta}.
+		\widetilde{T} = \threebythree{-1}{0}{0}{0}{-\cos\theta}{\sin\theta}{0}{\sin\theta}{\cos\theta}.
 		\end{align}</p>
 </div>
 <details class="dtl">
@@ -344,19 +348,19 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<div id="tx">
 		<p>$C_1= C_1^{\text{flip}} = -C_0$ とすると，</p>
 		<p>\begin{align}
-			\widehat{C} = \widehat{C}^{\text{flip}}&= (I_n-\ketbra{1}{1})\otimes C_0 -\ketbra{1}{1}\otimes C_0\\
+			T = T^{\text{flip}}&= (I_n-\ketbra{1}{1})\otimes C_0 -\ketbra{1}{1}\otimes C_0\\
 			&= (I_n -2\ketbra{1}{1})\otimes C_0
 			\end{align}</p>
 		<p>が成り立つ．このとき</p>
 		<p>\begin{align}
-			&\widehat{C}^{\text{flip}}\ket{ab}\\
+			&T^{\text{flip}}\ket{ab}\\
 				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes C_0 \right\}\ket{ab}\\
 				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\left( \ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}(2\braket{s_c|e}\ket{s_c} -\ket{e})\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\left( \fraction{2}{N-1}\sum_{f=1}^{N-1}\ket{f}-\ket{e}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\left( 2\sum_{f=1}^{N-1}\ket{f} -\sum_{e=1}^{N-1}\ket{e}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e} = -\ket{ab},\Rule{0pt}{0pt}{20pt}\\
-			&\widehat{C}^{\text{flip}}\ket{ba}\\
+			&T^{\text{flip}}\ket{ba}\\
 				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\\
 				& \hspace{50mm}\cdot\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
 				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{ \ket{b}\otimes (2\braket{s_c|N-b+1}\ket{s_c} -\ket{N-b+1})\right\}\\
@@ -366,7 +370,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 				&= \fraction{2\sqrt{N-2}}{N-1}\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \fraction{1}{\sqrt{N-2}}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
 				&\hspace{50mm} -\fraction{N-3}{N-1}\left(\fraction{1}{\sqrt{N-1}}\ket{b}\otimes \ket{N+1-b}\right)\\
 				&=\sin\theta \ket{bb} -\cos\theta\ket{ba},\Rule{0pt}{0pt}{20pt}\\
-			&\widehat{C}^{\text{flip}}\ket{bb}\\
+			&T^{\text{flip}}\ket{bb}\\
 				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\\
 				& \hspace{30mm}\cdot\left(\fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
 				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}(2\ketbra{s_c}{s_c}-I_d)\ket{e}\\
@@ -378,7 +382,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			\end{align}</p>
 		<p>以上の結果をまとめると，</p>
 		<p>\begin{align}
-			&[\widehat{C}\ket{ab}\ \widehat{C}\ket{ba}\ \widehat{C}\ket{bb}]\\
+			&[T\ket{ab}\ T\ket{ba}\ T\ket{bb}]\\
 			&= [-\ket{ab}\ -\cos\theta\ket{ba}+\sin\theta\ket{bb}\ \sin\theta\ket{ba}+\cos\theta\ket{bb}]\\
 			&= [\ket{ab}\ \ket{ba}\ \ket{bb}] \threebythree{-1}{0}{0}{0}{-\cos\theta}{\sin\theta}{0}{\sin\theta}{\cos\theta}\Rule{0pt}{25pt}{0pt}.
 			\end{align}</p>
@@ -397,13 +401,51 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Uc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p></p>
+	<p>量子ウォーク探索の作用素 $U$ に関し，線形写像 $f_U: \spn\mathcal{A}\to \mathcal{A};\ \ket{\psi}\mapsto U\ket{\psi}$ の表現行列 $\widetilde{U}$ は</p>
+	<p>\begin{align}
+		\widetilde{U} = \threebythree{0}{-\cos\theta}{\sin\theta}{-1}{0}{0}{0}{\sin\theta}{\cos\theta}
+		\end{align}</p>
+	<p>であり，$\widetilde{U}$ の固有値と固有ベクトルは
+	<p>\begin{align}
+		&E_+ = \eu^{\iu \phi},\quad \ket{\psi_+} = \sqrt{\fraction{1}{3+\cos\theta}}\threevec{-\eu^{-\iu \phi/2}}{\eu^{\iu\phi/2}}{\sqrt{1+\cos\theta}};\Rule{0px}{0px}{40px}\\
+		&E_- = \eu^{-\iu \phi},\quad \ket{\psi_-} = \sqrt{\fraction{1}{3+\cos\theta}}\threevec{-\eu^{\iu \phi/2}}{\eu^{-\iu\phi/2}}{\sqrt{1+\cos\theta}};\Rule{0px}{0px}{40px}\\
+		&E_{-1} = -1,\quad \ket{\psi_+} = \sqrt{\fraction{1}{3+\cos\theta}}\threevec{-\sqrt{1+\cos\theta}}{-\sqrt{1+\cos\theta}}{\sqrt{1-\cos\theta}}
+		\end{align}</p>
+	<p>である．ただし，$\phi$ は以下で定義される：</p>
+	<p>\begin{align}
+		&\cos\phi = \fraction{1+\cos\theta}{2},\quad \sin\phi = \fraction{\sqrt{(1- \cos\theta)(3+ \cos\theta)}}{2}. %;\\
+		%&\cos\xi = \fraction{\sqrt{1-\cos\theta}}{2},\quad \sin\xi = \fraction{\sqrt{3+\cos\theta}}{2}. 
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
- 	</div>
+		<p>$U = ST$ であることから，$f_U$ の表現行列 $\widetilde{U}$ は</p>
+		<p>\begin{align}
+			\widetilde{U} &= \widetilde{S}\cdot \widetilde{T}\\
+				&= \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1} \threebythree{-1}{0}{0}{0}{-\cos\theta}{\sin\theta}{0}{\sin\theta}{\cos\theta}\\
+				&= \threebythree{0}{-\cos\theta}{\sin\theta}{-1}{0}{0}{0}{\sin\theta}{\cos\theta}
+			\end{align}</p>
+		<p>と計算される．</p>
+		<p>ここで $\widetilde{U}$ の固有値を $E$ とすると，</p>
+		<p>\begin{align}
+			\det\threebythree{-E}{-\cos\theta}{\sin\theta}{-1}{-E}{0}{0}{\sin\theta}{\cos\theta-E} = 0
+			\end{align}</p>
+		<p>が成り立つ．この式の左辺は</p>
+ 		<p>\begin{align}
+			&\det\threebythree{-E}{-\cos\theta}{\sin\theta}{-1}{-E}{0}{0}{\sin\theta}{\cos\theta-E}\Rule{0px}{0px}{40px}\\
+			&= (E^2-cos\theta)(\cos\theta -E) -\sin^2\theta\\
+			&= -E^3 +E^2 \cos\theta +E \cos\theta \mathrel{\underset{\quad\quad\quad\quad\quad =-1}{\underline{-\cos^2\theta -\sin^2\theta}}}\\
+			&= -(E^3 -E^2 \cos\theta -E \cos\theta +1)\\
+			&= -(E-1)(E^2 -(1+\cos\theta)E +1)\\
+			&= -(E-1)(E^2 -2E\cos\phi +1)\\
+			&= -(E-1)\left\{E -\left(\cos\phi +\sqrt{\cos^2\phi -1}\right)\right\}\\
+			&	\hspace{50mm}\left\{E -\left(\cos\phi -\sqrt{\cos^2\phi -1}\right)\right\}\\
+			&= -(E-1)\{E- (\cos\phi +\iu \sin\phi)\}\{E- (\cos\phi -\iu \sin\phi)\}\\
+			&= -(E-1)(E -\eu^{\iu \phi})(E -\eu^{-\iu \phi})
+			\end{align}</p>
+		<p>と因数分解される．よって，$\widetilde{U}$ の固有値は $\eu^{\pm \iu\phi},\ -1$ である．</p>
+	</div>
 </details>
 <details class="dtl">
 	<summary>補足</summary>
