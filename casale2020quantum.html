@@ -35,7 +35,7 @@
 </script>
 <script>
 	const established = "2023/4/15"
-	const updated = "2023/7/21"
+	const updated = "2023/7/22"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["", "Introduction",
 				"Best Arm Identification",
@@ -497,25 +497,48 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p><script>nr(N,aOf6)</script>，<script>nr(N,aro6)</script> における考察により，</p>
+		<p><script>nr(N,aOf6)</script>，<script>nr(N,aro6)</script> における考察により，$\mathcal{S} = \spn\{\ket{\varPsi_1},\ \ket{\varPsi_0}\}$ 上の $Q$ による線形変換の表現行列 $\widetilde{Q}$ は</p>
 		<p>\begin{align}
-			Q = R_\varPsi O_f &\simeq \twobytwo{-\cos 2\theta}{\sin 2\theta}{\sin 2\theta}{\cos 2\theta} \twobytwo{-1}{0}{0}{1}\\
-					&= \twobytwo{\cos 2\theta}{\sin 2\theta}{-\sin 2\theta}{\cos 2\theta}.
+			\widetilde{Q} = \widetilde{R_\varPsi} \widetilde{O_f} &= \twobytwo{-\cos 2\theta}{\sin 2\theta}{\sin 2\theta}{\cos 2\theta} \twobytwo{-1}{0}{0}{1}\\
+					&= \twobytwo{\cos 2\theta}{\sin 2\theta}{-\sin 2\theta}{\cos 2\theta},
 			\end{align}</p>
-		<p>故に，以下の結果を得ることができる：</p>
+		<p>つまり</p>
 		<p>\begin{align}
-			&\ket{\varPsi_1} \simeq \twovec{-\cos 2\theta}{\sin 2\theta},\ \ket{\varPsi_0} \simeq \twovec{\sin 2\theta}{\cos 2\theta}\\
-			&Q\ket{\varPsi} \simeq \twobytwo{\cos 2\theta}{\sin 2\theta}{-\sin 2\theta}{\cos 2\theta} \twovec{\sin \theta}{\cos \theta}\\
-				&\hspace{10mm} = \twovec{\cos 2\theta \sin \theta + \sin 2\theta \cos \theta}{-\sin 2\theta \sin \theta + \cos 2\theta \cos \theta} = \twovec{\sin 3\theta}{\cos 3\theta}
+			[Q\ket{\varPsi_1}\ \ Q\ket{\varPsi_0}] = [\ket{\varPsi_1}\ \ \ket{\varPsi_0}]\twobytwo{\cos 2\theta}{\sin 2\theta}{-\sin 2\theta}{\cos 2\theta}
 			\end{align}</p>
-		<p>これらの結果はすべて上記命題と対応している．</p>
- 	</div>
+		<p>であるから，</p>
+		<p>\begin{align}
+			Q\ket{\varPsi_1} &= \cos 2\theta \,\ket{\varPsi_1} - \sin 2\theta \,\ket{\varPsi_0},\\
+			Q\ket{\varPsi_0} &= \sin 2\theta \,\ket{\varPsi_1} + \cos 2\theta \,\ket{\varPsi_0}\\
+			\end{align}</p>
+		<p>である．この結果を用いると</p>
+		<p>\begin{align}
+			&Q\ket{\varPsi} = \sin\theta \cdot Q\ket{\varPsi_1} +\cos\theta \cdot Q\ket{\varPsi_0}\\
+			&= \sin\theta (\cos 2\theta \,\ket{\varPsi_1} - \sin 2\theta \,\ket{\varPsi_0}) +\cos\theta (\sin 2\theta \,\ket{\varPsi_1} + \cos 2\theta \,\ket{\varPsi_0})\\
+			&= (\cos 2\theta \sin\theta +\sin 2\theta \cos\theta)\ket{\varPsi_1} +(-\sin 2\theta \sin\theta +\cos 2\theta \cos\theta)\ket{\varPsi_0}\\
+			&= \sin 3\theta \,\ket{\varPsi_0} +\cos 3\theta \,\ket{\varPsi_1}.
+			\end{align}</p>
+		<p>同様に，$\mathcal{S}$ 上の $Q^n$ による線形変換の表現行列は</p>
+		<p>\begin{align}
+			\widetilde{Q}^n = \twobytwo{\cos 2t\theta}{\sin 2t\theta}{-\sin 2t\theta}{\cos 2t\theta}
+			\end{align}</p>
+		<p>であることから</p>
+ 		<p>\begin{align}
+			Q\ket{\varPsi_1} &= \cos 2t\theta \,\ket{\varPsi_1} - \sin 2t\theta \,\ket{\varPsi_0},\\
+			Q\ket{\varPsi_0} &= \sin 2t\theta \,\ket{\varPsi_1} + \cos 2t\theta \,\ket{\varPsi_0}\\
+			\end{align}</p>
+		<p>であり，故に</p>
+		<p>\begin{align}
+			Q^n \ket{\varPsi} = \sin ((2t+1)\theta) \,\ket{\varPsi_0} +\cos ((2t+1)\theta) \,\ket{\varPsi_1}
+			\end{align}</p>
+		<p>を得る．これを用いれば，$Q$ を $n$ 回作用させた後に測定を行い $x\in X_1$ を観測する確率は</p>
+		<p>\begin{align}
+			P_n(x) &= |\braket{x|Q^n|\varPsi}|^2\\
+				&= |\sin ((2n+1)\theta) \braket{x|\varPsi_1} + \cos((2n+1)\theta) \underset{\quad\quad =0}{\underline{\braket{x|\varPsi_0}}}|^2\\
+				&= \sin^2 ((2n+1)\theta) \left|\fraction{1}{\sqrt{p}}\sum_{x'\in X_1} \alpha_{x'} \braket{x|x'}\right|^2\\
+				&= \fraction{|\alpha_x|^2}{p}\sin^2 ((2n+1)\theta) 
+			\end{align}</p>
+	</div>
 </details>
 </div>
 <br>
