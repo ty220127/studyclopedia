@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -39,7 +38,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/22"
+	const updated = "2023/7/23"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -97,7 +96,12 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Stc9</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>頂点に対応する Hilbert 空間を $\mathbb{C}^N$，コインに対応する Hilbert 空間を $\mathbb{C}^{N-1}$ とする．つまり，量子ウォークの空間は合成系 $\mathbb{C}^N\otimes \mathbb{C}^{N-1}$ である．このとき，それぞれの空間に対応する一様状態は</p>
+	<p>頂点に対応する Hilbert 空間を位置 $1,\,2,\,\cdots,\,N$ に対応するベクトル群による計算基底 $\{\ket{1},\,\ket{2},\,\cdots,\,\ket{N}\}$ の張る線形空間 $\mathcal{H}_v$，ウォーカーの推移に関する「コイン」に対応する Hilbert 空間を内部状態 $1,\,2,\,\cdots,\, N-1$ に対応するベクトル群による計算基底 $\{\ket{1},\,\ket{2},\,\cdots,\,\ket{N-1}\}$ の張る線形空間 $\mathcal{H}_c$ とする：</p>
+	<p>\begin{align}
+		\mathcal{H}_v &:= \spn\{\ket{i}\,|\,i = 1,\,2,\,\cdots,\,N\} \simeq \mathbb{C}^N,\\
+		\mathcal{H}_c &:= \spn\{\ket{e}\,|\,e = 1,\,2,\,\cdots,\,N-1\} \simeq \mathbb{C}^{N-1}.
+		\end{align}</p>
+	<p>このとき，それぞれの空間に対応する一様状態は</p>
 	<p>\begin{align}
 		\ket{s_v} = \fraction{1}{\sqrt{N}}\sum_{i=1}^{N}\ket{i},\quad \ket{s_c} = \fraction{1}{\sqrt{N-1}} \sum_{e=1}^{N-1}\ket{e}
 		\end{align}</p>
@@ -111,25 +115,24 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\end{align}</p>
 	<p>と表される．ここで $\ket{w}\in \mathbb{C}^N$ はマーク頂点 $w\in [N]:=\{1,\,2,\,\cdots,\,N\}$ により添え字づけられたベクトルである．また $S$ はフリップフロップシフト作用素</p>
 	<p>\begin{align}
-		S(\ket{i}\otimes \ket{i\to j}) = \ket{j}\otimes \ket{j\to i}\quad (i,\ j\in [N])
-		\end{align}</p>
-	<p>である．以下，本サイトにおいては<p>
-	<p>\begin{align}
-		w = 1,\quad \ket{i\to j} = \ket{(j-i) \modulo N}
-		\end{align}</p>
-	<p>とする（このように設定しても一般性を失わない）．更に $C_0$ は Grover 拡散コイン</p>
+			S = \sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N},
+			\end{align}</p>
+	<p>$C_0$ は Grover 拡散コイン</p>
 	<p>\begin{align}
 		C_0 = 2\ketbra{s_c}{s_c} -I_d
 		\end{align}</p>
-	<p>であり，$C_1$ はマーク頂点に対して導入されるコインである．</p>
+	<p>であり，$C_1$ はマーク頂点に対してコインとして導入されるあるユニタリ行列とする．なお，本サイトでは $w=1$ とする（このように設定しても一般性を失わない）．</p>
 </div>
 <details class="dtl">
-	<summary>補足</summary>
+	<summary>補足１</summary>
 	<div id="tx">
-		<p>上の取り決めより，$S$ は以下のように記述することができる：</p>
-		<p>\begin{align}
-			S = \sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}.
-			\end{align}</p>
+		<p>論文では Hilbert 空間を $\mathbb{C}^N,\ \mathbb{C}^{N-1}$ としているが，必ずしもそのように設定する必要はなく，また $\mathbb{C}^{N},\ \mathbb{C}^{N-1}$ とおくことに依る処理もないので，本サイトでは一般の Hilbert 空間として設定した．</p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足２</summary>
+	<div id="tx">
+		<p>論文ではある頂点 $i$ から $j$ への推移に対応するベクトルを $\ket{i\to j}$ とおいているが，これが具体的に $\mathcal{H}_c$ のどのようなベクトルなのかが述べられていない．この設定には様々な方法があるが，本サイトでは処理のしやすさを考慮し $\ket{i\to j} = \ket{(j-i)\modulo N}$ と設定した．</p>
  	</div>
 </details>
 </div>
@@ -478,20 +481,34 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Stl9</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p></p>
+	<p>頂点に対応する Hilbert 空間を位置 $1,\,2,\,\cdots,\,N$ に対応するベクトル群による計算基底 $\{\ket{1},\,\ket{2},\,\cdots,\,\ket{N}\}$ の張る線形空間 $\mathcal{H}_v$，各頂点における $\ell$ 個の自己閉路と $(N-1)$ 種類の推移に関する「コイン」に対応する Hilbert 空間を内部状態 $0_1,\,\cdots,\,0_\ell,\,1,\,\cdots,\, N-1$ に対応するベクトル群による計算基底 $\{\ket{0_1},\,\cdots,\,\ket{0_\ell},\,\ket{1},\,\cdots,\,\ket{N-1}\}$ の張る線形空間 $\mathcal{H}_c$ とする：</p>
+	<p>\begin{align}
+		\mathcal{H}_v &:= \spn\{\ket{i}\,|\,i = 1,\,2,\,\cdots,\,N\} \simeq \mathbb{C}^N,\\
+		\mathcal{H}_c &:= \spn\{\ket{e}\,|\,e = 0_1,\,\cdots,\,0_\ell,\,1,\,\cdots,\,N-1\} \simeq \mathbb{C}^{N+\ell -1}.
+		\end{align}</p>
+	<p>このとき，それぞれの空間に対応する一様状態は</p>
+	<p>\begin{align}
+		\ket{s_v} = \fraction{1}{\sqrt{N}}\sum_{i=1}^{N}\ket{i},\quad \ket{s_c} = \fraction{1}{\sqrt{N+\ell -1}} \left(\sum_{m=1}^{\ell}\ket{0_m} +\sum_{e=1}^{N-1}\ket{e}\right)
+		\end{align}</p>
+	<p>となり，これらを用いて初期状態を</p>
+	<p>\begin{align}
+		\ket{\psi_0} = \ket{s_v}\otimes \ket{s_c}
+		\end{align}</p>
+	<p>と定める．量子ウォーク探索の作用素 $U$ は</p>
+	<p>\begin{align}
+		U = S\cdot \{(I_n -\ketbra{w}{w})\otimes C_0 + \ketbra{w}{w}\otimes C_1\} 
+		\end{align}</p>
+	<p>と表される．ここで $\ket{w}\in \mathbb{C}^N$ はマーク頂点 $w\in [N]:=\{1,\,2,\,\cdots,\,N\}$ により添え字づけられたベクトルである．また $S$ はフリップフロップシフト作用素</p>
+	<p>\begin{align}
+			S =& \sum_{i = 1}^{N}\Biggl(\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\\
+				& \hspace{60mm}\ketbra{i}{i} + \sum_{m=1}^{\ell}\sum_{k=1}^{\ell}\ketbra{0_k}{0_m}\Biggr)
+			\end{align}</p>
+	<p>$C_0$ は Grover 拡散コイン</p>
+	<p>\begin{align}
+		C_0 = 2\ketbra{s_c}{s_c} -I_d
+		\end{align}</p>
+	<p>であり，$C_1$ はマーク頂点に対してコインとして導入されるあるユニタリ行列とする．なお，本サイトでは $w=1$ とする（このように設定しても一般性を失わない）．</p>
 </div>
-<details class="dtl">
-	<summary>証明</summary>
-	<div id="tx">
-		<p></p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p></p>
- 	</div>
-</details>
 </div>
 <br>
 
