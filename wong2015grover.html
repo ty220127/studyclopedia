@@ -501,7 +501,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>と表される．ここで $\ket{w}\in \mathbb{C}^N$ はマーク頂点 $w\in [N]:=\{1,\,2,\,\cdots,\,N\}$ により添え字づけられたベクトルである．また $S$ はフリップフロップシフト作用素</p>
 	<p>\begin{align}
 			S =& \sum_{i = 1}^{N}\Biggl(\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\\
-				& \hspace{65mm}\ketbra{i}{i} \otimes \sum_{m=1}^{\ell}\ketbra{0_m}{0_m}\Biggr)
+				& \hspace{65mm}+\ketbra{i}{i} \otimes \sum_{m=1}^{\ell}\ketbra{0_m}{0_m}\Biggr)
 			\end{align}</p>
 	<p>$C_0$ は Grover 拡散コイン</p>
 	<p>\begin{align}
