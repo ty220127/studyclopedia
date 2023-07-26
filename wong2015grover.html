@@ -38,7 +38,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/23"
+	const updated = "2023/7/26"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -119,7 +119,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			\end{align}</p>
 	<p>$C_0$ は Grover 拡散コイン</p>
 	<p>\begin{align}
-		C_0 = 2\ketbra{s_c}{s_c} -I_d
+		C_0 = 2\ketbra{s_c}{s_c} -I_{N-1}
 		\end{align}</p>
 	<p>であり，$C_1$ はマーク頂点に対してコインとして導入されるあるユニタリ行列とする．なお，本サイトでは $w=1$ とする（このように設定しても一般性を失わない）．</p>
 </div>
@@ -207,14 +207,14 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\braket{ab|ab} &= \fraction{1}{N-1} \braket{1|1} \sum_{e=1}^{N-1}\sum_{f=1}^{N-1} \braket{e|f}\\
 			&= \fraction{1}{N-1} \sum_{e=1}^{N-1} 1 = \fraction{N-1}{N-1} = 1,\Rule{0px}{0px}{30px}\\
 		\braket{ab|ba} &= \fraction{1}{N-1} \sum_{e=1}^{N-1}\sum_{b=2}^{N} \braket{1|b}\cdot \braket{e|N-b+1} = 0,\Rule{0px}{0px}{30px}\\
-		\braket{ab|bb} &= \fraction{1}{(N-1)\sqrt{N-2}} \sum_{b=2}^{N} \braket{1|b} \sum_{e=1}^{N-1}\sum_{\stackrel{f=1}{f\not = N-b+1}}^{N-1} \braket{e|f} = 0,\Rule{0px}{0px}{30px}\\
+		\braket{ab|bb} &= \fraction{1}{(N-1)\sqrt{N-2}} \sum_{b=2}^{N} \braket{1|b} \sum_{e=1}^{N-1}\sum_{\substack{f=1\\ f\not = N-b+1}}^{N-1} \braket{e|f} = 0,\Rule{0px}{0px}{30px}\\
 		\braket{ba|ba} &= \fraction{1}{N-1} \sum_{b=2}^{N} \sum_{c=2}^{N} \braket{b|c} \braket{N-b+1|N-c+1}\\
 			&= \fraction{1}{N-1} \sum_{b=2}^{N} 1\cdot 1 = \fraction{N-1}{N-1} = 1,\Rule{0px}{0px}{30px} \\
-		\braket{ba|bb} &= \fraction{1}{(N-1)\sqrt{N-2}} \sum_{b=2}^{N}\sum_{c=2}^{N} \braket{b|c} \sum_{\stackrel{e=1}{e\not = N-c+1}}^{N-1}\braket{N-b+1|e}\\
-				&= \fraction{1}{(N-1)\sqrt{N-2}} \sum_{b=2}^{N} \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\braket{N-b+1|e} = 0,\Rule{0px}{0px}{30px}\\
-		\braket{bb|bb} &= \fraction{1}{(N-1)(N-2)} \sum_{b=2}^{N}\sum_{c=2}^{N}\braket{b|c} \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\sum_{\stackrel{f=1}{f\not = N-c+1}}^{N-1} \braket{e|f}\\
-			&= \fraction{1}{(N-1)(N-2)} \sum_{b=2}^{N}\sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\sum_{\stackrel{f=1}{f\not = N-b+1}}^{N-1} \braket{e|f}\\	
-			&= \fraction{1}{(N-1)(N-2)} \sum_{b=2}^{N}\sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} 1\\
+		\braket{ba|bb} &= \fraction{1}{(N-1)\sqrt{N-2}} \sum_{b=2}^{N}\sum_{c=2}^{N} \braket{b|c} \sum_{\substack{e=1\\ e\not = N-c+1}}^{N-1}\braket{N-b+1|e}\\
+				&= \fraction{1}{(N-1)\sqrt{N-2}} \sum_{b=2}^{N} \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\braket{N-b+1|e} = 0,\Rule{0px}{0px}{30px}\\
+		\braket{bb|bb} &= \fraction{1}{(N-1)(N-2)} \sum_{b=2}^{N}\sum_{c=2}^{N}\braket{b|c} \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\sum_{\substack{f=1\\ f\not = N-c+1}}^{N-1} \braket{e|f}\\
+			&= \fraction{1}{(N-1)(N-2)} \sum_{b=2}^{N}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\sum_{\substack{f=1\\ f\not = N-b+1}}^{N-1} \braket{e|f}\\	
+			&= \fraction{1}{(N-1)(N-2)} \sum_{b=2}^{N}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} 1\\
 			&= \fraction{(N-1)(N-2)}{(N-1)(N-2)} = 1.
 		\end{align}</p>
  	</div>
@@ -240,9 +240,9 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		&\ket{\psi_0} = \ket{s_v}\otimes \ket{s_c}\\
 			&= \fraction{1}{\sqrt{N(N-1)}} \sum_{i=1}^{N}\ket{i}\otimes \sum_{e=1}^{N-1}\ket{e}\\
 			&= \fraction{1}{\sqrt{N(N-1)}}\Biggl\{ \ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} +\\
-			& \hspace{20mm} \sum_{b=2}^{N} \ket{b} \otimes \Biggl( \ket{N-b+1} + \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} \ket{e}\Biggr)\Biggr\}\\
+			& \hspace{20mm} \sum_{b=2}^{N} \ket{b} \otimes \Biggl( \ket{N-b+1} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \ket{e}\Biggr)\Biggr\}\\
 			&= \fraction{1}{\sqrt{N}}\Biggl( \fraction{1}{\sqrt{N-1}}\ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} + \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\\
-			& \hspace{45mm}  \fraction{\sqrt{N-2}}{\sqrt{(N-1)(N-2)}} \sum_{b=2}^{N}\ket{b}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} \ket{e} \Biggr)\\
+			& \hspace{45mm}  \fraction{\sqrt{N-2}}{\sqrt{(N-1)(N-2)}} \sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \ket{e} \Biggr)\\
 			&= \fraction{1}{\sqrt{N}}\left( \ket{ab} +\ket{ba} + \sqrt{N-2}\ket{bb}\right).
 		\end{align}</p>
  	</div>
@@ -267,34 +267,34 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<summary>証明</summary>
 	<div id="tx">
 	<p>\begin{align}
-		S\ket{ab} &= \left(\sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
+		S\ket{ab} &= \left(\sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
 			&\hspace{50mm}\cdot \left( \ket{1}\otimes \fraction{1}{\sqrt{N-1}} \sum_{e=1}^{N-1} \ket{e}\right)	\\
 			&= \fraction{1}{\sqrt{N-1}}\sum_{j=2}^{N}\ket{j}\otimes \ketbra{N-j+1}{j-1}\sum_{e=1}^{N-1}\ket{e}\\
 			&= \fraction{1}{\sqrt{N-1}}\sum_{j=2}^{N}\ket{j}\otimes \ket{N-j+1} = \ket{ba}. \Rule{0px}{0px}{40px}\\
-		S\ket{ba} &= \left(\sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
+		S\ket{ba} &= \left(\sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
 			&\hspace{35mm}\cdot \left( \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
-			&= \fraction{1}{\sqrt{N-1}}\sum_{i=2}^{N}\sum_{\stackrel{j=1}{j\not =1}}^{N}\bigl(\ket{j}\\
+			&= \fraction{1}{\sqrt{N-1}}\sum_{i=2}^{N}\sum_{\substack{j=1\\ j\not =1}}^{N}\bigl(\ket{j}\\
 			&\hspace{18mm}\otimes \braket{(j-i)\modulo N|N-i+1}\ket{(i-j)\modulo N}\bigr)\\
 			&= \fraction{1}{\sqrt{N-1}} \sum_{i=2}^{N}\ket{1}\otimes \ket{i-1}\\
 			&= \fraction{1}{\sqrt{N-1}}\ket{1}\otimes \sum_{i=2}^{N}\ket{i-1}\\
 			&= \fraction{1}{\sqrt{N-1}}\ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} = \ket{ab}.  \Rule{0px}{0px}{40px}\\
-		S\ket{bb} &= \left(\sum_{i = 1}^{N}\sum_{\stackrel{j=1}{j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
+		S\ket{bb} &= \left(\sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\right)\\
 			& \hspace{15mm}\cdot\left(\fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e= 1\\ e \not = N-b+1}}^{N-1}\ket{e}\right)\\
-			&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\sum_{\stackrel{j=1}{j\not =b}}^{N}\bigl(\ket{j}\\
-			&\hspace{17mm}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1} \braket{(j-b)\modulo N|e}\ket{(b-j)\modulo N}\bigr).
+			&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\sum_{\substack{j=1\\ j\not =b}}^{N}\bigl(\ket{j}\\
+			&\hspace{17mm}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \braket{(j-b)\modulo N|e}\ket{(b-j)\modulo N}\bigr).
 		\end{align}</p>
 		<p>ここで，$j=1$ の項において</p>
 		<p>\begin{align}
-			\ket{1} \otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\braket{N-b+1|e}\ket{b-1} = 0.
+			\ket{1} \otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\braket{N-b+1|e}\ket{b-1} = 0.
 			\end{align}</p>
 		<p>次に，$j = 2,\ \cdots,\ b-1$ に対して，$N-b+j = N-b+2,\ \cdots,\ N-1$ であり，各 $j$ に対し $\braket{N-b+j|e} = 1$ なる $e$ が一つずつ存在するから</p>
 		<p>\begin{align}
-			&\ket{j}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\braket{N-b+j|e}\ket{b-j}\\
+			&\ket{j}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\braket{N-b+j|e}\ket{b-j}\\
 			&=\ket{j}\otimes \ket{b-j}.
 			\end{align}</p>
 		<p>そして $j = b+1,\ \cdots,\ N$ に対して，$j-b = 1,\ \cdots,\ N-b$ であり，各 $j$ に対し $\braket{j-b|e} = 1$ なる $e$ が一つずつ存在するから</p>
 		<p>\begin{align}
-			&\ket{j}\otimes \sum_{\stackrel{e=1}{e\not = N-b+1}}^{N-1}\braket{j-b|e}\ket{N+b-j}\\
+			&\ket{j}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\braket{j-b|e}\ket{N+b-j}\\
 			&=\ket{j}\otimes \ket{N+b-j}.
 			\end{align}</p>
 		<p>以上の結果を $S\ket{bb}$ の変形式に代入すると</p>
@@ -332,7 +332,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Cc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>$T = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1$ とする．このとき，$C_1= C_1^{\text{flip}} = -C_0$，$C_1 = C_1^{\text{SKW}}= I_d$ 何れの場合も以下が成り立つ：</p>
+	<p>$T = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1$ とする．このとき，$C_1= C_1^{\text{flip}} = -C_0$，$C_1 = C_1^{\text{SKW}}= -I_{N-1}$ 何れの場合も以下が成り立つ：</p>
 	<p>\begin{align}
 		&T\ket{ab} = -\ket{ab},\\
 		&T\ket{ba} =  -\cos\theta\ket{ba} +\sin\theta\ket{bb},\\
@@ -359,13 +359,13 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		<p>\begin{align}
 			&T^{\text{flip}}\ket{ab}\\
 				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes C_0 \right\}\ket{ab}\\
-				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\left( \ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e}\right)\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_{N-1}) \right\}\left( \ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}(2\braket{s_c|e}\ket{s_c} -\ket{e})\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\left( \fraction{2}{N-1}\sum_{f=1}^{N-1}\ket{f}-\ket{e}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\left( 2\sum_{f=1}^{N-1}\ket{f} -\sum_{e=1}^{N-1}\ket{e}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e} = -\ket{ab},\Rule{0pt}{0pt}{20pt}\\
 			&T^{\text{flip}}\ket{ba}\\
-				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_{N-1}) \right\}\\
 				& \hspace{50mm}\cdot\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
 				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{ \ket{b}\otimes (2\braket{s_c|N-b+1}\ket{s_c} -\ket{N-b+1})\right\}\\
 				&=\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\left\{\ket{b}\otimes\left( \fraction{2}{N-1}\sum_{e=1}^{N-1}\ket{e} -\ket{N-b+1}\right)\right\}\\
@@ -373,18 +373,40 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 				& \hspace{70mm} -\ket{b}\otimes \fraction{N-3}{N-1}\ket{N-b+1}\Biggr\}\\
 				&= \fraction{2\sqrt{N-2}}{N-1}\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \fraction{1}{\sqrt{N-2}}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
 				&\hspace{50mm} -\fraction{N-3}{N-1}\left(\fraction{1}{\sqrt{N-1}}\ket{b}\otimes \ket{N+1-b}\right)\\
-				&=\sin\theta \ket{bb} -\cos\theta\ket{ba},\Rule{0pt}{0pt}{20pt}\\
+				&= \fraction{2\sqrt{N-2}}{N-1}\ket{bb} -\fraction{N-3}{N-1}\ket{ba} = -\cos\theta \ket{ba} + \sin\theta \ket{bb},\Rule{0pt}{0pt}{20pt}\\
 			&T^{\text{flip}}\ket{bb}\\
-				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_d) \right\}\\
+				&= \left\{\left(I_n -2\ketbra{1}{1}\right)\otimes (2\ketbra{s_c}{s_c}-I_{N-1}) \right\}\\
 				& \hspace{30mm}\cdot\left(\fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
-				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}(2\ketbra{s_c}{s_c}-I_d)\ket{e}\\
+				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}(2\ketbra{s_c}{s_c}-I_{N-1})\ket{e}\\
 				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\left( \fraction{2}{N-1}\sum_{f=1}^{N-1}\ket{f} -\ket{e}\right)\\
 				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \left( \fraction{2(N-2)}{N-1}\sum_{f=1}^{N-1}\ket{f} -\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
 				&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\\
 				&\hspace{30mm} \otimes \left(\fraction{2(N-2)}{N-1}\ket{N-b+1}+ \fraction{N-3}{N-1}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \ket{e}\right)\\
 				&= \fraction{2\sqrt{N-2}}{N-1}\ket{ba} + \fraction{N-3}{N-1}\ket{bb} = \sin\theta\ket{ba} + \cos\theta\ket{bb}.
 			\end{align}</p>
-		<p>以上の結果をまとめると，</p>
+		<p>次に，$C_1 = C_1^{\text{SKW}} = -I_{N-1}$ とすると，</p>
+		<p>\begin{align}
+			T = T^{\text{SKW}} = (I_n -\ketbra{1}{1})\otimes C_0 -\ketbra{1}{1}\otimes I_{N-1}
+			\end{align}</p>
+		<p>となる．このとき</p>
+		<p>\begin{align}
+			&T^{\text{SKW}}\ket{ab}\\
+			&= ( (I_n -\ketbra{1}{1})\otimes C_0 -\ketbra{1}{1}\otimes I_{N-1}) \left(\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e}\right)\\
+			&= -\ket{1}\otimes \fraction{1}{\sqrt{N-1}}\sum_{e=1}^{N-1}\ket{e} = -\ket{ab},\Rule{0pt}{0pt}{20pt}\\
+			&T^{\text{SKW}}\ket{ba}\\
+			&= ( (I_n -\ketbra{1}{1})\otimes C_0 -\ketbra{1}{1}\otimes I_{N-1}) \\
+			& \hspace{50mm}\cdot\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\right)\\
+			&= \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes (2\braket{s_c|N-b+1}\ket{s_c} -\ket{N-b+1})\\
+			&= \fraction{2\sqrt{N-2}}{N-1}\left(\fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \fraction{1}{\sqrt{N-2}}\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+			&\hspace{50mm} -\fraction{N-3}{N-1}\left(\fraction{1}{\sqrt{N-1}}\ket{b}\otimes \ket{N+1-b}\right)\\
+			&= \fraction{2\sqrt{N-2}}{N-1}\ket{bb} -\fraction{N-3}{N-1}\ket{ba} = -\cos\theta \ket{ba} + \sin\theta \ket{bb}\Rule{0pt}{0pt}{20pt}\\
+			&T^{\text{SKW}}\ket{bb}\\
+			&= ( (I_n -\ketbra{1}{1})\otimes C_0 -\ketbra{1}{1}\otimes I_{N-1}) \\
+			& \hspace{30mm}\cdot\left(\fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+			&= \fraction{1}{\sqrt{(N-1)(N-2)}}\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}(2\ketbra{s_c}{s_c}-I_{N-1})\ket{e}\\
+			&= \fraction{2\sqrt{N-2}}{N-1}\ket{ba} + \fraction{N-3}{N-1}\ket{bb} = \sin\theta\ket{ba} + \cos\theta \ket{bb}.
+			\end{align}</p>
+		<p>つまり，本ケースにおいて，$T^{\text{flip}}$ と $T^{\text{SKW}}$ は等価であることがわかる．$T$ をこれら２つのうちいずれかであるとして計算結果をまとめると，</p>
 		<p>\begin{align}
 			&[T\ket{ab}\ T\ket{ba}\ T\ket{bb}]\\
 			&= [-\ket{ab}\ -\cos\theta\ket{ba}+\sin\theta\ket{bb}\ \sin\theta\ket{ba}+\cos\theta\ket{bb}]\\
@@ -405,7 +427,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Uc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>量子ウォーク探索の作用素 $U$ に関し，線形写像 $f_U: \spn\mathcal{A}\to \mathcal{A};\ \ket{\psi}\mapsto U\ket{\psi}$ の表現行列 $\widetilde{U}$ は</p>
+	<p>量子ウォーク探索の作用素 $U$ に関し，線形写像 $f_U: \spn\mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto U\ket{\psi}$ の表現行列 $\widetilde{U}$ は</p>
 	<p>\begin{align}
 		\widetilde{U} = \threebythree{0}{-\cos\theta}{\sin\theta}{-1}{0}{0}{0}{\sin\theta}{\cos\theta}
 		\end{align}</p>
@@ -505,7 +527,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			\end{align}</p>
 	<p>$C_0$ は Grover 拡散コイン</p>
 	<p>\begin{align}
-		C_0 = 2\ketbra{s_c}{s_c} -I_d
+		C_0 = 2\ketbra{s_c}{s_c} -I_{N-1}
 		\end{align}</p>
 	<p>であり，$C_1$ はマーク頂点に対してコインとして導入されるあるユニタリ行列とする．なお，本サイトでは $w=1$ とする（このように設定しても一般性を失わない）．</p>
 </div>
