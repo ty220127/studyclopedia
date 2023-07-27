@@ -141,35 +141,6 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = qwc9</script>
-<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
-<div id="tx">
-	<p>$U_0 = S\cdot (I_N\otimes C_0)$ として，</p>
-	<p>\begin{align}
-		U_0\ket{\psi_0} = \ket{\psi_0}
-		\end{align}</p>
-	<p>が成り立つ．</p>
-</div>
-<details class="dtl">
-	<summary>証明</summary>
-	<div id="tx">
-	<p></p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p>$S$ は，$\mathcal{H} = \spn\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ 上で</p>
-		<p>\begin{align}
-			S \simeq \threebythree{0}{1}{0}{1}{0}{0}{0}{0}{1}.
-			\end{align}</p>
- 	</div>
-</details>
-</div>
-<br>
-<!-- end of a box -->
-
-<!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = flc9</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
@@ -323,6 +294,44 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<summary>補足</summary>
 	<div id="tx">
 		<p>真面目に計算して示すと上記証明のようにやや煩雑になるが，直感的にはほぼ明らかな事実である．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = qwc9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$U_0 = S\cdot (I_N\otimes C_0)$ として，</p>
+	<p>\begin{align}
+		U_0\ket{\psi_0} = \ket{\psi_0}
+		\end{align}</p>
+	<p>が成り立つ．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>まず，$(I_N\otimes C_0) \ket{\psi_0}$ を計算すると</p>
+	<p>\begin{align}
+		(I_N\otimes C_0) \ket{\psi_0} &= (I_N\otimes C_0) (\ket{s_v}\otimes \ket{s_c})\\
+			&= \ket{s_v} \otimes (2\ketbra{s_c}{s_c} -I_{N-1})\ket{s_c}\\
+			&= \ket{s_v} \otimes (2\ket{s_c} -\ket{s_c})\\
+			&= \ket{s_v} \otimes \ket{s_c} = \ket{\psi_0}.
+		\end{align}</p>
+	<p>次に，$S\ket{\psi_0}$ を計算する．$\ket{\psi_0}$ を <script>nr(N,Fic9)</script> のように書き換えれば，$\spn\{\ket{ab},\,\ket{ba},\,\ket{bb}\}$ における $S$ の作用 <script>nr(N,Sc9)</script> より</p>
+	<p>\begin{align}
+		S\ket{\psi_0} &= S \cdot \fraction{1}{\sqrt{N}} (\ket{ab} + \ket{ba} + \sqrt{N-2}\ket{bb} )\\
+			&= \fraction{1}{\sqrt{N}} (S\ket{ab} + S\ket{ba} +\sqrt{N-2} S\ket{bb} )\\
+			&= \fraction{1}{\sqrt{N}} (\ket{ba} + \ket{ab} + \sqrt{N-2}\ket{bb} )\\
+			&= \ket{\psi_0}.
+		\end{align}</p>
+	<p>以上をまとめると，</p>
+	<p>\begin{align}
+		U_0\ket{\psi_0} &= S (I_N\otimes C_0)\ket{\psi_0}\\
+			&= S\ket{\psi_0} = \ket{\psi_0}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
