@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -587,17 +588,19 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>\begin{align}
 		\braket{aa|aa} &= \fraction{1}{\ell} \braket{1|1} \cdot \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} =1,\\
 		\braket{ab|ab} &= \fraction{1}{N-1} \braket{1|1} \cdot \underset{\hspace{10mm}= N-1}{\underline{\sum_{e=1}^{N-1} \braket{e|e}}} =1,\\
-		\braket{ba|ba} &= \fraction{1}{N-1} \underset{\hspace{55mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b} \cdot \braket{N-b+1|N-b+1}}} =1\\
+		\braket{ba|ba} &= \fraction{1}{N-1} \underset{\hspace{55mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b} \cdot \braket{N-b+1|N-b+1}}} =1,\\
 		\braket{bb|bb} &= \fraction{1}{(N-1)(N+\ell-2)} \sum_{b=2}^{N}\braket{b|b} \left( \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} + \underset{\hspace{15mm}= N-2}{\underline{\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \braket{e|e}}}\right)\\
 			&= \fraction{1}{N-1} \underset{\hspace{10mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b}}} =1.
 		\end{align}</p>
-	<p>次に $\alpha \not = \beta$ に対して $\braket{\alpha | \beta} =0$ を示す：</p>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p></p>
- 	</div>
+	<p>次に $\alpha \not = \beta$ に対して $\braket{\alpha | \beta} =0$ を示す．まず，$\sum_{b=2}^{N}\braket{1|b} =0$ であることから</p>
+	<p>\begin{align}
+		\braket{aa|ba} = \braket{aa|bb} = \braket{ab|ba} = \braket{ab|bb} = 0
+		\end{align}</p>
+	<p>がいえる．そして任意の $m = 1,\,\cdots,\,\ell$ と $e = 1,\,\cdots,\, N-1$ に対して $\braket{0_m|e} = 0$ であることから</p>
+	<p>\begin{align}
+		\braket{aa|ab} = \braket{ba|bb} = 0
+		\end{align}</p>
+	<p>を得る．</p>
 </details>
 </div>
 <br>
