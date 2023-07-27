@@ -582,25 +582,16 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
+	<p>$\braket{\alpha|\beta}$ が $0$ ないし $1$ であるならば $\braket{\beta|\alpha}$ も同じ値であるので $\braket{aa|aa}$，$\braket{aa|ab}$，$\braket{aa|ba}$，$\braket{aa|bb}$，$\braket{ab|ab}$，$\braket{ab|ba}$，$\braket{ab|bb}$，$\braket{ba|ba}$，$\braket{ba|bb}$，$\braket{bb|bb}$ の全 10 ケースについて調べれば十分である．</p>
+	<p>まず，任意の $\alpha \in \{aa,\,ab,\,ba,\,bb\}$ に対して $\braket{\alpha|\alpha} = 1$ を確認する：	
 	<p>\begin{align}
-		&\ket{\psi_0} = \ket{s_v}\otimes \ket{s_c}\\
-			&= \fraction{1}{\sqrt{N}}\sum_{i=1}^{N}\ket{i}\otimes \fraction{1}{\sqrt{N+\ell -1}}\left(\sum_{m=1}^{\ell}\ket{0_m} + \sum_{e=1}^{N-1}\ket{e}\right)\\
-			&= \fraction{1}{\sqrt{N(N+\ell -1)}}\Biggl\{ \ket{1}\otimes \sum_{m=1}^{\ell}\ket{0_m} + \ket{1}\otimes \sum_{e=1}^{N-1}\ket{e}\\
-				&\hspace{5mm}+\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1} + \sum_{b=2}^{N}\ket{b}\otimes \Biggl(\sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\Biggr)\Biggr\}.
+		\braket{aa|aa} &= \fraction{1}{\ell} \braket{1|1} \cdot \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} =1,\\
+		\braket{ab|ab} &= \fraction{1}{N-1} \braket{1|1} \cdot \underset{\hspace{10mm}= N-1}{\underline{\sum_{e=1}^{N-1} \braket{e|e}}} =1,\\
+		\braket{ba|ba} &= \fraction{1}{N-1} \underset{\hspace{55mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b} \cdot \braket{N-b+1|N-b+1}}} =1\\
+		\braket{bb|bb} &= \fraction{1}{(N-1)(N+\ell-2)} \sum_{b=2}^{N}\braket{b|b} \left( \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} + \underset{\hspace{15mm}= N-2}{\underline{\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \braket{e|e}}}\right)\\
+			&= \fraction{1}{N-1} \underset{\hspace{10mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b}}} =1.
 		\end{align}</p>
-	<p>ここで <script>nr(N,fll9)</script> より，</p>
-	<p>\begin{align}
-		\ket{1}\otimes \sum_{m=1}^{\ell}\ket{0_m} &= \sqrt{\ell}\ket{aa}\Rule{0px}{0px}{20px},\\
-		\ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} &= \sqrt{N-1}\ket{ab}\Rule{0px}{0px}{20px},\\
-		\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1} &= \sqrt{N-1}\ket{ba}\Rule{0px}{0px}{20px},\\
-		\sum_{b=2}^{N}\ket{b}\otimes \Biggl(\sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\Biggr) &= \sqrt{(N-1)(N+\ell -2)}\ket{bb}
-		\end{align}</p>
-	<p>であるから，</p>
- 	<p>\begin{align}
-		\ket{\psi_0} = &\fraction{1}{\sqrt{N(N+\ell -1)}}\Bigl(\sqrt{\ell}\ket{aa} + \sqrt{N-1}\ket{ab} +\\
-			 & \hspace{35mm}\sqrt{N-1}\ket{ba} + \sqrt{(N-1)(N+\ell -2)}\ket{bb}\Bigr).
-		\end{align}</p>
- 	</div>
+	<p>次に $\alpha \not = \beta$ に対して $\braket{\alpha | \beta} =0$ を示す：</p>
 </details>
 <details class="dtl">
 	<summary>補足</summary>
