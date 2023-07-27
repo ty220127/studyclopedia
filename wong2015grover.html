@@ -38,7 +38,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/26"
+	const updated = "2023/7/27"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -582,7 +582,24 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+	<p>\begin{align}
+		&\ket{\psi_0} = \ket{s_v}\otimes \ket{s_c}\\
+			&= \fraction{1}{\sqrt{N}}\sum_{i=1}^{N}\ket{i}\otimes \fraction{1}{\sqrt{N+\ell -1}}\left(\sum_{m=1}^{\ell}\ket{0_m} + \sum_{e=1}^{N-1}\ket{e}\right)\\
+			&= \fraction{1}{\sqrt{N(N+\ell -1)}}\Biggl\{ \ket{1}\otimes \sum_{m=1}^{\ell}\ket{0_m} + \ket{1}\otimes \sum_{e=1}^{N-1}\ket{e}\\
+				&\hspace{5mm}+\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1} + \sum_{b=2}^{N}\ket{b}\otimes \Biggl(\sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\Biggr)\Biggr\}.
+		\end{align}</p>
+	<p>ここで <script>nr(N,fll9)</script> より，</p>
+	<p>\begin{align}
+		\ket{1}\otimes \sum_{m=1}^{\ell}\ket{0_m} &= \sqrt{\ell}\ket{aa}\Rule{0px}{0px}{20px},\\
+		\ket{1}\otimes \sum_{e=1}^{N-1}\ket{e} &= \sqrt{N-1}\ket{ab}\Rule{0px}{0px}{20px},\\
+		\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1} &= \sqrt{N-1}\ket{ba}\Rule{0px}{0px}{20px},\\
+		\sum_{b=2}^{N}\ket{b}\otimes \Biggl(\sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\Biggr) &= \sqrt{(N-1)(N+\ell -2)}\ket{bb}
+		\end{align}</p>
+	<p>であるから，</p>
+ 	<p>\begin{align}
+		\ket{\psi_0} = &\fraction{1}{\sqrt{N(N+\ell -1)}}\Bigl(\sqrt{\ell}\ket{aa} + \sqrt{N-1}\ket{ab} +\\
+			 & \hspace{35mm}\sqrt{N-1}\ket{ba} + \sqrt{(N-1)(N+\ell -2)}\ket{bb}\Bigr).
+		\end{align}</p>
  	</div>
 </details>
 <details class="dtl">
