@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -39,7 +38,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/27"
+	const updated = "2023/7/31"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -304,11 +303,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = qwc9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>$U_0 = S\cdot (I_N\otimes C_0)$ として，</p>
+	<p>量子ウォークの時間発展作用素を $U = S(I\otimes C_0)$ とすると，初期状態 $\ket{\psi_0}$ は定常状態になる：</p>
 	<p>\begin{align}
-		U_0\ket{\psi_0} = \ket{\psi_0}
+		U_0\ket{\psi_0} = \ket{\psi_0}.
 		\end{align}</p>
-	<p>が成り立つ．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
@@ -545,27 +543,6 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <br>
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = qwl9</script>
-<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
-<div id="tx">
-	<p></p>
-</div>
-<details class="dtl">
-	<summary>証明</summary>
-	<div id="tx">
-		<p></p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p></p>
- 	</div>
-</details>
-</div>
-<br>
-
-<!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = fll9</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
@@ -595,10 +572,11 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>$\braket{\alpha|\beta}$ が $0$ ないし $1$ であるならば $\braket{\beta|\alpha}$ も同じ値であるので $\braket{aa|aa}$，$\braket{aa|ab}$，$\braket{aa|ba}$，$\braket{aa|bb}$，$\braket{ab|ab}$，$\braket{ab|ba}$，$\braket{ab|bb}$，$\braket{ba|ba}$，$\braket{ba|bb}$，$\braket{bb|bb}$ の全 10 ケースについて調べれば十分である．</p>
 	<p>まず，任意の $\alpha \in \{aa,\,ab,\,ba,\,bb\}$ に対して $\braket{\alpha|\alpha} = 1$ を確認する：	
 	<p>\begin{align}
-		\braket{aa|aa} &= \fraction{1}{\ell} \braket{1|1} \cdot \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} =1,\\
-		\braket{ab|ab} &= \fraction{1}{N-1} \braket{1|1} \cdot \underset{\hspace{10mm}= N-1}{\underline{\sum_{e=1}^{N-1} \braket{e|e}}} =1,\\
-		\braket{ba|ba} &= \fraction{1}{N-1} \underset{\hspace{55mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b} \cdot \braket{N-b+1|N-b+1}}} =1,\\
-		\braket{bb|bb} &= \fraction{1}{(N-1)(N+\ell-2)} \sum_{b=2}^{N}\braket{b|b} \left( \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} + \underset{\hspace{15mm}= N-2}{\underline{\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \braket{e|e}}}\right)\\
+		&\braket{aa|aa} = \fraction{1}{\ell} \braket{1|1} \cdot \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} =1,\\
+		&\braket{ab|ab} = \fraction{1}{N-1} \braket{1|1} \cdot \underset{\hspace{10mm}= N-1}{\underline{\sum_{e=1}^{N-1} \braket{e|e}}} =1,\\
+		&\braket{ba|ba} = \fraction{1}{N-1} \underset{\hspace{55mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b} \cdot \braket{N-b+1|N-b+1}}} =1,\\
+		&\braket{bb|bb}\\
+		&= \fraction{1}{(N-1)(N+\ell-2)} \sum_{b=2}^{N}\braket{b|b} \left( \underset{\hspace{20mm}=\ell}{\underline{\sum_{m=1}^{\ell} \braket{0_m|0_m}}} + \underset{\hspace{15mm}= N-2}{\underline{\sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1} \braket{e|e}}}\right)\\
 			&= \fraction{1}{N-1} \underset{\hspace{10mm}= N-1}{\underline{\sum_{b=2}^{N} \braket{b|b}}} =1.
 		\end{align}</p>
 	<p>次に $\alpha \not = \beta$ に対して $\braket{\alpha | \beta} =0$ を示す．まず，$\sum_{b=2}^{N}\braket{1|b} =0$ であることから</p>
@@ -651,6 +629,181 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </div>
 <br>
 
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Sl9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>\begin{align}
+		S\ket{aa} = \ket{aa},\ \ S\ket{ab} = \ket{ba},\ \ S\ket{ba} = \ket{ab},\ \ S\ket{bb} = \ket{bb}
+		\end{align}
+	<p>であり，線形写像 $f_S^\circ : \spn \mathcal{A}^\circ\to \spn \mathcal{A}^\circ;\ \ket{\psi}\mapsto S\ket{\psi}$ の表現行列 $\widetilde{S}$ は</p>
+	<p>\begin{align}
+		\widetilde{S} = \left[ \begin{array}{cccc}
+			1 & 0 & 0 & 0\\
+			0 & 0 & 1 & 0\\
+			0 & 1 & 0 & 0\\
+			0 & 0 & 0 & 1 \end{array}\right]
+		\end{align}</p>
+	<p>である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = qwl9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>量子ウォークの時間発展作用素を $U = S(I\otimes C_0)$ とすると，初期状態 $\ket{\psi_0}$ は定常状態になる：</p>
+	<p>\begin{align}
+		U\ket{\psi_0} = \ket{\psi_0}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+</div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Clf9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$C_1^{\text{flip}} = -C_0$ に対して，$T^{\text{flip}} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{flip}}$ とすると，線形写像 $f^\circ_T: \spn\mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto T\ket{\psi}$ の表現行列は</p>
+	<p>\begin{align}
+		\widetilde{C}^{\text{flip}} = \left[\begin{array}{cccc}
+			\cos\theta & -\sin\theta & 0 & 0\\
+			-\sin\theta & -\cos\theta & 0 & 0\\
+			0 & 0 & -\cos\theta & \sin\theta\\
+			0 & 0 & \sin\theta & \cos\theta \end{array}\right]
+		\end{align}</p>
+	<p>である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+</div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Cls9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$C_1^{\text{SKW}} = -I_{N+\ell -1}$ に対して，$T^{\text{SKW}} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{SKW}}$ とすると，線形写像 $f^\circ_T: \spn\mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto T\ket{\psi}$ の表現行列は</p>
+	<p>\begin{align}
+		\widetilde{C}^{\text{SKW}} = \left[\begin{array}{cccc}
+			-1 & 0 & 0 & 0\\
+			0 & -1 & 0 & 0\\
+			0 & 0 & -\cos\theta & \sin\theta\\
+			0 & 0 & \sin\theta & \cos\theta \end{array}\right]
+		\end{align}</p>
+	<p>である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+</div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Ulf9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>量子ウォーク探索の作用素 $U$ に関し，コイン行列について $C_1 = C_1^{\text{flip}} = -C_0$ であるとき，線形写像 $f_U^\circ: \spn \mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto U\ket{\psi}$ の表現行列 $\widetilde{U}$ は</p>
+	<p>\begin{align}
+		\widetilde{U} = \left[\begin{array}{cccc}
+			\cos\theta & -\sin\theta & 0 & 0\\
+			0 & 0 & -\cos\theta & \sin\theta\\
+			-\sin\theta & -\cos\theta &0 &0\\
+			0 & 0 & \sin\theta & \cos\theta \end{array}\right]
+		\end{align}
+	<p>であり，$\widetilde{U}$ の固有値と固有ベクトルは</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+</div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Uls9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>量子ウォーク探索の作用素 $U$ に関し，コイン行列について $C_1 = C_1^{\text{SKW}} = I_{N+\ell-1}$ であるとき，線形写像 $f_U^\circ: \spn \mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto U\ket{\psi}$ の表現行列 $\widetilde{U}$ は</p>
+	<p>\begin{align}
+		\widetilde{U} = \left[\begin{array}{cccc}
+			-1 & 0 & 0 & 0\\
+			0 & 0 & -\cos\theta & \sin\theta\\
+			0 & -1 &0 &0\\
+			0 & 0 & \sin\theta & \cos\theta \end{array}\right]
+		\end{align}
+	<p>であり，$\widetilde{U}$ の固有値と固有ベクトルは</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
 </div>
 
 <br>
