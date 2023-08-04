@@ -38,7 +38,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/7/31"
+	const updated = "2023/8/4"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -441,9 +441,9 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\end{align}</p>
 	<p>であり，$\widetilde{U}$ の固有値と固有ベクトルは
 	<p>\begin{align}
-		&E_+ = \eu^{\iu \phi},\quad \ket{\psi_+} = \sqrt{\fraction{1}{3+\cos\theta}}\threevec{-\eu^{-\iu \phi/2}}{\eu^{\iu\phi/2}}{\sqrt{1+\cos\theta}};\Rule{0px}{0px}{40px}\\
-		&E_- = \eu^{-\iu \phi},\quad \ket{\psi_-} = \sqrt{\fraction{1}{3+\cos\theta}}\threevec{-\eu^{\iu \phi/2}}{\eu^{-\iu\phi/2}}{\sqrt{1+\cos\theta}};\Rule{0px}{0px}{40px}\\
-		&E_{-1} = -1,\quad \ket{\psi_+} = \sqrt{\fraction{1}{3+\cos\theta}}\threevec{-\sqrt{1+\cos\theta}}{-\sqrt{1+\cos\theta}}{\sqrt{1-\cos\theta}}
+		&E_+ = \eu^{\iu \phi},\quad \ket{\psi_+} = \fraction{1}{2\cos(\phi/2)}\threevec{-\iu \eu^{\iu \phi/2}}{\iu \eu^{-\iu\phi/2}}{\sqrt{2\cos\phi}};\Rule{0px}{0px}{40px}\\
+		&E_- = \eu^{-\iu \phi},\quad \ket{\psi_-} = \fraction{1}{2\cos(\phi/2)}\threevec{\iu \eu^{-\iu \phi/2}}{-\iu \eu^{\iu\phi/2}}{\sqrt{2\cos\theta}};\Rule{0px}{0px}{40px}\\
+		&E_{-1} = -1,\quad \ket{\psi_{-1}} = \fraction{1}{2\cos(\phi/2)}\threevec{-\sqrt{2\cos\phi}}{-\sqrt{2\cos\phi}}{2\sin(\phi/2)}
 		\end{align}</p>
 	<p>である．ただし，$\phi$ は以下で定義される：</p>
 	<p>\begin{align}
@@ -479,16 +479,61 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= -(E+1)(E -\eu^{\iu \phi})(E -\eu^{-\iu \phi})
 			\end{align}</p>
 		<p>と因数分解される．よって，$\widetilde{U}$ の固有値は $\eu^{\pm \iu\phi},\ -1$ である．</p>
-		<p>ここで，各固有値に属する固有ベクトルを求める．</p>
+		<p>ここで，各固有値に属する固有ベクトルを求める．準備として，$\phi$ の半角の三角比を求めておく：</p>
+		<p>\begin{align}
+			&\cos \fraction{\phi}{2} = \sqrt{\fraction{1+\cos\phi}{2}} = \sqrt{\fraction{2+1+\cos\phi}{4}} = \fraction{\sqrt{3+\cos\phi}}{2},\\
+			&\sin \fraction{\phi}{2} = \fraction{\sin\phi}{2\cos(\phi/2)} = \fraction{\sqrt{1-\cos\phi}}{2}.
+			\end{align}</p>
+		<p>$E= E_+ = \eu^{\iu \phi}$ に対して</p>
+		<p>\begin{align}
+			&\threebythree{-\eu^{\iu \phi}}{-\cos\theta}{\sin\theta}{-1}{-\eu^{\iu \phi}}{0}{0}{\sin\theta}{\cos\theta-\eu^{\iu \phi}}\threevec{x}{y}{z} = \mathbf{0}\\
+			&\Longrightarrow\ \left\{\begin{array}{l} x = -\eu^{\iu\phi}y\\ y\sin\theta = -z(\cos\theta-\eu^{\iu\phi}) \end{array}\right.\\
+			&\Longleftrightarrow\ \threevec{x}{y}{z} = {}^\exists c_{+} \threevec{-\eu^{\iu\phi}(\cos\theta -\eu^{\iu\phi})}{\cos\theta -\eu^{\iu\phi}}{\sin\theta}.
+			\end{align}</p>
+		<p>ただし $c_+$ は正規化定数である．ここで</p>
+		<p>\begin{align}
+			\eu^{\iu\phi} -\cos\theta &= \fraction{1-\cos\theta}{2} +\iu \fraction{\sqrt{(1-\cos\theta)(3+\cos\theta)}}{2}\\
+				& =\sqrt{1-\cos\theta} \left(\sin\fraction{\phi}{2} + \iu \cos\fraction{\phi}{2}\right)\\
+				& = 2\iu\eu^{-\iu(\phi/2)}\sin\fraction{\phi}{2} .\Rule{0px}{0px}{20px}\\
+
+			-\eu^{\iu\phi} (\eu^{\iu\phi} -\cos\theta) &= -2\iu\eu^{\iu(\phi/2)}\sin\fraction{\phi}{2}.
+			\end{align}</p>
+		<p>以上により，固有ベクトルは</p>
+		<p>\begin{align}
+			\threevec{x}{y}{z} = {}^\exists c_{+} \threevec{-2\iu\eu^{\iu(\phi/2)}\sin(\phi/2)}{2\iu\eu^{-\iu(\phi/2)}\sin(\phi/2)}{\sin\theta}
+			\end{align}</p>
+		<p>と書くことができ，ゆえ $c_+$ 正規化定数は以下のように計算される：</p>
+		<p>\begin{align}
+			c_+ &= \sqrt{2\cdot 4\sin^2\fraction{\phi}{2} + \sin^2\theta}\\
+				&= \sqrt{4(1-\cos\phi) + \sin^2\theta}\\
+				&= \sqrt{4\left(1- \fraction{1+\cos\theta}{2}\right) + (1-\cos\theta)(1+\cos\theta)}\\
+				&= \sqrt{2(1-\cos\theta) + (1-\cos\theta)(1+\cos\theta)}\\
+				&= \sqrt{(1-\cos\theta)(3+\cos\theta)} = 4\sin\fraction{\phi}{2}\cos\fraction{\phi}{2}.
+			\end{align}</p>
+		<p>以上により，$E = E_+ = \eu^{\iu \phi}$ に属する固有ベクトルは</p>
+		<p>\begin{align}
+			\ket{\psi_+} &= \fraction{1}{4\sin(\phi/2)\cos(\phi/2)}\threevec{-2\iu\eu^{\iu(\phi/2)}\sin(\phi/2)}{2\iu\eu^{-\iu(\phi/2)}\sin(\phi/2)}{\sin\theta}\\
+						&= \fraction{1}{4\sin(\phi/2)\cos(\phi/2)}\threevec{-2\iu\eu^{\iu(\phi/2)}\sin(\phi/2)}{2\iu\eu^{-\iu(\phi/2)}\sin(\phi/2)}{\sqrt{1-\cos\theta}\sqrt{1+\cos\theta}}\\
+						&= \fraction{1}{4\sin(\phi/2)\cos(\phi/2)}\threevec{-2\iu\eu^{\iu(\phi/2)}\sin(\phi/2)}{2\iu\eu^{-\iu(\phi/2)}\sin(\phi/2)}{2\sin(\phi/2)\sqrt{2\cos\phi}}\\
+						&= \fraction{1}{2\cos(\phi/2)} \threevec{-\iu \eu^{\iu(\phi/2)}}{\iu \eu^{-\iu(\phi/2)}}{\sqrt{2\cos\phi}}.
+			\end{align}</p>
+		<p>と固有ベクトルが導かれる．ただし $c_{-1}$ は正規化定数であり，以下のように得られる：</p>
+		<p>\begin{align}
+			c_{-1} = \sqrt{ 2(1+\cos\theta) + 1-\cos\theta} = \sqrt{3+\cos\theta} = 2\cos\fraction{\phi}{2}.
+			\end{align}</p>
+		<p>以上により，$E = E_{-1} = -1$ に属する固有ベクトルは</p>
+		<p>\begin{align}
+			\ket{\psi_{-1}} = \sqrt{\fraction{1}{3+\cos\theta}}\threevec{-\sqrt{1+\cos\theta}}{-\sqrt{1+\cos\theta}}{\sqrt{1-\cos\theta}}.
+			\end{align}
 		<p>$E= E_{-1} = -1$ に対して</p>
 		<p>\begin{align}
 			&\threebythree{1}{-\cos\theta}{\sin\theta}{-1}{1}{0}{0}{\sin\theta}{\cos\theta+1}\threevec{x}{y}{z} = \mathbf{0}\\
 			&\Longrightarrow\ \left\{\begin{array}{l} x = y\\ y\sin\theta = -z(1+\cos\theta) \end{array}\right.\\
-			&\Longleftrightarrow\ \threevec{x}{y}{z} = {}^\exists c_{-1} \threevec{-\sqrt{1+\cos\theta}}{-\sqrt{1+\cos\theta}}{\sqrt{1-\cos\theta}}
+			&\Longleftrightarrow\ \threevec{x}{y}{z} = {}^\exists c_{-1} \threevec{-\sqrt{1+\cos\theta}}{-\sqrt{1+\cos\theta}}{\sqrt{1-\cos\theta}} = {}^\exists c_{-1} \threevec{-\sqrt{2\cos\phi}}{-\sqrt{2\cos\phi}}{2\sin(\phi/2)}
 			\end{align}</p>
 		<p>と固有ベクトルが導かれる．ただし $c$ は正規化定数であり，以下のように得られる：</p>
 		<p>\begin{align}
-			c_{-1} = \sqrt{ 2(1+\cos\theta) +1 - \cos\theta} = \sqrt{3+\cos\theta}.
+			c_{-1} = \sqrt{ 2(1+\cos\theta) + 1-\cos\theta} = \sqrt{3+\cos\theta} = 2\cos\fraction{\phi}{2}.
 			\end{align}</p>
 		<p>以上により，$E = E_{-1} = -1$ に属する固有ベクトルは</p>
 		<p>\begin{align}
@@ -499,7 +544,12 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p></p>
+		<p>$c_{-1}$ の計算は，少し手数は多くなるが $phi$ のままでも当然計算できる．</p>
+		<p>\begin{align}
+			c_{-1} &= \sqrt{ 2\cdot 2\cos\phi +4\sin^2(\phi/2)}\\ 
+					&= \sqrt{4(1-2\sin^2(\phi/2) +\sin^2(\phi/2)}\\
+					&= 2\sqrt{1-\sin^2(\phi/2)} = 2\cos(\phi/2).
+			\end{align}</p>
  	</div>
 </details>
 </div>
