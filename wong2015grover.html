@@ -31,6 +31,7 @@
 		threebythree: ['\\left[\\begin{array}{ccc} #1 & #2 & #3\\\\ #4 & #5 & #6\\\\ #7 & #8 & #9\\end{array}\\right]', 9],
 		threevec: ['\\left[\\begin{array}{c} #1 \\\\ #2 \\\\ #3 \\end{array}\\right]', 3],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+		bra: ['\\langle{#1}|', 1],
 		ket: ['|{#1}\\rangle', 1],
 		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
 		braket: ['\\langle #1 \\rangle',1],
@@ -38,7 +39,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/8/4"
+	const updated = "2023/8/6"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -132,7 +133,44 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>補足２</summary>
 	<div id="tx">
-		<p>論文ではある頂点 $i$ から $j$ への推移に対応するベクトルを $\ket{i\to j}$ とおいているが，これが具体的に $\mathcal{H}_c$ のどのようなベクトルなのかが述べられていない．この設定には様々な方法があるが，本サイトでは処理のしやすさを考慮し $\ket{i\to j} = \ket{(j-i)\modulo N}$ と設定した．</p>
+		<p>論文ではある頂点 $i$ から $j$ への推移に対応するベクトルを $\ket{i\to j}$ とおいているが，これが具体的に $\mathcal{H}_c$ のどのようなベクトルなのかが述べられていない．この設定には様々な方法があるが，本サイトでは処理のしやすさを考慮し $\ket{i\to j} = \ket{(j-i)\modulo N}$ と設定した．この well-definedness を以下で確認する．</p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>$S$ の well-definedness</summary>
+	<div id="tx">
+		<p> $S$ が Hermite 作用素でありかつユニタリ作用素であることを確認する．まず，以下の議論により $S$ は Hermite 作用素である：</p>
+		<p>\begin{align}
+			S^\dagger &= \Biggl(\sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N}\Biggr)^\dagger\\
+				&= \sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N} (\ketbra{j}{i}\otimes \ketbra{(i-j)\modulo N}{(j-i)\modulo N})^\dagger\\
+				&= \sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N} \ketbra{i}{j}\otimes \ketbra{(j-i)\modulo N}{(i-j)\modulo N}\\
+				&= \sum_{j = 1}^{N}\sum_{\substack{i=1\\ i\not = j}}^{N} \ketbra{i}{j}\otimes \ketbra{(j-i)\modulo N}{(i-j)\modulo N}\\
+				&= S.
+			\end{align}</p>
+		<p>また，</p>
+		<p>\begin{align}
+			&S^\dagger S = SS^\dagger = S^2 \\
+				&= \sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N}\sum_{i' = 1}^{N}\sum_{\substack{j'=1\\ j'\not = i'}}^{N} \ket{j}\braket{i|j'}\bra{i'}\\
+				& \hspace{5mm}\otimes \ket{(i-j)\modulo N}\braket{(j-i)\modulo N|(i'-j')\modulo N}\bra{(j'-i')\modulo N}\\
+				&= \sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N}\sum_{i' = 1}^{N}\sum_{\substack{j'=1\\ j'\not = i'}}^{N} \delta_{ij'} \delta_{((j-i)\modulo N)((i'-j')\modulo N)} \ketbra{j}{i'}\\
+				& \hspace{50mm} \otimes \ketbra{(i-j)\modulo N}{(j'-i')\modulo N}\\
+				&= \sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N}\sum_{\substack{i' = 1\\ i'\not =i}}^{N} \delta_{ji'} \ketbra{j}{i'} \otimes \ketbra{(i-j)\modulo N}{(i -i')\modulo N}\\
+				&= \sum_{i = 1}^{N}\sum_{\substack{j=1\\ j\not = i}}^{N}\ketbra{j}{j} \otimes \ketbra{(i-j)\modulo N}{(i -j)\modulo N}\\
+				&= \sum_{j = 1}^{N}\ketbra{j}{j} \otimes \sum_{\substack{i=1\\ i\not = j}}^{N}\ketbra{(i-j)\modulo N}{(i -j)\modulo N}.
+			\end{align}</p>
+		<p>ここで，任意の $j = 1,\,\cdots,\,N$ に対し，以下が成り立つ：</p>
+		<p>\begin{align}
+			&\sum_{\substack{i=1\\ i\not =j}}{N} \ketbra{(i-j)\modulo N}{(i-j)\modulo N}\\
+			&= \sum_{i=1}^{j-1}\ketbra{N+i-j}{(N+i-j} + \sum_{i=j+1}^{N}\ketbra{i-j}{i-j}\\
+			&= \underset{e := N+i-j}{\underline{\sum_{e=N-j+1}^{N-1} \ketbra{e}{e}}} + \underset{e := i-j}{\underline{\sum_{e = 1}^{N-j} \ketbra{e}{e}}} = \sum_{e=1}^{N-1} \ketbra{e}{e}.
+			\end{align}</p>
+		<p>よって，</p>
+		<p>\begin{align}
+			S^2 &= \sum_{j = 1}^{N}\ketbra{j}{j} \otimes \sum_{\substack{i=1\\ i\not = j}}^{N}\ketbra{(i-j)\modulo N}{(i -j)\modulo N}\\
+			&= \sum_{j=1}^{N}\ketbra{j}{j} \otimes \sum_{e=1}^{N-1}\ketbra{e}{e}\\
+			&= I_N\otimes I_{N-1} = I_{N(N-1)}.
+			\end{align}</p>
+		<p>よって，$S$ はユニタリ作用素である．</p>
  	</div>
 </details>
 </div>
@@ -290,6 +328,15 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	</div>
 </details>
 <details class="dtl">
+	<summary>別証明</summary>
+	<div id="tx">
+		<p> $S\ket{ab} = \ket{ba}$ が証明された後，$S$ が Hermite かつユニタリであることを用いれば，$S\ket{ba} = \ket{ab}$ は直ちに従う：</p>
+		<p>\begin{align}
+			S\cdot S\ket{ab} = S\ket{ba} \ \Longleftrightarrow\ S^2\ket{ab} = S\ket{ba}\ \Longleftrightarrow\ S\ket{ba} = \ket{ab}.
+			\end{align}</p>
+	</div>
+</details>
+<details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
 		<p>真面目に計算して示すと上記証明のようにやや煩雑になるが，直感的にはほぼ明らかな事実である．</p>
@@ -423,9 +470,16 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
  	</div>
 </details>
 <details class="dtl">
-	<summary>補足</summary>
+	<summary>別証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>$T\ket{ba} = -\cos\theta \ket{ba} + \sin\theta \ket{bb}$ が分かっている下で，$T\ket{bb}$ を以下のように計算することができる：</p>
+		<p>\begin{align}
+			&T\ket{ba} = -\cos\theta \ket{ba} + \sin\theta \ket{bb}\\
+			&\Longleftrightarrow \ T^2\ket{ba} = -\cos\theta \cdot T\ket{ba} + \sin\theta \cdot T\ket{bb}\\
+			&\Longleftrightarrow \ \ket{ba} = \cos^2\theta\ket{ba} -\sin\theta\cos\theta \ket{bb} + \sin\theta \cdot T\ket{bb}\\
+			&\Longleftrightarrow \ \sin\theta \cdot T\ket{bb} = (1-\cos^2\theta)\ket{ba} +\sin\theta\cos\theta \ket{bb}\\
+			&\Longleftrightarrow \ T\ket{bb} = \sin\theta \ket{ba} +\cos\theta \ket{bb}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -706,7 +760,44 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>\begin{align}
+			&S\ket{aa} = \fraction{1}{\sqrt{\ell}} S\left( \ket{1}\otimes \sum_{m=1}^{\ell} \ket{0_m}\right)\\
+				&= \fraction{1}{\sqrt{\ell}} \ket{1}\otimes \sum_{k=1}^{\ell}\sum_{m=1}^{\ell}\delta_{km} \ket{0_k}\\
+				&= \fraction{1}{\sqrt{\ell}} \ket{1} \otimes \sum_{m=1}^{\ell} \ket{0_m} = \ket{aa}.\Rule{0px}{0px}{40px}\\
+			
+			&S\ket{ab} = \fraction{1}{\sqrt{N-1}} S\left( \ket{1}\otimes \sum_{e=1}^{N-1}\ket{e}\right)\\
+			&= \fraction{1}{\sqrt{N-1}} \sum_{j=2}^{N} \ket{j}\otimes \sum_{e=1}^{N-1} \ket{N+1-j}\braket{j-1|e}\\
+			&= \fraction{1}{\sqrt{N-1}} \sum_{j=2}^{N} \ket{j} \otimes \ket{N+1-j} = \ket{ba}.\Rule{0px}{0px}{40px}\\
+			
+			&S\ket{ba} = \fraction{1}{\sqrt{N-1}} \sum_{b=2}^{N} \ket{b}\otimes \ket{N-b+1}\\
+			&= \fraction{1}{\sqrt{N-1}} \sum_{b=2}^{N} S(\ket{b}\otimes \ket{N-b+1})\\
+			&= \fraction{1}{\sqrt{N-1}} \sum_{b=2}^{N} \sum_{\substack{j=1\\ j\not = b}}^{N}\ket{j} \otimes \ket{(b-j)\modulo N}\braket{(j-b)\modulo N|N-b+1}\\
+			&= \fraction{1}{\sqrt{N-1}} \sum_{b=2}^{N} \Biggl( \sum_{j=1}^{b-1} \ket{j} \otimes \underset{=1\,(j=1);\ 0\,(\text{o.w.})}{\underline{\ket{b-j}\braket{N+j-b|N-b+1}}}\\
+			& \hspace{50mm} \sum_{j=b+1}^{N} \ket{N+b-j}\underset{=0\, (^{}\forall j)}{\underline{\braket{j-b|N-b+1}}}\Biggr)\\
+			&= \fraction{1}{\sqrt{N-1}} \ket{1}\otimes \sum_{b=2}^{N} \ket{b-1}\\
+			&= \fraction{1}{\sqrt{N-1}} \ket{1}\otimes \sum_{e=1}^{N-1} \ket{e} = \ket{ab}. \Rule{0px}{0px}{40px}\\
+
+			&S\ket{bb} = \fraction{1}{\sqrt{(N-1)(N+\ell -2)}} S\sum_{b=2}^{N}\ket{b}\otimes \left( \sum_{m=1}^{\ell}\ket{0_m}+ \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+			&= \fraction{1}{\sqrt{(N-1)(N+\ell -2)}}\cdot\\
+			&\hspace{30mm}\Biggl( \underset{\text{(i)}}{\underline{S\sum_{b=2}^{N}\ket{b}\otimes \sum_{m=1}^{\ell}\ket{0_m}}} + \underset{\text{(ii)}}{\underline{S\sum_{b=2}^{N}\ket{b}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}}} \Biggr).\Rule{0px}{0px}{40px}\\
+
+			&\text{(i)} = \sum_{b=2}^{N} \ket{b} \otimes \sum_{m=1}^{\ell}\ket{0_m},\\
+			&\text{(ii)} = \sum_{b=2}^{N}\sum_{\substack{j=1\\ j\not = b}}^{N} \ket{j} \otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{(b-j)\modulo N}\braket{(j-b)\modulo N | e}\\
+			&= \sum_{b=2}^{N} \Biggl( \sum_{j=1}^{b-1} \ket{j}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{b-j}\underset{\substack{1\leq N+1-b \leq N+j-b \leq N-1\\ N+j-b \not = N-b+1}}{\underline{\braket{N+j-b | e}}}\\
+			&\hspace{40mm} \sum_{j=b+1}^{N} \ket{j}\otimes \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{N+b-j}\underset{1\leq j-b \leq N-b \lt N-1}{\underline{\braket{j-b | e}}}\Biggr)\\
+			&= \sum_{b=2}^{N}\left(\sum_{j=2}^{b-1} \ket{j}\otimes \ket{b-j} + \sum_{j=b+1}^{N} \ket{j}\otimes \ket{N+b-j}\right)\\
+			&= \sum_{b=2}^{N}\sum_{\substack{j=2\\ j\not = b}}^{N}\ket{j}\otimes \ket{(b-j) \modulo N}\\
+			&= \sum_{j=2}^{N}\ket{j}\otimes \sum_{\substack{b=2\\ b\not = j}}^{N}\ket{(b-j) \modulo N}\\
+			&= \sum_{j=2}^{N}\ket{j}\otimes \left( \sum_{b=2}^{j-1} \ket{N+b-j} + \sum_{b=j+1}^{N} \ket{b-j}\right)\\
+			&= \sum_{j=2}^{N}\ket{j}\otimes \left( \sum_{e=N+2-j}^{N-1} \ket{e} + \sum_{e = 1}^{N-j}\ket{e}\right)\\
+			&= \sum_{j=2}^{N}\ket{j}\otimes \sum_{\substack{e=1\\ e \not = N+1-j}}^{N-1}\ket{e}\Rule{0px}{0px}{40px}\\
+
+			&\therefore\\
+			&S\ket{bb} = \fraction{1}{\sqrt{(N-1)(N+\ell -2)}}\cdot\\
+			&\hspace{40mm} \left(\sum_{b=2}^{N} \ket{b} \otimes \sum_{m=1}^{\ell}\ket{0_m} + \sum_{j=2}^{N}\ket{j}\otimes \sum_{\substack{e=1\\ e \not = N+1-j}}^{N-1}\ket{e}\right)\\
+			&= \fraction{1}{\sqrt{(N-1)(N+\ell -2)}}\sum_{b=2}^{N} \ket{b}\otimes \left(\sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e} \right)\\
+			&= \ket{bb}.
+			\end{align}</p>
  	</div>
 </details>
 <details class="dtl">
