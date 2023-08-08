@@ -96,18 +96,17 @@ console.log( LIST );
     var tmp = document.getElementsByClassName("page") ;
 	console.log(tmp)
 
-    for(var i=0; i<=tmp.length-1;i++){
+    for(var j=0; j<=tmp.length-1;j++){
         //id追加
-        tmp[i].setAttribute("id",moji+i);
+        tmp[j].setAttribute("id",moji+ j);
     }
 
 var tt = [];
 
-for(var i = 0; i <= tmp.length-1; i++){
-	tt[i] = document.getElementById("PgNo" + i);
-	tt[i].href = refs[i+1];
+for(var j = 0; j <= tmp.length-1; j++){
+	tt[j] = document.getElementById("PgNo" + j);
+	tt[j].href = refs[LIST[j]];
 }
 console.log(tt)
 console.log(tt.href)
-
 </script>
