@@ -39,7 +39,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/8/6"
+	const updated = "2023/8/8"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -821,13 +821,28 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p></p>
+	<p>まず，$(I_N\otimes C_0) \ket{\psi_0}$ を計算すると</p>
+	<p>\begin{align}
+		(I_N\otimes C_0) \ket{\psi_0} &= (I_N\otimes C_0) (\ket{s_v}\otimes \ket{s_c})\\
+			&= \ket{s_v} \otimes (2\ketbra{s_c}{s_c} -I_{N+\ell -1})\ket{s_c}\\
+			&= \ket{s_v} \otimes (2\ket{s_c} -\ket{s_c})\\
+			&= \ket{s_v} \otimes \ket{s_c} = \ket{\psi_0}.
+		\end{align}</p>
+	<p>次に，$S\ket{\psi_0}$ を計算する．$\ket{\psi_0}$ を <script>nr(N,Fil9)</script> のように書き換えれば，$\spn\{\ket{aa},\,\ket{ab},\,\ket{ba},\,\ket{bb}\}$ における $S$ の作用 <script>nr(N,Sl9)</script> より</p>
+	<p>\begin{align}
+		S\ket{\psi_0} &= S \cdot \fraction{1}{\sqrt{N(N+\ell -1)}}\Bigl(\sqrt{\ell}\ket{aa} + \sqrt{N-1}\ket{ab}\\
+				&\hspace{30mm}+ \sqrt{N-1}\ket{ba} + \sqrt{(N-1)(N+\ell-2)}\ket{bb} \Bigr)\\
+			&= \fraction{1}{\sqrt{N(N+\ell -1)}} \Bigl(\sqrt{\ell}S\ket{aa} + \sqrt{N-1}S\ket{ab}\\
+				&\hspace{30mm}+ \sqrt{N-1}S\ket{ba} + \sqrt{(N-1)(N+\ell-2)}S\ket{bb} \Bigr)\\
+			&= \fraction{1}{\sqrt{N(N+\ell -1)}} \Bigl(\sqrt{\ell}\ket{aa} + \sqrt{N-1}\ket{ba}\\
+				&\hspace{30mm}+ \sqrt{N-1}\ket{ab} + \sqrt{(N-1)(N+\ell-2)}\ket{bb} \Bigr)\\
+			&= \ket{\psi_0}.
+		\end{align}</p>
+	<p>以上をまとめると，</p>
+	<p>\begin{align}
+		U_0\ket{\psi_0} &= S (I_N\otimes C_0)\ket{\psi_0}\\
+			&= S\ket{\psi_0} = \ket{\psi_0}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
@@ -850,37 +865,28 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
- 	</div>
-</details>
-<details class="dtl">
-	<summary>補足</summary>
-	<div id="tx">
-		<p></p>
- 	</div>
-</details>
-</div>
-<br>
-
-
-<!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = Cls9</script>
-<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
-<div id="tx">
-	<p>$C_1^{\text{SKW}} = -I_{N+\ell -1}$ に対して，$T^{\text{SKW}} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{SKW}}$ とすると，線形写像 $f^\circ_T: \spn\mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto T\ket{\psi}$ の表現行列は</p>
-	<p>\begin{align}
-		\widetilde{C}^{\text{SKW}} = \left[\begin{array}{cccc}
-			-1 & 0 & 0 & 0\\
-			0 & -1 & 0 & 0\\
-			0 & 0 & -\cos\theta & \sin\theta\\
-			0 & 0 & \sin\theta & \cos\theta \end{array}\right]
-		\end{align}</p>
-	<p>である．</p>
-</div>
-<details class="dtl">
-	<summary>証明</summary>
-	<div id="tx">
-		<p></p>
+		<p>$C_1^{\text{flip}} = -C_0$ であることから，</p>
+		<p>\begin{align}
+			T^{\text{flip}} &= (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{flip}}\\
+				&= (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes (-C_0)\\
+				&= (I_n -2\ketbra{1}{1})\otimes C_0.
+			\end{align}</p>
+		<p>以下，各基底に対する作用を調べる．まず $\ket{aa}$ に対して</p>
+		<p>\begin{align}
+			T^{\text{flip}}\ket{aa} &= \{(I_n -2\ketbra{1}{1})\otimes C_0\} \cdots \fraction{1}{\sqrt{\ell}}\left(\ket{1}\otimes \sum_{m=1}^{\ell}\ket{0_m}\right)\\
+				&= -\ket{1}\otimes \fraction{1}{\sqrt{\ell}}C_0 \sum_{m=1}^{\ell}\ket{0_m}.
+			\end{align}</p>
+		<p>この第2レジスターについて</p>
+		<p>\begin{align}
+			\fraction{1}{\sqrt{\ell}}C_0 \sum_{m=1}^{\ell}\ket{0_m} &= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} (2\ket{s_c}\braket{s_c|0_m}-\ket{0_m})\\
+				&= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} \left(\fraction{2}{\ell}\sum_{k=1}^{\ell}\ket{0_k} -\ket{0_m}\right) \\
+				&= \fraction{1}{\sqrt{\ell}} \left( 2\sum_{k=1}^{\ell} \ket{0_k} -\sum_{m=1}^{\ell}\ket{0_m}\right)\\
+				&= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell}\ket{0_m}.
+			\end{align}</p>
+		<p>よって，</p>
+		<p>\begin{align}
+			T^{\text{flip}}\ket{aa} = -\ket{1}\otimes \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell}\ket{0_m} = \ket{aa}.
+			\end{align}</p>
  	</div>
 </details>
 <details class="dtl">
@@ -920,6 +926,36 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </details>
 </div>
 <br>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Cls9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$C_1^{\text{SKW}} = -I_{N+\ell -1}$ に対して，$T^{\text{SKW}} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{SKW}}$ とすると，線形写像 $f^\circ_T: \spn\mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto T\ket{\psi}$ の表現行列は</p>
+	<p>\begin{align}
+		\widetilde{C}^{\text{SKW}} = \left[\begin{array}{cccc}
+			-1 & 0 & 0 & 0\\
+			0 & -1 & 0 & 0\\
+			0 & 0 & -\cos\theta & \sin\theta\\
+			0 & 0 & \sin\theta & \cos\theta \end{array}\right]
+		\end{align}</p>
+	<p>である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+
 
 <!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = Uls9</script>
