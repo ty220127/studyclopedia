@@ -10,6 +10,19 @@ var pub = [];
 
 i = 0;
 
+//12:Schmuland2003random
+i = 12;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/schmuland2003random.html";
+ttls[i] = "Random Harmonic Series";
+authors[i] = ["Byron", "Schmuland"]; 
+dates[i] = new Date( 2003, 5, 1, 00, 00 );
+doi[i] = "https://www.tandfonline.com/doi/abs/10.1080/00029890.2003.11919978";
+arxiv[i] = "";
+pub[i] = "The American Mathematical Monthly Vol. 110, Iss. 5, pp. 407-416";
+j = 0;
+j++; usD7 = j; bns[i][j] = "";
+
 //11:Konno2018partition
 i = 11;
 bns[i] = [];
@@ -19,7 +32,7 @@ authors[i] = ["Norio", "Konno", "Renato", "Portugal", "Iwao", "Sato", "Etsuo", "
 dates[i] = new Date( 2018, 3, 12, 00, 00 );
 doi[i] = "https://link.springer.com/article/10.1007/s11128-017-1807-4";
 arxiv[i] = "https://arxiv.org/abs/1707.07127";
-pub[i] = "Quantum Information Processing vol. 17, Art. No. 100";
+pub[i] = "Quantum Information Processing Vol. 17, Art. No. 100";
 j = 0;
 j++; usD7 = j; bns[i][j] = "";
 
