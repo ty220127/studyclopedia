@@ -1,0 +1,140 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+		ket: ['|{#1}\\rangle', 1],
+		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
+		braket: ['\\langle #1 \\rangle',1],
+	}}});
+</script>
+<script>
+	const established = "2023/8/7"
+	const updated = "2023/8/7"
+	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
+	const sec = ["","Introduction", 
+			"Distribution of X",
+      "Binary digits and coin tosses",
+      "Regrouping the series",
+      "Densities and characteristic functions",
+      "Morrison's proof",
+      "Numerical results",
+			"Other random sums"];
+	const app = ["Eigensystem of the search operator with marked vertices in both sets"];
+</script>
+<style>
+</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+
+<body>
+<script src="https://ty220127.github.io/studyclopedia/number.js"></script>
+<script>
+	const N = 12;
+	document.title= ttls[N] + "｜STUDYCLOPEDIA";
+</script>
+
+<div class="header">
+<a href="index.html">STUDYCLOPEDIA</a>
+</div>
+
+<div class="boxes">
+<center><div id="ttlhead"><script>document.write(ttls[N])</script></div>
+<p><script>document.write(authors[N])</script>
+<br><script>document.write(pub[N])</script> (<script>document.write(dates[N].getFullYear())</script>). [<a id="doi">doi</a>] [<a id="axv">arXiv</a>] </p>
+</center>
+<hr>
+
+<p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+       
+<center style="margin-top:3em;">
+<table border="2" width="80%" cellpadding="5"><tbody><tr><td>
+</td></tr></tbody></table>
+</center>
+<br><br>
+
+<div class="section"><script>s = 1; document.write(s + ". " + sec[s])</script></div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = usD7</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p></p>
+</div>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+	<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = usP7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p></p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+
+
+</div>
+
+<br>
+<div class="footer"></div>
+
+<body>
+</html>
+
+<script>
+const doitar = document.getElementById("doi");
+doitar.href = doi[N];
+
+const axvtar = document.getElementById("axv");
+  if(arxiv[N] != null){
+    axvtar.href = arxiv[N];
+  }
+</script>
