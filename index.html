@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -19,6 +20,28 @@
 
 <body>
 <script src="https://ty220127.github.io/studyclopedia/number.js"></script>
+<script>
+const pad2 = (n) =>  { return n < 10 ? '0' + n : n }
+
+var no = [];
+for(i = 1; i<dates.length; i++){
+no[i] = dates[i].getFullYear().toString() 
+　　　　　　　+ pad2(dates[i].getMonth() + 1) 
+　　　　　　　+ pad2(dates[i].getDate()) 
+}
+
+console.log(no)
+const no0 = [...no];
+const no1 = no.sort()
+console.log(no0)
+console.log(no1)
+
+var LIST = [];
+for(i = 0; i<dates.length; i++){
+LIST[i] = no0.indexOf( no1[i] );
+}
+console.log( LIST );
+</script>
 
 <div class="header">
 <center style="font-size: 200%"><a href="index.html">STUDYCLOPEDIA</a></center>
@@ -30,35 +53,36 @@
 <a href="history.html">更新履歴</a>
 </center>
 
-<script>i = 0;</script>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
-<script>i++; document.write(dates[i].getFullYear())</script> <a class="page"><script>athr(i); document.write(":  "+ ttls[i])</script></a><br>
+<script>i = -1;</script>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
+<script>i++; document.write(dates[LIST[i]].getFullYear())</script> <a class="page"><script>athr(LIST[i]); document.write(":  "+ ttls[LIST[i]])</script></a><br>
 
 </div>
 
