@@ -39,7 +39,7 @@
 </script>
 <script>
 	const established = "2023/6/17"
-	const updated = "2023/8/8"
+	const updated = "2023/8/9"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Grover's algorithm as a discrete-time quantum walk",  
@@ -852,41 +852,112 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = Clf9</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>$C_1^{\text{flip}} = -C_0$ に対して，$T^{\text{flip}} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{flip}}$ とすると，線形写像 $f^\circ_T: \spn\mathcal{A}\to \spn\mathcal{A};\ \ket{\psi}\mapsto T\ket{\psi}$ の表現行列は</p>
+	<p>$C_1^{\text{flip}} = -C_0$ に対して，$T^{\text{flip}} = (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{flip}}$ とすると，線形写像 $f^\circ_T: \spn\mathcal{A}^\circ\to \spn\mathcal{A}^\circ;\ \ket{\psi}\mapsto T\ket{\psi}$ の表現行列は</p>
 	<p>\begin{align}
 		\widetilde{C}^{\text{flip}} = \left[\begin{array}{cccc}
 			\cos\theta & -\sin\theta & 0 & 0\\
 			-\sin\theta & -\cos\theta & 0 & 0\\
-			0 & 0 & -\cos\theta & \sin\theta\\
-			0 & 0 & \sin\theta & \cos\theta \end{array}\right]
+			0 & 0 & -\cos\phi & \sin\phi\\
+			0 & 0 & \sin\phi & \cos\phi \end{array}\right]
 		\end{align}</p>
-	<p>である．</p>
+	<p>である．ただし</p>
+	<p>\begin{align}
+		&\cos\theta = \fraction{N-\ell-1}{N+\ell-1},\quad \sin\theta = \fraction{2\sqrt{\ell(N-1)}}{N+\ell -1},\Rule{0px}{0px}{20px}\\
+		&\cos\phi = \fraction{N+\ell-3}{N+\ell-1},\quad \sin\phi = \fraction{2\sqrt{N+\ell -2}}{N+\ell -1}.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
 		<p>$C_1^{\text{flip}} = -C_0$ であることから，</p>
 		<p>\begin{align}
-			T^{\text{flip}} &= (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{flip}}\\
+			T= T^{\text{flip}} &= (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes C_1^{\text{flip}}\\
 				&= (I_n -\ketbra{1}{1})\otimes C_0 + \ketbra{1}{1}\otimes (-C_0)\\
 				&= (I_n -2\ketbra{1}{1})\otimes C_0.
 			\end{align}</p>
 		<p>以下，各基底に対する作用を調べる．まず $\ket{aa}$ に対して</p>
 		<p>\begin{align}
-			T^{\text{flip}}\ket{aa} &= \{(I_n -2\ketbra{1}{1})\otimes C_0\} \cdot \fraction{1}{\sqrt{\ell}}\left(\ket{1}\otimes \sum_{m=1}^{\ell}\ket{0_m}\right)\\
+			T\ket{aa} &= \{(I_n -2\ketbra{1}{1})\otimes C_0\} \cdot \fraction{1}{\sqrt{\ell}}\left(\ket{1}\otimes \sum_{m=1}^{\ell}\ket{0_m}\right)\\
 				&= -\ket{1}\otimes \fraction{1}{\sqrt{\ell}}C_0 \sum_{m=1}^{\ell}\ket{0_m}.
 			\end{align}</p>
-		<p>この第2レジスターについて</p>
+		<p>この第２レジスターについて</p>
 		<p>\begin{align}
-			\fraction{1}{\sqrt{\ell}}C_0 \sum_{m=1}^{\ell}\ket{0_m} &= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} (2\ket{s_c}\braket{s_c|0_m}-\ket{0_m})\\
-				&= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} \left(\fraction{2}{\ell}\sum_{k=1}^{\ell}\ket{0_k} -\ket{0_m}\right) \\
-				&= \fraction{1}{\sqrt{\ell}} \left( 2\sum_{k=1}^{\ell} \ket{0_k} -\sum_{m=1}^{\ell}\ket{0_m}\right)\\
-				&= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell}\ket{0_m}.
+			&\fraction{1}{\sqrt{\ell}}C_0 \sum_{m=1}^{\ell}\ket{0_m}\\
+				&= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} (2\ket{s_c}\braket{s_c|0_m}-\ket{0_m})\\
+				&= \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} \left\{\fraction{2}{N +\ell -1}\left(\sum_{k=1}^{\ell}\ket{0_k} + \sum_{e=1}^{N-1}\ket{e}\right) -\ket{0_m}\right\} \\
+				&= \fraction{1}{\sqrt{\ell}} \left\{ \left(\fraction{2\ell}{N+\ell -1}-1\right)\sum_{m=1}^{\ell}\ket{0_m} + \fraction{2\ell}{N+\ell -1}\sum_{e=1}^{N-1}\ket{e}\right\}\\
+				&= -\fraction{N-\ell -1}{N+\ell -1} \cdot \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} \ket{0_m} + \fraction{2\sqrt{\ell(N-1)}}{N+\ell -1} \cdot \fraction{1}{\sqrt{N-1}} \sum_{e=1}^{N-1}\ket{e}\\
+				&= -\cos\theta \cdot \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} \ket{0_m} +\sin\theta \cdot \fraction{1}{\sqrt{N-1}} \sum_{e=1}^{N-1}\ket{e}.
 			\end{align}</p>
 		<p>よって，</p>
 		<p>\begin{align}
-			T^{\text{flip}}\ket{aa} = -\ket{1}\otimes \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell}\ket{0_m} = \ket{aa}.
+			T\ket{aa} &= -\ket{1}\otimes \left(-\cos\theta \cdot \fraction{1}{\sqrt{\ell}}\sum_{m=1}^{\ell} \ket{0_m} +\sin\theta \cdot \fraction{1}{\sqrt{N-1}} \sum_{e=1}^{N-1}\ket{e}\right)\\
+				&= \cos\theta \cdot \fraction{1}{\sqrt{\ell}} \ket{1}\otimes \sum_{m=1}^{\ell} \ket{0_m} -\sin\theta \cdot \fraction{1}{\sqrt{N-1}} \ket{1}\otimes \sum_{e=1}^{N-1}\ket{e}\\
+				&= \cos\theta\,\ket{aa} - \sin\theta\,\ket{ab}
 			\end{align}</p>
+		<p>つまり</p>
+		<p>\begin{align}
+			T \ket{aa} = \cos\theta\,\ket{aa} - \sin\theta\,\ket{ab}.
+			\end{align}</p>
+		<p>この両辺に $T^{\text{flip}}$ を作用させて</p>
+		<p>\begin{align}
+			\ket{aa} &= \cos\theta\cdot T\ket{aa} -\sin\theta\cdot T\ket{ab}\\
+				&= \cos^2\theta\cdot \ket{aa} -\sin\theta\cos\theta\cdot \ket{ab} -\sin\theta \cdot T\ket{ab}.
+			\end{align}</p> 
+		<p>よって</p>
+		<p>\begin{align}
+			T\ket{ab} &= \fraction{1}{\sin\theta} (-\sin^2\theta\cdot \ket{aa} -\sin\theta\cos\theta\cdot \ket{ab})\\
+				&= -\sin\theta\, \ket{aa} -\cos\theta\, \ket{ab}.
+			\end{align}</p>
+		<p>続いて $\ket{ba}$ に対して</p>
+		<p>\begin{align}
+			T\ket{ba} &= \{(I_n -2\ketbra{1}{1})\otimes C_0\}\cdot \fraction{1}{\sqrt{N-1}} \sum_{b=2}^{N} \ket{b}\otimes \ket{N-b+1}\\
+				&=  \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N} \ket{b}\otimes C_0 \ket{N-b+1}.
+			\end{align}</p>
+		<p>この第２レジスターについて</p>
+		<p>\begin{align}
+			&C_0 \ket{N-b+1}\\
+				&= 2\ket{s_c}\braket{s_c|N-b+1} -\ket{N-b+1}\\
+				&= \fraction{2}{N+\ell -1} \left( \sum_{m=1}^{\ell}\ket{0_m} + \sum_{e=1}^{N-1}\ket{e}\right) -\ket{N-b+1}\\
+				&= \left(\fraction{2}{N+\ell -1} -1\right)\ket{N-b+1}\\
+				&\hspace{30mm}+\fraction{2}{N+\ell -1} \left( \sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+				&= -\fraction{N+\ell -3}{N+\ell -1}\ket{N-b+1}\\
+				&\hspace{20mm} +\fraction{2\sqrt{N+\ell-2}}{N+\ell -1} \fraction{1}{\sqrt{N+\ell-2}}\left( \sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\right)\\
+				&= -\cos\phi\,\ket{N-b+1}\\
+				&\hspace{20mm} + \sin\phi\,  \fraction{1}{\sqrt{N+\ell-2}}\Biggl( \sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\Biggr).
+			\end{align}</p>
+		<p>よって</p>
+		<p>\begin{align}
+			&T\ket{ba}\\
+				&= \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N} \ket{b}\otimes \Biggl\{ -\cos\phi\,\ket{N-b+1}\\
+				& \hspace{20mm} + \sin\phi\,  \fraction{1}{\sqrt{N+\ell-2}}\Biggl( \sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\Biggr)\Biggr\}\\
+				&= -\cos\phi\cdot \fraction{1}{\sqrt{N-1}}\sum_{b=2}^{N}\ket{b}\otimes \ket{N-b+1}\\
+				&\,\,+\sin\phi\cdot \fraction{1}{\sqrt{(N-1)(N+\ell-2)}} \sum_{b=2}^{N}\ket{b}\otimes\Biggl( \sum_{m=1}^{\ell}\ket{0_m} + \sum_{\substack{e=1\\ e\not = N-b+1}}^{N-1}\ket{e}\Biggr)\\
+				&= -\cos\phi\,\ket{ba} + \sin\phi\,\ket{bb},
+			\end{align}</p>
+		<p>つまり</p>
+		<p>\begin{align}
+			T\ket{ba} = -\cos\phi\,\ket{ba} +\sin\phi\,\ket{bb}.
+			\end{align}</p>
+		<p>この両辺に $T$ を作用させて</p>
+		<p>\begin{align}
+			\ket{ba} &= -\cos\phi\cdot T\ket{ba} +\sin\phi\cdot T\ket{bb}\\
+				&= \cos^2\phi\, \ket{ba} -\sin\phi\cos\phi\, \ket{bb} +\sin\phi\, T\ket{bb}
+			\end{align}</p>
+		<p>よって</p>
+		<p>\begin{align}
+			T\ket{bb} &= \fraction{1}{\sin\phi} (\sin^2\phi\,\ket{ba} +\sin\phi\cos\phi\, \ket{bb})\\
+				&= \sin\phi\,\ket{ba} +\cos\phi\,\ket{bb}
+			\end{align}</p>
+		<p>以上により $T$ の作用は $\spn \mathcal{A}^\circ$ で閉じていることがわかり，上記のような線形写像 $f_T^\circ$ を定義できる．その表現行列は，以下の下線部で示される $\widetilde{C}^{\text{flip}}$ である：</p>
+		<p>\begin{align}
+			&[T\ket{aa}\ T\ket{ab}\ T\ket{ba}\ T\ket{bb}]\\
+			&= [\ket{aa}\ \ket{ab}\ \ket{ba}\ \ket{bb}]
+				\underset{= \widetilde{C}^{\text{flip}}}{\underline{\left[\begin{array}{cccc} \cos\theta & -\sin\theta & 0 & 0\\
+			-\sin\theta & -\cos\theta & 0 & 0\\
+			0 & 0 & -\cos\phi & \sin\phi\\
+			0 & 0 & \sin\phi & \cos\phi \end{array}\right]}}
+			\end{align}
  	</div>
 </details>
 <details class="dtl">
