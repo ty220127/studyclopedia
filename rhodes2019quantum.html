@@ -20,6 +20,8 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
+		eu: '\\mathrm{e}',
+		iu: '\\mathrm{i}',
 		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
@@ -34,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/9"
+	const updated = "2023/8/11"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -170,7 +172,201 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </details>
 </div>
 <br>
+<!-- end of a box -->
 
+<div class="section"><script>s = 2; document.write(s + ". " + sec[s])</script></div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = cu7</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>マーク頂点が $X$ 側に $k$ 個存在し，$Y$ 側には存在しない場合を考える．$X$ 側のマーク頂点を $a$ 頂点，$Y$ 側の頂点を $b$ 頂点，$X$ 側の非マーク頂点を $c$ 頂点と呼ぶ．以降，$a,\ b,\ c$ 頂点の集合をそれぞれ $\mathcal{A},\ \mathcal{B},\ \mathcal{C}$ で表現する（$\mathcal{A}\cup \mathcal{C} = X$，$\mathcal{B} = Y$）．また，$a$ 頂点から $b$ 頂点に向いている状態，$b$ 頂点から $a$ 頂点に向いている状態，$b$ 頂点から $c$ 頂点に向いている状態，$c$ 頂点から $b$ 頂点に向いている状態をそれぞれ $\ket{ab},\ \ket{ba},\ \ket{bc},\ \ket{cb}$ と表す：</p>
+	<p>\begin{align}
+		\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}} \sum_{b\in \mathcal{B}} \ket{a,\,b},\\
+		\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}} \sum_{a\in \mathcal{A}} \ket{b,\,a},\\
+		\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}} \sum_{c\in \mathcal{C}} \ket{b,\,c},\\
+		\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} \ket{c,\,b}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>各ベクトルの係数部分は正規化である．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = cS7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $S$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_S: \ket{\psi}\mapsto S\ket{\psi}$ が定義でき，その表現行列 $\widetilde{S}$ は<p>
+	<p>\begin{align}
+		\widetilde{S} = \left[ \begin{array}{cccc}
+			0 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 1 \\ 
+			0 & 0 & 1 & 0 \end{array}\right].
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>\begin{align}
+			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
+			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
+			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
+			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = cC7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $C$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_C: \ket{\psi}\mapsto C\ket{\psi}$ が定義でき，その表現行列 $\widetilde{C}$ は<p>
+	<p>\begin{align}
+		\widetilde{C} = \left[ \begin{array}{cccc}
+			1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right].
+		\end{align}</p>
+	<p>ただし，</p>
+	<p>\begin{align}
+		\cos\theta = 1-\fraction{2k}{N_1},\quad \sin\theta = \fraction{2}{N_1}\sqrt{k(N_1 -k)}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>\begin{align}
+			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
+			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
+			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
+			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = cQ7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $Q$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_Q: \ket{\psi}\mapsto Q\ket{\psi}$ が定義でき，その表現行列 $\widetilde{Q}$ は<p>
+	<p>\begin{align}
+		\widetilde{Q} = \left[ \begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right].
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>\begin{align}
+			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
+			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
+			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
+			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = cU7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $U$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_U: \ket{\psi}\mapsto U\ket{\psi}$ が定義でき，その表現行列 $\widetilde{U}$ は<p>
+	<p>\begin{align}
+		\widetilde{U} = \left[ \begin{array}{cccc}
+			0 & -\cos\theta & \sin\theta & 0 \\
+			-1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 \\
+			0 & \sin\theta & \cos\theta & 0 \end{array}\right].
+		\end{align}</p>
+	<p>また，$\widetilde{U}$ の固有値及び固有ベクトルは以下である：</p>
+	<p>\begin{align}
+		&\ket{\psi_1} = \fraction{1}{2}[\iu,\ \iu\eu^{\iu\phi},\ -\eu^{\iu\phi},\ 1]^\trp,\quad \lambda_1 = -\eu^{-\iu\phi};\\
+		&\ket{\psi_2} = \fraction{1}{2}[\iu,\ -\iu\eu^{\iu\phi},\ \eu^{\iu\phi},\ 1]^\trp,\quad \lambda_2 = \eu^{-\iu\phi};\\
+		&\ket{\psi_3} = \fraction{1}{2}[-\iu,\ -\iu\eu^{-\iu\phi},\ -\eu^{-\iu\phi},\ 1]^\trp,\quad \lambda_3 = -\eu^{\iu\phi};\\
+		&\ket{\psi_4} = \fraction{1}{2}[-\iu,\ -\iu\eu^{-\iu\phi},\ \eu^{-\iu\phi},\ 1]^\trp,\quad \lambda_4 = \eu^{\iu\phi},
+		\end{align}</p>
+	<p>ただし</p>
+	<p>\begin{align}
+		\phi = \fraction{\theta}{2}
+		\end{align}</p>
+	<p>である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>\begin{align}
+			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
+			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
+			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
+			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = ci7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,cu7)</script>で導入したベクトルを用いて頂点関する一様状態 $\ket{s}$ は以下のように書き換えられる：</p>
+	<p>\begin{align}
+		\ket{s} &= \fraction{1}{\sqrt{N_1 +N_2}} \left( \sqrt{k}\ket{ab} + \sqrt{\fraction{N_2}{N_1}k}\ket{ba} \right.\\
+				&\hspace{40mm} \left.+\sqrt{\fraction{N_2}{N_1}(N_1-k)}\ket{bc} + \sqrt{N_1-k}\ket{cb}\right).
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>\begin{align}
+			\ket{s} &= \fraction{1}{\sqrt{N_1 +N_2}}\left( \fraction{1}{\sqrt{N_2}}\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \fraction{1}{\sqrt{N_1}} \sum_{j\in Y}\sum_{i\in X}\ket{j,\,i}\right)\\
+					&= \fraction{1}{\sqrt{N_1 +N_2}} \left\{ \fraction{1}{\sqrt{N_2}} \left( \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} + \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right) \right.\\
+					&\hspace{40mm} \left. + \fraction{1}{\sqrt{N_1}} \left( \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} + \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\right) \right\}\\
+					&= \fraction{1}{\sqrt{N_1 +N_2}} \Biggl( \sqrt{k}\ket{ab} + \sqrt{N_1-k}\ket{cb}\\
+					&\hspace{40mm} +\sqrt{\fraction{N_2}{N_1}k}\ket{ba} + \sqrt{\fraction{N_2}{N_1}(N_1-k)}\ket{bc}\Biggr).
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
 
 </div>
 
