@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -246,25 +245,19 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>$(\Rightarrow)\Rule{0px}{0px}{10px}$</p>
-		<p>$\ket{s} = \ket{\sigma}$ のとき，線形独立性より</p>
 		<p>\begin{align}
-			\fraction{1}{\sqrt{(N_1 +N_2)N_2}} = \fraction{1}{\sqrt{2N_1N_2}} = \fraction{1}{\sqrt{(N_1+N_2)N_1}} 
+			&U_{\text{walk}}\ket{\sigma} = SC \cdot \fraction{1}{\sqrt{2N_1N_2}}\sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}\\
+			& = \fraction{1}{\sqrt{2N_1N_2}}\,SC \cdot \left( \sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \sum_{i\in Y}\sum_{j\in X} \ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}}\,S \left( \sum_{i\in X}\sum_{j\in Y} C\ket{i,\,j} + \sum_{i\in Y}\sum_{j\in X} C\ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1 N_2}}\, S\left(\fraction{2}{N_2}\sum_{i\in X}\sum_{j\in Y}\sum_{j'\in Y}\ket{i,\,j'} -\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j}  \right.\\
+			& \hspace{50mm} \left. + \fraction{2}{N_1}\sum_{i\in Y}\sum_{j\in X}\sum_{j'\in X}\ket{i,\,j'} -\sum_{i\in Y}\sum_{j\in X} \ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \, S \left( \fraction{2N_2}{N_2} \sum_{i\in X}\sum_{j'\in Y} \ket{i,\,j'} - \sum_{i\in X}\sum_{j\in Y} \ket{i,\,j}  \right.\\
+			& \hspace{50mm} \left. + \fraction{2N_1}{N_1} \sum_{i\in Y}\sum_{j'\in X} \ket{i,\,j'} -\sum_{i\in Y}\sum_{j\in X} \ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \, S \left( \sum_{i\in X}\sum_{j\in Y} \ket{i,\, j} +\sum_{i\in Y}\sum_{j\in X}\ket{i,\,j}\right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sum_{i\in X}\sum_{j\in Y} \ket{j,\, i} +\sum_{i\in Y}\sum_{j\in X}\ket{j,\,i}\right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sum_{j\in Y}\sum_{i\in X} \ket{j,\, i} +\sum_{j\in X}\sum_{i\in Y}\ket{j,\,i}\right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \sum_{j\in X\cup Y}\sum_{i\sim j} \ket{j,\,i} = \ket{\sigma}.
 			\end{align}</p>
-		<p>であることから $N_1 = N_2$ が導かれる．$\Rule{0px}{0px}{20px}$</p>
-		<p>$(\Leftarrow)\Rule{0px}{0px}{10px}$</p>
-		<p> $N_1 =N_2$ を $\ket{s}$ に代入すると</p>
-		<p>\begin{align}
-			\ket{s} &= \fraction{1}{\sqrt{N_1 + N_1}} \left(\fraction{1}{\sqrt{N_1}}\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \fraction{1}{\sqrt{N_1}} \sum_{j\in Y}\sum_{i\in X}\ket{j,\,i}\right)\\
-				&= \fraction{1}{\sqrt{2N_1}} \cdot \fraction{1}{\sqrt{N_1}} \sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}\\
-				&= \fraction{1}{\sqrt{2} N_1} \sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}.
-			\end{align}</p>
-		<p>一方，$N_1 = N_2$ を $\ket{\sigma}$ に代入すると</p>
-		<p>\begin{align}
-			\ket{\sigma} &= \fraction{1}{\sqrt{2N_1 N_1}} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}\\
-				&= \fraction{1}{\sqrt{2} N_1} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}.
-			\end{align}</p>
-		<p>よって $\ket{s} = \ket{\sigma}$ である．</p>
  	</div>
 </details>
 </div>
@@ -356,9 +349,38 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
+		<p>$\mathcal{A}\subset X,\ \mathcal{B} = Y,\ \mathcal{C} \subset X$ に留意して</p>
 		<p>\begin{align}
-			C\ket{ab} = 
+			&C\ket{ab} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} C\ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}} \sum_{b\in \mathcal{B}} \left( \fraction{2}{N_2} \sum_{j'\in Y}\ket{a,\,j'} -\ket{a,\,b}\right)\\
+				&= \fraction{1}{\sqrt{kN_2}} \left(\fraction{2N_2}{N_2} \sum_{a\in \mathcal{A}} \sum_{j'\in \mathcal{B}} \ket{a,\,j'} - \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}}\ket{a,\,b}\right)\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{40px}\\
+			
+			&C\ket{ba} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} C\ket{b,\,a}\\
+			&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}} \sum_{a\in \mathcal{A}} \left( \fraction{2}{N_1}\sum_{j'\in X}\ket{b,\,j'} -\ket{b,\,a}\right)\\
+			&= \fraction{1}{\sqrt{kN_2}} \left( \fraction{2k}{N_1} \sum_{b\in \mathcal{B}}\sum_{j'\in \mathcal{A}\cup \mathcal{C}} \ket{b,\,j'} -\sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a}\right)\\
+			&= -\left(1-\fraction{2k}{N_1}\right) \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \\
+			& \hspace{40mm} + \fraction{2\sqrt{k(N_1-k)}}{N_1} \fraction{1}{\sqrt{(N_1-k)N_2}}\sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\\
+			&= -\cos\theta \ket{ba} + \sin\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
+			
+			&C\ket{bc} = C \cdot \fraction{C\ket{ba} +\cos\theta \,\ket{ba}}{\sin\theta}  = \fraction{\ket{ba} + \cos\theta \, C\ket{ba}}{\sin\theta}\\
+			&= \fraction{(1 -\cos^2) \ket{ba} +\sin\theta\cos\theta \ket{bc}}{\sin\theta} = \sin\theta \ket{ba} +\cos\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
+		
+			&C\ket{cb} = \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} C\ket{c,\,b}\\
+			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \left( \fraction{1}{N_2}\sum_{j'\in Y} \ket{c,\,j'} -\ket{c,\,b}\right)\\
+			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \left(\fraction{2N_2}{N_2} \sum_{c\in \mathcal{C}}\sum_{j'\in \mathcal{B}} \ket{c,\,j'} -\sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right)\\
+			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb}.
 			\end{align}</p>
+	<p>よって $C$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_C:\ket{\psi}\mapsto C\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{C}$ である：</p>
+	<p>\begin{align}
+		&[S\ket{ab}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}] \\
+		&= [\ket{ab}\ -\cos\theta \ket{ab} +\sin\theta\ket{bc} \ \sin\theta\ket{ba} +\cos\theta\ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
+		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{C}}{\underline{\left[\begin{array}{cccc}
+			1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right]}}\Rule{0px}{60px}{0px}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
