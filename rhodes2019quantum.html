@@ -364,7 +364,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= -\cos\theta \ket{ba} + \sin\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
 			
 			&C\ket{bc} = C \cdot \fraction{C\ket{ba} +\cos\theta \,\ket{ba}}{\sin\theta}  = \fraction{\ket{ba} + \cos\theta \, C\ket{ba}}{\sin\theta}\\
-			&= \fraction{(1 -\cos^2) \ket{ba} +\sin\theta\cos\theta \ket{bc}}{\sin\theta} = \sin\theta \ket{ba} +\cos\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
+			&= \fraction{(1 -\cos^2\theta) \ket{ba} +\sin\theta\cos\theta \ket{bc}}{\sin\theta} = \sin\theta \ket{ba} +\cos\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
 		
 			&C\ket{cb} = \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} C\ket{c,\,b}\\
 			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \left( \fraction{1}{N_2}\sum_{j'\in Y} \ket{c,\,j'} -\ket{c,\,b}\right)\\
@@ -374,7 +374,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>よって $C$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_C:\ket{\psi}\mapsto C\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{C}$ である：</p>
 	<p>\begin{align}
 		&[S\ket{ab}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}] \\
-		&= [\ket{ab}\ -\cos\theta \ket{ab} +\sin\theta\ket{bc} \ \sin\theta\ket{ba} +\cos\theta\ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
+		&= [\ket{ab}\ -\cos\theta \ket{ba} +\sin\theta\ket{bc} \ \sin\theta\ket{ba} +\cos\theta\ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
 		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{C}}{\underline{\left[\begin{array}{cccc}
 			1 & 0 & 0 & 0 \\ 
 			0 & -\cos\theta & \sin\theta & 0 \\
