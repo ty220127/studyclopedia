@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -36,7 +37,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/11"
+	const updated = "2023/8/14"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -174,6 +175,102 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <br>
 <!-- end of a box -->
 
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = C7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,usD7)</script>の完全２部グラフに関して，コイン行列 $C$ をなすベクトル $\ket{\xi_v}$ は以下のように計算できる：</p>
+	<p>\begin{align}
+		\ket{\xi_v} = \begin{case}{ll} \fraction{1}{\sqrt{N_2}} \sum_{u\in Y}\ket{v,\,u} & (v\in X)\\ \fraction{1}{\sqrt{N_1}} \sum_{u\in X} \ket{v,\,u} & (v\in Y) \end{case}.
+		\end{align}</p>
+	<p>よって，$(i,\,j)$ に対応する量子状態に対して，$C$ は以下のように作用する：</p>
+	<p>\begin{align}
+		C\ket{i,\,j} = \begin{case}{ll} \fraction{2}{N_2}\sum_{j'\in Y} \ket{i,\,j'} -\ket{i,\,j} & (i\in X)\\
+			\fraction{2}{N_1}\sum_{j'\in X} \ket{i,\,j'} -\ket{i,\,j} & (i\in Y) \end{case}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>$v\in X $ のとき，完全２部グラフの性質により，ある頂点 $u$ が $v$ と隣接していることは $u$ が $Y$ の頂点であることと同値である．よって $\deg v = |Y| = N_2$ であり，</p>
+		<p>\begin{align}
+			\ket{\xi_v} = \fraction{1}{\sqrt{N_2}} \sum_{u\in Y} \ket{v,\,u}
+			\end{align}</p>
+		<p>が成り立つ．</p>
+		<p>$v\in Y$ のときも同様に，ある頂点 $u$ が $v$ と隣接していることは $u$ が $X$ に属していることと同値である．よって $\deg v = |X| = N_1$ であり，</p>
+		<p>\begin{align}
+			\ket{\xi_v} &= \fraction{1}{\sqrt{N_1}} \sum_{u\in Y} \ket{v,\,u}
+			\end{align}</p>
+		<p>が成り立つ．</p>
+		<p>ここで，内積 $\braket{\xi_v|i,\,j}$ を考える：</p>
+		<p>\begin{align}
+			\braket{\xi_v|i,\,j} &= \fraction{1}{\sqrt{\deg v}} \sum_{u\sim v} \braket{v,\,u|i,\,j} \\
+				&= \fraction{\delta_{vi}}{\sqrt{\deg v}} \sum_{u\sim v} \delta_{uj}.
+			\end{align}</p>
+		<p>$i\in X$ のとき $j \in Y$ であり，</p>
+		<p>\begin{align}
+			\braket{\xi_v|i,\,j} = \begin{case}{ll} \fraction{1}{\sqrt{\deg i}} \sum_{u\in Y} \delta_{uj} = \fraction{1}{\sqrt{N_1}} & (v = i)\\
+				0\Rule{0px}{30px}{0px} & (\text{o.w.}) \end{case}.
+			\end{align}</p>
+		<p>故に，この下では</p>
+		<p>\begin{align}
+			C\ket{i,\,j} &= \left( 2\sum_{v\in X\cup Y}\ketbra{\xi_v}{\xi_v} -I_{\mathcal{H}}\right) \ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_2}} \ket{\xi_i} -\ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_2}} \cdot \fraction{1}{\sqrt{N_2}} \sum_{j'\in Y} \ket{i,\,j'} -\ket{i,\,j}\\
+				&= \fraction{2}{N_2}\sum_{j'\in Y} \ket{i,\,j'} -\ket{i,\,j}.
+			\end{align}</p>
+		<p>$i\in Y$ のとき $j \in X$ であり，</p>
+		<p>\begin{align}
+			\braket{\xi_v|i,\,j} = \begin{case}{ll} \fraction{1}{\sqrt{\deg i}} \sum_{u\in X} \delta_{uj} = \fraction{1}{\sqrt{N_2}} & (v = i)\\
+				0\Rule{0px}{30px}{0px} & (\text{o.w.}) \end{case}.
+			\end{align}</p>
+		<p>故に，この下では</p>
+		<p>\begin{align}
+			C\ket{i,\,j} &= \left( 2\sum_{v\in X\cup Y}\ketbra{\xi_v}{\xi_v} -I_{\mathcal{H}}\right) \ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_1}} \ket{\xi_i} -\ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_1}} \cdot \fraction{1}{\sqrt{N_1}} \sum_{j'\in X} \ket{i,\,j'} -\ket{i,\,j}\\
+				&= \fraction{2}{N_1}\sum_{j'\in X} \ket{i,\,j'} -\ket{i,\,j}.
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = st7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>\begin{align}U_{\text{walk}}\ket{\sigma} = \ket{\sigma}.\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>$(\Rightarrow)\Rule{0px}{0px}{10px}$</p>
+		<p>$\ket{s} = \ket{\sigma}$ のとき，線形独立性より</p>
+		<p>\begin{align}
+			\fraction{1}{\sqrt{(N_1 +N_2)N_2}} = \fraction{1}{\sqrt{2N_1N_2}} = \fraction{1}{\sqrt{(N_1+N_2)N_1}} 
+			\end{align}</p>
+		<p>であることから $N_1 = N_2$ が導かれる．$\Rule{0px}{0px}{20px}$</p>
+		<p>$(\Leftarrow)\Rule{0px}{0px}{10px}$</p>
+		<p> $N_1 =N_2$ を $\ket{s}$ に代入すると</p>
+		<p>\begin{align}
+			\ket{s} &= \fraction{1}{\sqrt{N_1 + N_1}} \left(\fraction{1}{\sqrt{N_1}}\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \fraction{1}{\sqrt{N_1}} \sum_{j\in Y}\sum_{i\in X}\ket{j,\,i}\right)\\
+				&= \fraction{1}{\sqrt{2N_1}} \cdot \fraction{1}{\sqrt{N_1}} \sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}\\
+				&= \fraction{1}{\sqrt{2} N_1} \sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}.
+			\end{align}</p>
+		<p>一方，$N_1 = N_2$ を $\ket{\sigma}$ に代入すると</p>
+		<p>\begin{align}
+			\ket{\sigma} &= \fraction{1}{\sqrt{2N_1 N_1}} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}\\
+				&= \fraction{1}{\sqrt{2} N_1} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}.
+			\end{align}</p>
+		<p>よって $\ket{s} = \ket{\sigma}$ である．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
 <div class="section"><script>s = 2; document.write(s + ". " + sec[s])</script></div>
 
 <!-- beginning of a box -->
@@ -224,6 +321,15 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
 				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
 			\end{align}</p>
+	<p>よって $S$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_S:\ket{\psi}\mapsto S\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{S}$ である：</p>
+	<p>\begin{align}
+		[S\ket{ab}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}] &= [\ket{ba}\ \ket{ab}\ \ket{cb}\ \ket{bc}]\\
+		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{S}}{\underline{\left[\begin{array}{cccc}
+			0 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 1 \\ 
+			0 & 0 & 1 & 0 \end{array}\right]}}\Rule{0px}{60px}{0px}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
@@ -251,14 +357,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<summary>証明</summary>
 	<div id="tx">
 		<p>\begin{align}
-			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
-				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
-			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
-				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
-			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
-				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
-			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
-				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			C\ket{ab} = 
 			\end{align}</p>
  	</div>
 </details>
