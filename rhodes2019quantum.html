@@ -36,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/14"
+	const updated = "2023/8/15"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -68,6 +68,7 @@
 </center>
 <hr>
 $\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\tr}{tr}
 \newenvironment{case}[1]
   {\left\{ \begin{array}{#1}}
   {\end{array}\right.}$
@@ -364,7 +365,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= -\cos\theta \ket{ba} + \sin\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
 			
 			&C\ket{bc} = C \cdot \fraction{C\ket{ba} +\cos\theta \,\ket{ba}}{\sin\theta}  = \fraction{\ket{ba} + \cos\theta \, C\ket{ba}}{\sin\theta}\\
-			&= \fraction{(1 -\cos^2\theta) \ket{ba} +\sin\theta\cos\theta \ket{bc}}{\sin\theta} = \sin\theta \ket{ba} +\cos\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
+			&= \fraction{(1 -\cos^2) \ket{ba} +\sin\theta\cos\theta \ket{bc}}{\sin\theta} = \sin\theta \ket{ba} +\cos\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
 		
 			&C\ket{cb} = \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} C\ket{c,\,b}\\
 			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \left( \fraction{1}{N_2}\sum_{j'\in Y} \ket{c,\,j'} -\ket{c,\,b}\right)\\
@@ -374,7 +375,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>よって $C$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_C:\ket{\psi}\mapsto C\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{C}$ である：</p>
 	<p>\begin{align}
 		&[S\ket{ab}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}] \\
-		&= [\ket{ab}\ -\cos\theta \ket{ba} +\sin\theta\ket{bc} \ \sin\theta\ket{ba} +\cos\theta\ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
+		&= [\ket{ab}\ -\cos\theta \ket{ab} +\sin\theta\ket{bc} \ \sin\theta\ket{ba} +\cos\theta\ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
 		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{C}}{\underline{\left[\begin{array}{cccc}
 			1 & 0 & 0 & 0 \\ 
 			0 & -\cos\theta & \sin\theta & 0 \\
@@ -403,16 +404,30 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
+		<p>$Q$ の定義より $(a,\,b)\in \mathcal{A}\times \mathcal{B}$ に対して $Q\ket{a,\,b} = -\ket{a,\,b}$，その他の状態 $(u,\,v)$ に対して $Q\ket{u,\,v} = \ket{u,\,v}$．よって，</p>
 		<p>\begin{align}
-			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
-				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
-			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
-				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
-			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
-				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
-			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
-				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			Q\ket{ab} &= \fraction{1}{\sqrt{kN_2}}\sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} Q\ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} (-\ket{a,\,b})\\
+				&= -\fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = -\ket{ab},\Rule{0px}{0px}{40px}\\
+			
+			Q\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in\mathcal{A}} Q\ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in\mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{40px}\\
+			
+			Q\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in\mathcal{C}} Q\ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in\mathcal{C}} \ket{b,\,c} = \ket{bc},\Rule{0px}{0px}{40px}\\
+			
+			Q\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in\mathcal{B}} Q\ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in\mathcal{B}} \ket{c,\,b} = \ket{cb}.
 			\end{align}</p>
+	<p>よって $Q$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_Q:\ket{\psi}\mapsto Q\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{Q}$ である：</p>
+	<p>\begin{align}
+		&[Q\ket{ab}\ Q\ket{ba}\ Q\ket{bc}\ Q\ket{cb}] = [-\ket{ab}\ \ket{ba} \ \ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
+		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{Q}}{\underline{\left[\begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right]}}\Rule{0px}{60px}{0px}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
@@ -447,16 +462,54 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
+		<p>$U$ は $U = SCQ$ と定義され，作用素 $S,\ C,\ Q$ は何れも線形空間 $\mathcal{S}$ に関してその作用が閉じているので，$U$ も $\mathcal{S}$ に関してその作用が閉じており，線形変換 $f_U: \ket{\psi}\mapsto U\ket{\psi}$ の表現行列 $\widetilde{U}$ は以下の下線部で示される：</p>
 		<p>\begin{align}
-			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
-				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
-			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
-				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
-			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
-				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
-			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
-				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			\widetilde{U} &= \widetilde{S}\widetilde{C}\widetilde{Q}\\
+				&= \left[ \begin{array}{cccc}
+			0 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 1 \\ 
+			0 & 0 & 1 & 0 \end{array}\right]\,
+					\left[ \begin{array}{cccc}
+			1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right]\,
+					\left[ \begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right] \Rule{0px}{60px}{0px}\\
+
+				&= \underset{=\widetilde{U}}{\underline{\left[ \begin{array}{cccc}
+			0 & -\cos\theta & \sin\theta & 0 \\
+			-1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 \\
+			0 & \sin\theta & \cos\theta & 0 \end{array}\right]}}.\Rule{0px}{60px}{0px}
 			\end{align}</p>
+		<p>ここで $\widetilde{U}$ の跡 $\tr \widetilde{U}$ と行列式 $\det\widetilde{U}$ を計算すると</p>
+		<p>\begin{align}
+			\tr \widetilde{U} &= 0,\\
+			\det \widetilde{U} &= \left| \begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right| \Rule{0px}{60px}{50px}\\
+			&= -(-\cos^2\theta -\sin^2\theta) = 1
+			\end{align}</p>
+		<p>を得る．故に，固有多項式 $\varPhi_{\widetilde{U}}(\lambda) = \det(\widetilde{U} -\lambda I_4)$ は以下のように得られる：</p>
+		<p>\begin{align}
+			\varPhi_{\widetilde{U}} (\lambda) &= \left|\begin{array}{cccc}
+			-\lambda & -\cos\theta & \sin\theta & 0 \\
+			-1 & -\lambda & 0 & 0 \\ 
+			0 & 0 & -\lambda & 1 \\
+			0 & \sin\theta & \cos\theta & -\lambda \end{array}\right| \Rule{0px}{0px}{50px}\\
+				&= \lambda^4 + \tr \widetilde{U} \cdot \lambda^3 -2\cos\theta \cdot \lambda^2 + \det \widetilde{U}\\
+				&= \lambda^4 -2\cos\theta\cdot \lambda^2 + 1\\
+				&= (\lambda^2 -\eu^{\iu\theta})(\lambda^2 -\eu^{-\iu\theta})\\
+				&= (\lambda -\eu^{\iu\phi})(\lambda +\eu^{\iu\phi})(\lambda -\eu^{-\iu\phi})(\lambda +\eu^{-\iu\phi}),
+			\end{align}</p>
+		<p>ただし $\phi = \theta/2$．よって，$\widetilde{U}$ の固有値は $\pm \eu^{\iu\phi},\ \pm \eu^{-\iu\phi}$ である．</p>
  	</div>
 </details>
 </div>
@@ -464,7 +517,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = ci7</script>
+<p id="1">&nbsp;</p><script>var curbox = civ7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p><script>nr(N,cu7)</script>で導入したベクトルを用いて頂点関する一様状態 $\ket{s}$ は以下のように書き換えられる：</p>
@@ -482,6 +535,32 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 					&\hspace{40mm} \left. + \fraction{1}{\sqrt{N_1}} \left( \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} + \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\right) \right\}\\
 					&= \fraction{1}{\sqrt{N_1 +N_2}} \Biggl( \sqrt{k}\ket{ab} + \sqrt{N_1-k}\ket{cb}\\
 					&\hspace{40mm} +\sqrt{\fraction{N_2}{N_1}k}\ket{ba} + \sqrt{\fraction{N_2}{N_1}(N_1-k)}\ket{bc}\Biggr).
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = cie7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,cu7)</script>で導入したベクトルを用いて頂点関する一様状態 $\ket{\sigma}$ は以下のように書き換えられる：</p>
+	<p>\begin{align}
+		\ket{\sigma} &= \fraction{1}{\sqrt{2N_1N_2}} \left( \sqrt{kN_2}\ket{ab} + \sqrt{kN_2}\ket{ba} \right.\\
+				&\hspace{40mm} \left.+\sqrt{(N_1-k)N_2}\ket{bc} + \sqrt{(N_1-k)N_2}\ket{cb}\right).
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>\begin{align}
+			\ket{\sigma} &= \fraction{1}{\sqrt{2N_1N_2}} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}\\
+				&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} + \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a}  \right.\\
+				&\hspace{50mm} \left. + \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} + \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right)\\
+				&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sqrt{kN_2}\ket{ab} + \sqrt{kN_2}\ket{ba} \right.\\
+				&\hspace{40mm} \left.+\sqrt{(N_1-k)N_2}\ket{bc} + \sqrt{(N_1-k)N_2}\ket{cb}\right).
 			\end{align}</p>
  	</div>
 </details>
