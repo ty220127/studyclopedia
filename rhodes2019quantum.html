@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -448,10 +449,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\end{align}</p>
 	<p>また，$\widetilde{U}$ の固有値及び固有ベクトルは以下である：</p>
 	<p>\begin{align}
-		&\ket{\psi_1} = \fraction{1}{2}[\iu,\ \iu\eu^{\iu\phi},\ -\eu^{\iu\phi},\ 1]^\trp,\quad \lambda_1 = -\eu^{-\iu\phi};\\
-		&\ket{\psi_2} = \fraction{1}{2}[\iu,\ -\iu\eu^{\iu\phi},\ \eu^{\iu\phi},\ 1]^\trp,\quad \lambda_2 = \eu^{-\iu\phi};\\
-		&\ket{\psi_3} = \fraction{1}{2}[-\iu,\ -\iu\eu^{-\iu\phi},\ -\eu^{-\iu\phi},\ 1]^\trp,\quad \lambda_3 = -\eu^{\iu\phi};\\
-		&\ket{\psi_4} = \fraction{1}{2}[-\iu,\ -\iu\eu^{-\iu\phi},\ \eu^{-\iu\phi},\ 1]^\trp,\quad \lambda_4 = \eu^{\iu\phi},
+		&\ket{\psi_1} = \fraction{1}{2}[\iu,\ \iu\eu^{\iu\phi},\ {-\eu^{\iu\phi}},\ 1]^\trp,\quad \lambda_1 = -\eu^{-\iu\phi};\\
+		&\ket{\psi_2} = \fraction{1}{2}[\iu,\ {-\iu\eu^{\iu\phi}},\ \eu^{\iu\phi},\ 1]^\trp,\quad \lambda_2 = \eu^{-\iu\phi};\\
+		&\ket{\psi_3} = \fraction{1}{2}[-\iu,\ {-\iu\eu^{-\iu\phi}},\ {-\eu^{-\iu\phi}},\ 1]^\trp,\quad \lambda_3 = -\eu^{\iu\phi};\\
+		&\ket{\psi_4} = \fraction{1}{2}[-\iu,\ \iu\eu^{-\iu\phi},\ \eu^{-\iu\phi},\ 1]^\trp,\quad \lambda_4 = \eu^{\iu\phi},
 		\end{align}</p>
 	<p>ただし</p>
 	<p>\begin{align}
@@ -506,11 +507,83 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			0 & \sin\theta & \cos\theta & -\lambda \end{array}\right| \Rule{0px}{0px}{50px}\\
 				&= \lambda^4 + \tr \widetilde{U} \cdot \lambda^3 -2\cos\theta \cdot \lambda^2 + \det \widetilde{U}\\
 				&= \lambda^4 -2\cos\theta\cdot \lambda^2 + 1\\
-				&= (\lambda^2 -\eu^{\iu\theta})(\lambda^2 -\eu^{-\iu\theta})\\
-				&= (\lambda -\eu^{\iu\phi})(\lambda +\eu^{\iu\phi})(\lambda -\eu^{-\iu\phi})(\lambda +\eu^{-\iu\phi}),
+				&= (\lambda^2 -\eu^{-\iu\theta})(\lambda^2 -\eu^{\iu\theta})\\
+				&= (\lambda -\eu^{-\iu\phi})(\lambda +\eu^{-\iu\phi})(\lambda -\eu^{\iu\phi})(\lambda +\eu^{\iu\phi}),
 			\end{align}</p>
-		<p>ただし $\phi = \theta/2$．よって，$\widetilde{U}$ の固有値は $\pm \eu^{\iu\phi},\ \pm \eu^{-\iu\phi}$ である．</p>
- 	</div>
+		<p>ただし $\phi = \theta/2$．よって，$\widetilde{U}$ の固有値は $\pm \eu^{-\iu\phi},\ \pm \eu^{\iu\phi}$ である．</p>
+		<p>固有値が $\lambda = \pm \eu^{-\iu\phi}$ である場合の固有ベクトルを求める．$\widetilde{U} \mp \eu^{-\iu\phi} I_4$ の行基本変形は以下の通り：</p>
+		<p>\begin{align}
+			\widetilde{U} \mp \eu^{-\iu\phi} I_4 &\to \left[ \begin{array}{cccc}
+			\mp \eu^{-\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			-1 & \mp \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & 0 & \mp \eu^{-\iu\phi} & 1 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{-\iu\phi} \end{array}\right]\\
+				&\to \left[ \begin{array}{cccc}
+			-1 & \mp \eu^{-\iu\phi} & 0 & 0 \\ 
+			\mp \eu^{-\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{-\iu\phi}\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & \eu^{-\iu\phi}-\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & -\eu^{-\iu\phi} + \cos\theta & 0\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & -\iu\sin\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \iu\sin\theta & 0\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & -\iu & 1 & 0 \\
+			0 & 1 & \iu & 0\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+			\end{align}</p>
+		<p>よって，固有ベクトル $\ket{\psi} = [x\,\, y\,\, z\,\, w]^\trp$ に関して以下が成立する：</p>
+		<p>\begin{align}
+			\left\{\begin{array}{l} x \pm \eu^{-\iu\phi}y =0 \\ -\iu y +z =0\\ \mp \eu^{-\iu\phi}z + w = 0\end{array}\right.,\quad \therefore\quad \left\{\begin{array}{l} x = \mp \eu^{-\iu\phi} y\\ y = -\iu z\\ z = \pm \eu^{\iu\phi}w \end{array}\right..
+			\end{align}</p>
+		<p>すなわち，正規化された固有ベクトル $\ket{\psi}$ は</p>
+		<p>\begin{align}
+			\ket{\psi} = \fraction{1}{2} \left[ \begin{array}{c} \iu \\ \mp \iu \eu^{\iu\phi}\\  \pm \eu^{\iu\phi}\\ 1 \end{array}\right].
+			\end{align}</p>
+ 		<p>固有値が $\lambda = \pm \eu^{\iu\phi}$ である場合の固有ベクトルを求める．$\widetilde{U} \mp \eu^{\iu\phi} I_4$ の行基本変形は以下の通り：</p>
+		<p>\begin{align}
+			\widetilde{U} \mp \eu^{\iu\phi} I_4 &\to \left[ \begin{array}{cccc}
+			\mp \eu^{\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			-1 & \mp \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & 0 & \mp \eu^{\iu\phi} & 1 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{\iu\phi} \end{array}\right]\\
+				&\to \left[ \begin{array}{cccc}
+			-1 & \mp \eu^{\iu\phi} & 0 & 0 \\ 
+			\mp \eu^{\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{\iu\phi}\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & \eu^{\iu\phi}-\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & -\eu^{\iu\phi} + \cos\theta & 0\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & \iu\sin\theta & \sin\theta & 0 \\
+			0 & \sin\theta & -\iu\sin\theta & 0\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & \iu & 1 & 0 \\
+			0 & 1 & -\iu & 0\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+			\end{align}</p>
+		<p>よって，固有ベクトル $\ket{\psi} = [x\,\, y\,\, z\,\, w]^\trp$ に関して以下が成立する：</p>
+		<p>\begin{align}
+			\left\{\begin{array}{l} x \pm \eu^{\iu\phi}y =0 \\ \iu y +z =0\\ \mp \eu^{\iu\phi}z + w = 0\end{array}\right.,\quad \therefore\quad \left\{\begin{array}{l} x = \mp \eu^{\iu\phi} y\\ y = \iu z\\ z = \pm \eu^{-\iu\phi}w \end{array}\right..
+			\end{align}</p>
+		<p>すなわち，正規化された固有ベクトル $\ket{\psi}$ は</p>
+		<p>\begin{align}
+			\ket{\psi} = \fraction{1}{2} \left[ \begin{array}{c} -\iu \\ \pm \iu \eu^{-\iu\phi}\\  \pm \eu^{-\iu\phi}\\ 1 \end{array}\right].
+			\end{align}</p>
+	</div>
 </details>
 </div>
 <br>
