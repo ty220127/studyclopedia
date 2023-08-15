@@ -90,7 +90,7 @@ authors[i] = ["Takatomo","Mihana", "Yuta","Terashima", "Makoto","Naruse", "Song-
 dates[i] = new Date( 2018, 4, 5, 00, 00 );
 doi[i] = "https://www.hindawi.com/journals/complexity/2018/4318127/";
 arxiv[i] = "";
-pub[i] = "Complexity vol. 2018, Art. ID 4318127";
+pub[i] = "Complexity Vol. 2018, Art. ID 4318127";
 j = 0;
 j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
 j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
@@ -230,3 +230,16 @@ function athr(n){
 		}
 }
 
+function athr2(n){
+	al = authors[n].length;
+	if(al == 2){
+		document.write(authors[n][0] + " " + authors[n][1]);
+	}else if(al == 4){
+			document.write(authors[n][0] + " " + authors[n][1] + " and " + authors[n][2] + " " + authors[n][3]);
+	} else {
+		for(i = 0; 2*i < authors[n].length-2; i++){
+			document.write(authors[n][2*i] + " " + authors[n][2*i +1] + ", ");
+		}
+		document.write(" and " + authors[n][authors[n].length-2] + " " + authors[n][authors[n].length-1]);
+	}
+}
