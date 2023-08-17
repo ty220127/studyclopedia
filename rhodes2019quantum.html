@@ -4,34 +4,34 @@
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["¥¥(","¥¥)"]] } });	
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['¥¥href{https://ty220127.github.io/mathemaru/#1.html###2}{¥¥scriptsize¥¥sf[¥¥# #2]}',2],
-		nr: ['^¥¥numref{#1}{#2}', 2],
-		refeq: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{=}',2],
-		refleq: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥leq}',2],
-		refeqv: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥equiv}',2],
-		reflr: ['¥¥underset{¥¥hspace{-0.5mm}¥¥numref{#1}{#2}}{¥¥Longleftrightarrow}',2],
-		refr: ['¥¥underset{¥¥numref{#1}{#2}}{¥¥Longrightarrow}',2],
-		bs: '¥¥boldsymbol', 
-		bsqcu: '¥¥displaystyle¥¥bigsqcup', 
-		bcu: '¥¥displaystyle¥¥bigcup', 
-		bca: '¥¥displaystyle¥¥bigcap', 
-		fraction: ['¥¥displaystyle¥¥frac{#1}{#2}', 2],
-		limit: '¥¥displaystyle¥¥lim',
-		sig: '¥¥displaystyle¥¥sum',
-		eu: '¥¥mathrm{e}',
-		iu: '¥¥mathrm{i}',
-		cpl: '¥¥mathsf{c}',
-		trp: '¥¥mathsf{T}',
-		rd: '¥¥mathrm{d}',
-		intgrl: '¥¥displaystyle¥¥int',
-		twobytwo: ['¥¥left[¥¥begin{array}{cc} #1 & #2¥¥¥¥ #3 & #4¥¥end{array}¥¥right]', 4],
-		choose: ['¥¥left(¥¥begin{array}{c} #1¥¥¥¥ #2¥¥end{array}¥¥right)', 2],
-		bra: ['¥¥langle{#1}|', 1],
-		ket: ['|{#1}¥¥rangle', 1],
-		ketbra: ['|{#1}¥¥rangle¥¥hspace{-0.5mm}¥¥langle{#2}|',2],
-		braket: ['¥¥langle #1 ¥¥rangle',1],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		eu: '\\mathrm{e}',
+		iu: '\\mathrm{i}',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+		bra: ['\\langle{#1}|', 1],
+		ket: ['|{#1}\\rangle', 1],
+		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
+		braket: ['\\langle #1 \\rangle',1],
 	}}});
 </script>
 <script>
@@ -67,12 +67,12 @@
 <br><script>document.write(pub[N])</script> (<script>document.write(dates[N].getFullYear())</script>). [<a id="doi">doi</a>] [<a id="axv">arXiv</a>] </p>
 </center>
 <hr>
-$¥DeclareMathOperator{¥spn}{span} ¥DeclareMathOperator{¥modulo}{mod}
-¥DeclareMathOperator{¥tr}{tr}
-¥DeclareMathOperator{¥im}{Im}
-¥newenvironment{case}[1]
-  {¥left¥{ ¥begin{array}{#1}}
-  {¥end{array}¥right.}$
+$\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{Im}
+\newenvironment{case}[1]
+  {\left\{ \begin{array}{#1}}
+  {\end{array}\right.}$
 
 <p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
 Page No. <b><script>document.write(N)</script></b> &ensp;
@@ -93,41 +93,41 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = usD7</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>頂点集合 $X,¥ Y$ からなる完全2部グラフを考える．ただし，$X,¥ Y$ それぞれに属する頂点の個数は $N_1,¥ N_2$ とする．すなわち，グラフは以下の組 $K_{N_1,N_2}$ により構成される：</p>
-	<p>¥begin{align}
-		K_{N_1,N_2} = (X¥cup Y,¥, (X¥times Y)¥cup (Y¥times X)).
-		¥end{align}</p>
-	<p>ここで，粒子（ウォーカー）がある頂点 $u ¥in X¥cup Y$ においてその隣接頂点 $v¥in X¥cup Y$ の方を向いている状態を $(u,¥,v)$ で表す．このような状態たちに対応するベクトル群により張られる Hilbert 空間を $¥mathcal{H}$ とする：</p>
-	<p>¥begin{align}
-		¥mathcal{H} := ¥spn ¥{ ¥ket{u,¥,v}¥,|¥,(u,¥,v)¥in (X¥times Y)¥cup (Y¥times X)¥}¥simeq ¥mathbb{C}^{2N_1 N_2}.
-		¥end{align}</p>
-	<p>また，頂点，辺に関する一様状態をそれぞれ $¥ket{s},¥ ¥ket{¥sigma}$ で表す：</p>
-	<p>¥begin{align}
-		¥ket{s} &= ¥fraction{1}{¥sqrt{N_1 +N_2}}¥left( ¥fraction{1}{¥sqrt{N_2}}¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{i,¥,j} + ¥fraction{1}{¥sqrt{N_1}} ¥sum_{j¥in Y}¥sum_{i¥in X}¥ket{j,¥,i}¥right),¥¥
-		¥ket{¥sigma} &= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥sum_{i¥in X¥cup Y} ¥sum_{j¥sim i} ¥ket{i,¥,j}.
-		¥end{align}
-	<p>量子ウォークの時間発展作用素 $U_{¥text{walk}}$ は</p>
-	<p>¥begin{align}
-		U_{¥text{walk}} = SC
-		¥end{align}</p>
+	<p>頂点集合 $X,\ Y$ からなる完全2部グラフを考える．ただし，$X,\ Y$ それぞれに属する頂点の個数は $N_1,\ N_2$ とする．すなわち，グラフは以下の組 $K_{N_1,N_2}$ により構成される：</p>
+	<p>\begin{align}
+		K_{N_1,N_2} = (X\cup Y,\, (X\times Y)\cup (Y\times X)).
+		\end{align}</p>
+	<p>ここで，粒子（ウォーカー）がある頂点 $u \in X\cup Y$ においてその隣接頂点 $v\in X\cup Y$ の方を向いている状態を $(u,\,v)$ で表す．このような状態たちに対応するベクトル群により張られる Hilbert 空間を $\mathcal{H}$ とする：</p>
+	<p>\begin{align}
+		\mathcal{H} := \spn \{ \ket{u,\,v}\,|\,(u,\,v)\in (X\times Y)\cup (Y\times X)\}\simeq \mathbb{C}^{2N_1 N_2}.
+		\end{align}</p>
+	<p>また，頂点，辺に関する一様状態をそれぞれ $\ket{s},\ \ket{\sigma}$ で表す：</p>
+	<p>\begin{align}
+		\ket{s} &= \fraction{1}{\sqrt{N_1 +N_2}}\left( \fraction{1}{\sqrt{N_2}}\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \fraction{1}{\sqrt{N_1}} \sum_{j\in Y}\sum_{i\in X}\ket{j,\,i}\right),\\
+		\ket{\sigma} &= \fraction{1}{\sqrt{2N_1N_2}} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}.
+		\end{align}
+	<p>量子ウォークの時間発展作用素 $U_{\text{walk}}$ は</p>
+	<p>\begin{align}
+		U_{\text{walk}} = SC
+		\end{align}</p>
 	<p>と表される．ただし $S$ はフリップフロップシフト作用素</p>
-	<p>¥begin{align}
-		S = ¥sum_{i,¥in X¥cup Y}¥sum_{j¥sim i} ¥ketbra{i,¥,j}{j,¥,i}
-		¥end{align}</p>
+	<p>\begin{align}
+		S = \sum_{i,\in X\cup Y}\sum_{j\sim i} \ketbra{i,\,j}{j,\,i}
+		\end{align}</p>
 	<p>であり，$C$ は Grover の拡散コイン</p>
-	<p>¥begin{align}
-		C &= 2 ¥sum_{i¥in X¥cup Y} ¥ketbra{¥xi_i}{¥xi_i} -I_{¥mathcal{H}},¥¥
-			&¥ket{¥xi_i} = ¥fraction{1}{¥sqrt{¥deg i}}¥sum_{j¥sim i} ¥ket{i,¥,j}
-		¥end{align}</p>
+	<p>\begin{align}
+		C &= 2 \sum_{i\in X\cup Y} \ketbra{\xi_i}{\xi_i} -I_{\mathcal{H}},\\
+			&\ket{\xi_i} = \fraction{1}{\sqrt{\deg i}}\sum_{j\sim i} \ket{i,\,j}
+		\end{align}</p>
 	<p>である．</p>
 	<p>更に，探索におけるマーク頂点に関するオラクル $Q$ を</p>
-	<p>¥begin{align}
-		Q = ¥sum_{i¥in X¥cup Y}¥sum_{j¥sim i} (-1)^{f(i)} ¥ketbra{i,¥,j}{i,¥,j}
-		¥end{align}</p>
+	<p>\begin{align}
+		Q = \sum_{i\in X\cup Y}\sum_{j\sim i} (-1)^{f(i)} \ketbra{i,\,j}{i,\,j}
+		\end{align}</p>
 	<p>と定義し，空間探索のための時間発展作用素を</p>
-	<p>¥begin{align}
-		U = U_{¥text{walk}} Q = SCQ
-		¥end{align}</p>
+	<p>\begin{align}
+		U = U_{\text{walk}} Q = SCQ
+		\end{align}</p>
 	<p>と定める．</p>
 </div>
 <details class="dtl">
@@ -144,32 +144,32 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = usP7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>¥begin{align}
-		¥ket{s} = ¥ket{¥sigma} ¥ ¥Longleftrightarrow¥ N_1 = N_2.
-		¥end{align}</p>
+	<p>\begin{align}
+		\ket{s} = \ket{\sigma} \ \Longleftrightarrow\ N_1 = N_2.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>$(¥Rightarrow)¥Rule{0px}{0px}{10px}$</p>
-		<p>$¥ket{s} = ¥ket{¥sigma}$ のとき，線形独立性より</p>
-		<p>¥begin{align}
-			¥fraction{1}{¥sqrt{(N_1 +N_2)N_2}} = ¥fraction{1}{¥sqrt{2N_1N_2}} = ¥fraction{1}{¥sqrt{(N_1+N_2)N_1}} 
-			¥end{align}</p>
-		<p>であることから $N_1 = N_2$ が導かれる．$¥Rule{0px}{0px}{20px}$</p>
-		<p>$(¥Leftarrow)¥Rule{0px}{0px}{10px}$</p>
-		<p> $N_1 =N_2$ を $¥ket{s}$ に代入すると</p>
-		<p>¥begin{align}
-			¥ket{s} &= ¥fraction{1}{¥sqrt{N_1 + N_1}} ¥left(¥fraction{1}{¥sqrt{N_1}}¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{i,¥,j} + ¥fraction{1}{¥sqrt{N_1}} ¥sum_{j¥in Y}¥sum_{i¥in X}¥ket{j,¥,i}¥right)¥¥
-				&= ¥fraction{1}{¥sqrt{2N_1}} ¥cdot ¥fraction{1}{¥sqrt{N_1}} ¥sum_{i¥in X¥cup Y}¥sum_{j¥sim i} ¥ket{i,¥,j}¥¥
-				&= ¥fraction{1}{¥sqrt{2} N_1} ¥sum_{i¥in X¥cup Y}¥sum_{j¥sim i} ¥ket{i,¥,j}.
-			¥end{align}</p>
-		<p>一方，$N_1 = N_2$ を $¥ket{¥sigma}$ に代入すると</p>
-		<p>¥begin{align}
-			¥ket{¥sigma} &= ¥fraction{1}{¥sqrt{2N_1 N_1}} ¥sum_{i¥in X¥cup Y} ¥sum_{j¥sim i} ¥ket{i,¥,j}¥¥
-				&= ¥fraction{1}{¥sqrt{2} N_1} ¥sum_{i¥in X¥cup Y} ¥sum_{j¥sim i} ¥ket{i,¥,j}.
-			¥end{align}</p>
-		<p>よって $¥ket{s} = ¥ket{¥sigma}$ である．</p>
+		<p>$(\Rightarrow)\Rule{0px}{0px}{10px}$</p>
+		<p>$\ket{s} = \ket{\sigma}$ のとき，線形独立性より</p>
+		<p>\begin{align}
+			\fraction{1}{\sqrt{(N_1 +N_2)N_2}} = \fraction{1}{\sqrt{2N_1N_2}} = \fraction{1}{\sqrt{(N_1+N_2)N_1}} 
+			\end{align}</p>
+		<p>であることから $N_1 = N_2$ が導かれる．$\Rule{0px}{0px}{20px}$</p>
+		<p>$(\Leftarrow)\Rule{0px}{0px}{10px}$</p>
+		<p> $N_1 =N_2$ を $\ket{s}$ に代入すると</p>
+		<p>\begin{align}
+			\ket{s} &= \fraction{1}{\sqrt{N_1 + N_1}} \left(\fraction{1}{\sqrt{N_1}}\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \fraction{1}{\sqrt{N_1}} \sum_{j\in Y}\sum_{i\in X}\ket{j,\,i}\right)\\
+				&= \fraction{1}{\sqrt{2N_1}} \cdot \fraction{1}{\sqrt{N_1}} \sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}\\
+				&= \fraction{1}{\sqrt{2} N_1} \sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}.
+			\end{align}</p>
+		<p>一方，$N_1 = N_2$ を $\ket{\sigma}$ に代入すると</p>
+		<p>\begin{align}
+			\ket{\sigma} &= \fraction{1}{\sqrt{2N_1 N_1}} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}\\
+				&= \fraction{1}{\sqrt{2} N_1} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}.
+			\end{align}</p>
+		<p>よって $\ket{s} = \ket{\sigma}$ である．</p>
  	</div>
 </details>
 </div>
@@ -180,58 +180,58 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = C7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p><script>nr(N,usD7)</script>の完全２部グラフに関して，コイン行列 $C$ をなすベクトル $¥ket{¥xi_v}$ は以下のように計算できる：</p>
-	<p>¥begin{align}
-		¥ket{¥xi_v} = ¥begin{case}{ll} ¥fraction{1}{¥sqrt{N_2}} ¥sum_{u¥in Y}¥ket{v,¥,u} & (v¥in X)¥¥ ¥fraction{1}{¥sqrt{N_1}} ¥sum_{u¥in X} ¥ket{v,¥,u} & (v¥in Y) ¥end{case}.
-		¥end{align}</p>
-	<p>よって，$(i,¥,j)$ に対応する量子状態に対して，$C$ は以下のように作用する：</p>
-	<p>¥begin{align}
-		C¥ket{i,¥,j} = ¥begin{case}{ll} ¥fraction{2}{N_2}¥sum_{j'¥in Y} ¥ket{i,¥,j'} -¥ket{i,¥,j} & (i¥in X)¥¥
-			¥fraction{2}{N_1}¥sum_{j'¥in X} ¥ket{i,¥,j'} -¥ket{i,¥,j} & (i¥in Y) ¥end{case}.
-		¥end{align}</p>
+	<p><script>nr(N,usD7)</script>の完全２部グラフに関して，コイン行列 $C$ をなすベクトル $\ket{\xi_v}$ は以下のように計算できる：</p>
+	<p>\begin{align}
+		\ket{\xi_v} = \begin{case}{ll} \fraction{1}{\sqrt{N_2}} \sum_{u\in Y}\ket{v,\,u} & (v\in X)\\ \fraction{1}{\sqrt{N_1}} \sum_{u\in X} \ket{v,\,u} & (v\in Y) \end{case}.
+		\end{align}</p>
+	<p>よって，$(i,\,j)$ に対応する量子状態に対して，$C$ は以下のように作用する：</p>
+	<p>\begin{align}
+		C\ket{i,\,j} = \begin{case}{ll} \fraction{2}{N_2}\sum_{j'\in Y} \ket{i,\,j'} -\ket{i,\,j} & (i\in X)\\
+			\fraction{2}{N_1}\sum_{j'\in X} \ket{i,\,j'} -\ket{i,\,j} & (i\in Y) \end{case}.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>$v¥in X $ のとき，完全２部グラフの性質により，ある頂点 $u$ が $v$ と隣接していることは $u$ が $Y$ の頂点であることと同値である．よって $¥deg v = |Y| = N_2$ であり，</p>
-		<p>¥begin{align}
-			¥ket{¥xi_v} = ¥fraction{1}{¥sqrt{N_2}} ¥sum_{u¥in Y} ¥ket{v,¥,u}
-			¥end{align}</p>
+		<p>$v\in X $ のとき，完全２部グラフの性質により，ある頂点 $u$ が $v$ と隣接していることは $u$ が $Y$ の頂点であることと同値である．よって $\deg v = |Y| = N_2$ であり，</p>
+		<p>\begin{align}
+			\ket{\xi_v} = \fraction{1}{\sqrt{N_2}} \sum_{u\in Y} \ket{v,\,u}
+			\end{align}</p>
 		<p>が成り立つ．</p>
-		<p>$v¥in Y$ のときも同様に，ある頂点 $u$ が $v$ と隣接していることは $u$ が $X$ に属していることと同値である．よって $¥deg v = |X| = N_1$ であり，</p>
-		<p>¥begin{align}
-			¥ket{¥xi_v} &= ¥fraction{1}{¥sqrt{N_1}} ¥sum_{u¥in Y} ¥ket{v,¥,u}
-			¥end{align}</p>
+		<p>$v\in Y$ のときも同様に，ある頂点 $u$ が $v$ と隣接していることは $u$ が $X$ に属していることと同値である．よって $\deg v = |X| = N_1$ であり，</p>
+		<p>\begin{align}
+			\ket{\xi_v} &= \fraction{1}{\sqrt{N_1}} \sum_{u\in Y} \ket{v,\,u}
+			\end{align}</p>
 		<p>が成り立つ．</p>
-		<p>ここで，内積 $¥braket{¥xi_v|i,¥,j}$ を考える：</p>
-		<p>¥begin{align}
-			¥braket{¥xi_v|i,¥,j} &= ¥fraction{1}{¥sqrt{¥deg v}} ¥sum_{u¥sim v} ¥braket{v,¥,u|i,¥,j} ¥¥
-				&= ¥fraction{¥delta_{vi}}{¥sqrt{¥deg v}} ¥sum_{u¥sim v} ¥delta_{uj}.
-			¥end{align}</p>
-		<p>$i¥in X$ のとき $j ¥in Y$ であり，</p>
-		<p>¥begin{align}
-			¥braket{¥xi_v|i,¥,j} = ¥begin{case}{ll} ¥fraction{1}{¥sqrt{¥deg i}} ¥sum_{u¥in Y} ¥delta_{uj} = ¥fraction{1}{¥sqrt{N_1}} & (v = i)¥¥
-				0¥Rule{0px}{30px}{0px} & (¥text{o.w.}) ¥end{case}.
-			¥end{align}</p>
+		<p>ここで，内積 $\braket{\xi_v|i,\,j}$ を考える：</p>
+		<p>\begin{align}
+			\braket{\xi_v|i,\,j} &= \fraction{1}{\sqrt{\deg v}} \sum_{u\sim v} \braket{v,\,u|i,\,j} \\
+				&= \fraction{\delta_{vi}}{\sqrt{\deg v}} \sum_{u\sim v} \delta_{uj}.
+			\end{align}</p>
+		<p>$i\in X$ のとき $j \in Y$ であり，</p>
+		<p>\begin{align}
+			\braket{\xi_v|i,\,j} = \begin{case}{ll} \fraction{1}{\sqrt{\deg i}} \sum_{u\in Y} \delta_{uj} = \fraction{1}{\sqrt{N_1}} & (v = i)\\
+				0\Rule{0px}{30px}{0px} & (\text{o.w.}) \end{case}.
+			\end{align}</p>
 		<p>故に，この下では</p>
-		<p>¥begin{align}
-			C¥ket{i,¥,j} &= ¥left( 2¥sum_{v¥in X¥cup Y}¥ketbra{¥xi_v}{¥xi_v} -I_{¥mathcal{H}}¥right) ¥ket{i,¥,j}¥¥
-				&= ¥fraction{2}{¥sqrt{N_2}} ¥ket{¥xi_i} -¥ket{i,¥,j}¥¥
-				&= ¥fraction{2}{¥sqrt{N_2}} ¥cdot ¥fraction{1}{¥sqrt{N_2}} ¥sum_{j'¥in Y} ¥ket{i,¥,j'} -¥ket{i,¥,j}¥¥
-				&= ¥fraction{2}{N_2}¥sum_{j'¥in Y} ¥ket{i,¥,j'} -¥ket{i,¥,j}.
-			¥end{align}</p>
-		<p>$i¥in Y$ のとき $j ¥in X$ であり，</p>
-		<p>¥begin{align}
-			¥braket{¥xi_v|i,¥,j} = ¥begin{case}{ll} ¥fraction{1}{¥sqrt{¥deg i}} ¥sum_{u¥in X} ¥delta_{uj} = ¥fraction{1}{¥sqrt{N_2}} & (v = i)¥¥
-				0¥Rule{0px}{30px}{0px} & (¥text{o.w.}) ¥end{case}.
-			¥end{align}</p>
+		<p>\begin{align}
+			C\ket{i,\,j} &= \left( 2\sum_{v\in X\cup Y}\ketbra{\xi_v}{\xi_v} -I_{\mathcal{H}}\right) \ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_2}} \ket{\xi_i} -\ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_2}} \cdot \fraction{1}{\sqrt{N_2}} \sum_{j'\in Y} \ket{i,\,j'} -\ket{i,\,j}\\
+				&= \fraction{2}{N_2}\sum_{j'\in Y} \ket{i,\,j'} -\ket{i,\,j}.
+			\end{align}</p>
+		<p>$i\in Y$ のとき $j \in X$ であり，</p>
+		<p>\begin{align}
+			\braket{\xi_v|i,\,j} = \begin{case}{ll} \fraction{1}{\sqrt{\deg i}} \sum_{u\in X} \delta_{uj} = \fraction{1}{\sqrt{N_2}} & (v = i)\\
+				0\Rule{0px}{30px}{0px} & (\text{o.w.}) \end{case}.
+			\end{align}</p>
 		<p>故に，この下では</p>
-		<p>¥begin{align}
-			C¥ket{i,¥,j} &= ¥left( 2¥sum_{v¥in X¥cup Y}¥ketbra{¥xi_v}{¥xi_v} -I_{¥mathcal{H}}¥right) ¥ket{i,¥,j}¥¥
-				&= ¥fraction{2}{¥sqrt{N_1}} ¥ket{¥xi_i} -¥ket{i,¥,j}¥¥
-				&= ¥fraction{2}{¥sqrt{N_1}} ¥cdot ¥fraction{1}{¥sqrt{N_1}} ¥sum_{j'¥in X} ¥ket{i,¥,j'} -¥ket{i,¥,j}¥¥
-				&= ¥fraction{2}{N_1}¥sum_{j'¥in X} ¥ket{i,¥,j'} -¥ket{i,¥,j}.
-			¥end{align}</p>
+		<p>\begin{align}
+			C\ket{i,\,j} &= \left( 2\sum_{v\in X\cup Y}\ketbra{\xi_v}{\xi_v} -I_{\mathcal{H}}\right) \ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_1}} \ket{\xi_i} -\ket{i,\,j}\\
+				&= \fraction{2}{\sqrt{N_1}} \cdot \fraction{1}{\sqrt{N_1}} \sum_{j'\in X} \ket{i,\,j'} -\ket{i,\,j}\\
+				&= \fraction{2}{N_1}\sum_{j'\in X} \ket{i,\,j'} -\ket{i,\,j}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -242,24 +242,24 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = st7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>¥begin{align}U_{¥text{walk}}¥ket{¥sigma} = ¥ket{¥sigma}.¥end{align}</p>
+	<p>\begin{align}U_{\text{walk}}\ket{\sigma} = \ket{\sigma}.\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>¥begin{align}
-			&U_{¥text{walk}}¥ket{¥sigma} = SC ¥cdot ¥fraction{1}{¥sqrt{2N_1N_2}}¥sum_{i¥in X¥cup Y}¥sum_{j¥sim i} ¥ket{i,¥,j}¥¥
-			& = ¥fraction{1}{¥sqrt{2N_1N_2}}¥,SC ¥cdot ¥left( ¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{i,¥,j} + ¥sum_{i¥in Y}¥sum_{j¥in X} ¥ket{i,¥,j} ¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{2N_1N_2}}¥,S ¥left( ¥sum_{i¥in X}¥sum_{j¥in Y} C¥ket{i,¥,j} + ¥sum_{i¥in Y}¥sum_{j¥in X} C¥ket{i,¥,j} ¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{2N_1 N_2}}¥, S¥left(¥fraction{2}{N_2}¥sum_{i¥in X}¥sum_{j¥in Y}¥sum_{j'¥in Y}¥ket{i,¥,j'} -¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{i,¥,j}  ¥right.¥¥
-			& ¥hspace{50mm} ¥left. + ¥fraction{2}{N_1}¥sum_{i¥in Y}¥sum_{j¥in X}¥sum_{j'¥in X}¥ket{i,¥,j'} -¥sum_{i¥in Y}¥sum_{j¥in X} ¥ket{i,¥,j} ¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥, S ¥left( ¥fraction{2N_2}{N_2} ¥sum_{i¥in X}¥sum_{j'¥in Y} ¥ket{i,¥,j'} - ¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{i,¥,j}  ¥right.¥¥
-			& ¥hspace{50mm} ¥left. + ¥fraction{2N_1}{N_1} ¥sum_{i¥in Y}¥sum_{j'¥in X} ¥ket{i,¥,j'} -¥sum_{i¥in Y}¥sum_{j¥in X} ¥ket{i,¥,j} ¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥, S ¥left( ¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{i,¥, j} +¥sum_{i¥in Y}¥sum_{j¥in X}¥ket{i,¥,j}¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥left( ¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{j,¥, i} +¥sum_{i¥in Y}¥sum_{j¥in X}¥ket{j,¥,i}¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥left( ¥sum_{j¥in Y}¥sum_{i¥in X} ¥ket{j,¥, i} +¥sum_{j¥in X}¥sum_{i¥in Y}¥ket{j,¥,i}¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥sum_{j¥in X¥cup Y}¥sum_{i¥sim j} ¥ket{j,¥,i} = ¥ket{¥sigma}.
-			¥end{align}</p>
+		<p>\begin{align}
+			&U_{\text{walk}}\ket{\sigma} = SC \cdot \fraction{1}{\sqrt{2N_1N_2}}\sum_{i\in X\cup Y}\sum_{j\sim i} \ket{i,\,j}\\
+			& = \fraction{1}{\sqrt{2N_1N_2}}\,SC \cdot \left( \sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \sum_{i\in Y}\sum_{j\in X} \ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}}\,S \left( \sum_{i\in X}\sum_{j\in Y} C\ket{i,\,j} + \sum_{i\in Y}\sum_{j\in X} C\ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1 N_2}}\, S\left(\fraction{2}{N_2}\sum_{i\in X}\sum_{j\in Y}\sum_{j'\in Y}\ket{i,\,j'} -\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j}  \right.\\
+			& \hspace{50mm} \left. + \fraction{2}{N_1}\sum_{i\in Y}\sum_{j\in X}\sum_{j'\in X}\ket{i,\,j'} -\sum_{i\in Y}\sum_{j\in X} \ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \, S \left( \fraction{2N_2}{N_2} \sum_{i\in X}\sum_{j'\in Y} \ket{i,\,j'} - \sum_{i\in X}\sum_{j\in Y} \ket{i,\,j}  \right.\\
+			& \hspace{50mm} \left. + \fraction{2N_1}{N_1} \sum_{i\in Y}\sum_{j'\in X} \ket{i,\,j'} -\sum_{i\in Y}\sum_{j\in X} \ket{i,\,j} \right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \, S \left( \sum_{i\in X}\sum_{j\in Y} \ket{i,\, j} +\sum_{i\in Y}\sum_{j\in X}\ket{i,\,j}\right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sum_{i\in X}\sum_{j\in Y} \ket{j,\, i} +\sum_{i\in Y}\sum_{j\in X}\ket{j,\,i}\right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sum_{j\in Y}\sum_{i\in X} \ket{j,\, i} +\sum_{j\in X}\sum_{i\in Y}\ket{j,\,i}\right)\\
+			&= \fraction{1}{\sqrt{2N_1N_2}} \sum_{j\in X\cup Y}\sum_{i\sim j} \ket{j,\,i} = \ket{\sigma}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -272,13 +272,13 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cu7</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>マーク頂点が $X$ 側に $k$ 個存在し，$Y$ 側には存在しない場合を考える．$X$ 側のマーク頂点を $a$ 頂点，$Y$ 側の頂点を $b$ 頂点，$X$ 側の非マーク頂点を $c$ 頂点と呼ぶ．以降，$a,¥ b,¥ c$ 頂点の集合をそれぞれ $¥mathcal{A},¥ ¥mathcal{B},¥ ¥mathcal{C}$ で表現する（$¥mathcal{A}¥cup ¥mathcal{C} = X$，$¥mathcal{B} = Y$）．また，$a$ 頂点から $b$ 頂点に向いている状態，$b$ 頂点から $a$ 頂点に向いている状態，$b$ 頂点から $c$ 頂点に向いている状態，$c$ 頂点から $b$ 頂点に向いている状態をそれぞれ $¥ket{ab},¥ ¥ket{ba},¥ ¥ket{bc},¥ ¥ket{cb}$ と表す：</p>
-	<p>¥begin{align}
-		¥ket{ab} &= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}} ¥sum_{b¥in ¥mathcal{B}} ¥ket{a,¥,b},¥¥
-		¥ket{ba} &= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}} ¥sum_{a¥in ¥mathcal{A}} ¥ket{b,¥,a},¥¥
-		¥ket{bc} &= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{b¥in ¥mathcal{B}} ¥sum_{c¥in ¥mathcal{C}} ¥ket{b,¥,c},¥¥
-		¥ket{cb} &= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{c¥in ¥mathcal{C}} ¥sum_{b¥in ¥mathcal{B}} ¥ket{c,¥,b}.
-		¥end{align}</p>
+	<p>マーク頂点が $X$ 側に $k$ 個存在し，$Y$ 側には存在しない場合を考える．$X$ 側のマーク頂点を $a$ 頂点，$Y$ 側の頂点を $b$ 頂点，$X$ 側の非マーク頂点を $c$ 頂点と呼ぶ．以降，$a,\ b,\ c$ 頂点の集合をそれぞれ $\mathcal{A},\ \mathcal{B},\ \mathcal{C}$ で表現する（$\mathcal{A}\cup \mathcal{C} = X$，$\mathcal{B} = Y$）．また，$a$ 頂点から $b$ 頂点に向いている状態，$b$ 頂点から $a$ 頂点に向いている状態，$b$ 頂点から $c$ 頂点に向いている状態，$c$ 頂点から $b$ 頂点に向いている状態をそれぞれ $\ket{ab},\ \ket{ba},\ \ket{bc},\ \ket{cb}$ と表す：</p>
+	<p>\begin{align}
+		\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}} \sum_{b\in \mathcal{B}} \ket{a,\,b},\\
+		\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}} \sum_{a\in \mathcal{A}} \ket{b,\,a},\\
+		\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}} \sum_{c\in \mathcal{C}} \ket{b,\,c},\\
+		\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} \ket{c,\,b}.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>補足</summary>
@@ -294,37 +294,37 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cS7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $¥mathcal{S} = ¥spn ¥{¥ket{ab},¥,¥ket{ba},¥,¥ket{bc},¥,¥ket{cb}¥}$ に関してシフト作用素 $S$ の作用は閉じている．$¥mathcal{S}$ 上の線形変換 $f_S: ¥ket{¥psi}¥mapsto S¥ket{¥psi}$ が定義でき，その表現行列 $¥widetilde{S}$ は<p>
-	<p>¥begin{align}
-		¥widetilde{S} = ¥left[ ¥begin{array}{cccc}
-			0 & 1 & 0 & 0 ¥¥ 
-			1 & 0 & 0 & 0 ¥¥
-			0 & 0 & 0 & 1 ¥¥ 
-			0 & 0 & 1 & 0 ¥end{array}¥right].
-		¥end{align}</p>
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $S$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_S: \ket{\psi}\mapsto S\ket{\psi}$ が定義でき，その表現行列 $\widetilde{S}$ は<p>
+	<p>\begin{align}
+		\widetilde{S} = \left[ \begin{array}{cccc}
+			0 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 1 \\ 
+			0 & 0 & 1 & 0 \end{array}\right].
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>¥begin{align}
-			S¥ket{ab} &= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} S¥ket{a,¥,b} = ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} ¥ket{b,¥,a}¥¥
-				&= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} ¥ket{b,¥,a} = ¥ket{ba},¥Rule{0px}{0px}{20px}¥¥
-			S¥ket{ba} &= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} S¥ket{b,¥,a} = ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} ¥ket{a,¥,b}¥¥
-				&= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} ¥ket{a,¥,b} = ¥ket{ab},¥Rule{0px}{0px}{20px}¥¥
-			S¥ket{bc} &= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in ¥mathcal{C}} S¥ket{b,¥,c} = ¥fraction{1}{¥sqrt{(N_1 -k)N_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in ¥mathcal{C}} ¥ket{c,¥,b}¥¥
-				&= ¥fraction{1}{¥sqrt{(N_1 -k)N_2}} ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}} ¥ket{c,¥,b} = ¥ket{cb},¥Rule{0px}{0px}{20px}¥¥
-			S¥ket{cb} &= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}} S¥ket{c,¥,b} = ¥fraction{1}{¥sqrt{(N_1 -k)N_2}} ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}} ¥ket{b,¥,c}¥¥
-				&= ¥fraction{1}{¥sqrt{(N_1 -k)N_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in ¥mathcal{C}} ¥ket{b,¥,c} = ¥ket{bc}.
-			¥end{align}</p>
-	<p>よって $S$ の作用は $¥mathcal{S}$ に関して閉じており，ゆえ $¥mathcal{S}$ 上の線形変換 $f_S:¥ket{¥psi}¥mapsto S¥ket{¥psi}$ を定義できる．その表現行列は，以下の下線部で示した $¥widetilde{S}$ である：</p>
-	<p>¥begin{align}
-		[S¥ket{ab}¥ S¥ket{ba}¥ S¥ket{bc}¥ S¥ket{cb}] &= [¥ket{ba}¥ ¥ket{ab}¥ ¥ket{cb}¥ ¥ket{bc}]¥¥
-		&= [¥ket{ab}¥ ¥ket{ba}¥ ¥ket{bc}¥ ¥ket{cb}] ¥,¥underset{=¥widetilde{S}}{¥underline{¥left[¥begin{array}{cccc}
-			0 & 1 & 0 & 0 ¥¥ 
-			1 & 0 & 0 & 0 ¥¥
-			0 & 0 & 0 & 1 ¥¥ 
-			0 & 0 & 1 & 0 ¥end{array}¥right]}}¥Rule{0px}{60px}{0px}.
-		¥end{align}</p>
+		<p>\begin{align}
+			S\ket{ab} &= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} S\ket{a,\,b} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{20px}\\
+			S\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} S\ket{b,\,a} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{20px}\\
+			S\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} S\ket{b,\,c} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb},\Rule{0px}{0px}{20px}\\
+			S\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} S\ket{c,\,b} = \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{(N_1 -k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} = \ket{bc}.
+			\end{align}</p>
+	<p>よって $S$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_S:\ket{\psi}\mapsto S\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{S}$ である：</p>
+	<p>\begin{align}
+		[S\ket{ab}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}] &= [\ket{ba}\ \ket{ab}\ \ket{cb}\ \ket{bc}]\\
+		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{S}}{\underline{\left[\begin{array}{cccc}
+			0 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 1 \\ 
+			0 & 0 & 1 & 0 \end{array}\right]}}\Rule{0px}{60px}{0px}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
@@ -335,54 +335,54 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cC7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $¥mathcal{S} = ¥spn ¥{¥ket{ab},¥,¥ket{ba},¥,¥ket{bc},¥,¥ket{cb}¥}$ に関してシフト作用素 $C$ の作用は閉じている．$¥mathcal{S}$ 上の線形変換 $f_C: ¥ket{¥psi}¥mapsto C¥ket{¥psi}$ が定義でき，その表現行列 $¥widetilde{C}$ は<p>
-	<p>¥begin{align}
-		¥widetilde{C} = ¥left[ ¥begin{array}{cccc}
-			1 & 0 & 0 & 0 ¥¥ 
-			0 & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥end{array}¥right].
-		¥end{align}</p>
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $C$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_C: \ket{\psi}\mapsto C\ket{\psi}$ が定義でき，その表現行列 $\widetilde{C}$ は<p>
+	<p>\begin{align}
+		\widetilde{C} = \left[ \begin{array}{cccc}
+			1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right].
+		\end{align}</p>
 	<p>ただし，</p>
-	<p>¥begin{align}
-		¥cos¥theta = 1-¥fraction{2k}{N_1},¥quad ¥sin¥theta = ¥fraction{2}{N_1}¥sqrt{k(N_1 -k)}.
-		¥end{align}</p>
+	<p>\begin{align}
+		\cos\theta = 1-\fraction{2k}{N_1},\quad \sin\theta = \fraction{2}{N_1}\sqrt{k(N_1 -k)}.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>$¥mathcal{A}¥subset X,¥ ¥mathcal{B} = Y,¥ ¥mathcal{C} ¥subset X$ に留意して</p>
-		<p>¥begin{align}
-			&C¥ket{ab} = ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} C¥ket{a,¥,b}¥¥
-				&= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}} ¥sum_{b¥in ¥mathcal{B}} ¥left( ¥fraction{2}{N_2} ¥sum_{j'¥in Y}¥ket{a,¥,j'} -¥ket{a,¥,b}¥right)¥¥
-				&= ¥fraction{1}{¥sqrt{kN_2}} ¥left(¥fraction{2N_2}{N_2} ¥sum_{a¥in ¥mathcal{A}} ¥sum_{j'¥in ¥mathcal{B}} ¥ket{a,¥,j'} - ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}}¥ket{a,¥,b}¥right)¥¥
-				&= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} ¥ket{a,¥,b} = ¥ket{ab},¥Rule{0px}{0px}{40px}¥¥
+		<p>$\mathcal{A}\subset X,\ \mathcal{B} = Y,\ \mathcal{C} \subset X$ に留意して</p>
+		<p>\begin{align}
+			&C\ket{ab} = \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} C\ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}} \sum_{b\in \mathcal{B}} \left( \fraction{2}{N_2} \sum_{j'\in Y}\ket{a,\,j'} -\ket{a,\,b}\right)\\
+				&= \fraction{1}{\sqrt{kN_2}} \left(\fraction{2N_2}{N_2} \sum_{a\in \mathcal{A}} \sum_{j'\in \mathcal{B}} \ket{a,\,j'} - \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}}\ket{a,\,b}\right)\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = \ket{ab},\Rule{0px}{0px}{40px}\\
 			
-			&C¥ket{ba} = ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} C¥ket{b,¥,a}¥¥
-			&= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}} ¥sum_{a¥in ¥mathcal{A}} ¥left( ¥fraction{2}{N_1}¥sum_{j'¥in X}¥ket{b,¥,j'} -¥ket{b,¥,a}¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{kN_2}} ¥left( ¥fraction{2k}{N_1} ¥sum_{b¥in ¥mathcal{B}}¥sum_{j'¥in ¥mathcal{A}¥cup ¥mathcal{C}} ¥ket{b,¥,j'} -¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} ¥ket{b,¥,a}¥right)¥¥
-			&= -¥left(1-¥fraction{2k}{N_1}¥right) ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} ¥¥
-			& ¥hspace{40mm} + ¥fraction{2¥sqrt{k(N_1-k)}}{N_1} ¥fraction{1}{¥sqrt{(N_1-k)N_2}}¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in ¥mathcal{C}}¥ket{b,¥,c}¥¥
-			&= -¥cos¥theta ¥ket{ba} + ¥sin¥theta ¥ket{bc}, ¥Rule{0px}{0px}{40px}¥¥
+			&C\ket{ba} = \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} C\ket{b,\,a}\\
+			&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}} \sum_{a\in \mathcal{A}} \left( \fraction{2}{N_1}\sum_{j'\in X}\ket{b,\,j'} -\ket{b,\,a}\right)\\
+			&= \fraction{1}{\sqrt{kN_2}} \left( \fraction{2k}{N_1} \sum_{b\in \mathcal{B}}\sum_{j'\in \mathcal{A}\cup \mathcal{C}} \ket{b,\,j'} -\sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a}\right)\\
+			&= -\left(1-\fraction{2k}{N_1}\right) \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \\
+			& \hspace{40mm} + \fraction{2\sqrt{k(N_1-k)}}{N_1} \fraction{1}{\sqrt{(N_1-k)N_2}}\sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\\
+			&= -\cos\theta \ket{ba} + \sin\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
 			
-			&C¥ket{bc} = C ¥cdot ¥fraction{C¥ket{ba} +¥cos¥theta ¥,¥ket{ba}}{¥sin¥theta}  = ¥fraction{¥ket{ba} + ¥cos¥theta ¥, C¥ket{ba}}{¥sin¥theta}¥¥
-			&= ¥fraction{(1 -¥cos^2) ¥ket{ba} +¥sin¥theta¥cos¥theta ¥ket{bc}}{¥sin¥theta} = ¥sin¥theta ¥ket{ba} +¥cos¥theta ¥ket{bc}, ¥Rule{0px}{0px}{40px}¥¥
+			&C\ket{bc} = C \cdot \fraction{C\ket{ba} +\cos\theta \,\ket{ba}}{\sin\theta}  = \fraction{\ket{ba} + \cos\theta \, C\ket{ba}}{\sin\theta}\\
+			&= \fraction{(1 -\cos^2) \ket{ba} +\sin\theta\cos\theta \ket{bc}}{\sin\theta} = \sin\theta \ket{ba} +\cos\theta \ket{bc}, \Rule{0px}{0px}{40px}\\
 		
-			&C¥ket{cb} = ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{c¥in ¥mathcal{C}} ¥sum_{b¥in ¥mathcal{B}} C¥ket{c,¥,b}¥¥
-			&= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}} ¥left( ¥fraction{1}{N_2}¥sum_{j'¥in Y} ¥ket{c,¥,j'} -¥ket{c,¥,b}¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥left(¥fraction{2N_2}{N_2} ¥sum_{c¥in ¥mathcal{C}}¥sum_{j'¥in ¥mathcal{B}} ¥ket{c,¥,j'} -¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}}¥ket{c,¥,b}¥right)¥¥
-			&= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}} ¥ket{c,¥,b} = ¥ket{cb}.
-			¥end{align}</p>
-	<p>よって $C$ の作用は $¥mathcal{S}$ に関して閉じており，ゆえ $¥mathcal{S}$ 上の線形変換 $f_C:¥ket{¥psi}¥mapsto C¥ket{¥psi}$ を定義できる．その表現行列は，以下の下線部で示した $¥widetilde{C}$ である：</p>
-	<p>¥begin{align}
-		&[S¥ket{ab}¥ S¥ket{ba}¥ S¥ket{bc}¥ S¥ket{cb}] ¥¥
-		&= [¥ket{ab}¥ -¥cos¥theta ¥ket{ab} +¥sin¥theta¥ket{bc} ¥ ¥sin¥theta¥ket{ba} +¥cos¥theta¥ket{bc}¥ ¥ket{cb}] ¥Rule{0px}{20px}{0px}¥¥
-		&= [¥ket{ab}¥ ¥ket{ba}¥ ¥ket{bc}¥ ¥ket{cb}] ¥,¥underset{=¥widetilde{C}}{¥underline{¥left[¥begin{array}{cccc}
-			1 & 0 & 0 & 0 ¥¥ 
-			0 & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥end{array}¥right]}}¥Rule{0px}{60px}{0px}.
-		¥end{align}</p>
+			&C\ket{cb} = \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} C\ket{c,\,b}\\
+			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \left( \fraction{1}{N_2}\sum_{j'\in Y} \ket{c,\,j'} -\ket{c,\,b}\right)\\
+			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \left(\fraction{2N_2}{N_2} \sum_{c\in \mathcal{C}}\sum_{j'\in \mathcal{B}} \ket{c,\,j'} -\sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right)\\
+			&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \ket{c,\,b} = \ket{cb}.
+			\end{align}</p>
+	<p>よって $C$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_C:\ket{\psi}\mapsto C\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{C}$ である：</p>
+	<p>\begin{align}
+		&[S\ket{ab}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}] \\
+		&= [\ket{ab}\ -\cos\theta \ket{ab} +\sin\theta\ket{bc} \ \sin\theta\ket{ba} +\cos\theta\ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
+		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{C}}{\underline{\left[\begin{array}{cccc}
+			1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right]}}\Rule{0px}{60px}{0px}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
@@ -393,42 +393,42 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cQ7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $¥mathcal{S} = ¥spn ¥{¥ket{ab},¥,¥ket{ba},¥,¥ket{bc},¥,¥ket{cb}¥}$ に関してシフト作用素 $Q$ の作用は閉じている．$¥mathcal{S}$ 上の線形変換 $f_Q: ¥ket{¥psi}¥mapsto Q¥ket{¥psi}$ が定義でき，その表現行列 $¥widetilde{Q}$ は<p>
-	<p>¥begin{align}
-		¥widetilde{Q} = ¥left[ ¥begin{array}{cccc}
-			-1 & 0 & 0 & 0 ¥¥ 
-			0 & 1 & 0 & 0 ¥¥
-			0 & 0 & 1 & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥end{array}¥right].
-		¥end{align}</p>
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $Q$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_Q: \ket{\psi}\mapsto Q\ket{\psi}$ が定義でき，その表現行列 $\widetilde{Q}$ は<p>
+	<p>\begin{align}
+		\widetilde{Q} = \left[ \begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right].
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>$Q$ の定義より $(a,¥,b)¥in ¥mathcal{A}¥times ¥mathcal{B}$ に対して $Q¥ket{a,¥,b} = -¥ket{a,¥,b}$，その他の状態 $(u,¥,v)$ に対して $Q¥ket{u,¥,v} = ¥ket{u,¥,v}$．よって，</p>
-		<p>¥begin{align}
-			Q¥ket{ab} &= ¥fraction{1}{¥sqrt{kN_2}}¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} Q¥ket{a,¥,b}¥¥
-				&= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} (-¥ket{a,¥,b})¥¥
-				&= -¥fraction{1}{¥sqrt{kN_2}} ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} ¥ket{a,¥,b} = -¥ket{ab},¥Rule{0px}{0px}{40px}¥¥
+		<p>$Q$ の定義より $(a,\,b)\in \mathcal{A}\times \mathcal{B}$ に対して $Q\ket{a,\,b} = -\ket{a,\,b}$，その他の状態 $(u,\,v)$ に対して $Q\ket{u,\,v} = \ket{u,\,v}$．よって，</p>
+		<p>\begin{align}
+			Q\ket{ab} &= \fraction{1}{\sqrt{kN_2}}\sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} Q\ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} (-\ket{a,\,b})\\
+				&= -\fraction{1}{\sqrt{kN_2}} \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} = -\ket{ab},\Rule{0px}{0px}{40px}\\
 			
-			Q¥ket{ba} &= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in¥mathcal{A}} Q¥ket{b,¥,a}¥¥
-				&= ¥fraction{1}{¥sqrt{kN_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in¥mathcal{A}} ¥ket{b,¥,a} = ¥ket{ba},¥Rule{0px}{0px}{40px}¥¥
+			Q\ket{ba} &= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in\mathcal{A}} Q\ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{kN_2}} \sum_{b\in \mathcal{B}}\sum_{a\in\mathcal{A}} \ket{b,\,a} = \ket{ba},\Rule{0px}{0px}{40px}\\
 			
-			Q¥ket{bc} &= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in¥mathcal{C}} Q¥ket{b,¥,c}¥¥
-				&= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in¥mathcal{C}} ¥ket{b,¥,c} = ¥ket{bc},¥Rule{0px}{0px}{40px}¥¥
+			Q\ket{bc} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in\mathcal{C}} Q\ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{b\in \mathcal{B}}\sum_{c\in\mathcal{C}} \ket{b,\,c} = \ket{bc},\Rule{0px}{0px}{40px}\\
 			
-			Q¥ket{cb} &= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in¥mathcal{B}} Q¥ket{c,¥,b}¥¥
-				&= ¥fraction{1}{¥sqrt{(N_1-k)N_2}} ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in¥mathcal{B}} ¥ket{c,¥,b} = ¥ket{cb}.
-			¥end{align}</p>
-	<p>よって $Q$ の作用は $¥mathcal{S}$ に関して閉じており，ゆえ $¥mathcal{S}$ 上の線形変換 $f_Q:¥ket{¥psi}¥mapsto Q¥ket{¥psi}$ を定義できる．その表現行列は，以下の下線部で示した $¥widetilde{Q}$ である：</p>
-	<p>¥begin{align}
-		&[Q¥ket{ab}¥ Q¥ket{ba}¥ Q¥ket{bc}¥ Q¥ket{cb}] = [-¥ket{ab}¥ ¥ket{ba} ¥ ¥ket{bc}¥ ¥ket{cb}] ¥Rule{0px}{20px}{0px}¥¥
-		&= [¥ket{ab}¥ ¥ket{ba}¥ ¥ket{bc}¥ ¥ket{cb}] ¥,¥underset{=¥widetilde{Q}}{¥underline{¥left[¥begin{array}{cccc}
-			-1 & 0 & 0 & 0 ¥¥ 
-			0 & 1 & 0 & 0 ¥¥
-			0 & 0 & 1 & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥end{array}¥right]}}¥Rule{0px}{60px}{0px}.
-		¥end{align}</p>
+			Q\ket{cb} &= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in\mathcal{B}} Q\ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{(N_1-k)N_2}} \sum_{c\in \mathcal{C}}\sum_{b\in\mathcal{B}} \ket{c,\,b} = \ket{cb}.
+			\end{align}</p>
+	<p>よって $Q$ の作用は $\mathcal{S}$ に関して閉じており，ゆえ $\mathcal{S}$ 上の線形変換 $f_Q:\ket{\psi}\mapsto Q\ket{\psi}$ を定義できる．その表現行列は，以下の下線部で示した $\widetilde{Q}$ である：</p>
+	<p>\begin{align}
+		&[Q\ket{ab}\ Q\ket{ba}\ Q\ket{bc}\ Q\ket{cb}] = [-\ket{ab}\ \ket{ba} \ \ket{bc}\ \ket{cb}] \Rule{0px}{20px}{0px}\\
+		&= [\ket{ab}\ \ket{ba}\ \ket{bc}\ \ket{cb}] \,\underset{=\widetilde{Q}}{\underline{\left[\begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right]}}\Rule{0px}{60px}{0px}.
+		\end{align}</p>
  	</div>
 </details>
 </div>
@@ -439,150 +439,150 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cU7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $¥mathcal{S} = ¥spn ¥{¥ket{ab},¥,¥ket{ba},¥,¥ket{bc},¥,¥ket{cb}¥}$ に関してシフト作用素 $U$ の作用は閉じている．$¥mathcal{S}$ 上の線形変換 $f_U: ¥ket{¥psi}¥mapsto U¥ket{¥psi}$ が定義でき，その表現行列 $¥widetilde{U}$ は<p>
-	<p>¥begin{align}
-		¥widetilde{U} = ¥left[ ¥begin{array}{cccc}
-			0 & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			-1 & 0 & 0 & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & 0 ¥end{array}¥right].
-		¥end{align}</p>
-	<p>また，$¥widetilde{U}$ の固有値及び固有ベクトルは以下である：</p>
-	<p>¥begin{align}
-		&¥ket{¥psi_1} = ¥fraction{1}{2}[¥iu,¥ ¥iu¥eu^{¥iu¥phi},¥ {-¥eu^{¥iu¥phi}},¥ 1]^¥trp,¥quad ¥lambda_1 = -¥eu^{-¥iu¥phi};¥¥
-		&¥ket{¥psi_2} = ¥fraction{1}{2}[¥iu,¥ {-¥iu¥eu^{¥iu¥phi}},¥ ¥eu^{¥iu¥phi},¥ 1]^¥trp,¥quad ¥lambda_2 = ¥eu^{-¥iu¥phi};¥¥
-		&¥ket{¥psi_3} = ¥fraction{1}{2}[-¥iu,¥ {-¥iu¥eu^{-¥iu¥phi}},¥ {-¥eu^{-¥iu¥phi}},¥ 1]^¥trp,¥quad ¥lambda_3 = -¥eu^{¥iu¥phi};¥¥
-		&¥ket{¥psi_4} = ¥fraction{1}{2}[-¥iu,¥ ¥iu¥eu^{-¥iu¥phi},¥ ¥eu^{-¥iu¥phi},¥ 1]^¥trp,¥quad ¥lambda_4 = ¥eu^{¥iu¥phi},
-		¥end{align}</p>
+	<p><script>nr(N,cu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S} = \spn \{\ket{ab},\,\ket{ba},\,\ket{bc},\,\ket{cb}\}$ に関してシフト作用素 $U$ の作用は閉じている．$\mathcal{S}$ 上の線形変換 $f_U: \ket{\psi}\mapsto U\ket{\psi}$ が定義でき，その表現行列 $\widetilde{U}$ は<p>
+	<p>\begin{align}
+		\widetilde{U} = \left[ \begin{array}{cccc}
+			0 & -\cos\theta & \sin\theta & 0 \\
+			-1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 \\
+			0 & \sin\theta & \cos\theta & 0 \end{array}\right].
+		\end{align}</p>
+	<p>また，$\widetilde{U}$ の固有値及び固有ベクトルは以下である：</p>
+	<p>\begin{align}
+		&\ket{\psi_1} = \fraction{1}{2}[\iu,\ \iu\eu^{\iu\phi},\ {-\eu^{\iu\phi}},\ 1]^\trp,\quad \lambda_1 = -\eu^{-\iu\phi};\\
+		&\ket{\psi_2} = \fraction{1}{2}[\iu,\ {-\iu\eu^{\iu\phi}},\ \eu^{\iu\phi},\ 1]^\trp,\quad \lambda_2 = \eu^{-\iu\phi};\\
+		&\ket{\psi_3} = \fraction{1}{2}[-\iu,\ {-\iu\eu^{-\iu\phi}},\ {-\eu^{-\iu\phi}},\ 1]^\trp,\quad \lambda_3 = -\eu^{\iu\phi};\\
+		&\ket{\psi_4} = \fraction{1}{2}[-\iu,\ \iu\eu^{-\iu\phi},\ \eu^{-\iu\phi},\ 1]^\trp,\quad \lambda_4 = \eu^{\iu\phi},
+		\end{align}</p>
 	<p>ただし</p>
-	<p>¥begin{align}
-		¥phi = ¥fraction{¥theta}{2}
-		¥end{align}</p>
+	<p>\begin{align}
+		\phi = \fraction{\theta}{2}
+		\end{align}</p>
 	<p>である．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>$U$ は $U = SCQ$ と定義され，作用素 $S,¥ C,¥ Q$ は何れも線形空間 $¥mathcal{S}$ に関してその作用が閉じているので，$U$ も $¥mathcal{S}$ に関してその作用が閉じており，線形変換 $f_U: ¥ket{¥psi}¥mapsto U¥ket{¥psi}$ の表現行列 $¥widetilde{U}$ は以下の下線部で示される：</p>
-		<p>¥begin{align}
-			¥widetilde{U} &= ¥widetilde{S}¥widetilde{C}¥widetilde{Q}¥¥
-				&= ¥left[ ¥begin{array}{cccc}
-			0 & 1 & 0 & 0 ¥¥ 
-			1 & 0 & 0 & 0 ¥¥
-			0 & 0 & 0 & 1 ¥¥ 
-			0 & 0 & 1 & 0 ¥end{array}¥right]¥,
-					¥left[ ¥begin{array}{cccc}
-			1 & 0 & 0 & 0 ¥¥ 
-			0 & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥end{array}¥right]¥,
-					¥left[ ¥begin{array}{cccc}
-			-1 & 0 & 0 & 0 ¥¥ 
-			0 & 1 & 0 & 0 ¥¥
-			0 & 0 & 1 & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
+		<p>$U$ は $U = SCQ$ と定義され，作用素 $S,\ C,\ Q$ は何れも線形空間 $\mathcal{S}$ に関してその作用が閉じているので，$U$ も $\mathcal{S}$ に関してその作用が閉じており，線形変換 $f_U: \ket{\psi}\mapsto U\ket{\psi}$ の表現行列 $\widetilde{U}$ は以下の下線部で示される：</p>
+		<p>\begin{align}
+			\widetilde{U} &= \widetilde{S}\widetilde{C}\widetilde{Q}\\
+				&= \left[ \begin{array}{cccc}
+			0 & 1 & 0 & 0 \\ 
+			1 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 1 \\ 
+			0 & 0 & 1 & 0 \end{array}\right]\,
+					\left[ \begin{array}{cccc}
+			1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right]\,
+					\left[ \begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right] \Rule{0px}{60px}{0px}\\
 
-				&= ¥underset{=¥widetilde{U}}{¥underline{¥left[ ¥begin{array}{cccc}
-			0 & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			-1 & 0 & 0 & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & 0 ¥end{array}¥right]}}.¥Rule{0px}{60px}{0px}
-			¥end{align}</p>
-		<p>ここで $¥widetilde{U}$ の跡 $¥tr ¥widetilde{U}$ と行列式 $¥det¥widetilde{U}$ を計算すると</p>
-		<p>¥begin{align}
-			¥tr ¥widetilde{U} &= 0,¥¥
-			¥det ¥widetilde{U} &= ¥left| ¥begin{array}{cccc}
-			-1 & 0 & 0 & 0 ¥¥ 
-			0 & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & 0 ¥¥ 
-			0 & 0 & 0 & 1 ¥end{array}¥right| ¥Rule{0px}{60px}{50px}¥¥
-			&= -(-¥cos^2¥theta -¥sin^2¥theta) = 1
-			¥end{align}</p>
-		<p>を得る．故に，固有多項式 $¥varPhi_{¥widetilde{U}}(¥lambda) = ¥det(¥widetilde{U} -¥lambda I_4)$ は以下のように得られる：</p>
-		<p>¥begin{align}
-			¥varPhi_{¥widetilde{U}} (¥lambda) &= ¥left|¥begin{array}{cccc}
-			-¥lambda & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			-1 & -¥lambda & 0 & 0 ¥¥ 
-			0 & 0 & -¥lambda & 1 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & -¥lambda ¥end{array}¥right| ¥Rule{0px}{0px}{50px}¥¥
-				&= ¥lambda^4 + ¥tr ¥widetilde{U} ¥cdot ¥lambda^3 -2¥cos¥theta ¥cdot ¥lambda^2 + ¥det ¥widetilde{U}¥¥
-				&= ¥lambda^4 -2¥cos¥theta¥cdot ¥lambda^2 + 1¥¥
-				&= (¥lambda^2 -¥eu^{-¥iu¥theta})(¥lambda^2 -¥eu^{¥iu¥theta})¥¥
-				&= (¥lambda -¥eu^{-¥iu¥phi})(¥lambda +¥eu^{-¥iu¥phi})(¥lambda -¥eu^{¥iu¥phi})(¥lambda +¥eu^{¥iu¥phi}),
-			¥end{align}</p>
-		<p>ただし $¥phi = ¥theta/2$．よって，$¥widetilde{U}$ の固有値は $¥pm ¥eu^{-¥iu¥phi},¥ ¥pm ¥eu^{¥iu¥phi}$ である．</p>
-		<p>固有値が $¥lambda = ¥pm ¥eu^{-¥iu¥phi}$ である場合の固有ベクトルを求める．$¥widetilde{U} ¥mp ¥eu^{-¥iu¥phi} I_4$ の行基本変形は以下の通り：</p>
-		<p>¥begin{align}
-			¥widetilde{U} ¥mp ¥eu^{-¥iu¥phi} I_4 &¥to ¥left[ ¥begin{array}{cccc}
-			¥mp ¥eu^{-¥iu¥phi} & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			-1 & ¥mp ¥eu^{-¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & 0 & ¥mp ¥eu^{-¥iu¥phi} & 1 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & ¥mp ¥eu^{-¥iu¥phi} ¥end{array}¥right]¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			-1 & ¥mp ¥eu^{-¥iu¥phi} & 0 & 0 ¥¥ 
-			¥mp ¥eu^{-¥iu¥phi} & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & ¥mp ¥eu^{-¥iu¥phi}¥¥
-			0 & 0 & ¥mp ¥eu^{-¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			1 & ¥pm ¥eu^{-¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & ¥eu^{-¥iu¥theta}-¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & -¥eu^{-¥iu¥theta} + ¥cos¥theta & 0¥¥
-			0 & 0 & ¥mp ¥eu^{-¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			1 & ¥pm ¥eu^{-¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & -¥iu¥sin¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & ¥iu¥sin¥theta & 0¥¥
-			0 & 0 & ¥mp ¥eu^{-¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			1 & ¥pm ¥eu^{-¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & -¥iu & 1 & 0 ¥¥
-			0 & 1 & ¥iu & 0¥¥
-			0 & 0 & ¥mp ¥eu^{-¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-			¥end{align}</p>
-		<p>よって，固有ベクトル $¥ket{¥psi} = [x¥,¥, y¥,¥, z¥,¥, w]^¥trp$ に関して以下が成立する：</p>
-		<p>¥begin{align}
-			¥left¥{¥begin{array}{l} x ¥pm ¥eu^{-¥iu¥phi}y =0 ¥¥ -¥iu y +z =0¥¥ ¥mp ¥eu^{-¥iu¥phi}z + w = 0¥end{array}¥right.,¥quad ¥therefore¥quad ¥left¥{¥begin{array}{l} x = ¥mp ¥eu^{-¥iu¥phi} y¥¥ y = -¥iu z¥¥ z = ¥pm ¥eu^{¥iu¥phi}w ¥end{array}¥right..
-			¥end{align}</p>
-		<p>すなわち，正規化された固有ベクトル $¥ket{¥psi}$ は</p>
-		<p>¥begin{align}
-			¥ket{¥psi} = ¥fraction{1}{2} ¥left[ ¥begin{array}{c} ¥iu ¥¥ ¥mp ¥iu ¥eu^{¥iu¥phi}¥¥  ¥pm ¥eu^{¥iu¥phi}¥¥ 1 ¥end{array}¥right].
-			¥end{align}</p>
- 		<p>固有値が $¥lambda = ¥pm ¥eu^{¥iu¥phi}$ である場合の固有ベクトルを求める．$¥widetilde{U} ¥mp ¥eu^{¥iu¥phi} I_4$ の行基本変形は以下の通り：</p>
-		<p>¥begin{align}
-			¥widetilde{U} ¥mp ¥eu^{¥iu¥phi} I_4 &¥to ¥left[ ¥begin{array}{cccc}
-			¥mp ¥eu^{¥iu¥phi} & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			-1 & ¥mp ¥eu^{¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & 0 & ¥mp ¥eu^{¥iu¥phi} & 1 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & ¥mp ¥eu^{¥iu¥phi} ¥end{array}¥right]¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			-1 & ¥mp ¥eu^{¥iu¥phi} & 0 & 0 ¥¥ 
-			¥mp ¥eu^{¥iu¥phi} & -¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & ¥cos¥theta & ¥mp ¥eu^{¥iu¥phi}¥¥
-			0 & 0 & ¥mp ¥eu^{¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			1 & ¥pm ¥eu^{¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & ¥eu^{¥iu¥theta}-¥cos¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & -¥eu^{¥iu¥theta} + ¥cos¥theta & 0¥¥
-			0 & 0 & ¥mp ¥eu^{¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			1 & ¥pm ¥eu^{¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & ¥iu¥sin¥theta & ¥sin¥theta & 0 ¥¥
-			0 & ¥sin¥theta & -¥iu¥sin¥theta & 0¥¥
-			0 & 0 & ¥mp ¥eu^{¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-				&¥to ¥left[ ¥begin{array}{cccc}
-			1 & ¥pm ¥eu^{¥iu¥phi} & 0 & 0 ¥¥ 
-			0 & ¥iu & 1 & 0 ¥¥
-			0 & 1 & -¥iu & 0¥¥
-			0 & 0 & ¥mp ¥eu^{¥iu¥phi} & 1  ¥end{array}¥right] ¥Rule{0px}{60px}{0px}¥¥
-			¥end{align}</p>
-		<p>よって，固有ベクトル $¥ket{¥psi} = [x¥,¥, y¥,¥, z¥,¥, w]^¥trp$ に関して以下が成立する：</p>
-		<p>¥begin{align}
-			¥left¥{¥begin{array}{l} x ¥pm ¥eu^{¥iu¥phi}y =0 ¥¥ ¥iu y +z =0¥¥ ¥mp ¥eu^{¥iu¥phi}z + w = 0¥end{array}¥right.,¥quad ¥therefore¥quad ¥left¥{¥begin{array}{l} x = ¥mp ¥eu^{¥iu¥phi} y¥¥ y = ¥iu z¥¥ z = ¥pm ¥eu^{-¥iu¥phi}w ¥end{array}¥right..
-			¥end{align}</p>
-		<p>すなわち，正規化された固有ベクトル $¥ket{¥psi}$ は</p>
-		<p>¥begin{align}
-			¥ket{¥psi} = ¥fraction{1}{2} ¥left[ ¥begin{array}{c} -¥iu ¥¥ ¥pm ¥iu ¥eu^{-¥iu¥phi}¥¥  ¥pm ¥eu^{-¥iu¥phi}¥¥ 1 ¥end{array}¥right].
-			¥end{align}</p>
+				&= \underset{=\widetilde{U}}{\underline{\left[ \begin{array}{cccc}
+			0 & -\cos\theta & \sin\theta & 0 \\
+			-1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 \\
+			0 & \sin\theta & \cos\theta & 0 \end{array}\right]}}.\Rule{0px}{60px}{0px}
+			\end{align}</p>
+		<p>ここで $\widetilde{U}$ の跡 $\tr \widetilde{U}$ と行列式 $\det\widetilde{U}$ を計算すると</p>
+		<p>\begin{align}
+			\tr \widetilde{U} &= 0,\\
+			\det \widetilde{U} &= \left| \begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\ 
+			0 & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & 0 \\ 
+			0 & 0 & 0 & 1 \end{array}\right| \Rule{0px}{60px}{50px}\\
+			&= -(-\cos^2\theta -\sin^2\theta) = 1
+			\end{align}</p>
+		<p>を得る．故に，固有多項式 $\varPhi_{\widetilde{U}}(\lambda) = \det(\widetilde{U} -\lambda I_4)$ は以下のように得られる：</p>
+		<p>\begin{align}
+			\varPhi_{\widetilde{U}} (\lambda) &= \left|\begin{array}{cccc}
+			-\lambda & -\cos\theta & \sin\theta & 0 \\
+			-1 & -\lambda & 0 & 0 \\ 
+			0 & 0 & -\lambda & 1 \\
+			0 & \sin\theta & \cos\theta & -\lambda \end{array}\right| \Rule{0px}{0px}{50px}\\
+				&= \lambda^4 + \tr \widetilde{U} \cdot \lambda^3 -2\cos\theta \cdot \lambda^2 + \det \widetilde{U}\\
+				&= \lambda^4 -2\cos\theta\cdot \lambda^2 + 1\\
+				&= (\lambda^2 -\eu^{-\iu\theta})(\lambda^2 -\eu^{\iu\theta})\\
+				&= (\lambda -\eu^{-\iu\phi})(\lambda +\eu^{-\iu\phi})(\lambda -\eu^{\iu\phi})(\lambda +\eu^{\iu\phi}),
+			\end{align}</p>
+		<p>ただし $\phi = \theta/2$．よって，$\widetilde{U}$ の固有値は $\pm \eu^{-\iu\phi},\ \pm \eu^{\iu\phi}$ である．</p>
+		<p>固有値が $\lambda = \pm \eu^{-\iu\phi}$ である場合の固有ベクトルを求める．$\widetilde{U} \mp \eu^{-\iu\phi} I_4$ の行基本変形は以下の通り：</p>
+		<p>\begin{align}
+			\widetilde{U} \mp \eu^{-\iu\phi} I_4 &\to \left[ \begin{array}{cccc}
+			\mp \eu^{-\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			-1 & \mp \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & 0 & \mp \eu^{-\iu\phi} & 1 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{-\iu\phi} \end{array}\right]\\
+				&\to \left[ \begin{array}{cccc}
+			-1 & \mp \eu^{-\iu\phi} & 0 & 0 \\ 
+			\mp \eu^{-\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{-\iu\phi}\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & \eu^{-\iu\theta}-\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & -\eu^{-\iu\theta} + \cos\theta & 0\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & -\iu\sin\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \iu\sin\theta & 0\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{-\iu\phi} & 0 & 0 \\ 
+			0 & -\iu & 1 & 0 \\
+			0 & 1 & \iu & 0\\
+			0 & 0 & \mp \eu^{-\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+			\end{align}</p>
+		<p>よって，固有ベクトル $\ket{\psi} = [x\,\, y\,\, z\,\, w]^\trp$ に関して以下が成立する：</p>
+		<p>\begin{align}
+			\left\{\begin{array}{l} x \pm \eu^{-\iu\phi}y =0 \\ -\iu y +z =0\\ \mp \eu^{-\iu\phi}z + w = 0\end{array}\right.,\quad \therefore\quad \left\{\begin{array}{l} x = \mp \eu^{-\iu\phi} y\\ y = -\iu z\\ z = \pm \eu^{\iu\phi}w \end{array}\right..
+			\end{align}</p>
+		<p>すなわち，正規化された固有ベクトル $\ket{\psi}$ は</p>
+		<p>\begin{align}
+			\ket{\psi} = \fraction{1}{2} \left[ \begin{array}{c} \iu \\ \mp \iu \eu^{\iu\phi}\\  \pm \eu^{\iu\phi}\\ 1 \end{array}\right].
+			\end{align}</p>
+ 		<p>固有値が $\lambda = \pm \eu^{\iu\phi}$ である場合の固有ベクトルを求める．$\widetilde{U} \mp \eu^{\iu\phi} I_4$ の行基本変形は以下の通り：</p>
+		<p>\begin{align}
+			\widetilde{U} \mp \eu^{\iu\phi} I_4 &\to \left[ \begin{array}{cccc}
+			\mp \eu^{\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			-1 & \mp \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & 0 & \mp \eu^{\iu\phi} & 1 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{\iu\phi} \end{array}\right]\\
+				&\to \left[ \begin{array}{cccc}
+			-1 & \mp \eu^{\iu\phi} & 0 & 0 \\ 
+			\mp \eu^{\iu\phi} & -\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & \cos\theta & \mp \eu^{\iu\phi}\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & \eu^{\iu\theta}-\cos\theta & \sin\theta & 0 \\
+			0 & \sin\theta & -\eu^{\iu\theta} + \cos\theta & 0\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & \iu\sin\theta & \sin\theta & 0 \\
+			0 & \sin\theta & -\iu\sin\theta & 0\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+				&\to \left[ \begin{array}{cccc}
+			1 & \pm \eu^{\iu\phi} & 0 & 0 \\ 
+			0 & \iu & 1 & 0 \\
+			0 & 1 & -\iu & 0\\
+			0 & 0 & \mp \eu^{\iu\phi} & 1  \end{array}\right] \Rule{0px}{60px}{0px}\\
+			\end{align}</p>
+		<p>よって，固有ベクトル $\ket{\psi} = [x\,\, y\,\, z\,\, w]^\trp$ に関して以下が成立する：</p>
+		<p>\begin{align}
+			\left\{\begin{array}{l} x \pm \eu^{\iu\phi}y =0 \\ \iu y +z =0\\ \mp \eu^{\iu\phi}z + w = 0\end{array}\right.,\quad \therefore\quad \left\{\begin{array}{l} x = \mp \eu^{\iu\phi} y\\ y = \iu z\\ z = \pm \eu^{-\iu\phi}w \end{array}\right..
+			\end{align}</p>
+		<p>すなわち，正規化された固有ベクトル $\ket{\psi}$ は</p>
+		<p>\begin{align}
+			\ket{\psi} = \fraction{1}{2} \left[ \begin{array}{c} -\iu \\ \pm \iu \eu^{-\iu\phi}\\  \pm \eu^{-\iu\phi}\\ 1 \end{array}\right].
+			\end{align}</p>
 	</div>
 </details>
 </div>
@@ -593,22 +593,22 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = civ7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p><script>nr(N,cu7)</script>で導入したベクトルを用いて頂点関する一様状態 $¥ket{s}$ は以下のように書き換えられる：</p>
-	<p>¥begin{align}
-		¥ket{s} &= ¥fraction{1}{¥sqrt{N_1 +N_2}} ¥left( ¥sqrt{k}¥ket{ab} + ¥sqrt{¥fraction{N_2}{N_1}k}¥ket{ba} ¥right.¥¥
-				&¥hspace{40mm} ¥left.+¥sqrt{¥fraction{N_2}{N_1}(N_1-k)}¥ket{bc} + ¥sqrt{N_1-k}¥ket{cb}¥right).
-		¥end{align}</p>
+	<p><script>nr(N,cu7)</script>で導入したベクトルを用いて頂点関する一様状態 $\ket{s}$ は以下のように書き換えられる：</p>
+	<p>\begin{align}
+		\ket{s} &= \fraction{1}{\sqrt{N_1 +N_2}} \left( \sqrt{k}\ket{ab} + \sqrt{\fraction{N_2}{N_1}k}\ket{ba} \right.\\
+				&\hspace{40mm} \left.+\sqrt{\fraction{N_2}{N_1}(N_1-k)}\ket{bc} + \sqrt{N_1-k}\ket{cb}\right).
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>¥begin{align}
-			¥ket{s} &= ¥fraction{1}{¥sqrt{N_1 +N_2}}¥left( ¥fraction{1}{¥sqrt{N_2}}¥sum_{i¥in X}¥sum_{j¥in Y} ¥ket{i,¥,j} + ¥fraction{1}{¥sqrt{N_1}} ¥sum_{j¥in Y}¥sum_{i¥in X}¥ket{j,¥,i}¥right)¥¥
-					&= ¥fraction{1}{¥sqrt{N_1 +N_2}} ¥left¥{ ¥fraction{1}{¥sqrt{N_2}} ¥left( ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} ¥ket{a,¥,b} + ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}}¥ket{c,¥,b}¥right) ¥right.¥¥
-					&¥hspace{40mm} ¥left. + ¥fraction{1}{¥sqrt{N_1}} ¥left( ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} ¥ket{b,¥,a} + ¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in ¥mathcal{C}}¥ket{b,¥,c}¥right) ¥right¥}¥¥
-					&= ¥fraction{1}{¥sqrt{N_1 +N_2}} ¥Biggl( ¥sqrt{k}¥ket{ab} + ¥sqrt{N_1-k}¥ket{cb}¥¥
-					&¥hspace{40mm} +¥sqrt{¥fraction{N_2}{N_1}k}¥ket{ba} + ¥sqrt{¥fraction{N_2}{N_1}(N_1-k)}¥ket{bc}¥Biggr).
-			¥end{align}</p>
+		<p>\begin{align}
+			\ket{s} &= \fraction{1}{\sqrt{N_1 +N_2}}\left( \fraction{1}{\sqrt{N_2}}\sum_{i\in X}\sum_{j\in Y} \ket{i,\,j} + \fraction{1}{\sqrt{N_1}} \sum_{j\in Y}\sum_{i\in X}\ket{j,\,i}\right)\\
+					&= \fraction{1}{\sqrt{N_1 +N_2}} \left\{ \fraction{1}{\sqrt{N_2}} \left( \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} + \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right) \right.\\
+					&\hspace{40mm} \left. + \fraction{1}{\sqrt{N_1}} \left( \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a} + \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\right) \right\}\\
+					&= \fraction{1}{\sqrt{N_1 +N_2}} \Biggl( \sqrt{k}\ket{ab} + \sqrt{N_1-k}\ket{cb}\\
+					&\hspace{40mm} +\sqrt{\fraction{N_2}{N_1}k}\ket{ba} + \sqrt{\fraction{N_2}{N_1}(N_1-k)}\ket{bc}\Biggr).
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -619,51 +619,51 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cev7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>頂点に関する一様状態 $¥ket{s}$ を $¥widetilde{U}$ の固有ベクトルの線型結合</p>
-	<p>¥begin{align}
-		¥ket{s} = a¥ket{¥psi_1} +b¥ket{¥psi_2} +c¥ket{¥psi_3} +d¥ket{¥psi_4}
-		¥end{align}</p>
-	<p>で書き表すとき，$(a,¥,b,¥,c,¥,d)$ は以下の通りである：</p>
-	<p>¥begin{align}
-		a &= ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} -¥eu^{-¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{N_1+N_2}},¥¥
-		b &= ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} +¥eu^{-¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{N_1+N_2}},¥¥
-		c &= ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k} -¥eu^{¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{N_1+N_2}} ¥ (=¥overline{a}),¥¥
-		d &= ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} +¥eu^{¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{N_1+N_2}} ¥ (=¥overline{b}).
-		¥end{align}</p>
+	<p>頂点に関する一様状態 $\ket{s}$ を $\widetilde{U}$ の固有ベクトルの線型結合</p>
+	<p>\begin{align}
+		\ket{s} = a\ket{\psi_1} +b\ket{\psi_2} +c\ket{\psi_3} +d\ket{\psi_4}
+		\end{align}</p>
+	<p>で書き表すとき，$(a,\,b,\,c,\,d)$ は以下の通りである：</p>
+	<p>\begin{align}
+		a &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1+N_2}},\\
+		b &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1+N_2}},\\
+		c &= \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1+N_2}} \ (=\overline{a}),\\
+		d &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1+N_2}} \ (=\overline{b}).
+		\end{align}</p>
  	</div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>両辺で $¥ket{ab},¥ ¥ket{ba},¥ ¥ket{bc},¥ ¥ket{cb}$ の係数を比較すると，</p>
-		<p>¥begin{align}
-			&¥ket{ab}: ¥ ¥sqrt{¥fraction{k}{N_1+N_2}} = ¥fraction{¥{(a+b) -(c+d)¥}¥iu}{2},¥¥
-			&¥ket{ba}: ¥ ¥sqrt{¥fraction{N_2 k}{(N_1+N_2)N_1}} = ¥fraction{(a-b)¥iu¥eu^{¥iu¥phi} -(c-d)¥iu¥eu^{-¥iu¥phi}}{2},¥¥
-			&¥ket{bc}: ¥ ¥sqrt{¥fraction{N_2(N_1-k)}{(N_1+N_2)N_1}} = ¥fraction{-(a-b)¥eu^{¥iu¥phi} -(c-d)¥eu^{-¥iu¥phi}}{2},¥¥
-			&¥ket{cb}: ¥ ¥sqrt{¥fraction{N_1-k}{N_1+N_2}} = ¥fraction{a+b+c+d}{2}.
-			¥end{align}</p>
-		<p>ここで $¥alpha = (a+b)/2$，$¥beta = (c+d)/2$，$¥gamma = (a-b)/2$，$¥delta = (c-d)/2$ とすると，上記等式たちは以下のように書き換えられる：</p>
-		<p>¥begin{align}
-			¥left¥{¥begin{array}{l}
-				¥alpha -¥beta = -¥iu¥sqrt{¥fraction{k}{N_1+N_2}}¥¥
-				¥gamma¥eu^{¥iu¥phi} -¥delta¥eu^{-¥iu¥phi} = -¥iu¥sqrt{¥fraction{N_2 k}{(N_1+N_2)N_1}}¥¥
-				-¥gamma¥eu^{¥iu¥phi} -¥delta¥eu^{-¥iu¥phi} = ¥sqrt{¥fraction{N_2(N_1-k)}{(N_1+N_2)N_1}}¥¥
-				¥alpha + ¥beta = ¥sqrt{¥fraction{N_1-k}{N_1+N_2}} 
-				¥end{array}¥right..
-			¥end{align}</p>
-		<p>これらを一組の $(¥alpha,¥, ¥beta,¥, ¥gamma,¥, ¥delta)$ に関する連立方程式として解くと</p>
-		<p>¥begin{align}
-			&¥alpha = ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k}}{2¥sqrt{N_1 + N_2}},¥¥
-			&¥beta = ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k}}{2¥sqrt{N_1 + N_2}},¥¥
-			&¥gamma = -¥fraction{¥eu^{-¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{N_1 + N_2}},¥¥
-			&¥delta = -¥fraction{¥eu^{¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{N_1 + N_2}}.
-			¥end{align}</p>
+		<p>両辺で $\ket{ab},\ \ket{ba},\ \ket{bc},\ \ket{cb}$ の係数を比較すると，</p>
+		<p>\begin{align}
+			&\ket{ab}: \ \sqrt{\fraction{k}{N_1+N_2}} = \fraction{\{(a+b) -(c+d)\}\iu}{2},\\
+			&\ket{ba}: \ \sqrt{\fraction{N_2 k}{(N_1+N_2)N_1}} = \fraction{(a-b)\iu\eu^{\iu\phi} -(c-d)\iu\eu^{-\iu\phi}}{2},\\
+			&\ket{bc}: \ \sqrt{\fraction{N_2(N_1-k)}{(N_1+N_2)N_1}} = \fraction{-(a-b)\eu^{\iu\phi} -(c-d)\eu^{-\iu\phi}}{2},\\
+			&\ket{cb}: \ \sqrt{\fraction{N_1-k}{N_1+N_2}} = \fraction{a+b+c+d}{2}.
+			\end{align}</p>
+		<p>ここで $\alpha = (a+b)/2$，$\beta = (c+d)/2$，$\gamma = (a-b)/2$，$\delta = (c-d)/2$ とすると，上記等式たちは以下のように書き換えられる：</p>
+		<p>\begin{align}
+			\left\{\begin{array}{l}
+				\alpha -\beta = -\iu\sqrt{\fraction{k}{N_1+N_2}}\\
+				\gamma\eu^{\iu\phi} -\delta\eu^{-\iu\phi} = -\iu\sqrt{\fraction{N_2 k}{(N_1+N_2)N_1}}\\
+				-\gamma\eu^{\iu\phi} -\delta\eu^{-\iu\phi} = \sqrt{\fraction{N_2(N_1-k)}{(N_1+N_2)N_1}}\\
+				\alpha + \beta = \sqrt{\fraction{N_1-k}{N_1+N_2}} 
+				\end{array}\right..
+			\end{align}</p>
+		<p>これらを一組の $(\alpha,\, \beta,\, \gamma,\, \delta)$ に関する連立方程式として解くと</p>
+		<p>\begin{align}
+			&\alpha = \fraction{\sqrt{N_1-k} -\iu\sqrt{k}}{2\sqrt{N_1 + N_2}},\\
+			&\beta = \fraction{\sqrt{N_1-k} +\iu\sqrt{k}}{2\sqrt{N_1 + N_2}},\\
+			&\gamma = -\fraction{\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1 + N_2}},\\
+			&\delta = -\fraction{\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1 + N_2}}.
+			\end{align}</p>
 		<p>よって，</p>
-		<p>¥begin{align}
-			&a = ¥alpha + ¥gamma = ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} -¥eu^{-¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{N_1 + N_2}},¥¥
-			&b = ¥alpha - ¥gamma =  ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} +¥eu^{-¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{N_1 + N_2}},¥¥
-			&c = ¥beta + ¥delta = ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k} -¥eu^{¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{N_1 + N_2}} ¥ (=¥overline{a}),¥¥
-			&d = ¥beta - ¥delta = ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k} +¥eu^{¥iu¥phi}¥sqrt{N_2/N_1}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{N_1 + N_2}} ¥ (=¥overline{b}).
-			¥end{align}</p>
+		<p>\begin{align}
+			&a = \alpha + \gamma = \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1 + N_2}},\\
+			&b = \alpha - \gamma =  \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1 + N_2}},\\
+			&c = \beta + \delta = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1 + N_2}} \ (=\overline{a}),\\
+			&d = \beta - \delta = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} +\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1 + N_2}} \ (=\overline{b}).
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -674,47 +674,47 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cpv7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>頂点に関する一様状態 $¥ket{s}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |¥braket{ab|U^t|s}|^2$ とする．このとき $u¥in ¥mathbb{N}$ に対して</p>
-	<p>¥begin{align}
-		p(2u-1) &= ¥fraction{N_2}{(N_1+N_2)N_1}(¥sqrt{N_1-k}¥sin(2u¥phi) -¥sqrt{k}¥cos(2u¥phi))^2,¥¥
-		p(2u) &= ¥fraction{1}{N_1+N_2} (¥sqrt{N_1-k}¥sin(2u¥phi) +¥sqrt{k}¥cos(2u¥phi))^2.
-		¥end{align}</p>
+	<p>頂点に関する一様状態 $\ket{s}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |\braket{ab|U^t|s}|^2$ とする．このとき $u\in \mathbb{N}$ に対して</p>
+	<p>\begin{align}
+		p(2u-1) &= \fraction{N_2}{(N_1+N_2)N_1}(\sqrt{N_1-k}\sin(2u\phi) -\sqrt{k}\cos(2u\phi))^2,\\
+		p(2u) &= \fraction{1}{N_1+N_2} (\sqrt{N_1-k}\sin(2u\phi) +\sqrt{k}\cos(2u\phi))^2.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
 		<p>$U$ のスペクトル分解は <script>nr(N,cU7)</script> より</p>
-		<p>¥begin{align}
-			U = -¥eu^{-¥iu¥phi}¥ketbra{¥psi_1}{¥psi_1} +¥eu^{-¥iu¥phi}¥ketbra{¥psi_2}{¥psi_2} -¥eu^{¥iu¥phi}¥ketbra{¥psi_3}{¥psi_3} +¥eu^{¥iu¥phi}¥ketbra{¥psi_4}{¥psi_4}
-			¥end{align}</p>
+		<p>\begin{align}
+			U = -\eu^{-\iu\phi}\ketbra{\psi_1}{\psi_1} +\eu^{-\iu\phi}\ketbra{\psi_2}{\psi_2} -\eu^{\iu\phi}\ketbra{\psi_3}{\psi_3} +\eu^{\iu\phi}\ketbra{\psi_4}{\psi_4}
+			\end{align}</p>
 		<p>であるから，ユニタリ行列の固有ベクトルの直交性より</p>
-		<p>¥begin{align}
-			U^t = (-1)^t ¥eu^{-¥iu¥phi t}¥ketbra{¥psi_1}{¥psi_1} +¥eu^{-¥iu¥phi t}¥ketbra{¥psi_2}{¥psi_2} (-1)^t ¥eu^{¥iu¥phi t}¥ketbra{¥psi_3}{¥psi_3} +¥eu^{¥iu¥phi t}¥ketbra{¥psi_4}{¥psi_4}
-			¥end{align}</p>
+		<p>\begin{align}
+			U^t = (-1)^t \eu^{-\iu\phi t}\ketbra{\psi_1}{\psi_1} +\eu^{-\iu\phi t}\ketbra{\psi_2}{\psi_2} (-1)^t \eu^{\iu\phi t}\ketbra{\psi_3}{\psi_3} +\eu^{\iu\phi t}\ketbra{\psi_4}{\psi_4}
+			\end{align}</p>
 		<p>を得る．よって，<script>nr(N,cev7)</script> を用いて</p>
-		<p>¥begin{align}
-			U^t ¥ket{s} = (-1)^t a¥eu^{-¥iu¥phi t}¥ket{¥psi_1} +b¥eu^{-¥iu¥phi t}¥ket{¥psi_2}+ ¥overline{(-1)^t a¥eu^{-¥iu¥phi t}}¥ket{¥psi_3} +¥overline{b¥eu^{-¥iu¥phi t}}¥ket{¥psi_4}
-			¥end{align}</p>
-		<p>ここで $¥braket{ab|¥psi_1} = ¥braket{ab|¥psi_2} = ¥iu/2$，$¥braket{ab|¥psi_3} = ¥braket{ab|¥psi_4} = -¥iu/2$ であるから，</p>
-		<p>¥begin{align}
-			p(t) = |¥braket{ab|U^t|s}|^2 &= ¥fraction{1}{4} ¥left|(-1)^t a¥eu^{-¥iu¥phi t} +b¥eu^{-¥iu¥phi t}- ¥overline{(-1)^t a¥eu^{-¥iu¥phi t}} -¥overline{b¥eu^{-¥iu¥phi t}}¥right|^2¥¥
-				&= ¥left( ¥im((-1)^t a¥eu^{-¥iu¥phi t} +b¥eu^{-¥iu¥phi t})¥right)^2¥¥
-				&= ¥left( ¥im((b+(-1)^t a)¥eu^{-¥iu¥phi t})¥right)^2.
-			¥end{align}</p>
-		<p>よって，$u¥in ¥mathbb{N}$ に対して</p>
-		<p>¥begin{align}
-			p(2u-1) &= ¥left( ¥im((b - a)¥eu^{-¥iu¥phi (2u-1)})¥right)^2¥¥
-					& = ¥fraction{N_2}{(N_1+N_2)N_1} ¥left(¥im ¥left( (¥sqrt{N_1-k} +¥iu¥sqrt{k}) ¥eu^{-¥iu¥phi}¥eu^{-¥iu¥phi (2u-1)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{N_2}{(N_1+N_2)N_1} ¥left(¥im ¥left( (¥sqrt{N_1-k} +¥iu¥sqrt{k}) ¥eu^{-¥iu(2u¥phi)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{N_2}{(N_1+N_2)N_1} ¥left( -¥sqrt{N_1-k}¥sin(2u¥phi) + ¥sqrt{k}¥cos(2u¥phi) ¥right)^2¥¥
-					& = ¥fraction{N_2}{(N_1+N_2)N_1} ¥left( ¥sqrt{N_1-k}¥sin(2u¥phi) - ¥sqrt{k}¥cos(2u¥phi) ¥right)^2, ¥Rule{0px}{0px}{40px}¥¥
+		<p>\begin{align}
+			U^t \ket{s} = (-1)^t a\eu^{-\iu\phi t}\ket{\psi_1} +b\eu^{-\iu\phi t}\ket{\psi_2}+ \overline{(-1)^t a\eu^{-\iu\phi t}}\ket{\psi_3} +\overline{b\eu^{-\iu\phi t}}\ket{\psi_4}
+			\end{align}</p>
+		<p>ここで $\braket{ab|\psi_1} = \braket{ab|\psi_2} = \iu/2$，$\braket{ab|\psi_3} = \braket{ab|\psi_4} = -\iu/2$ であるから，</p>
+		<p>\begin{align}
+			p(t) = |\braket{ab|U^t|s}|^2 &= \fraction{1}{4} \left|(-1)^t a\eu^{-\iu\phi t} +b\eu^{-\iu\phi t}- \overline{(-1)^t a\eu^{-\iu\phi t}} -\overline{b\eu^{-\iu\phi t}}\right|^2\\
+				&= \left( \im((-1)^t a\eu^{-\iu\phi t} +b\eu^{-\iu\phi t})\right)^2\\
+				&= \left( \im((b+(-1)^t a)\eu^{-\iu\phi t})\right)^2.
+			\end{align}</p>
+		<p>よって，$u\in \mathbb{N}$ に対して</p>
+		<p>\begin{align}
+			p(2u-1) &= \left( \im((b - a)\eu^{-\iu\phi (2u-1)})\right)^2\\
+					& = \fraction{N_2}{(N_1+N_2)N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
+					& = \fraction{N_2}{(N_1+N_2)N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
+					& = \fraction{N_2}{(N_1+N_2)N_1} \left( -\sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
+					& = \fraction{N_2}{(N_1+N_2)N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2, \Rule{0px}{0px}{40px}\\
 
-			p(2u) &= ¥left( ¥im((b + a)¥eu^{-¥iu¥phi (2u-1)})¥right)^2¥¥
-					& = ¥fraction{1}{N_1+N_2} ¥left(¥im ¥left( (¥sqrt{N_1-k} +¥iu¥sqrt{k}) ¥eu^{-¥iu¥phi}¥eu^{-¥iu¥phi (2u-1)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{1}{N_1+N_2} ¥left(¥im ¥left( (¥sqrt{N_1-k} -¥iu¥sqrt{k}) ¥eu^{-¥iu(2u¥phi)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{1}{N_1+N_2} ¥left( -¥sqrt{N_1-k}¥sin(2u¥phi) - ¥sqrt{k}¥cos(2u¥phi) ¥right)^2¥¥
-					& = ¥fraction{1}{N_1+N_2} ¥left( ¥sqrt{N_1-k}¥sin(2u¥phi) + ¥sqrt{k}¥cos(2u¥phi) ¥right)^2.
-			¥end{align}</p>
+			p(2u) &= \left( \im((b + a)\eu^{-\iu\phi (2u-1)})\right)^2\\
+					& = \fraction{1}{N_1+N_2} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
+					& = \fraction{1}{N_1+N_2} \left(\im \left( (\sqrt{N_1-k} -\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
+					& = \fraction{1}{N_1+N_2} \left( -\sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
+					& = \fraction{1}{N_1+N_2} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2.
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -725,22 +725,22 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cie7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p><script>nr(N,cu7)</script>で導入したベクトルを用いて頂点関する一様状態 $¥ket{¥sigma}$ は以下のように書き換えられる：</p>
-	<p>¥begin{align}
-		¥ket{¥sigma} &= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥left( ¥sqrt{kN_2}¥ket{ab} + ¥sqrt{kN_2}¥ket{ba} ¥right.¥¥
-				&¥hspace{40mm} ¥left.+¥sqrt{(N_1-k)N_2}¥ket{bc} + ¥sqrt{(N_1-k)N_2}¥ket{cb}¥right).
-		¥end{align}</p>
+	<p><script>nr(N,cu7)</script>で導入したベクトルを用いて頂点関する一様状態 $\ket{\sigma}$ は以下のように書き換えられる：</p>
+	<p>\begin{align}
+		\ket{\sigma} &= \fraction{1}{\sqrt{2N_1N_2}} \left( \sqrt{kN_2}\ket{ab} + \sqrt{kN_2}\ket{ba} \right.\\
+				&\hspace{40mm} \left.+\sqrt{(N_1-k)N_2}\ket{bc} + \sqrt{(N_1-k)N_2}\ket{cb}\right).
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>¥begin{align}
-			¥ket{¥sigma} &= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥sum_{i¥in X¥cup Y} ¥sum_{j¥sim i} ¥ket{i,¥,j}¥¥
-				&= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥left( ¥sum_{a¥in ¥mathcal{A}}¥sum_{b¥in ¥mathcal{B}} ¥ket{a,¥,b} + ¥sum_{b¥in ¥mathcal{B}}¥sum_{a¥in ¥mathcal{A}} ¥ket{b,¥,a}  ¥right.¥¥
-				&¥hspace{50mm} ¥left. + ¥sum_{b¥in ¥mathcal{B}}¥sum_{c¥in ¥mathcal{C}} ¥ket{b,¥,c} + ¥sum_{c¥in ¥mathcal{C}}¥sum_{b¥in ¥mathcal{B}}¥ket{c,¥,b}¥right)¥¥
-				&= ¥fraction{1}{¥sqrt{2N_1N_2}} ¥left( ¥sqrt{kN_2}¥ket{ab} + ¥sqrt{kN_2}¥ket{ba} ¥right.¥¥
-				&¥hspace{40mm} ¥left.+¥sqrt{(N_1-k)N_2}¥ket{bc} + ¥sqrt{(N_1-k)N_2}¥ket{cb}¥right).
-			¥end{align}</p>
+		<p>\begin{align}
+			\ket{\sigma} &= \fraction{1}{\sqrt{2N_1N_2}} \sum_{i\in X\cup Y} \sum_{j\sim i} \ket{i,\,j}\\
+				&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \ket{a,\,b} + \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \ket{b,\,a}  \right.\\
+				&\hspace{50mm} \left. + \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} + \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right)\\
+				&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sqrt{kN_2}\ket{ab} + \sqrt{kN_2}\ket{ba} \right.\\
+				&\hspace{40mm} \left.+\sqrt{(N_1-k)N_2}\ket{bc} + \sqrt{(N_1-k)N_2}\ket{cb}\right).
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -751,51 +751,51 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cee7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>辺に関する一様状態 $¥ket{¥sigma}$ を $¥widetilde{U}$ の固有ベクトルの線型結合</p>
-	<p>¥begin{align}
-		¥ket{s} = a'¥ket{¥psi_1} +b'¥ket{¥psi_2} +c'¥ket{¥psi_3} +d'¥ket{¥psi_4}
-		¥end{align}</p>
-	<p>で書き表すとき，$(a,¥,b,¥,c,¥,d)$ は以下の通りである：</p>
-	<p>¥begin{align}
-		a' &= ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} -¥eu^{-¥iu¥phi}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{2N_1}},¥¥
-		b' &= ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} +¥eu^{-¥iu¥phi}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{2N_1}},¥¥
-		c' &= ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k} -¥eu^{¥iu¥phi}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{2N_1}}¥ (=¥overline{a'}),¥¥
-		d' &= ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} +¥eu^{¥iu¥phi}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{2N_1}}¥ (=¥overline{b'}).
-		¥end{align}</p>
+	<p>辺に関する一様状態 $\ket{\sigma}$ を $\widetilde{U}$ の固有ベクトルの線型結合</p>
+	<p>\begin{align}
+		\ket{s} = a'\ket{\psi_1} +b'\ket{\psi_2} +c'\ket{\psi_3} +d'\ket{\psi_4}
+		\end{align}</p>
+	<p>で書き表すとき，$(a,\,b,\,c,\,d)$ は以下の通りである：</p>
+	<p>\begin{align}
+		a' &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
+		b' &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
+		c' &= \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{a'}),\\
+		d' &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{b'}).
+		\end{align}</p>
  	</div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p>両辺で $¥ket{ab},¥ ¥ket{ba},¥ ¥ket{bc},¥ ¥ket{cb}$ の係数を比較すると，</p>
-		<p>¥begin{align}
-			&¥ket{ab}: ¥ ¥sqrt{¥fraction{k}{2N_1}} = ¥fraction{¥{(a'+b') -(c'+d')¥}¥iu}{2},¥¥
-			&¥ket{ba}: ¥ ¥sqrt{¥fraction{k}{2N_1}} = ¥fraction{(a'-b')¥iu¥eu^{¥iu¥phi} -(c'-d')¥iu¥eu^{-¥iu¥phi}}{2},¥¥
-			&¥ket{bc}: ¥ ¥sqrt{¥fraction{N_1 -k}{2N_1}} = ¥fraction{-(a'-b')¥eu^{¥iu¥phi} -(c'-d')¥eu^{-¥iu¥phi}}{2},¥¥
-			&¥ket{cb}: ¥ ¥sqrt{¥fraction{N_1-k}{2N_1}} = ¥fraction{a'+b'+c'+d'}{2}.
-			¥end{align}</p>
-		<p>ここで $¥alpha' = (a'+b')/2$，$¥beta' = (c'+d')/2$，$¥gamma' = (a'-b')/2$，$¥delta' = (c'-d')/2$ とすると，上記等式たちは以下のように書き換えられる：</p>
-		<p>¥begin{align}
-			¥left¥{¥begin{array}{l}
-				¥alpha' -¥beta' = -¥iu¥sqrt{¥fraction{k}{2N_1}}¥¥
-				¥gamma'¥eu^{¥iu¥phi} -¥delta'¥eu^{-¥iu¥phi} = -¥iu¥sqrt{¥fraction{k}{2N_1}}¥¥
-				-¥gamma'¥eu^{¥iu¥phi} -¥delta'¥eu^{-¥iu¥phi} = ¥sqrt{¥fraction{N_1-k}{2N_1}}¥¥
-				¥alpha' + ¥beta' = ¥sqrt{¥fraction{N_1-k}{2N_1}} 
-				¥end{array}¥right..
-			¥end{align}</p>
-		<p>これらを一組の $(¥alpha,¥, ¥beta,¥, ¥gamma,¥, ¥delta)$ に関する連立方程式として解くと</p>
-		<p>¥begin{align}
-			&¥alpha’ = ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k}}{2¥sqrt{2N_1}},¥¥
-			&¥beta' = ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k}}{2¥sqrt{2N_1}},¥¥
-			&¥gamma' = -¥fraction{¥eu^{-¥iu¥phi}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{2N_1}},¥¥
-			&¥delta' = -¥fraction{¥eu^{¥iu¥phi}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{2N_1}}.
-			¥end{align}</p>
+		<p>両辺で $\ket{ab},\ \ket{ba},\ \ket{bc},\ \ket{cb}$ の係数を比較すると，</p>
+		<p>\begin{align}
+			&\ket{ab}: \ \sqrt{\fraction{k}{2N_1}} = \fraction{\{(a'+b') -(c'+d')\}\iu}{2},\\
+			&\ket{ba}: \ \sqrt{\fraction{k}{2N_1}} = \fraction{(a'-b')\iu\eu^{\iu\phi} -(c'-d')\iu\eu^{-\iu\phi}}{2},\\
+			&\ket{bc}: \ \sqrt{\fraction{N_1 -k}{2N_1}} = \fraction{-(a'-b')\eu^{\iu\phi} -(c'-d')\eu^{-\iu\phi}}{2},\\
+			&\ket{cb}: \ \sqrt{\fraction{N_1-k}{2N_1}} = \fraction{a'+b'+c'+d'}{2}.
+			\end{align}</p>
+		<p>ここで $\alpha' = (a'+b')/2$，$\beta' = (c'+d')/2$，$\gamma' = (a'-b')/2$，$\delta' = (c'-d')/2$ とすると，上記等式たちは以下のように書き換えられる：</p>
+		<p>\begin{align}
+			\left\{\begin{array}{l}
+				\alpha' -\beta' = -\iu\sqrt{\fraction{k}{2N_1}}\\
+				\gamma'\eu^{\iu\phi} -\delta'\eu^{-\iu\phi} = -\iu\sqrt{\fraction{k}{2N_1}}\\
+				-\gamma'\eu^{\iu\phi} -\delta'\eu^{-\iu\phi} = \sqrt{\fraction{N_1-k}{2N_1}}\\
+				\alpha' + \beta' = \sqrt{\fraction{N_1-k}{2N_1}} 
+				\end{array}\right..
+			\end{align}</p>
+		<p>これらを一組の $(\alpha,\, \beta,\, \gamma,\, \delta)$ に関する連立方程式として解くと</p>
+		<p>\begin{align}
+			&\alpha’ = \fraction{\sqrt{N_1-k} -\iu\sqrt{k}}{2\sqrt{2N_1}},\\
+			&\beta' = \fraction{\sqrt{N_1-k} +\iu\sqrt{k}}{2\sqrt{2N_1}},\\
+			&\gamma' = -\fraction{\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
+			&\delta' = -\fraction{\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}.
+			\end{align}</p>
 		<p>よって，</p>
-		<p>¥begin{align}
-			&a = ¥alpha' + ¥gamma' = ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} -¥eu^{-¥iu¥phi}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{2N_1}},¥¥
-			&b = ¥alpha' - ¥gamma' =  ¥fraction{¥sqrt{N_1-k} -¥iu¥sqrt{k} +¥eu^{-¥iu¥phi}(¥sqrt{N_1-k} +¥iu¥sqrt{k})}{2¥sqrt{2N_1}},¥¥
-			&c = ¥beta' + ¥delta' = ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k} -¥eu^{¥iu¥phi}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{2N_1}}¥ (=¥overline{a'}),¥¥
-			&d = ¥beta' - ¥delta' = ¥fraction{¥sqrt{N_1-k} +¥iu¥sqrt{k} +¥eu^{¥iu¥phi}(¥sqrt{N_1-k} -¥iu¥sqrt{k})}{2¥sqrt{2N_1}}¥ (=¥overline{b'}).
-			¥end{align}</p>
+		<p>\begin{align}
+			&a = \alpha' + \gamma' = \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
+			&b = \alpha' - \gamma' =  \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
+			&c = \beta' + \delta' = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{a'}),\\
+			&d = \beta' - \delta' = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} +\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{b'}).
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -806,43 +806,43 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = cpv7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>辺に関する一様状態 $¥ket{¥sigma}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |¥braket{ab|U^t|¥sigma}|^2$ とする．このとき $u¥in ¥mathbb{N}$ に対して</p>
-	<p>¥begin{align}
-		p(2u-1) &= ¥fraction{1}{2N_1}(¥sqrt{N_1-k}¥sin(2u¥phi) -¥sqrt{k}¥cos(2u¥phi))^2,¥¥
-		p(2u) &= ¥fraction{1}{2N_1} (¥sqrt{N_1-k}¥sin(2u¥phi) +¥sqrt{k}¥cos(2u¥phi))^2.
-		¥end{align}</p>
+	<p>辺に関する一様状態 $\ket{\sigma}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |\braket{ab|U^t|\sigma}|^2$ とする．このとき $u\in \mathbb{N}$ に対して</p>
+	<p>\begin{align}
+		p(2u-1) &= \fraction{1}{2N_1}(\sqrt{N_1-k}\sin(2u\phi) -\sqrt{k}\cos(2u\phi))^2,\\
+		p(2u) &= \fraction{1}{2N_1} (\sqrt{N_1-k}\sin(2u\phi) +\sqrt{k}\cos(2u\phi))^2.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
 		<p>$U$ のスペクトル分解から得られる $U^t$ は <script>nr(N,cpv7)</script> と同様である．つまり</p>
-		<p>¥begin{align}
-			U^t = (-1)^t ¥eu^{-¥iu¥phi t}¥ketbra{¥psi_1}{¥psi_1} +¥eu^{-¥iu¥phi t}¥ketbra{¥psi_2}{¥psi_2} (-1)^t ¥eu^{¥iu¥phi t}¥ketbra{¥psi_3}{¥psi_3} +¥eu^{¥iu¥phi t}¥ketbra{¥psi_4}{¥psi_4}
-			¥end{align}</p>
+		<p>\begin{align}
+			U^t = (-1)^t \eu^{-\iu\phi t}\ketbra{\psi_1}{\psi_1} +\eu^{-\iu\phi t}\ketbra{\psi_2}{\psi_2} (-1)^t \eu^{\iu\phi t}\ketbra{\psi_3}{\psi_3} +\eu^{\iu\phi t}\ketbra{\psi_4}{\psi_4}
+			\end{align}</p>
 		<p>を得る．よって，<script>nr(N,cee7)</script> を用いて</p>
-		<p>¥begin{align}
-			U^t ¥ket{¥sigma} = (-1)^t a'¥eu^{-¥iu¥phi t}¥ket{¥psi_1} +b'¥eu^{-¥iu¥phi t}¥ket{¥psi_2}+ ¥overline{(-1)^t a'¥eu^{-¥iu¥phi t}}¥ket{¥psi_3} +¥overline{b'¥eu^{-¥iu¥phi t}}¥ket{¥psi_4}
-			¥end{align}</p>
-		<p>ここで $¥braket{ab|¥psi_1} = ¥braket{ab|¥psi_2} = ¥iu/2$，$¥braket{ab|¥psi_3} = ¥braket{ab|¥psi_4} = -¥iu/2$ であるから，</p>
-		<p>¥begin{align}
-			p(t) = |¥braket{ab|U^t|¥sigma}|^2 &= ¥fraction{1}{4} ¥left|(-1)^t a'¥eu^{-¥iu¥phi t} +b'¥eu^{-¥iu¥phi t}- ¥overline{(-1)^t a'¥eu^{-¥iu¥phi t}} -¥overline{b'¥eu^{-¥iu¥phi t}}¥right|^2¥¥
-				&= ¥left( ¥im((-1)^t a'¥eu^{-¥iu¥phi t} +b'¥eu^{-¥iu¥phi t})¥right)^2¥¥
-				&= ¥left( ¥im((b'+(-1)^t a')¥eu^{-¥iu¥phi t})¥right)^2.
-			¥end{align}</p>
-		<p>よって，$u¥in ¥mathbb{N}$ に対して</p>
-		<p>¥begin{align}
-			p(2u-1) &= ¥left( ¥im((b' - a')¥eu^{-¥iu¥phi (2u-1)})¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left(¥im ¥left( (¥sqrt{N_1-k} +¥iu¥sqrt{k}) ¥eu^{-¥iu¥phi}¥eu^{-¥iu¥phi (2u-1)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left(¥im ¥left( (¥sqrt{N_1-k} +¥iu¥sqrt{k}) ¥eu^{-¥iu(2u¥phi)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left( -¥sqrt{N_1-k}¥sin(2u¥phi) + ¥sqrt{k}¥cos(2u¥phi) ¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left( ¥sqrt{N_1-k}¥sin(2u¥phi) - ¥sqrt{k}¥cos(2u¥phi) ¥right)^2, ¥Rule{0px}{0px}{40px}¥¥
+		<p>\begin{align}
+			U^t \ket{\sigma} = (-1)^t a'\eu^{-\iu\phi t}\ket{\psi_1} +b'\eu^{-\iu\phi t}\ket{\psi_2}+ \overline{(-1)^t a'\eu^{-\iu\phi t}}\ket{\psi_3} +\overline{b'\eu^{-\iu\phi t}}\ket{\psi_4}
+			\end{align}</p>
+		<p>ここで $\braket{ab|\psi_1} = \braket{ab|\psi_2} = \iu/2$，$\braket{ab|\psi_3} = \braket{ab|\psi_4} = -\iu/2$ であるから，</p>
+		<p>\begin{align}
+			p(t) = |\braket{ab|U^t|\sigma}|^2 &= \fraction{1}{4} \left|(-1)^t a'\eu^{-\iu\phi t} +b'\eu^{-\iu\phi t}- \overline{(-1)^t a'\eu^{-\iu\phi t}} -\overline{b'\eu^{-\iu\phi t}}\right|^2\\
+				&= \left( \im((-1)^t a'\eu^{-\iu\phi t} +b'\eu^{-\iu\phi t})\right)^2\\
+				&= \left( \im((b'+(-1)^t a')\eu^{-\iu\phi t})\right)^2.
+			\end{align}</p>
+		<p>よって，$u\in \mathbb{N}$ に対して</p>
+		<p>\begin{align}
+			p(2u-1) &= \left( \im((b' - a')\eu^{-\iu\phi (2u-1)})\right)^2\\
+					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
+					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
+					& = \fraction{1}{2N_1} \left( -\sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
+					& = \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2, \Rule{0px}{0px}{40px}\\
 
-			p(2u) &= ¥left( ¥im((b' + a')¥eu^{-¥iu¥phi (2u-1)})¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left(¥im ¥left( (¥sqrt{N_1-k} +¥iu¥sqrt{k}) ¥eu^{-¥iu¥phi}¥eu^{-¥iu¥phi (2u-1)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left(¥im ¥left( (¥sqrt{N_1-k} -¥iu¥sqrt{k}) ¥eu^{-¥iu(2u¥phi)} ¥right) ¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left( -¥sqrt{N_1-k}¥sin(2u¥phi) - ¥sqrt{k}¥cos(2u¥phi) ¥right)^2¥¥
-					& = ¥fraction{1}{2N_1} ¥left( ¥sqrt{N_1-k}¥sin(2u¥phi) + ¥sqrt{k}¥cos(2u¥phi) ¥right)^2.
-			¥end{align}</p>
+			p(2u) &= \left( \im((b' + a')\eu^{-\iu\phi (2u-1)})\right)^2\\
+					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
+					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} -\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
+					& = \fraction{1}{2N_1} \left( -\sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
+					& = \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2.
+			\end{align}</p>
  	</div>
 </details>
 </div>
