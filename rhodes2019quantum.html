@@ -676,8 +676,12 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p>頂点に関する一様状態 $\ket{s}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |\braket{ab|U^t|s}|^2$ とする．このとき $u\in \mathbb{N}$ に対して</p>
 	<p>\begin{align}
-		p(2u-1) &= \fraction{N_2}{(N_1+N_2)N_1}(\sqrt{N_1-k}\sin(2u\phi) -\sqrt{k}\cos(2u\phi))^2,\\
-		p(2u) &= \fraction{1}{N_1+N_2} (\sqrt{N_1-k}\sin(2u\phi) +\sqrt{k}\cos(2u\phi))^2.
+		p(2u-1) &= \fraction{N_2}{N_1+N_2} \sin^2 (2u\phi -\kappa),\\
+		p(2u) &= \fraction{N_1}{N_1+N_2} \sin^2 (2u\phi +\kappa),
+		\end{align}</p>
+	<p>ただし</p>
+	<p>\begin{align}
+		\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}.
 		\end{align}</p>
 </div>
 <details class="dtl">
@@ -803,13 +807,17 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = cpv7</script>
+<p id="1">&nbsp;</p><script>var curbox = cpe7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p>辺に関する一様状態 $\ket{\sigma}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |\braket{ab|U^t|\sigma}|^2$ とする．このとき $u\in \mathbb{N}$ に対して</p>
 	<p>\begin{align}
-		p(2u-1) &= \fraction{1}{2N_1}(\sqrt{N_1-k}\sin(2u\phi) -\sqrt{k}\cos(2u\phi))^2,\\
-		p(2u) &= \fraction{1}{2N_1} (\sqrt{N_1-k}\sin(2u\phi) +\sqrt{k}\cos(2u\phi))^2.
+		p(2u-1) &= \fraction{1}{2}\sin^2(2u\phi -\kappa),\\
+		p(2u) &= \fraction{1}{2} \sin^2 (2u\phi +\kappa),
+		\end{align}</p>
+	<p>ただし</p>
+	<p>\begin{align}
+		\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}.
 		\end{align}</p>
 </div>
 <details class="dtl">
