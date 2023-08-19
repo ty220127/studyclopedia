@@ -36,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/18"
+	const updated = "2023/8/19"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -719,6 +719,22 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 					& = \fraction{1}{N_1+N_2} \left( -\sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
 					& = \fraction{1}{N_1+N_2} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2.
 			\end{align}</p>
+		<p>ここで，$\kappa$ を</p>
+		<p>\begin{align}
+			\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}
+			\end{align}</p>
+		<p>により定義する．これを用いて $p(2u-1),\ p(2u)$ はそれぞれ以下のように書き換えられる：</p>
+		<p>\begin{align}
+			p(2u-1) &= \fraction{N_2}{(N_1+N_2)N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
+				&= \fraction{N_1 N_2}{(N_1+N_2)N_1} \left(\sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) -\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
+				&= \fraction{N_2}{N_1+N_2} (\cos\kappa \sin(2u\phi) -\sin\kappa \cos(2u\phi))^2\\
+				&= \fraction{N_2}{N_1+N_2} \sin^2(2u\phi -\kappa),\Rule{0px}{0px}{40px}\\
+
+			p(2u) &= \fraction{1}{N_1+N_2} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
+				&= \fraction{N_1}{N_1 +N_2} \left( \sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) +\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
+				&= \fraction{N_1}{N_1+N_2} (\cos\kappa \sin(2u\phi) +\sin\kappa \cos(2u\phi))^2\\
+				&= \fraction{N_1}{N_1+N_2} \sin^2(2u\phi +\kappa).
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -850,6 +866,22 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} -\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
 					& = \fraction{1}{2N_1} \left( -\sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
 					& = \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2.
+			\end{align}</p>
+		<p>ここで，$\kappa$ を</p>
+		<p>\begin{align}
+			\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}
+			\end{align}</p>
+		<p>により定義する．これを用いて $p(2u-1),\ p(2u)$ はそれぞれ以下のように書き換えられる：</p>
+		<p>\begin{align}
+			p(2u-1) &= \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
+				&= \fraction{N_1}{2N_1} \left(\sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) -\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
+				&= \fraction{1}{2} (\cos\kappa \sin(2u\phi) -\sin\kappa \cos(2u\phi))^2\\
+				&= \fraction{1}{2} \sin^2(2u\phi -\kappa),\Rule{0px}{0px}{40px}\\
+
+			p(2u) &= \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
+				&= \fraction{N_1}{2N_1} \left( \sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) +\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
+				&= \fraction{1}{2} (\cos\kappa \sin(2u\phi) +\sin\kappa \cos(2u\phi))^2\\
+				&= \fraction{1}{2} \sin^2(2u\phi +\kappa).
 			\end{align}</p>
  	</div>
 </details>
