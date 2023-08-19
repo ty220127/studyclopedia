@@ -70,6 +70,7 @@
 $\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\diag}{diag}
 \newenvironment{case}[1]
   {\left\{ \begin{array}{#1}}
   {\end{array}\right.}$
@@ -884,6 +885,159 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 				&= \fraction{1}{2} \sin^2(2u\phi +\kappa).
 			\end{align}</p>
  	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<div class="section"><script>s = 3; document.write(s + ". " + sec[s])</script></div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Bcu7</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>マーク頂点が $X$ 側に $k_1$ 個存在し，$Y$ 側に $k_2$ 個存在する場合を考える．$X$ 側のマーク頂点を $a$ 頂点，$Y$ 側の頂点を $b$ 頂点，$X$ 側の非マーク頂点を $c$ 頂点，$X$ 側の非マーク頂点を $d$ 頂点と呼ぶ．以降，$a,\ b,\ c,\ d$ 頂点の集合をそれぞれ $\mathcal{A},\ \mathcal{B},\ \mathcal{C},\ \mathcal{D}$ で表現する（$\mathcal{A}\cup \mathcal{C} = X$，$\mathcal{B}\cup \mathcal{D} = Y$）．また，$x,\ y\in \{a,\,b,\,c,\,d\}$ に対して $x$ 頂点から $y$ 頂点に向いている状態を　$\ket{xy}$ などと表す：</p>
+	<p>\begin{align}
+		\ket{ab} = \fraction{1}{\sqrt{k_1k_2}} \sum_{a\in \mathcal{A}} \sum_{b\in \mathcal{B}} \ket{a,\,b},\quad
+		&\ket{ad} = \fraction{1}{\sqrt{k_1 M_2}} \sum_{a\in \mathcal{A}} \sum_{d\in \mathcal{D}} \ket{a,\,d},\\
+		\ket{ba} = \fraction{1}{\sqrt{k_1 k_2}} \sum_{b\in \mathcal{B}} \sum_{a\in \mathcal{A}} \ket{b,\,a},\quad
+		&\ket{bc} = \fraction{1}{\sqrt{M_1 k_2}} \sum_{b\in \mathcal{B}} \sum_{c\in \mathcal{C}} \ket{b,\,c},\\
+		\ket{cb} = \fraction{1}{\sqrt{M_1k_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} \ket{c,\,b},\quad
+		&\ket{cd} = \fraction{1}{\sqrt{M_1 M_2}} \sum_{c\in \mathcal{C}} \sum_{d\in \mathcal{D}} \ket{c,\,d},\\
+		\ket{da} = \fraction{1}{\sqrt{k_1 M_2}} \sum_{d\in \mathcal{D}} \sum_{a\in \mathcal{A}} \ket{d,\,a},\quad
+		&\ket{dc} = \fraction{1}{\sqrt{M_1 M_2}} \sum_{d\in \mathcal{D}} \sum_{c\in \mathcal{C}} \ket{d,\,c},\\
+		\end{align}</p>
+	<p>ただし $i=1,\,2$ に対して $M_i = N_i -k_i$ である．</p>
+</div>
+<details class="dtl">
+	<summary>補足１</summary>
+	<div id="tx">
+		<p>片側マークの場合と同様，各ベクトルの係数部分は正規化である．</p>
+ 	</div>
+</details>
+<details class="dtl">
+	<summary>補足２</summary>
+	<div id="tx">
+		<p>$M_i$ は，論文においては $N_{k_i}$ などという書き方になっている．</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = BcS7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,Bcu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S}' = \spn \{\ket{ab},\,\ket{ad},\,\ket{ba},\,\ket{bc},\,\ket{cb},\,\ket{cd},\,\ket{da},\,\ket{dc}\}$ に関してシフト作用素 $S$ の作用は閉じている．$\mathcal{S}'$ 上の線形変換 $f'_S: \ket{\psi}\mapsto S\ket{\psi}$ が定義でき，その表現行列 $\widetilde{S}$ は<p>
+	<p>\begin{align}
+		\widetilde{S} = \left[ \begin{array}{cccccccc}
+			0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+			1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
+			0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 
+		\end{array}\right].\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = BcC7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,Bcu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S}' = \spn \{\ket{ab},\,\ket{ad},\,\ket{ba},\,\ket{bc},\,\ket{cb},\,\ket{cd},\,\ket{da},\,\ket{dc}\}$ に関してシフト作用素 $C$ の作用は閉じている．$\mathcal{S}'$ 上の線形変換 $f'_C: \ket{\psi}\mapsto C\ket{\psi}$ が定義でき，その表現行列 $\widetilde{C}$ は<p>
+	<p>\begin{align}{\small
+		\widetilde{C} = \left[ \begin{array}{cccccccc}
+			-\cos\theta_2 & \sin\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			\sin\theta_2 & \cos\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & -\cos\theta_1 & \sin\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & \sin\theta_1 & \cos\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & -\cos\theta_2 & \sin\theta_2 & 0 & 0 \\ 
+			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 \\ 
+		\end{array}\right].
+		}\end{align}</p>
+	<p>ただし，$i = 1,\,2$ に対して</p>
+	<p>\begin{align}
+		\cos\theta_i = 1-\fraction{2k_i}{N_i},\quad \sin\theta_i = \fraction{2\sqrt{k_iM_i}}{N_i}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = BcQ7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,Bcu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S}' = \spn \{\ket{ab},\,\ket{ad},\,\ket{ba},\,\ket{bc},\,\ket{cb},\,\ket{cd},\,\ket{da},\,\ket{dc}\}$ に関してシフト作用素 $Q$ の作用は閉じている．$\mathcal{S}'$ 上の線形変換 $f'_Q: \ket{\psi}\mapsto Q\ket{\psi}$ が定義でき，その表現行列 $\widetilde{Q}$ は<p>
+	<p>\begin{align}
+		\widetilde{Q} = \diag (-1,\,-1,\,-1,\,-1,\,1,\,1,\,1,\,1).
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = BcU7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,Bcu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S}' = \spn \{\ket{ab},\,\ket{ad},\,\ket{ba},\,\ket{bc},\,\ket{cb},\,\ket{cd},\,\ket{da},\,\ket{dc}\}$ に関してシフト作用素 $U$ の作用は閉じている．$\mathcal{S}'$ 上の線形変換 $f'_U: \ket{\psi}\mapsto U\ket{\psi}$ が定義でき，その表現行列 $\widetilde{U}$ は<p>
+	<p>\begin{align}{\small
+		\widetilde{U} = \left[ \begin{array}{cccccccc}
+			0 & 0 & \cos\theta_1 & -\sin\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
+			\cos\theta_2 & -\sin\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & -\cos\theta_2 & \sin\theta_2 & 0 & 0 \\ 
+			0 & 0 & -\sin\theta_1 & -\cos\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 \\ 
+			-\sin\theta_2 & -\cos\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0 \\ 
+		\end{array}\right].
+		}\end{align}</p>
+	<!--<p>また，$\widetilde{U}$ の固有値及び固有ベクトルは以下である：</p>
+	<p>\begin{align}
+		&\ket{\psi_1} = \fraction{1}{2}[\iu,\ \iu\eu^{\iu\phi},\ {-\eu^{\iu\phi}},\ 1]^\trp,\quad \lambda_1 = -\eu^{-\iu\phi};\\
+		&\ket{\psi_2} = \fraction{1}{2}[\iu,\ {-\iu\eu^{\iu\phi}},\ \eu^{\iu\phi},\ 1]^\trp,\quad \lambda_2 = \eu^{-\iu\phi};\\
+		&\ket{\psi_3} = \fraction{1}{2}[-\iu,\ {-\iu\eu^{-\iu\phi}},\ {-\eu^{-\iu\phi}},\ 1]^\trp,\quad \lambda_3 = -\eu^{\iu\phi};\\
+		&\ket{\psi_4} = \fraction{1}{2}[-\iu,\ \iu\eu^{-\iu\phi},\ \eu^{-\iu\phi},\ 1]^\trp,\quad \lambda_4 = \eu^{\iu\phi},
+		\end{align}</p>
+	<p>ただし</p>
+	<p>\begin{align}
+		\phi = \fraction{\theta}{2}
+		\end{align}</p>
+	<p>である．</p>-->
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+	</div>
 </details>
 </div>
 <br>
