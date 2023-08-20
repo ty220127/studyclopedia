@@ -36,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/19"
+	const updated = "2023/8/20"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -599,6 +599,11 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\ket{s} &= \fraction{1}{\sqrt{N_1 +N_2}} \left( \sqrt{k}\ket{ab} + \sqrt{\fraction{N_2}{N_1}k}\ket{ba} \right.\\
 				&\hspace{40mm} \left.+\sqrt{\fraction{N_2}{N_1}(N_1-k)}\ket{bc} + \sqrt{N_1-k}\ket{cb}\right).
 		\end{align}</p>
+	<p>更に，<script>nr(N,cU7)</script> の $\phi$ を用いると</p>
+	<p>\begin{align}
+		\ket{s} &= \fraction{1}{\sqrt{N_1+N_2}} \left( \sqrt{N_1}\sin\phi \ket{ab} + \sqrt{N_2}\sin\phi \ket{ba} \right.\\
+				&\hspace{40mm} \left.+ \sqrt{N_2} \cos\phi \ket{bc} + \sqrt{N_1} \cos\phi \ket{cb}\right).
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
@@ -610,7 +615,25 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 					&= \fraction{1}{\sqrt{N_1 +N_2}} \Biggl( \sqrt{k}\ket{ab} + \sqrt{N_1-k}\ket{cb}\\
 					&\hspace{40mm} +\sqrt{\fraction{N_2}{N_1}k}\ket{ba} + \sqrt{\fraction{N_2}{N_1}(N_1-k)}\ket{bc}\Biggr).
 			\end{align}</p>
+		<p>ここで，$\phi$ について</p>
+		<p>\begin{align}
+			&\cos \phi = \cos \fraction{\theta}{2} = \sqrt{\fraction{1+\cos\theta}{2}} = \sqrt{\fraction{N_1-k}{N_1}},\\
+			&\sin \phi = \sin \fraction{\theta}{2} = \sqrt{\fraction{1-\cos\theta}{2}} = \sqrt{\fraction{k}{N_1}}.
+			\end{align}</p>
+		<p>これを上記の $\ket{s}$ に代入すれば</p>
+		<p>\begin{align}
+			\ket{s} &= \fraction{1}{\sqrt{N_1 +N_2}} \left( \sqrt{N_1 \fraction{k}{N_1}}\ket{ab} + \sqrt{N_2\fraction{k}{N_1}} \ket{ba} \right.\\
+					&\hspace{40mm} \left.\sqrt{N_2 \fraction{N_1-k}{N_1}} \ket{bc} + \sqrt{N_1 \fraction{N_1-k}{N_1}} \ket{cb}\right)\\
+					&= \fraction{1}{\sqrt{N_1+N_2}} \left( \sqrt{N_1} \sin\phi \ket{ab} + \sqrt{N_2}\sin\phi \ket{ba} \right.\\
+					&\hspace{40mm} \left. +\sqrt{N_2}\cos\phi \ket{bc} +\sqrt{N_1}\cos\phi \ket{cb} \right).
+			\end{align}</p>
  	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>論文では $\phi$ の三角関数が一様状態に表れていることに言及しないまま処理を進めているが，これを活用した方が明らかに処理が楽である．</p>
+	</div>
 </details>
 </div>
 <br>
@@ -625,46 +648,47 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\ket{s} = a\ket{\psi_1} +b\ket{\psi_2} +c\ket{\psi_3} +d\ket{\psi_4}
 		\end{align}</p>
 	<p>で書き表すとき，$(a,\,b,\,c,\,d)$ は以下の通りである：</p>
-	<p>\begin{align}
-		a &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1+N_2}},\\
-		b &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1+N_2}},\\
-		c &= \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1+N_2}} \ (=\overline{a}),\\
-		d &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1+N_2}} \ (=\overline{b}).
-		\end{align}</p>
+		<p>\begin{align}
+			&a  = \fraction{\sqrt{N_1}\eu^{-\iu\phi} -\sqrt{N_2}}{2\sqrt{N_1 + N_2}},\quad 
+			b =  \fraction{\sqrt{N_1}\eu^{-\iu\phi} +\sqrt{N_2}}{2\sqrt{N_1 + N_2}},\Rule{0px}{0px}{30px}\\
+			&c = \fraction{\sqrt{N_1}\eu^{\iu\phi} -\sqrt{N_2}}{2\sqrt{N_1 + N_2}}\ (=\overline{a}),\quad
+			d = \fraction{\sqrt{N_1}\eu^{\iu\phi} +\sqrt{N_2}}{2\sqrt{N_1 + N_2}}\ (=\overline{b}).
+			\end{align}</p>
  	</div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
 		<p>両辺で $\ket{ab},\ \ket{ba},\ \ket{bc},\ \ket{cb}$ の係数を比較すると，</p>
 		<p>\begin{align}
-			&\ket{ab}: \ \sqrt{\fraction{k}{N_1+N_2}} = \fraction{\{(a+b) -(c+d)\}\iu}{2},\\
-			&\ket{ba}: \ \sqrt{\fraction{N_2 k}{(N_1+N_2)N_1}} = \fraction{(a-b)\iu\eu^{\iu\phi} -(c-d)\iu\eu^{-\iu\phi}}{2},\\
-			&\ket{bc}: \ \sqrt{\fraction{N_2(N_1-k)}{(N_1+N_2)N_1}} = \fraction{-(a-b)\eu^{\iu\phi} -(c-d)\eu^{-\iu\phi}}{2},\\
-			&\ket{cb}: \ \sqrt{\fraction{N_1-k}{N_1+N_2}} = \fraction{a+b+c+d}{2}.
+			&\ket{ab}: \ \sqrt{\fraction{N_1}{N_1+N_2}}\sin\phi = \fraction{\{(a+b) -(c+d)\}\iu}{2},\\
+			&\ket{ba}: \ \sqrt{\fraction{N_2}{N_1+N_2}}\sin\phi = \fraction{(a-b)\iu\eu^{\iu\phi} -(c-d)\iu\eu^{-\iu\phi}}{2},\\
+			&\ket{bc}: \ \sqrt{\fraction{N_2}{N_1+N_2}}\cos\phi = \fraction{-(a-b)\eu^{\iu\phi} -(c-d)\eu^{-\iu\phi}}{2},\\
+			&\ket{cb}: \ \sqrt{\fraction{N_1}{N_1+N_2}}\cos\phi = \fraction{a+b+c+d}{2}.
 			\end{align}</p>
 		<p>ここで $\alpha = (a+b)/2$，$\beta = (c+d)/2$，$\gamma = (a-b)/2$，$\delta = (c-d)/2$ とすると，上記等式たちは以下のように書き換えられる：</p>
 		<p>\begin{align}
 			\left\{\begin{array}{l}
-				\alpha -\beta = -\iu\sqrt{\fraction{k}{N_1+N_2}}\\
-				\gamma\eu^{\iu\phi} -\delta\eu^{-\iu\phi} = -\iu\sqrt{\fraction{N_2 k}{(N_1+N_2)N_1}}\\
-				-\gamma\eu^{\iu\phi} -\delta\eu^{-\iu\phi} = \sqrt{\fraction{N_2(N_1-k)}{(N_1+N_2)N_1}}\\
-				\alpha + \beta = \sqrt{\fraction{N_1-k}{N_1+N_2}} 
+				\alpha -\beta = -\iu\sqrt{\fraction{N_1}{N_1+N_2}}\sin\phi\\
+				\gamma\eu^{\iu\phi} -\delta\eu^{-\iu\phi} = -\iu\sqrt{\fraction{N_2}{N_1+N_2}}\sin\phi\\
+				-\gamma\eu^{\iu\phi} -\delta\eu^{-\iu\phi} = \sqrt{\fraction{N_2}{N_1+N_2}}\cos\phi\\
+				\alpha + \beta = \sqrt{\fraction{N_1}{N_1+N_2}}\cos\phi
 				\end{array}\right..
 			\end{align}</p>
 		<p>これらを一組の $(\alpha,\, \beta,\, \gamma,\, \delta)$ に関する連立方程式として解くと</p>
 		<p>\begin{align}
-			&\alpha = \fraction{\sqrt{N_1-k} -\iu\sqrt{k}}{2\sqrt{N_1 + N_2}},\\
-			&\beta = \fraction{\sqrt{N_1-k} +\iu\sqrt{k}}{2\sqrt{N_1 + N_2}},\\
-			&\gamma = -\fraction{\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1 + N_2}},\\
-			&\delta = -\fraction{\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1 + N_2}}.
+			\alpha = \fraction{1}{2}\sqrt{\fraction{N_1}{N_1+N_2}} \eu^{-\iu\phi},\quad
+			&\beta = \fraction{1}{2}\sqrt{\fraction{N_1}{N_1+N_2}} \eu^{\iu\phi},\\
+			\gamma = -\fraction{1}{2}\sqrt{\fraction{N_2}{N_1+N_2}},\quad
+			&\delta = -\fraction{1}{2}\sqrt{\fraction{N_2}{N_1+N_2}}.
 			\end{align}</p>
 		<p>よって，</p>
 		<p>\begin{align}
-			&a = \alpha + \gamma = \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1 + N_2}},\\
-			&b = \alpha - \gamma =  \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{N_1 + N_2}},\\
-			&c = \beta + \delta = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1 + N_2}} \ (=\overline{a}),\\
-			&d = \beta - \delta = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} +\eu^{\iu\phi}\sqrt{N_2/N_1}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{N_1 + N_2}} \ (=\overline{b}).
+			a = \alpha + \gamma = \fraction{\sqrt{N_1}\eu^{-\iu\phi} -\sqrt{N_2}}{2\sqrt{N_1 + N_2}},\quad 
+			&b = \alpha - \gamma =  \fraction{\sqrt{N_1}\eu^{-\iu\phi} +\sqrt{N_2}}{2\sqrt{N_1 + N_2}},\Rule{0px}{0px}{30px}\\
+			c = \beta + \delta = \fraction{\sqrt{N_1}\eu^{\iu\phi} -\sqrt{N_2}}{2\sqrt{N_1 + N_2}},\quad
+			&d = \beta - \delta = \fraction{\sqrt{N_1}\eu^{\iu\phi} +\sqrt{N_2}}{2\sqrt{N_1 + N_2}}.
 			\end{align}</p>
+		<p>明らかに，$c = \overline{a},\ d = \overline{b}$ が従う．</p>
  	</div>
 </details>
 </div>
@@ -677,12 +701,8 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p>頂点に関する一様状態 $\ket{s}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |\braket{ab|U^t|s}|^2$ とする．このとき $u\in \mathbb{N}$ に対して</p>
 	<p>\begin{align}
-		p(2u-1) &= \fraction{N_2}{N_1+N_2} \sin^2 (2u\phi -\kappa),\\
-		p(2u) &= \fraction{N_1}{N_1+N_2} \sin^2 (2u\phi +\kappa),
-		\end{align}</p>
-	<p>ただし</p>
-	<p>\begin{align}
-		\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}.
+		p(2u-1) &= \fraction{N_2}{N_1+N_2} \sin^2 ((2u-1)\phi),\\
+		p(2u) &= \fraction{N_1}{N_1+N_2} \sin^2 ((2u+1)\phi).
 		\end{align}</p>
 </div>
 <details class="dtl">
@@ -694,49 +714,33 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			\end{align}</p>
 		<p>であるから，ユニタリ行列の固有ベクトルの直交性より</p>
 		<p>\begin{align}
-			U^t = (-1)^t \eu^{-\iu\phi t}\ketbra{\psi_1}{\psi_1} +\eu^{-\iu\phi t}\ketbra{\psi_2}{\psi_2} (-1)^t \eu^{\iu\phi t}\ketbra{\psi_3}{\psi_3} +\eu^{\iu\phi t}\ketbra{\psi_4}{\psi_4}
+			U^t &= (-1)^t \eu^{-\iu\phi t}\ketbra{\psi_1}{\psi_1} +\eu^{-\iu\phi t}\ketbra{\psi_2}{\psi_2}\\
+				&\hspace{40mm}  +(-1)^t \eu^{\iu\phi t}\ketbra{\psi_3}{\psi_3} +\eu^{\iu\phi t}\ketbra{\psi_4}{\psi_4}
 			\end{align}</p>
-		<p>を得る．よって，<script>nr(N,cev7)</script> を用いて</p>
+		<p>を得る．よって，<script>nr(N,cee7)</script> を用いて</p>
 		<p>\begin{align}
-			U^t \ket{s} = (-1)^t a\eu^{-\iu\phi t}\ket{\psi_1} +b\eu^{-\iu\phi t}\ket{\psi_2}+ \overline{(-1)^t a\eu^{-\iu\phi t}}\ket{\psi_3} +\overline{b\eu^{-\iu\phi t}}\ket{\psi_4}
+			U^t \ket{s} &= (-1)^t a\eu^{-\iu\phi t}\ket{\psi_1} +b\eu^{-\iu\phi t}\ket{\psi_2}\\
+					&\hspace{40mm} + \overline{(-1)^t a\eu^{-\iu\phi t}}\ket{\psi_3} +\overline{b\eu^{-\iu\phi t}}\ket{\psi_4}
 			\end{align}</p>
 		<p>ここで $\braket{ab|\psi_1} = \braket{ab|\psi_2} = \iu/2$，$\braket{ab|\psi_3} = \braket{ab|\psi_4} = -\iu/2$ であるから，</p>
 		<p>\begin{align}
-			p(t) = |\braket{ab|U^t|s}|^2 &= \fraction{1}{4} \left|(-1)^t a\eu^{-\iu\phi t} +b\eu^{-\iu\phi t}- \overline{(-1)^t a\eu^{-\iu\phi t}} -\overline{b\eu^{-\iu\phi t}}\right|^2\\
+			p(t) &= |\braket{ab|U^t|s}|^2\\
+				&= \fraction{1}{4} \left|(-1)^t a\eu^{-\iu\phi t} +b\eu^{-\iu\phi t}- \overline{(-1)^t a\eu^{-\iu\phi t}} -\overline{b\eu^{-\iu\phi t}}\right|^2\\
 				&= \left( \im((-1)^t a\eu^{-\iu\phi t} +b\eu^{-\iu\phi t})\right)^2\\
 				&= \left( \im((b+(-1)^t a)\eu^{-\iu\phi t})\right)^2.
 			\end{align}</p>
 		<p>よって，$u\in \mathbb{N}$ に対して</p>
 		<p>\begin{align}
 			p(2u-1) &= \left( \im((b - a)\eu^{-\iu\phi (2u-1)})\right)^2\\
-					& = \fraction{N_2}{(N_1+N_2)N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
-					& = \fraction{N_2}{(N_1+N_2)N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
-					& = \fraction{N_2}{(N_1+N_2)N_1} \left( -\sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
-					& = \fraction{N_2}{(N_1+N_2)N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2, \Rule{0px}{0px}{40px}\\
+					& = \fraction{N_2}{N_1+N_2} \left(\im \left( \eu^{-\iu\phi (2u-1)} \right) \right)^2\\
+					& = \fraction{N_2}{N_1+N_2} \sin^2((2u-1)\phi),\Rule{0px}{0px}{40px}\\
 
-			p(2u) &= \left( \im((b + a)\eu^{-\iu\phi (2u-1)})\right)^2\\
-					& = \fraction{1}{N_1+N_2} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
-					& = \fraction{1}{N_1+N_2} \left(\im \left( (\sqrt{N_1-k} -\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
-					& = \fraction{1}{N_1+N_2} \left( -\sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
-					& = \fraction{1}{N_1+N_2} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2.
+			p(2u) &= \left( \im((b + a)\eu^{-\iu\phi (2u)})\right)^2\\
+					& = \fraction{N_1}{N_1+N_2} \left(\im \left( \eu^{-\iu\phi}\eu^{-\iu\phi(2u)} \right) \right)^2\\
+					& = \fraction{N_1}{N_1+N_2} \left(\im \left( \eu^{-\iu(2u+1)\phi} \right) \right)^2\\
+					& = \fraction{N_1}{N_1+N_2} \sin^2((2u+1)\phi).
 			\end{align}</p>
-		<p>ここで，$\kappa$ を</p>
-		<p>\begin{align}
-			\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}
-			\end{align}</p>
-		<p>により定義する．これを用いて $p(2u-1),\ p(2u)$ はそれぞれ以下のように書き換えられる：</p>
-		<p>\begin{align}
-			p(2u-1) &= \fraction{N_2}{(N_1+N_2)N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
-				&= \fraction{N_1 N_2}{(N_1+N_2)N_1} \left(\sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) -\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
-				&= \fraction{N_2}{N_1+N_2} (\cos\kappa \sin(2u\phi) -\sin\kappa \cos(2u\phi))^2\\
-				&= \fraction{N_2}{N_1+N_2} \sin^2(2u\phi -\kappa),\Rule{0px}{0px}{40px}\\
-
-			p(2u) &= \fraction{1}{N_1+N_2} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
-				&= \fraction{N_1}{N_1 +N_2} \left( \sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) +\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
-				&= \fraction{N_1}{N_1+N_2} (\cos\kappa \sin(2u\phi) +\sin\kappa \cos(2u\phi))^2\\
-				&= \fraction{N_1}{N_1+N_2} \sin^2(2u\phi +\kappa).
-			\end{align}</p>
- 	</div>
+	</div>
 </details>
 </div>
 <br>
@@ -751,6 +755,10 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\ket{\sigma} &= \fraction{1}{\sqrt{2N_1N_2}} \left( \sqrt{kN_2}\ket{ab} + \sqrt{kN_2}\ket{ba} \right.\\
 				&\hspace{40mm} \left.+\sqrt{(N_1-k)N_2}\ket{bc} + \sqrt{(N_1-k)N_2}\ket{cb}\right).
 		\end{align}</p>
+	<p>更に，<script>nr(N,cU7)</script> の $\phi$ を用いると</p>
+	<p>\begin{align}
+		\ket{\sigma} &= \fraction{1}{\sqrt{2}} \left(\sin\phi \ket{ab} +\sin\phi \ket{ba} + \cos\phi \ket{bc} +\cos\phi \ket{cb}\right).
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
@@ -761,6 +769,12 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 				&\hspace{50mm} \left. + \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \ket{b,\,c} + \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right)\\
 				&= \fraction{1}{\sqrt{2N_1N_2}} \left( \sqrt{kN_2}\ket{ab} + \sqrt{kN_2}\ket{ba} \right.\\
 				&\hspace{40mm} \left.+\sqrt{(N_1-k)N_2}\ket{bc} + \sqrt{(N_1-k)N_2}\ket{cb}\right).
+			\end{align}</p>
+		<p>ここで，<script>nr(N,civ7)</script> で得た $\phi$ の三角関数を $\ket{\sigma}$ に代入すれば以下を得る：</p>
+		<p>\begin{align}
+			\ket{\sigma} &= \fraction{1}{\sqrt{2}} \left( \sqrt{\fraction{k}{N_1}} \ket{ab} + \sqrt{\fraction{k}{N_1}} \ket{ba}\right. \\
+						&\hspace{45mm} \left.+ \sqrt{\fraction{N_1-k}{N_1}} \ket{bc} + \sqrt{\fraction{N_1-k}{N_1}} \ket{cb} \right)\\
+				&= \fraction{1}{\sqrt{2}} \left( \sin\phi \ket{ab} +\sin\phi \ket{ba} +\cos\phi \ket{bc} +\cos\phi \ket{cb}\right).
 			\end{align}</p>
  	</div>
 </details>
@@ -777,46 +791,47 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\ket{s} = a'\ket{\psi_1} +b'\ket{\psi_2} +c'\ket{\psi_3} +d'\ket{\psi_4}
 		\end{align}</p>
 	<p>で書き表すとき，$(a,\,b,\,c,\,d)$ は以下の通りである：</p>
-	<p>\begin{align}
-		a' &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
-		b' &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
-		c' &= \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{a'}),\\
-		d' &= \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{b'}).
-		\end{align}</p>
+		<p>\begin{align}
+			&a' = \fraction{\eu^{-\iu\phi}-1}{2\sqrt{2}},\quad
+			b' =  \fraction{\eu^{-\iu\phi}+1}{2\sqrt{2}},\Rule{0px}{0px}{30px}\\
+			&c' = \fraction{\eu^{\iu\phi}-1}{2\sqrt{2}}\ (=\overline{a'}),\quad
+			d' =\fraction{\eu^{\iu\phi}+1}{2\sqrt{2}}\ (=\overline{b'}).
+			\end{align}</p>
  	</div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
 		<p>両辺で $\ket{ab},\ \ket{ba},\ \ket{bc},\ \ket{cb}$ の係数を比較すると，</p>
 		<p>\begin{align}
-			&\ket{ab}: \ \sqrt{\fraction{k}{2N_1}} = \fraction{\{(a'+b') -(c'+d')\}\iu}{2},\\
-			&\ket{ba}: \ \sqrt{\fraction{k}{2N_1}} = \fraction{(a'-b')\iu\eu^{\iu\phi} -(c'-d')\iu\eu^{-\iu\phi}}{2},\\
-			&\ket{bc}: \ \sqrt{\fraction{N_1 -k}{2N_1}} = \fraction{-(a'-b')\eu^{\iu\phi} -(c'-d')\eu^{-\iu\phi}}{2},\\
-			&\ket{cb}: \ \sqrt{\fraction{N_1-k}{2N_1}} = \fraction{a'+b'+c'+d'}{2}.
+			&\ket{ab}: \ \fraction{\sin\phi}{\sqrt{2}} = \fraction{\{(a'+b') -(c'+d')\}\iu}{2},\\
+			&\ket{ba}: \ \fraction{\sin\phi}{\sqrt{2}} = \fraction{(a'-b')\iu\eu^{\iu\phi} -(c'-d')\iu\eu^{-\iu\phi}}{2},\\
+			&\ket{bc}: \ \fraction{\cos\phi}{\sqrt{2}} = \fraction{-(a'-b')\eu^{\iu\phi} -(c'-d')\eu^{-\iu\phi}}{2},\\
+			&\ket{cb}: \ \fraction{\cos\phi}{\sqrt{2}} = \fraction{a'+b'+c'+d'}{2}.
 			\end{align}</p>
 		<p>ここで $\alpha' = (a'+b')/2$，$\beta' = (c'+d')/2$，$\gamma' = (a'-b')/2$，$\delta' = (c'-d')/2$ とすると，上記等式たちは以下のように書き換えられる：</p>
 		<p>\begin{align}
 			\left\{\begin{array}{l}
-				\alpha' -\beta' = -\iu\sqrt{\fraction{k}{2N_1}}\\
-				\gamma'\eu^{\iu\phi} -\delta'\eu^{-\iu\phi} = -\iu\sqrt{\fraction{k}{2N_1}}\\
-				-\gamma'\eu^{\iu\phi} -\delta'\eu^{-\iu\phi} = \sqrt{\fraction{N_1-k}{2N_1}}\\
-				\alpha' + \beta' = \sqrt{\fraction{N_1-k}{2N_1}} 
+				\alpha' -\beta' = -\iu\fraction{\sin\phi}{\sqrt{2}}\\
+				\gamma'\eu^{\iu\phi} -\delta'\eu^{-\iu\phi} = -\iu\fraction{\sin\phi}{\sqrt{2}}\\
+				-\gamma'\eu^{\iu\phi} -\delta'\eu^{-\iu\phi} = \fraction{\cos\phi}{\sqrt{2}}\\
+				\alpha' + \beta' = \fraction{\cos\phi}{\sqrt{2}}
 				\end{array}\right..
 			\end{align}</p>
 		<p>これらを一組の $(\alpha,\, \beta,\, \gamma,\, \delta)$ に関する連立方程式として解くと</p>
 		<p>\begin{align}
-			&\alpha’ = \fraction{\sqrt{N_1-k} -\iu\sqrt{k}}{2\sqrt{2N_1}},\\
-			&\beta' = \fraction{\sqrt{N_1-k} +\iu\sqrt{k}}{2\sqrt{2N_1}},\\
-			&\gamma' = -\fraction{\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
-			&\delta' = -\fraction{\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}.
+			\alpha’ = \fraction{\eu^{-\iu\phi}}{2\sqrt{2}},\ 
+			\beta' = \fraction{\eu^{\iu\phi}}{2\sqrt{2}},\
+			\gamma' = -\fraction{1}{2\sqrt{2}},\
+			\delta' = -\fraction{1}{2\sqrt{2}}.
 			\end{align}</p>
 		<p>よって，</p>
 		<p>\begin{align}
-			&a = \alpha' + \gamma' = \fraction{\sqrt{N_1-k} -\iu\sqrt{k} -\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
-			&b = \alpha' - \gamma' =  \fraction{\sqrt{N_1-k} -\iu\sqrt{k} +\eu^{-\iu\phi}(\sqrt{N_1-k} +\iu\sqrt{k})}{2\sqrt{2N_1}},\\
-			&c = \beta' + \delta' = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} -\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{a'}),\\
-			&d = \beta' - \delta' = \fraction{\sqrt{N_1-k} +\iu\sqrt{k} +\eu^{\iu\phi}(\sqrt{N_1-k} -\iu\sqrt{k})}{2\sqrt{2N_1}}\ (=\overline{b'}).
+			a' = \alpha' + \gamma' = \fraction{\eu^{-\iu\phi}-1}{2\sqrt{2}},\quad
+			&b' = \alpha' - \gamma' =  \fraction{\eu^{-\iu\phi}+1}{2\sqrt{2}},\Rule{0px}{0px}{30px}\\
+			c' = \beta' + \delta' = \fraction{\eu^{\iu\phi}-1}{2\sqrt{2}},\quad
+			&d' = \beta' - \delta' =\fraction{\eu^{\iu\phi}+1}{2\sqrt{2}}.
 			\end{align}</p>
+		<p>明らかに $c' = \overline{a'},\ d' = \overline{b'}$ が従う．</p>
  	</div>
 </details>
 </div>
@@ -829,12 +844,8 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div id="tx">
 	<p>辺に関する一様状態 $\ket{\sigma}$ を初期状態として量子ウォーク探索を行ったとき，$t$ ステップの時間発展の後に測定を行い探索が成功する確率を $p(t) = |\braket{ab|U^t|\sigma}|^2$ とする．このとき $u\in \mathbb{N}$ に対して</p>
 	<p>\begin{align}
-		p(2u-1) &= \fraction{1}{2}\sin^2(2u\phi -\kappa),\\
-		p(2u) &= \fraction{1}{2} \sin^2 (2u\phi +\kappa),
-		\end{align}</p>
-	<p>ただし</p>
-	<p>\begin{align}
-		\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}.
+		p(2u-1) &= \fraction{1}{2}\sin^2((2u-1)\phi),\\
+		p(2u) &= \fraction{1}{2} \sin^2 ((2u +1)\phi),
 		\end{align}</p>
 </div>
 <details class="dtl">
@@ -842,47 +853,31 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<div id="tx">
 		<p>$U$ のスペクトル分解から得られる $U^t$ は <script>nr(N,cpv7)</script> と同様である．つまり</p>
 		<p>\begin{align}
-			U^t = (-1)^t \eu^{-\iu\phi t}\ketbra{\psi_1}{\psi_1} +\eu^{-\iu\phi t}\ketbra{\psi_2}{\psi_2} (-1)^t \eu^{\iu\phi t}\ketbra{\psi_3}{\psi_3} +\eu^{\iu\phi t}\ketbra{\psi_4}{\psi_4}
+			U^t &= (-1)^t \eu^{-\iu\phi t}\ketbra{\psi_1}{\psi_1} +\eu^{-\iu\phi t}\ketbra{\psi_2}{\psi_2}\\
+				&\hspace{40mm}  +(-1)^t \eu^{\iu\phi t}\ketbra{\psi_3}{\psi_3} +\eu^{\iu\phi t}\ketbra{\psi_4}{\psi_4}
 			\end{align}</p>
 		<p>を得る．よって，<script>nr(N,cee7)</script> を用いて</p>
 		<p>\begin{align}
-			U^t \ket{\sigma} = (-1)^t a'\eu^{-\iu\phi t}\ket{\psi_1} +b'\eu^{-\iu\phi t}\ket{\psi_2}+ \overline{(-1)^t a'\eu^{-\iu\phi t}}\ket{\psi_3} +\overline{b'\eu^{-\iu\phi t}}\ket{\psi_4}
+			U^t \ket{\sigma} &= (-1)^t a'\eu^{-\iu\phi t}\ket{\psi_1} +b'\eu^{-\iu\phi t}\ket{\psi_2}\\
+					&\hspace{40mm} + \overline{(-1)^t a'\eu^{-\iu\phi t}}\ket{\psi_3} +\overline{b'\eu^{-\iu\phi t}}\ket{\psi_4}
 			\end{align}</p>
 		<p>ここで $\braket{ab|\psi_1} = \braket{ab|\psi_2} = \iu/2$，$\braket{ab|\psi_3} = \braket{ab|\psi_4} = -\iu/2$ であるから，</p>
 		<p>\begin{align}
-			p(t) = |\braket{ab|U^t|\sigma}|^2 &= \fraction{1}{4} \left|(-1)^t a'\eu^{-\iu\phi t} +b'\eu^{-\iu\phi t}- \overline{(-1)^t a'\eu^{-\iu\phi t}} -\overline{b'\eu^{-\iu\phi t}}\right|^2\\
+			p(t) &= |\braket{ab|U^t|\sigma}|^2\\
+				&= \fraction{1}{4} \left|(-1)^t a'\eu^{-\iu\phi t} +b'\eu^{-\iu\phi t}- \overline{(-1)^t a'\eu^{-\iu\phi t}} -\overline{b'\eu^{-\iu\phi t}}\right|^2\\
 				&= \left( \im((-1)^t a'\eu^{-\iu\phi t} +b'\eu^{-\iu\phi t})\right)^2\\
 				&= \left( \im((b'+(-1)^t a')\eu^{-\iu\phi t})\right)^2.
 			\end{align}</p>
 		<p>よって，$u\in \mathbb{N}$ に対して</p>
 		<p>\begin{align}
 			p(2u-1) &= \left( \im((b' - a')\eu^{-\iu\phi (2u-1)})\right)^2\\
-					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
-					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
-					& = \fraction{1}{2N_1} \left( -\sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
-					& = \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2, \Rule{0px}{0px}{40px}\\
+					& = \fraction{1}{2} \left(\im \left( \eu^{-\iu\phi (2u-1)} \right) \right)^2\\
+					& = \fraction{1}{2} \sin^2((2u-1)\phi), \Rule{0px}{0px}{40px}\\
 
 			p(2u) &= \left( \im((b' + a')\eu^{-\iu\phi (2u-1)})\right)^2\\
-					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} +\iu\sqrt{k}) \eu^{-\iu\phi}\eu^{-\iu\phi (2u-1)} \right) \right)^2\\
-					& = \fraction{1}{2N_1} \left(\im \left( (\sqrt{N_1-k} -\iu\sqrt{k}) \eu^{-\iu(2u\phi)} \right) \right)^2\\
-					& = \fraction{1}{2N_1} \left( -\sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
-					& = \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2.
-			\end{align}</p>
-		<p>ここで，$\kappa$ を</p>
-		<p>\begin{align}
-			\cos\kappa = \sqrt{\fraction{N_1-k}{N_1}},\quad \sin\kappa = \sqrt{\fraction{k}{N_1}}
-			\end{align}</p>
-		<p>により定義する．これを用いて $p(2u-1),\ p(2u)$ はそれぞれ以下のように書き換えられる：</p>
-		<p>\begin{align}
-			p(2u-1) &= \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) - \sqrt{k}\cos(2u\phi) \right)^2\\
-				&= \fraction{N_1}{2N_1} \left(\sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) -\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
-				&= \fraction{1}{2} (\cos\kappa \sin(2u\phi) -\sin\kappa \cos(2u\phi))^2\\
-				&= \fraction{1}{2} \sin^2(2u\phi -\kappa),\Rule{0px}{0px}{40px}\\
-
-			p(2u) &= \fraction{1}{2N_1} \left( \sqrt{N_1-k}\sin(2u\phi) + \sqrt{k}\cos(2u\phi) \right)^2\\
-				&= \fraction{N_1}{2N_1} \left( \sqrt{\fraction{N_1 -k}{N_1}}\sin(2u\phi) +\sqrt{\fraction{k}{N_1}}\cos(2u\phi)\right)^2\\
-				&= \fraction{1}{2} (\cos\kappa \sin(2u\phi) +\sin\kappa \cos(2u\phi))^2\\
-				&= \fraction{1}{2} \sin^2(2u\phi +\kappa).
+					& = \fraction{1}{2} \left(\im \left( \eu^{-\iu\phi} \eu^{-\iu(2u\phi)} \right) \right)^2\\
+					& = \fraction{1}{2} \left( \eu^{-\iu (2u+1)\phi}\right)^2\\
+					& = \fraction{1}{2} \sin^2((2u+1)\phi).
 			\end{align}</p>
  	</div>
 </details>
@@ -1008,8 +1003,9 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
 	<p><script>nr(N,Bcu7)</script>で導入したベクトルにより張られる空間 $\mathcal{S}' = \spn \{\ket{ab},\,\ket{ad},\,\ket{ba},\,\ket{bc},\,\ket{cb},\,\ket{cd},\,\ket{da},\,\ket{dc}\}$ に関してシフト作用素 $U$ の作用は閉じている．$\mathcal{S}'$ 上の線形変換 $f'_U: \ket{\psi}\mapsto U\ket{\psi}$ が定義でき，その表現行列 $\widetilde{U}$ は<p>
-	<p>\begin{align}{\small
-		\widetilde{U} = \left[ \begin{array}{cccccccc}
+	<p>\begin{align}
+		&{\small \widetilde{U} = }\\
+		&{\small \left[ \begin{array}{cccccccc}
 			0 & 0 & \cos\theta_1 & -\sin\theta_1 & 0 & 0 & 0 & 0 \\ 
 			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
 			\cos\theta_2 & -\sin\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
@@ -1018,8 +1014,8 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 \\ 
 			-\sin\theta_2 & -\cos\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
 			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0 \\ 
-		\end{array}\right].
-		}\end{align}</p>
+		\end{array}\right].}
+		\end{align}</p>
 	<!--<p>また，$\widetilde{U}$ の固有値及び固有ベクトルは以下である：</p>
 	<p>\begin{align}
 		&\ket{\psi_1} = \fraction{1}{2}[\iu,\ \iu\eu^{\iu\phi},\ {-\eu^{\iu\phi}},\ 1]^\trp,\quad \lambda_1 = -\eu^{-\iu\phi};\\
