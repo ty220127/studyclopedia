@@ -36,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/20"
+	const updated = "2023/8/23"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -591,6 +591,86 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = cUt7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+		<p><script>nr(N,cu7)</script> の時間発展作用素 $\widetilde{U}$ について，$u\in \mathbb{N}$ に対して</p>
+		<p>\begin{align}
+			\widetilde{U}^{2u-1} &= \left[ \begin{array}{cccc}
+				0 & -\cos u\theta & \sin u\theta & 0\\
+				-\cos (u-1)\theta & 0 & 0 & -\sin (u-1)\theta\\
+				-\sin (u-1)\theta & 0 & 0 & \cos (u-1)\theta\\
+				0 & \sin u\theta & \cos u\theta & 0
+				\end{array}\right],\Rule{0px}{0px}{60px}\\
+
+			\widetilde{U}^{2u} &= \left[ \begin{array}{cccc}
+				\cos u\theta & 0 & 0 & \sin u\theta\\
+				0 & \cos u\theta & -\sin u\theta & 0\\
+				0 & \sin u\theta & \cos u\theta & 0\\
+				-\sin u\theta & 0 & 0 & \cos u\theta
+				\end{array}\right]
+			\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>まず $\widetilde{U}^{2u}$ を帰納法により示す．$u=2$ のとき，</p>
+		<p>\begin{align}
+			\widetilde{U}^2 &= \left[ \begin{array}{cccc}
+			0 & -\cos\theta & \sin\theta & 0 \\
+			-1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 \\
+			0 & \sin\theta & \cos\theta & 0 \end{array}\right] \left[ \begin{array}{cccc}
+			0 & -\cos\theta & \sin\theta & 0 \\
+			-1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 \\
+			0 & \sin\theta & \cos\theta & 0 \end{array}\right]\\
+				&= \left[ \begin{array}{cccc}
+					\cos\theta & 0 & 0 &\sin\theta\\
+					0 & \cos\theta & -\sin\theta & 0\\
+					0 & \sin\theta & \cos\theta & 0\\
+					-\sin\theta & 0 & 0 & \cos\theta
+					\end{array}\right]
+			\end{align}</p>
+		<p>であるから命題は成立する．次にある $u$ で命題が成立すると仮定したとき，$u+1$ に対して</p>
+		<p>\begin{align}
+			&\widetilde{U}^{2(u+1)} = \widetilde{U}^{2u}\widetilde{U}^2\\
+			&{\small = \left[ \begin{array}{cccc}
+				\cos u\theta & 0 & 0 & \sin u\theta\\
+				0 & \cos u\theta & -\sin u\theta & 0\\
+				0 & \sin u\theta & \cos u\theta & 0\\
+				-\sin u\theta & 0 & 0 & \cos u\theta
+				\end{array}\right] 
+				\left[ \begin{array}{cccc}
+					\cos\theta & 0 & 0 &\sin\theta\\
+					0 & \cos\theta & -\sin\theta & 0\\
+					0 & \sin\theta & \cos\theta & 0\\
+					-\sin\theta & 0 & 0 & \cos\theta
+					\end{array}\right]}\Rule{0px}{0px}{40px}\\
+			&{\small =   \left[ \begin{array}{cccc}
+				\cos (u+1)\theta & 0 & 0 & \sin (u+1)\theta\\
+				0 & \cos (u+1)\theta & -\sin (u+1)\theta & 0\\
+				0 & \sin (u+1)\theta & \cos (u+1)\theta & 0\\
+				-\sin (u+1)\theta & 0 & 0 & \cos (u+1)\theta
+				\end{array}\right] }
+			\end{align}</p>
+		<p>これを踏まえて $\widetilde{U}^{2u-1}$ を計算すると</p>
+		<p>\begin{align}
+			&\widetilde{U}^{2u-1} = \widetilde{U}^{2(u-1)} \widetilde{U}\\
+			&=\left[ \begin{array}{cccc}
+				0 & -\cos u\theta & \sin u\theta & 0\\
+				-\cos (u-1)\theta & 0 & 0 & -\sin (u-1)\theta\\
+				-\sin (u-1)\theta & 0 & 0 & \cos (u-1)\theta\\
+				0 & \sin u\theta & \cos u\theta & 0
+				\end{array}\right].
+			\end{align}</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
 <p id="1">&nbsp;</p><script>var curbox = civ7</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
@@ -742,6 +822,24 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			\end{align}</p>
 	</div>
 </details>
+<details class="dtl">
+	<summary>別証明</summary>
+	<div id="tx">
+		<p><script>nr(N,cUt7)</script>，<script>nr(N,civ7)</script>より，$u\in \mathbb{N}$ に対して</p>
+		<p>\begin{align}
+			p(2u-1) &= |\braket{ab|\widetilde{U}^{2u-1}|s}|^2 = \fraction{N_2}{N_1+N_2}\sin^2(u\theta-\phi)\\
+					&= \fraction{N_2}{N_1 +N_2} \sin^2((2u-1)\phi),\Rule{0px}{0px}{20px}\\
+			p(2u) &= |\braket{ab| \widetilde{U}^{2u}|s} |^2 = \fraction{N_1}{N_1 +N_2} \sin (u\theta +\phi)\\
+				&= \fraction{N_1}{N_1 +N_2} \sin^2((2u+1)\phi).
+			\end{align}</p>
+	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>$\sin\phi = \sqrt{k/N_1}$ であり，これは $N_1$ 個の要素，$k$ 個のマーク頂点からなる振幅増幅で登場する三角関数に一致する．また，観測確率に含まれている三角関数の引数から，頂点数による確率の減衰を考慮しなければ，確率の変化は $N_1$ 個の要素によるオリジナルの振幅増幅と等価であることが分かる．特に，２ステップ分の時間発展が，オリジナルの振幅増幅における１回分に相当する．</p>
+	</div>
+</details>
 </div>
 <br>
 <!-- end of a box -->
@@ -880,6 +978,24 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 					& = \fraction{1}{2} \sin^2((2u+1)\phi).
 			\end{align}</p>
  	</div>
+</details>
+<details class="dtl">
+	<summary>別証明</summary>
+	<div id="tx">
+		<p><script>nr(N,cUt7)</script>，<script>nr(N,cie7)</script>より，$u\in \mathbb{N}$ に対して</p>
+		<p>\begin{align}
+			p(2u-1) &= |\braket{ab|\widetilde{U}^{2u-1}|\sigma}|^2 = \fraction{1}{2}\sin^2(u\theta-\phi)\\
+					&= \fraction{1}{2} \sin^2((2u-1)\phi),\Rule{0px}{0px}{20px}\\
+			p(2u) &= |\braket{ab| \widetilde{U}^{2u}|\sigma} |^2 = \fraction{1}{2} \sin (u\theta +\phi)\\
+				&= \fraction{1}{2} \sin^2((2u+1)\phi).
+			\end{align}</p>
+	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>$\sin\phi = \sqrt{k/N_1}$ であり，これは $N_1$ 個の要素，$k$ 個のマーク頂点からなる振幅増幅で登場する三角関数に一致する．また，観測確率に含まれている三角関数の引数から，頂点数による確率の減衰を考慮しなければ，確率の変化は $N_1$ 個の要素によるオリジナルの振幅増幅と等価であることが分かる．特に，２ステップ分の時間発展が，オリジナルの振幅増幅における１回分に相当する．</p>
+	</div>
 </details>
 </div>
 <br>
@@ -1028,6 +1144,34 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\phi = \fraction{\theta}{2}
 		\end{align}</p>
 	<p>である．</p>-->
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = BcUt7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p><script>nr(N,BcU7)</script>の $\widetilde{U}$ について，$u\in \mathbb{N}$ に対して<p>
+	<p>\begin{align}
+		&{\small \widetilde{U}^{2u} =  \left[ \begin{array}{cccc}
+			(\cos u\theta_1)R_2^u & 0 & (\sin u\theta_1)R_2^u & 0\\
+			0 & (\cos u\theta_2)R_1^u & 0 & (\sin u\theta_2)R_1^u\\ 
+			-(\sin u\theta_1)R_2^u & 0 & (\cos u\theta_1)R_2^u & 0\\
+			0 & -(\sin u\theta_2)R_1^u & 0 & (\cos u\theta_2)R_1^u\\ 
+		\end{array}\right].}
+		\end{align}</p>
+	<p>ただし，$i = 1,\,2$ に対して $R_i$ は回転行列：</p>
+	<p>\begin{align}
+		R_i = \twobytwo{\cos\theta_i}{-\sin \theta_i}{\sin \theta_i}{\cos \theta_i}.
+		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
