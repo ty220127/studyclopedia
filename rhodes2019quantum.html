@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -36,7 +37,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/23"
+	const updated = "2023/8/26"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -1088,7 +1089,64 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>\begin{align}
+			&C\ket{ab} = \fraction{1}{\sqrt{k_1k_2}}\sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} C\ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{k_1k_2}}\sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}} \left(\fraction{2}{N_2}\sum_{j'\in Y}\ket{a,\,j'} -\ket{a,\,b}\right)\\
+				&= \fraction{1}{\sqrt{k_1k_2}} \left( \fraction{2k_2}{N_2} \sum_{a\in \mathcal{A}}\sum_{j'\in Y}\ket{a,\,j'} - \sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}}\ket{a,\,b}\right)\\
+				&= -\left(1-\fraction{2k_2}{N_2}\right) \fraction{1}{\sqrt{k_1k_2}}\sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}}\ket{a,\,b} + \fraction{2\sqrt{k_2}}{\sqrt{k_1}N_2}\sum_{a\in \mathcal{A}}\sum_{d\in \mathcal{D}}\ket{a,\,d}\\
+				&= -\left(1-\fraction{2k_2}{N_2}\right)\ket{ab} + \fraction{2\sqrt{k_2M_2}}{N_2} \ket{ad}\\
+				&= -\cos\theta_2  \ket{ab} + \sin\theta_2 \ket{ad}\Rule{0px}{0px}{40px}.\\
+
+			&C\ket{ad} = \fraction{1}{\sqrt{k_1M_2}}\sum_{a\in \mathcal{A}}\sum_{d\in \mathcal{D}} C\ket{a,\,d}\\
+				&= \fraction{1}{\sqrt{k_1M_2}}\sum_{a\in \mathcal{A}}\sum_{d\in \mathcal{D}} \left(\fraction{2}{N_2}\sum_{j'\in Y}\ket{a,\,j'} -\ket{a,\,d}\right)\\
+				&= \fraction{1}{\sqrt{k_1M_2}} \left( \fraction{2M_2}{N_2} \sum_{a\in \mathcal{A}}\sum_{j'\in Y}\ket{a,\,j'} - \sum_{a\in \mathcal{A}}\sum_{d\in \mathcal{D}}\ket{a,\,d}\right)\\
+				&= \fraction{2\sqrt{M_2}}{\sqrt{k_1}N_2}\sum_{a\in \mathcal{A}}\sum_{b\in \mathcal{B}}\ket{a,\,b} +\left(\fraction{2M_2}{N_2} -1\right) \fraction{1}{\sqrt{k_1M_2}}\sum_{a\in \mathcal{A}}\sum_{d\in \mathcal{D}}\ket{a,\,d}\\
+				&= \fraction{2\sqrt{k_2M_2}}{N_2} \ket{ab} + \left(1 -\fraction{2k_2}{N_2}\right) \ket{ad}\\
+				&= \sin\theta_2 \ket{ab} + \cos\theta_2 \ket{ad}\Rule{0px}{0px}{40px}\\
+
+			&C\ket{ba} = \fraction{1}{\sqrt{k_1 k_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} C\ket{b,\,a} \\
+				&= \fraction{1}{\sqrt{k_1 k_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}} \left(\fraction{2}{N_1}\sum_{j'\in X}\ket{a,\,j'} -\ket{b,\,a}\right)\\
+				&= \fraction{1}{\sqrt{k_1 k_2}} \left( \fraction{2k_1}{N_1} \sum_{b\in \mathcal{B}}\sum_{j'\in X} \ket{b,\,j'} -\sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}}\ket{b,\,a}\right)\\
+				&= -\left( 1-\fraction{2k_1}{N_1} \right) \fraction{1}{\sqrt{k_1k_2}} \sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}}\ket{b,\,a} +\fraction{2\sqrt{k_1}}{\sqrt{k_2}N_1} \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\\
+				&= -\left( 1-\fraction{2k_1}{N_1} \right)\ket{ba}  +\fraction{2\sqrt{k_1M_1}}{N_1} \ket{bc}\\
+				&= -\cos\theta_1 \ket{ba} + \sin\theta_1 \ket{bc} \Rule{0px}{0px}{40px}.\\
+
+			&C\ket{bc} = \fraction{1}{\sqrt{M_1k_2}}\sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} C\ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{M_1k_2}}\sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}} \left(\fraction{2}{N_1}\sum_{j'\in X}\ket{b,\,j'} -\ket{b,\,c}\right)\\
+				&= \fraction{1}{\sqrt{M_1k_2}} \left( \fraction{2M_1}{N_1} \sum_{b\in \mathcal{B}}\sum_{j'\in X}\ket{b,\,j'} - \sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\right)\\
+				&= \fraction{2\sqrt{M_1}}{\sqrt{k_2}N_1}\sum_{b\in \mathcal{B}}\sum_{a\in \mathcal{A}}\ket{b,\,a} +\left(\fraction{2M_1}{N_1} -1\right) \fraction{1}{\sqrt{M_1k_2}}\sum_{b\in \mathcal{B}}\sum_{c\in \mathcal{C}}\ket{b,\,c}\\
+				&= \fraction{2\sqrt{k_1M_1}}{N_1} \ket{ba} + \left(1 -\fraction{2k_1}{N_1}\right) \ket{bc}\\
+				&= \sin\theta_1 \ket{ba} + \cos\theta_1 \ket{bc}\Rule{0px}{0px}{40px}\\
+
+			&C\ket{cb} = \fraction{1}{\sqrt{M_1 k_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} C\ket{c,\,b} \\
+				&= \fraction{1}{\sqrt{M_1 k_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}} \left(\fraction{2}{N_1}\sum_{j'\in Y}\ket{c,\,j'} -\ket{c,\,b}\right)\\
+				&= \fraction{1}{\sqrt{M_1 k_2}} \left( \fraction{2k_2}{N_2} \sum_{c\in \mathcal{C}}\sum_{j'\in Y} \ket{c,\,j'} -\sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b}\right)\\
+				&= -\left( 1-\fraction{2k_2}{N_2} \right) \fraction{1}{\sqrt{M_1k_2}} \sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b} +\fraction{2\sqrt{k_2}}{\sqrt{M_1}N_2} \sum_{c\in \mathcal{C}}\sum_{d\in \mathcal{D}}\ket{c,\,d}\\
+				&= -\left( 1-\fraction{2k_2}{N_2} \right)\ket{cb}  +\fraction{2\sqrt{k_2M_2}}{N_2} \ket{cd}\\
+				&= -\cos\theta_2 \ket{cb} + \sin\theta_2 \ket{cd} \Rule{0px}{0px}{40px}.\\
+
+			&C\ket{cd} = \fraction{1}{\sqrt{M_1M_2}}\sum_{c\in \mathcal{C}}\sum_{d\in \mathcal{D}} C\ket{c,\,d}\\
+				&= \fraction{1}{\sqrt{M_1M_2}}\sum_{c\in \mathcal{C}}\sum_{d\in \mathcal{D}} \left(\fraction{2}{N_2}\sum_{j'\in Y}\ket{c,\,j'} -\ket{c,\,d}\right)\\
+				&= \fraction{1}{\sqrt{M_1M_2}} \left( \fraction{2M_2}{N_2} \sum_{c\in \mathcal{C}}\sum_{j'\in Y}\ket{c,\,j'} - \sum_{c\in \mathcal{C}}\sum_{d\in \mathcal{D}}\ket{c,\,d}\right)\\
+				&= \fraction{2\sqrt{M_2}}{\sqrt{M_1}N_2}\sum_{c\in \mathcal{C}}\sum_{b\in \mathcal{B}}\ket{c,\,b} +\left(\fraction{2M_2}{N_2} -1\right) \fraction{1}{\sqrt{M_1M_2}}\sum_{c\in \mathcal{C}}\sum_{d\in \mathcal{D}}\ket{c,\,d}\\
+				&= \fraction{2\sqrt{k_2M_2}}{N_2} \ket{cb} + \left(1 -\fraction{2k_2}{N_2}\right) \ket{cd}\\
+				&= \sin\theta_2 \ket{cb} + \cos\theta_2 \ket{cd}. \Rule{0px}{0px}{30px}\\
+			\end{align}</p>
+			<p>\begin{align}
+			&C\ket{da} = \fraction{1}{\sqrt{k_1M_2}}\sum_{d\in \mathcal{D}}\sum_{a\in \mathcal{A}} C\ket{d,\,a}\\
+				&= \fraction{1}{\sqrt{k_1M_2}}\sum_{d\in \mathcal{D}}\sum_{a\in \mathcal{A}} \left( \fraction{2}{N_1}\sum_{j'\in X} \ket{d,\,j'} -\ket{d,\,a}\right)\\
+				&= \fraction{1}{\sqrt{k_1M_2}} \left( \fraction{2k_1}{N_1}\sum_{d\in \mathcal{D}}\sum_{j'\in X}\ket{d,\,j'} -\sum_{d\in \mathcal{D}}\sum_{a\in \mathcal{A}}\ket{d,\,a} \right)\\
+				&= -\left( 1-\fraction{2k_1}{N_1}\right) \fraction{1}{\sqrt{k_1M_2}}\sum_{d\in \mathcal{D}}\sum_{a\in \mathcal{A}}\ket{d,\,a} + \fraction{2\sqrt{k_1}}{\sqrt{M_2}N_1}\sum_{d\in \mathcal{D}}\sum_{c\in \mathcal{C}}\ket{d,\,c}\\
+				&= -\left( 1-\fraction{2k_1}{N_1}\right) \ket{da} + \fraction{2\sqrt{k_1M_1}}{N_1}\sin\theta_1 \ket{dc}\\
+				&= -\cos\theta_1 \ket{da} +\sin\theta_1 \ket{dc}.\Rule{0px}{0px}{40px}\\
+
+			&C\ket{dc} = \fraction{1}{\sqrt{M_1M_2}}\sum_{d\in \mathcal{D}}\sum_{c\in \mathcal{C}} C\ket{d,\,c}\\
+				&= \fraction{1}{\sqrt{M_1M_2}} \sum_{d\in \mathcal{D}}\sum_{c\in \mathcal{C}}\left( \fraction{2}{N_1}\sum_{j'\in X} \ket{d,\,j'} -\ket{d,\,c}\right)\\
+				&= \fraction{1}{\sqrt{M_1M_2}}\left( \fraction{2M_1}{N_1} \sum_{d\in \mathcal{D}}\sum_{j'\in X} \ket{d,\,j'} -\sum_{d\in \mathcal{D}}\sum_{c\in \mathcal{C}}\ket{d,\,c}\right)\\
+				&= \fraction{2\sqrt{M_1}}{\sqrt{M_2}N_1} \sum_{d\in \mathcal{D}}\sum_{a\in \mathcal{A}}\ket{d,\,a} +\left(\fraction{2M_1}{N_1} -1\right)\fraction{1}{\sqrt{M_1M_2}}\sum_{d\in \mathcal{D}}\sum_{c\in \mathcal{C}}\ket{d,\,c}\\
+				&= \fraction{2\sqrt{2k_1M_1}}{N_1} \ket{da} + \left(1-\fraction{k_1}{N_1}\right)\ket{dc}\\
+				&= \sin\theta_1\ket{da} +\cos\theta_1 \ket{dc}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
