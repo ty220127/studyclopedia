@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -37,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/8/26"
+	const updated = "2023/9/4"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -1057,7 +1056,39 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>\begin{align}
+			S\ket{ab} &= \fraction{1}{\sqrt{k_1k_2}} \sum_{a\in \mathcal{A}} \sum_{b\in \mathcal{B}} S\ket{a,\,b}\\
+				&= \fraction{1}{\sqrt{k_1k_2}} \sum_{a\in \mathcal{A}} \sum_{b\in \mathcal{B}} \ket{b,\,a} = \ket{ba}\Rule{0px}{0px}{40px}\\
+			S\ket{ad} &= \fraction{1}{\sqrt{k_1M_2}} \sum_{a\in \mathcal{A}} \sum_{d\in \mathcal{D}} S\ket{a,\,d}\\
+				&= \fraction{1}{\sqrt{k_1M_2}} \sum_{a\in \mathcal{A}} \sum_{d\in \mathcal{D}} \ket{d,\,a} = \ket{da}\Rule{0px}{0px}{40px}\\
+			S\ket{ba} &= \fraction{1}{\sqrt{k_1k_2}} \sum_{b\in \mathcal{B}} \sum_{a\in \mathcal{A}} S\ket{b,\,a}\\
+				&= \fraction{1}{\sqrt{k_1k_2}} \sum_{b\in \mathcal{B}} \sum_{a\in \mathcal{A}} \ket{a,\,b} = \ket{ab}\Rule{0px}{0px}{40px}\\
+			S\ket{bc} &= \fraction{1}{\sqrt{M_1k_2}} \sum_{b\in \mathcal{B}} \sum_{c\in \mathcal{C}} S\ket{b,\,c}\\
+				&= \fraction{1}{\sqrt{M_1k_2}} \sum_{b\in \mathcal{B}} \sum_{c\in \mathcal{C}} \ket{c,\,b} = \ket{cb}\Rule{0px}{0px}{40px}\\
+			S\ket{cb} &= \fraction{1}{\sqrt{M_1k_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} S\ket{c,\,b}\\
+				&= \fraction{1}{\sqrt{M_1k_2}} \sum_{c\in \mathcal{C}} \sum_{b\in \mathcal{B}} \ket{b,\,c} = \ket{bc}\Rule{0px}{0px}{40px}\\
+			S\ket{cd} &= \fraction{1}{\sqrt{M_1M_2}} \sum_{c\in \mathcal{C}} \sum_{d\in \mathcal{D}} S\ket{c,\,d}\\
+				&= \fraction{1}{\sqrt{M_1M_2}} \sum_{c\in \mathcal{C}} \sum_{d\in \mathcal{D}} \ket{d,\,c} = \ket{dc}\Rule{0px}{0px}{40px}\\
+			S\ket{da} &= \fraction{1}{\sqrt{k_1M_2}} \sum_{d\in \mathcal{D}} \sum_{a\in \mathcal{A}} S\ket{d,\,a}\\
+				&= \fraction{1}{\sqrt{k_1M_2}} \sum_{d\in \mathcal{D}} \sum_{a\in \mathcal{A}} \ket{a,\,d} = \ket{ad}\Rule{0px}{0px}{40px}\\
+			S\ket{dc} &= \fraction{1}{\sqrt{M_1M_2}} \sum_{d\in \mathcal{D}} \sum_{c\in \mathcal{C}} S\ket{d,\,c}\\
+				&= \fraction{1}{\sqrt{M_1M_2}} \sum_{d\in \mathcal{D}} \sum_{c\in \mathcal{C}} \ket{c,\,d} = \ket{cd}.
+			\end{align}</p>
+		<p>よって，$S$ の作用は $\mathcal{S}'$ で閉じており，$\mathcal{S}'$ 上の線形変換 $f_S'$ を定義できる．その表現行列は，以下を満たす $\widetilde{S}$ である：</p>
+		<p>\begin{align}
+			&[S\ket{ab}\ S\ket{ad}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}\ S\ket{cd}\ S\ket{da}\ S\ket{dc}]\\
+			&= [\ket{ab}\ \ket{ad}\ \ket{ba}\ \ket{bc}\ \ket{cb}\ \ket{cd}\ \ket{da}\ \ket{dc}]\\
+			&\hspace{60mm} \times \underset{=\widetilde{S}}{\underline{\left[\begin{array}{cccccccc}
+			0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+			1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
+			0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 
+				\end{array}\right]}}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
