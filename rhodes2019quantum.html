@@ -36,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/9/4"
+	const updated = "2023/9/5"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -1074,7 +1074,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			S\ket{dc} &= \fraction{1}{\sqrt{M_1M_2}} \sum_{d\in \mathcal{D}} \sum_{c\in \mathcal{C}} S\ket{d,\,c}\\
 				&= \fraction{1}{\sqrt{M_1M_2}} \sum_{d\in \mathcal{D}} \sum_{c\in \mathcal{C}} \ket{c,\,d} = \ket{cd}.
 			\end{align}</p>
-		<p>よって，$S$ の作用は $\mathcal{S}'$ で閉じており，$\mathcal{S}'$ 上の線形変換 $f_S'$ を定義できる．その表現行列は，以下を満たす $\widetilde{S}$ である：</p>
+		<p>よって，$S$ の作用は $\mathcal{S}'$ で閉じており，$\mathcal{S}'$ 上の線形変換 $f_S'$ を定義できる．その表現行列は以下の下線部の $\widetilde{S}$ である：</p>
 		<p>\begin{align}
 			&[S\ket{ab}\ S\ket{ad}\ S\ket{ba}\ S\ket{bc}\ S\ket{cb}\ S\ket{cd}\ S\ket{da}\ S\ket{dc}]\\
 			&= [\ket{ab}\ \ket{ad}\ \ket{ba}\ \ket{bc}\ \ket{cb}\ \ket{cd}\ \ket{da}\ \ket{dc}]\\
@@ -1109,7 +1109,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			0 & 0 & 0 & 0 & -\cos\theta_2 & \sin\theta_2 & 0 & 0 \\ 
 			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0 \\ 
 			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
-			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 
 		\end{array}\right].
 		}\end{align}</p>
 	<p>ただし，$i = 1,\,2$ に対して</p>
@@ -1178,6 +1178,20 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 				&= \fraction{2\sqrt{2k_1M_1}}{N_1} \ket{da} + \left(1-\fraction{k_1}{N_1}\right)\ket{dc}\\
 				&= \sin\theta_1\ket{da} +\cos\theta_1 \ket{dc}.
 			\end{align}</p>
+		<p>よって，$C$ の作用は $\mathcal{S}'$ で閉じており，$\mathcal{S}'$ 上の線形変換 $f_C'$ を定義できる．その表現行列は以下の下線部の $\widetilde{C}$ である：</p>
+		<p>\begin{align}
+			&[C\ket{ab}\ C\ket{ad}\ C\ket{ba}\ C\ket{bc}\ C\ket{cb}\ C\ket{cd}\ C\ket{da}\ C\ket{dc}]\\
+			&= [\ket{ab}\ \ket{ad}\ \ket{ba}\ \ket{bc}\ \ket{cb}\ \ket{cd}\ \ket{da}\ \ket{dc}]\cdot \underset{=\widetilde{C}}{\underline{\left[\begin{array}{cccccccc}
+			-\cos\theta_2 & \sin\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			\sin\theta_2 & \cos\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & -\cos\theta_1 & \sin\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & \sin\theta_1 & \cos\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & -\cos\theta_2 & \sin\theta_2 & 0 & 0 \\ 
+			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 
+				\end{array}\right]}}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -1237,7 +1251,67 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>$U = SCQ$ であり，$S,\ C,\ Q$ はすべてその作用が線形空間 $\mathcal{S}'$ で閉じているので，$U$ もまた作用が $\mathcal{S}'$ で閉じている．つまり $\mathcal{S}'$ 上の線形変換 $f_U': \ket{\psi}\mapsto U\ket{\psi}$ が存在して，その表現行列 $\widetilde{U}$ は</p>
+		<p>\begin{align}
+			\widetilde{U} &= \widetilde{S}\widetilde{C}\widetilde{Q}\\
+				&= \left[ \begin{array}{cccccccc}
+			0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+			1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
+			0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 
+		\end{array}\right] \left[ \begin{array}{cccccccc}
+			-\cos\theta_2 & \sin\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			\sin\theta_2 & \cos\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & -\cos\theta_1 & \sin\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & \sin\theta_1 & \cos\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & -\cos\theta_2 & \sin\theta_2 & 0 & 0 \\ 
+			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 
+		\end{array}\right] \left[ \begin{array}{cccccccc}
+			-1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & -1 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 1  & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 
+		\end{array}\right]\\
+			&= \left[ \begin{array}{cccccccc}
+			0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+			1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
+			0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 
+		\end{array}\right] \left[ \begin{array}{cccccccc}
+			\cos\theta_2 & -\sin\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			-\sin\theta_2 & -\cos\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & \cos\theta_1 & -\sin\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & -\sin\theta_1 & -\cos\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & -\cos\theta_2 & \sin\theta_2 & 0 & 0 \\ 
+			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 
+		\end{array}\right]\\
+			&= \left[ \begin{array}{cccccccc}
+			0 & 0 & \cos\theta_1 & -\sin\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & -\cos\theta_1 & \sin\theta_1 \\ 
+			\cos\theta_2 & -\sin\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & -\cos\theta_2 & \sin\theta_2 & 0 & 0 \\ 
+			0 & 0 & -\sin\theta_1 & -\cos\theta_1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & 0 & \sin\theta_1 & \cos\theta_1 \\
+			-\sin\theta_2 & -\cos\theta_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & 0  & \sin\theta_2 & \cos\theta_2  & 0 & 0  
+		\end{array}\right]\\
+			\end{align}</p>
 	</div>
 </details>
 </div>
