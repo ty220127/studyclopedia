@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -36,7 +37,7 @@
 </script>
 <script>
 	const established = "2023/6/2"
-	const updated = "2023/9/5"
+	const updated = "2023/9/7"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Marked vertices in one set", 
@@ -73,7 +74,10 @@ $\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
 \DeclareMathOperator{\diag}{diag}
 \newenvironment{case}[1]
   {\left\{ \begin{array}{#1}}
-  {\end{array}\right.}$
+  {\end{array}\right.}
+\newenvironment{matrix}[1]
+  {\left[\begin{array}{#1}}
+   {\end{array}\right]}$
 
 <p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
 Page No. <b><script>document.write(N)</script></b> &ensp;
@@ -1339,7 +1343,60 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-		<p></p>
+		<p>以下，$s_i = \sin\theta_i,\ c_i = \cos\theta_i$ と略記し，数学的帰納法により示す．まず $u=1$ に対して</p>
+		<p>\begin{align}
+			\widetilde{U}^2 &= 
+			\begin{matrix}{cccccccc}
+				0 & 0 & c_1 & -s_1 & 0 & 0 & 0 & 0\\
+				0 & 0 & 0 & 0 & 0 & 0 & -c_1 & s_1 \\ 
+				c_2 & -s_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+				0 & 0 & 0 & 0 & -c_2 & s_2 & 0 & 0 \\ 
+				0 & 0 & -s_1 & -c_1 & 0 & 0 & 0 & 0 \\ 
+				0 & 0 & 0 & 0 & 0 & 0 & s_1 & c_1 \\ 
+				-s_2 & -c_2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+				0 & 0 & 0 & 0  & s_2 & c_2  & 0 & 0 \end{matrix} ^2\\
+			
+				&= \begin{matrix}{cccccccc}
+					c_1c_2 & -c_1s_2 & 0 & 0 & s_1c_2 & -s_1s_2 & 0 & 0\\
+					c_1s_2 & c_1c_2 & 0 & 0 & s_1s_2 & s_1c_2 & 0 & 0\\
+					0 & 0 & c_1c_2 & -s_1c_2 & 0 & 0 & c_1s_2 & -s_1s_2\\  
+					0 & 0 & s_1c_2 & c_1c_2 & 0 & 0 & s_1s_2 & c_1s_2\\
+					-s_1c_2 & s_1s_2 & 0 & 0 & c_1c_2 & -c_1s_2 & 0 & 0\\
+					-s_1s_2 & -s_1c_2 & 0 & 0 & c_1s_2 & c_1c_2 & 0 & 0\\
+					0 & 0 & -c_1s_2 & s_1s_2 & 0 & 0 & c_1c_2 & -s_1c_2\\
+					0 & 0 & -s_1s_2 & -c_1s_2 & 0 & 0 & s_1c_2 & c_1c_2
+					\end{matrix}\\
+				
+				&=\begin{matrix}{cccc}
+					c_1R_2 & O_2 & s_1R_2 & O_2\\
+					O_2 & c_2R_1 & O_2 & s_2R_1\\
+					-s_1R_2 & O_4 & c_1R_2 & O_2\\
+					O_4 & -s_2R_1 & O_4 & c_2R_1
+					\end{matrix}
+			\end{align}</p>
+		<p>この結果は，命題で与えられた式に $u=1$ を代入したものと一致する．</p>
+		<p>次に一般の $u$ に対してこの命題が成立すると仮定する．このとき，$u+1$ に対して</p>
+		<p>\begin{align}
+			&\widetilde{U}^{2(u+1)} = \widetilde{U}^{2u} \widetilde{U}^2\\
+			&= \left[ \begin{array}{cccc}
+			(\cos u\theta_1)R_2^u & 0 & (\sin u\theta_1)R_2^u & 0\\
+			0 & (\cos u\theta_2)R_1^u & 0 & (\sin u\theta_2)R_1^u\\ 
+			-(\sin u\theta_1)R_2^u & 0 & (\cos u\theta_1)R_2^u & 0\\
+			0 & -(\sin u\theta_2)R_1^u & 0 & (\cos u\theta_2)R_1^u\\ 
+		\end{array}\right] \begin{matrix}{cccc}
+					c_1R_2 & O_2 & s_1R_2 & O_2\\
+					O_2 & c_2R_1 & O_2 & s_2R_1\\
+					-s_1R_2 & O_4 & c_1R_2 & O_2\\
+					O_4 & -s_2R_1 & O_4 & c_2R_1
+					\end{matrix}\\
+			&= \begin{matrix}{cccc}
+				(\cos (u+1)\theta_1) R_2^{u+1} & 0 & (\sin (u+1)\theta_1) R_2^{u+1} & 0\\
+				0 & (\cos (u+1)\theta_2) R_1^{u+1} & 0 & (\sin (u+1)\theta_2) R_1^{u+1}\\
+				-(\sin (u+1)\theta_1) R_2^{u+1} & 0 & (\cos (u+1)\theta_1) R_2^{u+1} & 0\\
+				0 & -(\sin (u+1)\theta_2) R_1^{u+1} & 0 & (\cos (u+1)\theta_2) R_1^{u+1}\\
+				\end{matrix}
+			\end{align}</p>
+		<p>が成り立つ．つまり $u+1$ に対しても成り立つことから，任意の自然数 $u$ に対して題意は成立する．</p>
 	</div>
 </details>
 </div>
