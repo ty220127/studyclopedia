@@ -20,12 +20,15 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
+		eu: '\\mathrm{e}',
+		iu: '\\mathrm{i}',
 		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+		bra: ['\\langle{#1}|', 1],
 		ket: ['|{#1}\\rangle', 1],
 		ketbra: ['|{#1}\\rangle\\hspace{-0.5mm}\\langle{#2}|',2],
 		braket: ['\\langle #1 \\rangle',1],
@@ -33,7 +36,7 @@
 </script>
 <script>
 	const established = "2023/8/7"
-	const updated = "2023/8/7"
+	const updated = "2023/9/7"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Distribution of X",
@@ -64,10 +67,17 @@
 
 <div class="boxes">
 <center><div id="ttlhead"><script>document.write(ttls[N])</script></div>
-<p><script>document.write(authors[N])</script>
+<p><script>athr2(N)</script>
 <br><script>document.write(pub[N])</script> (<script>document.write(dates[N].getFullYear())</script>). [<a id="doi">doi</a>] [<a id="axv">arXiv</a>] </p>
 </center>
 <hr>
+$\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\diag}{diag}
+\newenvironment{case}[1]
+  {\left\{ \begin{array}{#1}}
+  {\end{array}\right.}$
 
 <p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
 Page No. <b><script>document.write(N)</script></b> &ensp;
@@ -76,23 +86,46 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </p>
        
 <center style="margin-top:3em;">
-<table border="2" width="80%" cellpadding="5"><tbody><tr><td>
-</td></tr></tbody></table>
 </center>
-<br><br>
 
 <div class="section"><script>s = 1; document.write(s + ". " + sec[s])</script></div>
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = usD7</script>
+<p id="1">&nbsp;</p><script>var curbox = Rhs12</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p></p>
+	<p>無限列 $(\varepsilon_j)_{j=1}^{\infty}$ は，各項がそれぞれ独立に以下の分布に従う確率変数列であるとする：</p>
+	<p>\begin{align}
+		P(\varepsilon_j = 1) = P(\varepsilon_j = -1) = \fraction{1}{2}.
+		\end{align}</p>
+	<p>これを用いて，「符号のランダムな調和級数（以下，ランダム調和級数）」$X$ を以下の通り定義する：</p>
+	<p>\begin{align}
+		X = \sum_{j=1}^{\infty} \fraction{\varepsilon_j}{j}.
+		\end{align}</p>
+</div>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = RhsEp12</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>任意の $j = 1,\, 2,\, \cdots$ に対し，確率変数 $\varepsilon_j$ の期待値と２次モーメントはそれぞれ</p>
+	<p>\begin{align}
+		E(\varepsilon_j) = 0,\quad E(\varepsilon_j^2) = 1
+		\end{align}</p>
+	<p>である．</p>
 </div>
 <details class="dtl">
-	<summary>補足</summary>
+	<summary>証明</summary>
 	<div id="tx">
-	<p></p>
+		<p>期待値の定義から直ちに計算できる：</p>
+		<p>\begin{align}
+			E(\varepsilon_j) &= 1\cdot \fraction{1}{2} + (-1) \cdot \fraction{1}{2} = 0,\Rule{0px}{0px}{20px}\\
+
+			E(\varepsilon_j^2) &= 1^2\cdot \fraction{1}{2} +(-1)^2 \cdot \fraction{1}{2} = 1.
+			\end{align}</p>
  	</div>
 </details>
 </div>
@@ -100,10 +133,14 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = usP7</script>
+<p id="1">&nbsp;</p><script>var curbox = RhsC12</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p></p>
+	<p>以下で与えられる確率変数列 $S_n$ は，ほとんど確実に収束する．：</p>
+	<p>\begin{align}
+		S_n = \sum_{j=1}^{n} \fraction{\varepsilon_j}{j},
+		\end{align}</p>
+	<p>つまり，$X = \limit_{n\to \infty} S_n$ はほとんど確実に存在する．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
@@ -111,15 +148,49 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		<p></p>
  	</div>
 </details>
+</div>
+<br>
+<!-- end of a box -->
+
+<div class="section"><script>s = 2; document.write(s + ". " + sec[s])</script></div>
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = RhsE12</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$X$ の期待値と2次モーメントは</p>
+	<p>\begin{align}
+		E(X) = 0,\quad E(X^2) = \fraction{\pi^2}{6}
+		\end{align}</p>
+	<p>である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>$E(X)$ は，期待値の線形性と <script>nr(N,RhsEp12)</script> の結果から直ちに得られる：
+		<p>\begin{align}
+			E(X) &= E\left(\sum_{j=1}^{\infty}\fraction{\varepsilon_j}{j}\right) = \sum_{j=1}^{\infty} \fraction{E(\varepsilon_j)}{j} = 0.
+			\end{align}</p>
+		<p>$E(X^2)$ は上記に加え，$(\varepsilon_j)_{j=1}^{\infty}$ の独立性を利用することで計算される：</p>
+		<p>\begin{align}
+			E(X^2) &= E\left( \sum_{j=1}^{\infty}\fraction{\varepsilon_j}{j} \sum_{k=1}^{\infty} \fraction{\varepsilon_k}{k}\right) = E\left( \sum_{j=1}^{\infty}\sum_{k=1}^{\infty} \fraction{\varepsilon_j \varepsilon_k}{jk}\right)\\
+				&= \sum_{j=1}^{\infty}\sum_{k=1}^{\infty} \fraction{E(\varepsilon_j \varepsilon_k)}{jk} = \sum_{j=1}^{\infty} \left(\fraction{E(\varepsilon_j^2)}{j^2} + \sum_{\substack{k=1\\ k\not = j}}^{\infty}\fraction{E(\varepsilon_j \varepsilon_k)}{jk}\right)\\
+				&= \sum_{j=1}^{\infty} \fraction{1}{j^2} + \underset{\hspace{30mm}=0}{\underline{\sum_{j=1}^{\infty}\sum_{\substack{k=1\\ k\not =j}}^{\infty} \fraction{E(\varepsilon_j)E(\varepsilon_k)}{jk}}} = \sum_{j=1}^{\infty}\fraction{1}{j^2} = \fraction{\pi^2}{6}.
+			\end{align}</p>
+ 	</div>
+</details>
 <details class="dtl">
 	<summary>補足</summary>
 	<div id="tx">
-		<p></p>
+		<p>ここで挙げられた命題より，直ちに $X$ の分散 $V(X)$ を計算できる：</p>
+		<p>\begin{align}
+			V(X) = E(X^2) - E(X)^2 = E(X^2) = \fraction{\pi^2}{6}.
+			\end{align}</p>
  	</div>
 </details>
 </div>
 <br>
-
+<!-- end of a box -->
 
 </div>
 
@@ -134,7 +205,5 @@ const doitar = document.getElementById("doi");
 doitar.href = doi[N];
 
 const axvtar = document.getElementById("axv");
-  if(arxiv[N] != null){
-    axvtar.href = arxiv[N];
-  }
+axvtar.href = arxiv[N];
 </script>
