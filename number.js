@@ -21,7 +21,10 @@ doi[i] = "https://www.tandfonline.com/doi/abs/10.1080/00029890.2003.11919978";
 arxiv[i] = "";
 pub[i] = "The American Mathematical Monthly Vol. 110, Iss. 5, pp. 407-416";
 j = 0;
-j++; usD7 = j; bns[i][j] = "";
+j++; Rhs12 = j; bns[i][j] = "ランダム調和級数";
+j++; RhsC12 = j; bns[i][j] = "ランダム調和級数の収束性";
+j++; RhsE12 = j; bns[i][j] = "ランダム調和級数の期待値と２次モーメント";
+j++; RhsM12 = j; bns[i][j] = "ランダム調和級数の積率母関数に関する評価";
 
 //11:Konno2018partition
 i = 11;
@@ -34,7 +37,7 @@ doi[i] = "https://link.springer.com/article/10.1007/s11128-017-1807-4";
 arxiv[i] = "https://arxiv.org/abs/1707.07127";
 pub[i] = "Quantum Information Processing Vol. 17, Art. No. 100";
 j = 0;
-j++; usD7 = j; bns[i][j] = "";
+j++; Rhs12 = j; bns[i][j] = "ランダム調和級数";
 
 //10:Grover1996fast
 i = 10;
