@@ -22,6 +22,7 @@ arxiv[i] = "";
 pub[i] = "The American Mathematical Monthly Vol. 110, Iss. 5, pp. 407-416";
 j = 0;
 j++; Rhs12 = j; bns[i][j] = "ランダム調和級数";
+j++; RhsEp12 = j; bns[i][j] = "符号確率変数の期待値と２次モーメント";
 j++; RhsC12 = j; bns[i][j] = "ランダム調和級数の収束性";
 j++; RhsE12 = j; bns[i][j] = "ランダム調和級数の期待値と２次モーメント";
 j++; RhsM12 = j; bns[i][j] = "ランダム調和級数の積率母関数に関する評価";
