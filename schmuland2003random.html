@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -36,7 +37,7 @@
 </script>
 <script>
 	const established = "2023/8/7"
-	const updated = "2023/9/7"
+	const updated = "2023/9/12"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
 			"Distribution of X",
@@ -186,6 +187,97 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		<p>\begin{align}
 			V(X) = E(X^2) - E(X)^2 = E(X^2) = \fraction{\pi^2}{6}.
 			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = RhsM12</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$X$ の $t$ に関する積率母関数 $E(\exp(tX))$ に対して</p>
+	<p>\begin{align}
+		E(\exp(tX)) \leq \exp\left( \fraction{t^2\pi^2}{12} \right) 
+		\end{align}</p>
+	<p>が成り立つ．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>$E(\exp(tX))$ は以下のように書き換えられる：</p>
+		<p>\begin{align}
+			&E(\exp(tX)) = E\left( \exp\left( t \sum_{j=1}^{\infty}\fraction{\varepsilon_j}{j} \right) \right)\\
+				&= E\left(\prod_{j=1}^{\infty} \exp\left(\fraction{t\varepsilon_j}{j}\right) \right)\\
+				&= \prod_{j=1}^{\infty} E\left(\exp\left(\fraction{t\varepsilon_j}{j}\right)\right)\\
+				&= \prod_{j=1}^{\infty} \left( P(\varepsilon_j = +1) \exp\left(\fraction{t\cdot 1}{j} \right) +P(\varepsilon_j = -1) \exp\left( \fraction{t\cdot (-1)}{j}\right) \right)\\
+				&= \prod_{j=1}^{\infty} \fraction{1}{2}\left( \exp\left(\fraction{t}{j} \right) + \exp\left( -\fraction{t}{j}\right) \right).
+			\end{align}</p>
+		<p>ここで，指数関数の Maclaurin 展開を考えると，任意の実数 $x$ に対して</p>
+		<p>\begin{align}
+			\exp(x) = \sum_{k=0}^{\infty} \fraction{1}{k!} x^k
+			\end{align}</p>
+		<p>である．よって $x$ に $-x,\ x^2/2$ を代入することでそれぞれ</p>
+		<p>\begin{align}
+			\exp(-x) = \sum_{k=0}^{\infty} \fraction{(-1)^k}{k!} x^k,\quad \exp\left(\fraction{x^2}{2}\right) = \sum_{k=0}^{\infty} \fraction{1}{2^k k!}x^{2k}
+			\end{align}</p>
+		<p>を得る．よって</p>
+		<p>\begin{align}
+			&\exp\left(\fraction{x^2}{2}\right) - \fraction{1}{2}(\exp(x) + \exp(-x))\\
+			&= \sum_{k=0}^{\infty} \fraction{1}{2^k k!}x^{2k} - \fraction{1}{2} \sum_{k=0}^{\infty}\fraction{1 +(-1)^k}{k!} x^k\\
+			&= \sum_{k=0}^{\infty} \fraction{1}{2^k k!}x^{2k} - \sum_{m=0}^{\infty} \fraction{1}{(2m)!} x^{2m}\\
+			&= \sum_{m=0}^{\infty} \underset{m=0\, \Rightarrow\, 0}{\underline{\left(\fraction{1}{2^m m!} - \fraction{1}{(2m)!} \right) }}x^{2k}\\
+			&= \sum_{m=1}^{\infty} \fraction{1}{k!} \left(\fraction{1}{2^k} -\prod_{\ell = m+1}^{2m} \fraction{1}{\ell} \right) x^{2k} \geq 0,
+			\end{align}</p>
+		<p>つまり</p>
+		<p>\begin{align}
+			\fraction{1}{2}(\exp(x) +\exp(-x)) \leq \exp\left(\fraction{x^2}{2}\right)
+			\end{align}</p>
+		<p>が成り立つ．これを用いることで，$E(\exp(tX))$ は以下のように評価される：</p>
+		<p>\begin{align}
+			E(\exp(tX)) &= \prod_{j=1}^{\infty} \fraction{1}{2} \left( \exp\left(\fraction{t}{j}\right) + \exp\left(-\fraction{t}{j}\right)\right)\\
+				&\leq \prod_{j=1}^{\infty} \exp\left(\fraction{t^2}{2j^2}\right) = \exp \left( \fraction{t^2}{2} \prod_{j=1}^{\infty}\fraction{1}{j^2}\right)\\
+				&= \exp \left( \fraction{t^2}{2}\cdot \fraction{\pi^2}{6} \right) = \exp \left( \fraction{t^2 \pi^2}{12} \right).
+			\end{align}</p>
+ 	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = RhsP12</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$X$ がある正数 $x \gt 0$ より大きくなる確率について</p>
+	<p>\begin{align}
+		P(X \gt x) \leq \exp\left( -\fraction{3x^2}{\pi^2} \right) 
+		\end{align}</p>
+	<p>が成り立つ．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p>まず，指数関数の性質より，任意の $t\in \mathbb{R}$ に対して $X \gt x \ \Longleftrightarrow\ \exp(tX) \gt \exp(tx)$ である．つまり，任意の $t\in \mathbb{R}$ に対して</p>
+		<p>\begin{align}
+			P(X\gt x) = P(\exp(tX) \gt \exp(tx))
+			\end{align}</p>
+		<p>である．ここで Markov の不等式より</p>
+		<p>\begin{align}
+			&P(\exp(tX) \gt \exp(tx)) \leq \fraction{E(tX)}{\exp(tx)}\\
+					&\underset{\text{[12-5]}}{\leq} \exp\left(\fraction{t^2\pi^2}{12} \right) \exp(-tx)\\
+					&= \exp\left( \fraction{t^2\pi^2}{12} -tx \right) = \exp \left( \fraction{\pi^2}{12} \left(t -\fraction{6x}{\pi^2}\right)^2 -\fraction{3x^2}{\pi^2}\right)
+			\end{align}</p>
+		<p>が成り立つ．よって，任意の $t\in \mathbb{R}$ に対して
+		<p>\begin{align}
+			P(X\gt x) \leq \exp \left( \fraction{\pi^2}{12} \left(t^2 -\fraction{6x}{\pi^2}\right)^2 -\fraction{3x^2}{\pi^2}\right)
+			\end{align}</p>
+		<p>であり，この不等式における指数関数の引数の最小値は $t= 6x/\pi^2$ のときに $-3x^2/\pi^2$ であるから</p>
+		<p>\begin{align}
+			P(X\gt x) \leq \exp\left(-\fraction{3x^2}{\pi^2} \right)
+			\end{align}</p>
+		<p>が成立する．</p>
  	</div>
 </details>
 </div>
