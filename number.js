@@ -99,8 +99,7 @@ doi[i] = "https://www.hindawi.com/journals/complexity/2018/4318127/";
 arxiv[i] = "";
 pub[i] = "Complexity Vol. 2018, Art. ID 4318127";
 j = 0;
-j++; usD7 = j; bns[i][j] = "定義：頂点上及び辺上の一様状態";
-j++; usP7 = j; bns[i][j] = "命題：頂点上及び辺上の一様状態の一致条件";
+j++; TA8 = j; bns[i][j] = "定義：閾値アジャスタの時間変化";
 
 //7:Rhodes2019QWSonCBG
 i = 7;
