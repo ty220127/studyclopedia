@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/studyclopedia/studycss.css"/>
 <html>
@@ -75,7 +76,7 @@ $\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
 \newenvironment{case}[1]
   {\left\{ \begin{array}{#1}}
   {\end{array}\right.}$
-
+  
 <p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
 Page No. <b><script>document.write(N)</script></b> &ensp;
 <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
@@ -83,35 +84,40 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 </p>
        
 <center style="margin-top:3em;">
-<table border="2" width="80%" cellpadding="5"><tbody><tr><td>
-半導体レーザーのカオス振動ダイナミクスによる綱引き法を用いた適応的意思決定における記憶パラメータの効果を調べる．光フィードバックを用いた半導体レーザーのカオス時系列を実験的に生成し，勝率が動的に変化するスロットマシン群に対する合計報酬の最大化を目的とする多腕バンディット問題を解く適応的意思決定に適用する．記憶パラメータの制御が正しい意思決定の実現にどのように依存するかを調べる．適応度は記憶パラメータをより小さくすることで強化されるのに対し，正しい意思決定への収束度は記憶バラメータをより大きくすることで高くなることがわかった．適応性と環境の変化，問題の難しさの関係は，過去の決定を前提に考察される．この高速適応的意思決定の検証は，過去の事象の記憶の重要性を強調するとともに，将来的な光知能への道を舗装する．
-</td></tr></tbody></table>
 </center>
-<br><br>
 
 <div class="section"><script>s = 1; document.write(s + ". " + sec[s])</script></div>
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = Rhs12</script>
+<p id="1">&nbsp;</p><script>var curbox = TA8</script>
 <div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p></p>
-</div>
-</div>
-<br>
-<!-- end of a box -->
-
-<!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = RhsEp12</script>
-<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
-<div id="tx">
-	<p></p>
+	<p>時刻 $t$ における閾値アジャスタの値を $\DeclareMathOperator{\TA}{TA}\TA (t)$ とし，その時間変化を</p>
+	<p>\begin{align}
+		\TA (t) = X(t) + \alpha \TA (t-1)	
+		\end{align}</p>
+	<p>と定義する．ただし $\alpha$ は<b><u>記憶パラメータ (memory parameter)</u></b>と呼ばれ，$\alpha\in [0,\ 1]$ を満たす．また $X(t)$ は以下に従って決まるものとする：</p>
+	<ul style="margin-top: 5pt; margin-left: 20pt;">
+		<li> $t$ 回目の意思決定においてスロットマシン $S_A$ が選択され，かつ $S_A$ が
+			<ul style="margin-left: 20pt;  margin-bottom: 5pt">
+				<li> 勝つ $\Longrightarrow$ $X(t) = -1$</li>
+				<li> 負ける $\Longrightarrow$ $X(t) = +1$</li>
+			</ul>
+		</li>
+		<li>  $t$ 回目の意思決定においてスロットマシン $S_B$ が選択され，かつ $S_B$ が
+			<ul style="margin-left: 20pt; margin-bottom: 5pt">
+				<li> 勝つ $\Longrightarrow$ $X(t) = +1$</li>
+				<li> 負ける $\Longrightarrow$ $X(t) = -1$</li>
+			</ul>
+		</li>
+	</ul>
+	<p>なお，閾値アジャスタの初期値は $\TA (0) = 0$ とする．</p>
 </div>
 <details class="dtl">
-	<summary>証明</summary>
+	<summary>補足</summary>
 	<div id="tx">
-		<p></p>
- 	</div>
+	<p>Naruse et al. (2017) において，$\varDelta = \varOmega = 1$ のケースである．</p>
+	</div>
 </details>
 </div>
 <br>
