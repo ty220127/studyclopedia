@@ -10,6 +10,19 @@ var pub = [];
 
 i = 0;
 
+//13:Higuchi2020electric
+i = 13;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/higuchi2020electric.html";
+ttls[i] = "Electric Circuit Induced by Quantum Walk";
+authors[i] = ["Yusuke", "Higuchi", "Mohamed", "Sabri", "Etsuo", "Segawa"]; 
+dates[i] = new Date( 2020, 7, 3, 00, 00 );
+doi[i] = "https://link.springer.com/article/10.1007/s10955-020-02591-3";
+arxiv[i] = "https://arxiv.org/abs/2002.05261";
+pub[i] = "Journal of Statistical Physics, Vol. 181, pp. 603–617";
+j = 0;
+j++; Rhs12 = j; bns[i][j] = "ランダム調和級数";
+
 //12:Schmuland2003random
 i = 12;
 bns[i] = [];
