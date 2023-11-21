@@ -10,6 +10,19 @@ var pub = [];
 
 i = 0;
 
+//14:Segawa2019spectral
+i = 14;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/segawa2019spectral.html";
+ttls[i] = "Spectral mapping theorem of an abstract quantum walk";
+authors[i] = ["Etsuo", "Segawa", "Akito", "Suzuki"]; 
+dates[i] = new Date( 2019, 9, 11, 00, 00 );
+doi[i] = "https://link.springer.com/article/10.1007/s11128-019-2448-6";
+arxiv[i] = "https://arxiv.org/abs/1506.06457";
+pub[i] = "Quantum Information Processing, Vol. 18, Art. No. 333";
+j = 0;
+j++; Rhs12 = j; bns[i][j] = "ランダム調和級数";
+
 //13:Higuchi2020electric
 i = 13;
 bns[i] = [];
