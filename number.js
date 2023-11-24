@@ -10,6 +10,19 @@ var pub = [];
 
 i = 0;
 
+//15:Segawa2016generator
+i = 15;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/segawa2016generator.html";
+ttls[i] = "Generator of an abstract quantum walk";
+authors[i] = ["Etsuo", "Segawa", "Akito", "Suzuki"]; 
+dates[i] = new Date( 2016, 1, 30, 00, 00 );
+doi[i] = "https://link.springer.com/article/10.1007/s40509-016-0070-1";
+arxiv[i] = "https://arxiv.org/abs/1508.07473";
+pub[i] = "Quantum Studies: Mathematics and Foundations, Vol. 3, pp. 11-30";
+j = 0;
+j++; Rhs12 = j; bns[i][j] = "ランダム調和級数";
+
 //14:Segawa2019spectral
 i = 14;
 bns[i] = [];
