@@ -272,7 +272,8 @@ doi[i] = "https://projecteuclid.org/journals/journal-of-the-mathematical-society
 arxiv[i] = "https://arxiv.org/abs/quant-ph/0206103";
 pub[i] = "Journal of the Mathematical Society of Japan, Vol. 57, Iss. 4, pp. 1179-1195";
 j = 0;
-j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
+j++; QWSystem1 = j; bns[i][j] = "設定：１次元量子ウォークの時間発展";
+j++; PQ1 = j; bns[i][j] = "命題：ユニタリ行列の分解要素の性質";
 
 //Numbering-Rule
 function nr(model,box) {
