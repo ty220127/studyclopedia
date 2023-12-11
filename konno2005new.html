@@ -36,7 +36,7 @@
 </script>
 <script>
 	const established = "2022/10/16"
-	const updated = "2023/12/1"
+	const updated = "2023/12/11"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
                   "Abstract quantum walks",
@@ -119,7 +119,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			0 & \cdots & 0 & Q & 0 & P & 0\\
 			0 & \cdots & \cdots & 0 & Q & 0 & P\\
 			P & 0 & \cdots & \cdots & 0 & Q & 0
-			\end{array}\right],\quad 0 = \twobytwo{0}{0}{0}{0}
+			\end{array}\right]\quad \left(0 = \twobytwo{0}{0}{0}{0}\right)
 		\end{align}</p>
 	<p>で定義する．更に，時刻 $n$ における量子ビット状態</p>
 	<p>\begin{align}
@@ -127,13 +127,18 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\end{align}</p>
 	<p>に関して，初期量子ビット状態を</p>
 	<p>\begin{align}
-		\varPsi^{(0)}(\varphi) = \left[ \begin{array}{c} 0_N\\ \varphi\\ 0_N \end{array} \right]\in \bs{C}^{4N+2},
+		\varPsi^{(0)}(\varphi) = \left[ \begin{array}{c} 0_N\\ \varphi\\ 0_N \end{array} \right]\in \bs{C}^{4N+2}\quad (0_N = {}^t[0,\,0,\,\cdots,\,0] \in \bs{C}^{2N})
 		\end{align}</p>
 	<p>ある時刻 $n$ における量子ビット状態を</p>
 	<p>\begin{align}
 		\varPsi^{(n)}(\varphi) = (\overline{U}_N)^n \varPsi^{(0)}(\varphi)
 		\end{align}</p>
 	<p>とする．</p>
+	<p>最後に，時刻 $n$ における量子ウォークの位置 $X_n^\varphi$ が $k \in \{-N,\,\cdots,\,N\}$ である確率を</p>
+	<p>\begin{align}
+		P(X_n^\varphi =k) = \|\varPsi_k^{(n)}(\varphi)\|^2
+		\end{align}</p>
+	<p>と定義する．</p>
 </div>
 <details class="dtl">
 	<summary>補足</summary>
@@ -169,6 +174,109 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			&= \twobytwo{|a|^2 +|b|^2 }{0}{0}{|c|^2 +|d|^2} = \twobytwo{1}{0}{0}{1},\Rule{0pt}{0pt}{20pt}\\
 		P^*P + Q^*Q &= \twobytwo{\bar{a}}{0}{\bar{b}}{0} \twobytwo{a}{b}{0}{0} + \twobytwo{0}{\bar{c}}{0}{\bar{d}} \twobytwo{0}{0}{c}{d}\\
 			&= \twobytwo{|a|^2}{\bar{a}b}{a\bar{b}}{|b|^2} + \twobytwo{|c|^2}{\bar{c}d}{c\bar{d}}{|d|^2} = \twobytwo{1}{0}{0}{1},\Rule{0pt}{0pt}{20pt}\\
+		PQ^* &= \twobytwo{a}{b}{0}{0}\twobytwo{0}{\overline{c}}{0}{\overline{d}} = \twobytwo{0}{a\overline{c}+b\overline{d}}{0}{0} = \twobytwo{0}{0}{0}{0},\\
+		Q^*P &= \twobytwo{0}{\overline{c}}{0}{\overline{d}}\twobytwo{a}{b}{0}{0} = \twobytwo{0}{0}{0}{0},\Rule{0pt}{0pt}{20pt}\\
+		QP^* &= (PQ^*)^* = \twobytwo{0}{0}{0}{0},\quad P^*Q = (Q^*P)^* = \twobytwo{0}{0}{0}{0}.
+		\end{align}</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = PQ1</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$\overline{U}_N$ はユニタリ行列である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>$\overline{U}_N (\overline{U}_N)^* = (\overline{U}_N)^*\overline{U}_N = I_{4N+2}$（単位行列）を示す．</p>
+	<p>\begin{align}
+		&\overline{U}_N (\overline{U}_N)^* \\
+		&= 
+			\left[\begin{array}{ccccccc}
+			0 & P & 0 & \cdots & \cdots & 0 & Q\\
+			Q & 0 & P & 0 & \cdots & \cdots & 0\\
+			0 & Q & 0 & P & 0 & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & 0 & Q & 0 & P & 0\\
+			0 & \cdots & \cdots & 0 & Q & 0 & P\\
+			P & 0 & \cdots & \cdots & 0 & Q & 0
+			\end{array}\right]
+			\left[\begin{array}{ccccccc}
+			0 & Q^* & 0 & \cdots & \cdots & 0 & P^*\\
+			P^* & 0 & Q^* & 0 & \cdots & \cdots & 0\\
+			0 & P^* & 0 & Q^* & 0 & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & 0 & P^* & 0 & Q^* & 0\\
+			0 & \cdots & \cdots & 0 & P^* & 0 & Q^*\\
+			Q^* & 0 & \cdots & \cdots & 0 & P^* & 0
+			\end{array}\right] \Rule{0pt}{0pt}{55pt}\\
+		&= 
+			\left[\begin{array}{ccccccc}
+			PP^*+QQ^* & 0 & PQ^* & \cdots & \cdots & QP^* & 0\\
+			0 & QQ^*+PP^* & 0 & PQ^* & \cdots & \cdots & QP^*\\
+			QP^* & 0 & QQ^*+PP^* & 0 & PQ^* & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & QP^* & 0 & QQ^*+PP^* & 0 & PQ^*\\
+			PQ^* & \cdots & \cdots & QP^* & 0 & QQ^*+PP^* & 0\\
+			0 & PQ^* & \cdots & \cdots & QP^* & 0 & PP^*+QQ^*
+			\end{array}\right]\Rule{0pt}{0pt}{55pt}\\
+		&=
+			\left[\begin{array}{ccccccc}
+			I_2 & 0 & 0 & \cdots & \cdots & 0 & 0\\
+			0 & I_2 & 0 & 0 & \cdots & \cdots & 0\\
+			0 & 0 & I_2 & 0 & 0 & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & 0 & 0 & I_2 & 0 & 0\\
+			0 & \cdots & \cdots & 0 & 0 & I_2 & 0\\
+			0 & 0 & \cdots & \cdots & 0 & 0 & I_2
+			\end{array}\right] = I_{4N+2},\Rule{0pt}{0pt}{30pt}\\
+		\end{align}</p>
+	<p>\begin{align}
+		&(\overline{U}_N)^*\overline{U}_N  \\
+		&= 
+			\left[\begin{array}{ccccccc}
+			0 & Q^* & 0 & \cdots & \cdots & 0 & P^*\\
+			P^* & 0 & Q^* & 0 & \cdots & \cdots & 0\\
+			0 & P^* & 0 & Q^* & 0 & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & 0 & P^* & 0 & Q^* & 0\\
+			0 & \cdots & \cdots & 0 & P^* & 0 & Q^*\\
+			Q^* & 0 & \cdots & \cdots & 0 & P^* & 0
+			\end{array}\right] 
+			\left[\begin{array}{ccccccc}
+			0 & P & 0 & \cdots & \cdots & 0 & Q\\
+			Q & 0 & P & 0 & \cdots & \cdots & 0\\
+			0 & Q & 0 & P & 0 & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & 0 & Q & 0 & P & 0\\
+			0 & \cdots & \cdots & 0 & Q & 0 & P\\
+			P & 0 & \cdots & \cdots & 0 & Q & 0
+			\end{array}\right]\Rule{0pt}{0pt}{55pt}\\
+		&= 
+			\left[\begin{array}{ccccccc}
+			Q^*Q+P^*P & 0 & Q^*P & \cdots & \cdots & P^*Q & 0\\
+			0 & P^*P+Q^*Q & 0 & Q^*P & \cdots & \cdots & P^*Q\\
+			P^*Q & 0 & P^*P+Q^*Q & 0 & Q^*P & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & P^*Q & 0 & P^*P+Q^*Q & 0 & Q^*P\\
+			Q^*P & \cdots & \cdots & P^*Q & 0 & P^*P+Q^*Q & 0\\
+			0 & Q^*P & \cdots & \cdots & P^*Q & 0 & Q^*Q+P^*P
+			\end{array}\right]\Rule{0pt}{0pt}{55pt}\\
+		&=
+			\left[\begin{array}{ccccccc}
+			I_2 & 0 & 0 & \cdots & \cdots & 0 & 0\\
+			0 & I_2 & 0 & 0 & \cdots & \cdots & 0\\
+			0 & 0 & I_2 & 0 & 0 & \cdots & 0\\
+			\vdots & \ddots & \ddots & \ddots & \ddots & \ddots& \vdots\\
+			0 & \cdots & 0 & 0 & I_2 & 0 & 0\\
+			0 & \cdots & \cdots & 0 & 0 & I_2 & 0\\
+			0 & 0 & \cdots & \cdots & 0 & 0 & I_2
+			\end{array}\right] = I_{4N+2}.
 		\end{align}</p>
 	</div>
 </details>
