@@ -274,6 +274,7 @@ pub[i] = "Journal of the Mathematical Society of Japan, Vol. 57, Iss. 4, pp. 117
 j = 0;
 j++; QWSystem1 = j; bns[i][j] = "設定：１次元量子ウォークの時間発展";
 j++; PQ1 = j; bns[i][j] = "命題：ユニタリ行列の分解要素の性質";
+j++; SysU1 = j; bns[i][j] = "命題：量子ウォーク系の時間発展行列のユニタリ性";
 
 //Numbering-Rule
 function nr(model,box) {
