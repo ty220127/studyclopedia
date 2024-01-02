@@ -36,7 +36,7 @@
 </script>
 <script>
 	const established = "2022/10/16"
-	const updated = "2023/12/11"
+	const updated = "2024/1/2"
 	<!--document.title= ttl.replace( '<br>', '' ) + "｜STUDYCLOPEDIA"-->
 	const sec = ["","Introduction", 
                   "Abstract quantum walks",
@@ -102,7 +102,7 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\end{align}</p>
 	<p>ただし $a,\,b,\,c,\,d\in \bs{C}$（$\bs{C}$ は複素数の集合）である．</p>	<p>次に，ウォーカーの左向きと右向きの「カイラリティ」をそれぞれ $\ket{L} = {}^t[1,\,0],\ \ket{R} = {}^t[0,\,1]$ で表す．これらの線形結合で表される単位ベクトルの集合を</p>
 	<p>\begin{align}
-		\varPhi = \{\varphi = {}^t[\alpha,\,\beta]\in \bs{C}^2 \,|\, |\alpha|^2 + |\beta|^2 = 1\}
+		\varPhi = \left\{\varphi = {}^t[\alpha,\,\beta] = \alpha\ket{L} + \beta\ket{R} \in \bs{C}^2 \,|\, |\alpha|^2 + |\beta|^2 = 1\right\}
 		\end{align}</p>
 	<p>で表す．量子ウォークの初期状態は，$\varPhi$ の元から選ばれるものとし，初期状態 $\varphi \in \varPhi$ で原点から出発する量子ウォークの時刻 $n$ における位置を $X^\varphi_n$ とする．</p>
 	<p>ここで $U$ を $U = P+Q$ と分解する．ただし，</p>
@@ -151,17 +151,62 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <!-- end of a box -->
 
 <!-- beginning of a box -->
-<p id="1">&nbsp;</p><script>var curbox = PQ1</script>
+<p id="1">&nbsp;</p><script>var curbox = PQrep1</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>量子ウォークの時間発展作用素 $U$ の分解要素 $P, Q$ について</p>
+	<p>量子ウォークの時間発展作用素 $U$ の分解要素 $P,\ Q$ について</p>
 	<p>\begin{align}
-		&PP^* + QQ^* = P^*P + Q^*Q = \twobytwo{1}{0}{0}{1},\\
-		&PQ^* = QP^* = Q^*P = P^*Q = \twobytwo{0}{0}{0}{0}.
+		P = \ketbra{L}{L}U,\quad Q=\ketbra{R}{R}U.
 		\end{align}</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
+	<div id="tx">
+	<p>\begin{align}
+		\ketbra{L}{L}U &= \left[\begin{array}{c} 1\\ 0 \end{array}\right] \left[\begin{array}{cc} 1 & 0 \end{array}\right] \twobytwo{a}{b}{c}{d}\\
+			&= \twobytwo{1}{0}{0}{0}\twobytwo{a}{b}{c}{d} = \twobytwo{a}{b}{0}{0} = P, \Rule{0pt}{0pt}{20pt}\\
+		\ketbra{R}{R}U &= \left[\begin{array}{c} 0\\ 1 \end{array}\right] \left[\begin{array}{cc} 0 & 1 \end{array}\right] \twobytwo{a}{b}{c}{d}\\
+			&= \twobytwo{0}{0}{0}{1}\twobytwo{a}{b}{c}{d} = \twobytwo{0}{0}{c}{d} = Q.
+		\end{align}</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = PQdec1</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>量子ウォークの時間発展作用素 $U$ の分解要素 $P,\ Q$ について</p>
+	<p>\begin{align}
+		&PP^* + QQ^* = P^*P + Q^*Q = I_2,\\
+		&PQ^* = QP^* = Q^*P = P^*Q = O_{2,2}.
+		\end{align}</p>
+	<p>ただし $I_2$ は２次の単位行列，$O_{2,2}$ は $2\times 2$ の零行列：</p>
+	<p>\begin{align}
+		I_2 = \twobytwo{1}{0}{0}{1},\quad O_{2,2} = \twobytwo{0}{0}{0}{0}.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明１</summary>
+	<div id="tx">
+	<p>$U$ のユニタリ性より $UU^* = U^*U = I_2$ であることに注意して <script>nr(N,PQrep1)</script> を用いて計算すると</p>
+	<p>\begin{align}
+		PP^* + QQ^* &= \ketbra{L}{L}UU^*\ketbra{L}{L} + \ketbra{R}{R}UU^*\ketbra{R}{R}\\
+			&= \ketbra{L}{L}I_2\ketbra{L}{L} + \ketbra{R}{R}I_2\ketbra{R}{R}\\
+			&= \ketbra{L}{L} + \ketbra{R}{R} = I_2,\Rule{0pt}{0pt}{10pt}\\
+		P^*P + Q^*Q &= U^*\ket{L}\braket{L|L}\bra{L}U + U^*\ket{R}\braket{R|R}\bra{R}U\\
+			&= U^*\ketbra{L}{L}U + U^*\ketbra{R}{R}U\\
+			&= U^*(\ketbra{L}{L} + \ketbra{R}{R})U = I_2,\Rule{0pt}{0pt}{10pt}\\
+		PQ^* &= \ketbra{L}{L}UU^*\ketbra{R}{R} = \ket{L}\braket{L|R}\bra{R} = O_{2,2},\Rule{0pt}{0pt}{10pt}\\
+		Q^*P &= U^*\ket{R}\braket{R|L}\bra{L}U = O_{2,2},\Rule{0pt}{0pt}{10pt}\\
+		QP^* &= (PQ^*)^* = O_{2,2},\quad P^*Q = (Q^*P)^* = O_{2,2}.
+		\end{align}</p>
+	</div>
+</details>
+<details class="dtl">
+	<summary>証明２</summary>
 	<div id="tx">
 	<p>$U$ のユニタリ性より</p>
 	<p>\begin{align}
@@ -171,12 +216,12 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>であることに注意して，</p>
 	<p>\begin{align}
 		PP^* + QQ^* &= \twobytwo{a}{b}{0}{0} \twobytwo{\bar{a}}{0}{\bar{b}}{0} + \twobytwo{0}{0}{c}{d}\twobytwo{0}{\bar{c}}{0}{\bar{d}}\\
-			&= \twobytwo{|a|^2 +|b|^2 }{0}{0}{|c|^2 +|d|^2} = \twobytwo{1}{0}{0}{1},\Rule{0pt}{0pt}{20pt}\\
+			&= \twobytwo{|a|^2 +|b|^2 }{0}{0}{|c|^2 +|d|^2} = I_2,\Rule{0pt}{0pt}{20pt}\\
 		P^*P + Q^*Q &= \twobytwo{\bar{a}}{0}{\bar{b}}{0} \twobytwo{a}{b}{0}{0} + \twobytwo{0}{\bar{c}}{0}{\bar{d}} \twobytwo{0}{0}{c}{d}\\
-			&= \twobytwo{|a|^2}{\bar{a}b}{a\bar{b}}{|b|^2} + \twobytwo{|c|^2}{\bar{c}d}{c\bar{d}}{|d|^2} = \twobytwo{1}{0}{0}{1},\Rule{0pt}{0pt}{20pt}\\
-		PQ^* &= \twobytwo{a}{b}{0}{0}\twobytwo{0}{\overline{c}}{0}{\overline{d}} = \twobytwo{0}{a\overline{c}+b\overline{d}}{0}{0} = \twobytwo{0}{0}{0}{0},\\
-		Q^*P &= \twobytwo{0}{\overline{c}}{0}{\overline{d}}\twobytwo{a}{b}{0}{0} = \twobytwo{0}{0}{0}{0},\Rule{0pt}{0pt}{20pt}\\
-		QP^* &= (PQ^*)^* = \twobytwo{0}{0}{0}{0},\quad P^*Q = (Q^*P)^* = \twobytwo{0}{0}{0}{0}.
+			&= \twobytwo{|a|^2}{\bar{a}b}{a\bar{b}}{|b|^2} + \twobytwo{|c|^2}{\bar{c}d}{c\bar{d}}{|d|^2} = I_2,\Rule{0pt}{0pt}{20pt}\\
+		PQ^* &= \twobytwo{a}{b}{0}{0}\twobytwo{0}{\overline{c}}{0}{\overline{d}} = \twobytwo{0}{a\overline{c}+b\overline{d}}{0}{0} = O_{2,2},\\
+		Q^*P &= \twobytwo{0}{\overline{c}}{0}{\overline{d}}\twobytwo{a}{b}{0}{0} = O_{2,2},\Rule{0pt}{0pt}{20pt}\\
+		QP^* &= (PQ^*)^* = O_{2,2},\quad P^*Q = (Q^*P)^* = O_{2,2}.
 		\end{align}</p>
 	</div>
 </details>
@@ -278,6 +323,24 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 			0 & 0 & \cdots & \cdots & 0 & 0 & I_2
 			\end{array}\right] = I_{4N+2}.
 		\end{align}</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = QSrec1</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>\begin{align}
+		\varPsi_k^{(n+1)}(\varphi) = Q\varPsi_{k-1}^{(n)}(\varphi) + P\varPsi_{k+1}^{(n)}(\varphi)
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p></p>
 	</div>
 </details>
 </div>
