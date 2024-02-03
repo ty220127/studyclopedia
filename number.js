@@ -10,6 +10,19 @@ var pub = [];
 
 i = 0;
 
+//16:Naruse2018scalable
+i = 16;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/studyclopedia/naruse2018scalable.html";
+ttls[i] = "Scalable photonic reinforcement learning by time-division multiplexing of laser chaos";
+authors[i] = ["Makoto", "Naruse", "Takatomo", "Mihana", "Hirokazu", "Hori", "Hayato", "Saigo", "Kazuya","Okumura", "Mikio", "Hasegawa", "Atsushi", "Uchida"]; 
+dates[i] = new Date( 2018, 7, 18, 00, 00 );
+doi[i] = "https://www.nature.com/articles/s41598-018-29117-y";
+arxiv[i] = "https://arxiv.org/abs/1803.09425";
+pub[i] = "Scientific Reports, Vol. 8, Art. No. 10890";
+j = 0;
+j++; Rhs12 = j; bns[i][j] = "ランダム調和級数";
+
 //15:Segawa2016generator
 i = 15;
 bns[i] = [];
