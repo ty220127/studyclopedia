@@ -48,19 +48,28 @@
 <body>
 <script src="https://ty220127.github.io/studyclopedia/number.js"></script>
 <script>
-	const N = A21OAM;
+	const N = 5;
 	document.title= ttls[N] + "｜STUDYCLOPEDIA";
 </script>
 
-<center><div id="ttlhead"><script>document.write(ttls[N])</script></div>
-<p>Takashi Amakasu, Nicolas Chauvet, Guillaume Bachelier, Serge Huant, Ryoichi Horisaki, and Makoto Naruse
-<br>Scientific Reports vol. 11, article no. 21117 (2021). [<a id="doi">doi</a>] [<a id="axv">arXiv</a>] </p>
-</center>
-<hr>
 <div class="header">
-<center><a href="index.html">STUDYCLOPEDIA</a></center>
+<a href="index.html">STUDYCLOPEDIA</a>
 </div>
 
+<div class="boxes">
+<center><div id="ttlhead"><script>document.write(ttls[N])</script></div>
+<p><script>athr2(N)</script>
+<br><script>document.write(pub[N])</script> (<script>document.write(dates[N].getFullYear())</script>). [<a id="doi">doi</a>] [<a id="axv">arXiv</a>] </p>
+</center>
+<hr>
+$\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\diag}{diag}
+\newenvironment{case}[1]
+  {\left\{ \begin{array}{#1}}
+  {\end{array}\right.}$
+  
 <p style="text-align:right; margin-top:-0.1em; margin-bottom: -2em;">
 Page No. <b><script>document.write(N)</script></b> &ensp;
 <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
@@ -69,34 +78,35 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
        
 <center style="margin-top:3em;">
 <table border="2" width="80%" cellpadding="5"><tbody><tr><td>
+
 </td></tr></tbody></table>
-
-<ol id="box" style="text-align:left;">
-  <li><a href="#1"><script>document.write(sec1)</script></a></li>
-  <li><a href="#2"><script>document.write(sec2)</script></a></li>
-  <li><a href="#3"><script>document.write(sec3)</script></a></li>
-  <li><a href="#4"><script>document.write(sec4)</script></a></li>
-  <li><a href="#5"><script>document.write(sec5)</script></a></li>
-  <li><a href="#6"><script>document.write(sec6)</script></a></li>
-</ul>
 </center>
+<br><br>
 
-<h2 id="1"><script>document.write(sec1)</script></h2>
-aaaa
-<h2 id="2"><script>document.write(sec2)</script></h2>
-aaaa
-<h2 id="3"><script>document.write(sec3)</script></h2>
-aaaa
-<h2 id="4"><script>document.write(sec4)</script></h2>
-aaaa
-<h2 id="5"><script>document.write(sec5)</script></h2>
-aaaa
-<h2 id="6"><script>document.write(sec6)</script></h2>
-aaaa
-</body>
+<div class="section"><script>s = 1; document.write(s + ". " + sec[s])</script></div>
 
+<!-- beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = TA8</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p></p>
+</div>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+	<p></p>
+	</div>
+</details>
+</div>
+<br>
+<!-- end of a box -->
+
+</div>
+
+<br>
 <div class="footer"></div>
 
+<body>
 </html>
 
 <script>
